@@ -1,0 +1,162 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 460,
+            "y": 342
+          },
+          "nodeIndex": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
+          "nodeLineageTag": "19b536f3-ec44-4b32-b10e-2c74fefcfcc2",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 696.35863558889537,
+            "y": 0
+          },
+          "nodeIndex": "dCalendario",
+          "nodeLineageTag": "66c2ee74-5a6a-4394-a31b-150a14799414",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "Medidas",
+          "nodeLineageTag": "ec64466d-9569-4163-b827-916ea746cfe4",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1152.5612862514404,
+            "y": 0
+          },
+          "nodeIndex": "dEmpresa",
+          "nodeLineageTag": "99b6a162-75d0-494d-9951-6058f5bfd84b",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 298.222670202461
+          },
+          "nodeIndex": "dPrioridade",
+          "nodeLineageTag": "c4f4ba06-38e8-4059-a8f7-28f44decd6d3",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1555.1719726441174,
+            "y": 0
+          },
+          "nodeIndex": "Segmento visualização",
+          "nodeLineageTag": "24dc2f60-5d09-41e6-ae29-959846057302",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 56.365541386915083,
+            "y": 658.83328680972386
+          },
+          "nodeIndex": "dFornecedores",
+          "nodeLineageTag": "50ef0118-d831-46e5-b437-165073a36554",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1196.4773158404562,
+            "y": 422.625306907923
+          },
+          "nodeIndex": "DCEVPBI_PEDIDOPRAZOPAGAMENTO",
+          "nodeLineageTag": "91814723-1adc-4476-a64d-40c28ea44d0e",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 683.16534598775513,
+            "y": 814.53464005516207
+          },
+          "nodeIndex": "dCategoria",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2123.1719726441174,
+            "y": 395.26732002758104
+          },
+          "nodeIndex": "Spend LY / Itens LY",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1839.1719726441174,
+            "y": 395.26732002758104
+          },
+          "nodeIndex": "Spend CY / Itens CY",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas as tabelas",
+      "zoomValue": 70.955543900968877,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas as tabelas",
+  "defaultDiagram": "Todas as tabelas"
+}

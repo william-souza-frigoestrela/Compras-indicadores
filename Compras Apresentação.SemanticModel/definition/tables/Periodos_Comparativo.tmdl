@@ -1,0 +1,31 @@
+table Periodos_Comparativo
+	lineageTag: 3716b3dd-9f0d-4f54-bdc9-937a66987256
+
+	column Periodo
+		dataType: string
+		lineageTag: eaf1c446-91ba-4787-adcc-d504333e5c78
+		summarizeBy: none
+		sourceColumn: Periodo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dimensao
+		dataType: string
+		lineageTag: b1b40e77-3636-4a25-bb60-63b6d632fd63
+		summarizeBy: none
+		sourceColumn: Dimensao
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Periodos_Comparativo = m
+		mode: import
+		source =
+				let
+				    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WcszLV3AsKU3MUdJRCi5IzUtRitWBiuaVpBZl5hdhSkCVe5ak5hVjUw6ViAUA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Periodo = _t, Dimensao = _t])
+				in
+				    Fonte
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

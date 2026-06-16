@@ -1,0 +1,35 @@
+table dPrioridade
+	lineageTag: c4f4ba06-38e8-4059-a8f7-28f44decd6d3
+
+	column COD_PRIORIDADE
+		dataType: string
+		lineageTag: 6587a042-9916-40f6-ac9d-de06c8617b38
+		summarizeBy: none
+		sourceColumn: COD_PRIORIDADE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESC_PRIORIDADE
+		dataType: string
+		lineageTag: cdecb87e-7487-45d3-b6d0-b36f7d6d0088
+		summarizeBy: none
+		sourceColumn: DESC_PRIORIDADE
+		sortByColumn: COD_PRIORIDADE
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dPrioridade = m
+		mode: import
+		source =
+				let
+				    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WMlTSUQotSk/NK0lVitWJVjIC8gOK8tOLEnMTUxLBQsZAId/8lNQimIAJUMAvvyg3MQfMNQVyg1JLivITSzLLgCpiAQ==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [COD_PRIORIDADE = _t, DESC_PRIORIDADE = _t]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Fonte,{{"COD_PRIORIDADE", type text}, {"DESC_PRIORIDADE", type text}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

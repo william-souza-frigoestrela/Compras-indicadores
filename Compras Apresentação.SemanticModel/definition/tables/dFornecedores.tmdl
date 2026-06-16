@@ -1,0 +1,44 @@
+table dFornecedores
+	lineageTag: 50ef0118-d831-46e5-b437-165073a36554
+
+	column SEQFORNECEDOR
+		dataType: string
+		lineageTag: b69b4f9e-9eda-4022-8f4f-1007fba32aa7
+		summarizeBy: none
+		sourceColumn: SEQFORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FORNECEDOR COMPLETO'
+		dataType: string
+		lineageTag: 0b619dca-9d2c-4941-bc9a-2eabd54a1eed
+		summarizeBy: none
+		sourceColumn: FORNECEDOR COMPLETO
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fornecedor
+		dataType: string
+		lineageTag: 88e732de-9daa-4fe1-8c07-bb132b245962
+		summarizeBy: none
+		sourceColumn: Fornecedor
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dFornecedores = m
+		mode: import
+		source =
+				let
+				    Fonte = DCEVPB_SOLICITACAOTEMPOAPROVACAO,
+				    #"Outras Colunas Removidas" = Table.SelectColumns(Fonte,{"SEQFORNECEDOR", "FORNECEDOR"}),
+				    #"Duplicatas Removidas" = Table.Distinct(#"Outras Colunas Removidas", {"SEQFORNECEDOR"}),
+				    #"Linhas em Branco Removidas" = Table.SelectRows(#"Duplicatas Removidas", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null}))),
+				    #"Primeiros Caracteres Inseridos" = Table.AddColumn(#"Linhas em Branco Removidas", "Fornecedor", each Text.Start([FORNECEDOR], 25), type text),
+				    #"Colunas Renomeadas" = Table.RenameColumns(#"Primeiros Caracteres Inseridos",{{"FORNECEDOR", "FORNECEDOR COMPLETO"}})
+				in
+				    #"Colunas Renomeadas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

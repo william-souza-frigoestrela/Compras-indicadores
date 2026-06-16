@@ -1,0 +1,49 @@
+table 'Segmento visualização'
+	lineageTag: 24dc2f60-5d09-41e6-ae29-959846057302
+
+	column 'Segmento visualização'
+		lineageTag: d69c0921-870e-4c42-be8a-7bd0acd77ed9
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Segmento visualização Pedido'
+
+		relatedColumnDetails
+			groupByColumn: 'Segmento visualização Campos'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Segmento visualização Campos'
+		isHidden
+		lineageTag: 00d45b91-d4cf-407e-ab58-6d4279d57b28
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Segmento visualização Pedido'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Segmento visualização Pedido'
+		isHidden
+		formatString: 0
+		lineageTag: ce08a429-bac1-4386-a962-853802a3fa1c
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Segmento visualização' = calculated
+		mode: import
+		source =
+				{
+				    ("CATEGORIA", NAMEOF('dCategoria'[CATEGORIA]), 0),
+				    ("EMPRESA", NAMEOF('dEmpresa'[NOMEREDUZIDO]), 1),
+				    ("FORNECEDOR", NAMEOF(dFornecedores[Fornecedor]), 2)
+				}
+
+	annotation PBI_Id = aa811b4ffd5545cf8e5f5131ab82e3f0
+

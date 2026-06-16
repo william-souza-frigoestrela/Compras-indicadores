@@ -1,0 +1,1175 @@
+table Medidas
+	lineageTag: ec64466d-9569-4163-b827-916ea746cfe4
+
+	measure 'Spend CY' = ```
+			
+			--CALCULATE(
+			SUM(DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRPRODUTOTOTAL])
+			/*,
+			not dClusters[CLUSTERS] in {"MATERIA PRIMA Animais"
+			,"ANIMAIS"
+			,"ALIMENTOS"
+			,"PATRIMONIO Agropecuário"
+			,"MRO Agropecuário"
+			,"MDI Insumo Agropecuário"
+			}
+			)*/
+			
+			```
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		lineageTag: 6decedf5-7bc2-476d-b9a4-9db7e92476e2
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Spend LY' =
+			
+			CALCULATE([Spend CY],
+			SAMEPERIODLASTYEAR(dCalendario[Date])
+			/*,
+			not dClusters[CLUSTERS] in {"MATERIA PRIMA Animais"
+			,"ANIMAIS"
+			,"ALIMENTOS"
+			,"PATRIMONIO Agropecuário"
+			,"MRO Agropecuário"
+			,"MDI Insumo Agropecuário"
+			}
+			)
+			*/)
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		lineageTag: 7b4de9b2-f785-4f60-8a11-82d8b613005d
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Delta Gastos' = [Spend CY]-[Spend LY]
+		lineageTag: 29d42f85-e4d8-435b-a58e-38b9349293be
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Var % Spend LY' = ```
+			
+			DIVIDE(
+			    [Spend CY] - [Spend LY],
+			    [Spend LY]
+			)
+			
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 714af541-0e78-433f-81de-1fde9ac6ac02
+
+	measure 'Ranking Empresas' = ```
+			
+			RANKX(
+			    ALLSELECTED(dEmpresa[NOMEREDUZIDO]),
+			    CALCULATE(
+			        [Spend CY],
+			        ALLEXCEPT(dEmpresa, dEmpresa[NOMEREDUZIDO])
+			    ),
+			    ,
+			    DESC,
+			    DENSE
+			)
+			
+			```
+		formatString: 0
+		lineageTag: ceec173e-4349-485f-8676-4a683a83ee8c
+
+	measure 'Top 5 Empresas' = ```
+			
+			IF(
+			    [Ranking Empresas] <= 5,
+			    [Spend CY]
+			)
+			
+			
+			```
+		lineageTag: 69d59ca7-629d-426d-bf2a-66af15032c7a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Top 10 Empresas' =
+			
+			VAR TopEmpresas =
+			    TOPN(
+			        10,
+			        ALL(dEmpresa[NOMEREDUZIDO]),
+			        [Spend CY],
+			        DESC
+			    )
+			RETURN
+			CALCULATE(
+			    [Spend CY],
+			    KEEPFILTERS(TopEmpresas)
+			)
+		lineageTag: 23b54b79-ba19-490a-9a23-91914ae746fe
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Variação Label spend' =
+			
+			VAR vVariacao = [Var % Spend LY]
+			RETURN
+			    FORMAT(vVariacao, "  ⮝ +0.0% ;  ⮟ -0.0% ;  → 0%")
+		lineageTag: eaba1ce2-a6fe-4121-a9be-dceb617d5c4d
+
+	measure 'Variação Label delta gastos' = ```
+			
+			VAR vVariacao = [Delta Gastos]
+			
+			-- Realiza a divisão matemática direto na variável (Força a escala de milhões)
+			VAR vVariacaoMilhoes = vVariacao / 1000000 
+			
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			        -- Se for Positivo
+			        vVariacao > 0, "  ⮝ +" & FORMAT( vVariacaoMilhoes, "#,##0.0" ) & " Mi",
+			        
+			        -- Se for Negativo (Multiplicamos por -1 para o sinal de menos não duplicar)
+			        vVariacao < 0, "  ⮟ -" & FORMAT( vVariacaoMilhoes * -1, "#,##0.0" ) & " Mi",
+			        
+			        -- Se for Zero
+			        "  → R$ 0,0 Mi"
+			    )
+			```
+		lineageTag: b1bd6fe9-c2a0-45be-94e0-245313f46615
+
+	measure 'Spend CY - Var LY' = ```
+			
+			FORMAT([Spend CY], "R$ #,##0,,\M") 
+			    & "  ·  " 
+			    & FORMAT([% Variação Label spend], "+0%;-0%;0%")
+			```
+		lineageTag: 46923182-e9b9-4376-986d-63c7c7c7e240
+
+	measure 'Ranking Clusters' = ```
+			
+			RANKX(
+			    ALLSELECTED(dCategoria[CATEGORIA]),
+			    CALCULATE(
+			        [Spend CY],
+			        ALLEXCEPT(dCategoria,dCategoria[CATEGORIA])
+			    ),
+			    ,
+			    DESC,
+			    DENSE
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 457a649a-dd4b-454c-9779-14df7f75a37a
+
+	measure 'Qtd itens CY' = COUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO])
+		formatString: 0
+		lineageTag: cd64b018-9d87-437a-939c-e20dafd218de
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Ranking Fornecedor' = ```
+			
+			RANKX(
+			    ALLSELECTED(dFornecedores[Fornecedor]),
+			    CALCULATE(
+			        [Spend CY],
+			        ALLEXCEPT(dFornecedores,dFornecedores[Fornecedor])
+			    ),
+			    ,
+			    DESC,
+			    DENSE
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 939ab640-b3cf-4ace-9d18-62a2a1b5e40b
+
+	measure 'Tipo Ranking' = ```
+			
+			VAR Indice = 
+			    SELECTEDVALUE('Segmento visualização'[Segmento visualização Pedido])
+			RETURN
+			SWITCH(
+			    Indice,
+			    0, [Ranking Clusters],
+			    1, [Ranking Empresas],
+			    2, [Ranking Fornecedor],
+			    [Ranking Empresas]
+			)
+			```
+		formatString: 0
+		lineageTag: b424cb51-4fd5-4c41-ae95-a4ecf3299374
+
+	measure 'Spend LY format' = ```
+			
+			FORMAT([Spend LY], "R$ #,##0,,\M") 
+			```
+		lineageTag: 304a7226-0448-4bbf-8dbf-3b8a4cf9dc98
+
+	measure 'PMP Ponderado CY' =
+			
+			VAR Numerador =
+			    CALCULATE(
+			        SUMX(
+			            DCEVPBI_PEDIDOPRAZOPAGAMENTO,
+			            DCEVPBI_PEDIDOPRAZOPAGAMENTO[VLRPEDIDO]
+			                * DCEVPBI_PEDIDOPRAZOPAGAMENTO[PMP]
+			        )
+			    )
+			VAR Denominador =
+			    CALCULATE(
+			        SUM(DCEVPBI_PEDIDOPRAZOPAGAMENTO[VLRPEDIDO])
+			    )
+			RETURN
+			    DIVIDE(Numerador, Denominador, BLANK())
+		formatString: 0.00
+		lineageTag: f439cd39-1f1a-4791-889d-ba4923b624a5
+
+	measure 'PMP Ponderado LY' =
+			
+			CALCULATE(
+			    [PMP Ponderado CY],
+			    SAMEPERIODLASTYEAR(dCalendario[Date])
+			)
+		formatString: 0.00
+		lineageTag: 2e73c629-d072-4c5f-93ce-328b20315c8e
+
+	measure 'Var % PMP LY' =
+			
+			DIVIDE(
+			    [PMP Ponderado CY] - [PMP Ponderado LY],
+			    [PMP Ponderado LY]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 6702d852-3c48-4f3b-9dd1-f82270b2af55
+
+	measure '% Variação Label PMP' =
+			
+			VAR vVariacao = [Var % PMP LY]
+			RETURN
+			    FORMAT(vVariacao, "  ⮝ +0.0% ;  ⮟ -0.0% ;  → 0%")
+		lineageTag: 168eafe3-669e-4454-a706-e645393dd6cf
+
+	measure 'PMP CY - Var LY' = ```
+			
+			FORMAT([PMP Ponderado CY], "0.00") 
+			    & "  ·  " 
+			    & FORMAT([% Variação Label PMP], "+0%;-0%;0%")
+			```
+		lineageTag: 6d3d5656-48d8-485a-b014-7145586865a1
+
+	measure 'Ranking Clusters ASC' = ```
+			
+			VAR PMPAtual = 
+			    CALCULATE(
+			        [PMP Ponderado CY],
+			        ALLEXCEPT(dCategoria, dCategoria[CATEGORIA])
+			    )
+			RETURN
+			IF(
+			    ISBLANK(PMPAtual),
+			    BLANK(),
+			    RANKX(
+			        ALLSELECTED(dCategoria[CATEGORIA]),
+			        CALCULATE(
+			            [PMP Ponderado CY],
+			            ALLEXCEPT(dCategoria, dCategoria[CATEGORIA])
+			        ),
+			        ,
+			        ASC,
+			        DENSE
+			    )
+			)
+			```
+		formatString: 0
+		lineageTag: cbd1a1f6-a89a-4f04-a06c-9ce19deac87c
+
+	measure 'Ranking Empresas ASC' = ```
+			
+			VAR PMPAtual = 
+			    CALCULATE(
+			        [PMP Ponderado CY],
+			        ALLEXCEPT(dEmpresa, dEmpresa[NOMEREDUZIDO])
+			    )
+			RETURN
+			IF(
+			    ISBLANK(PMPAtual),
+			    BLANK(),
+			    RANKX(
+			        ALLSELECTED(dEmpresa[NOMEREDUZIDO]),
+			        CALCULATE(
+			            [PMP Ponderado CY],
+			            ALLEXCEPT(dEmpresa, dEmpresa[NOMEREDUZIDO])
+			        ),
+			        ,
+			        ASC,
+			        DENSE
+			    )
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 36e49329-92fe-4471-ab74-e0d55b8e33a4
+
+	measure 'Ranking Fornecedores ASC' = ```
+			
+			VAR PMPAtual = 
+			    CALCULATE(
+			        [PMP Ponderado CY],
+			        ALLEXCEPT(dFornecedores,dFornecedores[Fornecedor])
+			    )
+			RETURN
+			IF(
+			    ISBLANK(PMPAtual),
+			    BLANK(),
+			    RANKX(
+			        ALLSELECTED(dFornecedores[Fornecedor]),
+			        CALCULATE(
+			            [PMP Ponderado CY],
+			            ALLEXCEPT(dFornecedores, dFornecedores[Fornecedor])
+			        ),
+			        ,
+			        ASC,
+			        DENSE
+			    )
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 9ead7e5b-a77c-4c53-8d4d-be8713918fad
+
+	measure 'Tipo Ranking ASC' = ```
+			
+			VAR Indice = 
+			    SELECTEDVALUE('Segmento visualização'[Segmento visualização Pedido])
+			RETURN
+			SWITCH(
+			    Indice,
+			    0, [Ranking Clusters ASC],
+			    1, [Ranking Empresas ASC],
+			    2, [Ranking Fornecedores ASC],
+			    [Ranking Empresas]
+			    
+			)
+			```
+		formatString: 0
+		lineageTag: 4ce0f522-26fc-4fc7-81d3-f6d28ce19424
+
+	measure 'Qtd itens LY' =
+			
+			CALCULATE([Qtd itens CY],
+			SAMEPERIODLASTYEAR(dCalendario[Date]))
+		formatString: #,0
+		lineageTag: f4869f53-f0a8-408c-8529-ae938cab489a
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Destaque Maior Variacao Cluster' = ```
+			
+			VAR MaiorVariacao = 
+			    MAXX(
+			        ALLSELECTED(dCategoria[CATEGORIA]),
+			        ABS(CALCULATE([Var % Spend LY]))
+			    )
+			RETURN
+			IF(ABS([Var % Spend LY]) = MaiorVariacao, 1, 0)
+			```
+		formatString: 0
+		lineageTag: 9b221cca-edd0-4183-9aed-f956e3c7fa36
+
+	measure 'Destaque Maior Variacao Empresa' = ```
+			
+			VAR MaiorVariacao = 
+			    MAXX(
+			        ALLSELECTED(dEmpresa[NOMEREDUZIDO]),
+			        ABS(CALCULATE([Var % Spend LY]))
+			    )
+			RETURN
+			IF(ABS([Var % Spend LY]) = MaiorVariacao, 1, 0)
+			```
+		formatString: 0
+		lineageTag: d06fff74-7044-4bed-9368-a56c52afa8db
+
+	measure 'Destaque Maior Variacao Fornecedor' = ```
+			
+			VAR MaiorVariacao = 
+			    MAXX(
+			        ALLSELECTED(dFornecedores[Fornecedor]),
+			        ABS(CALCULATE([Var % Spend LY]))
+			    )
+			RETURN
+			IF(ABS([Var % Spend LY]) = MaiorVariacao, 1, 0)
+			```
+		formatString: 0
+		lineageTag: 19457247-b980-47b5-a09a-303790b57a27
+
+	measure 'Destaque Maior Variacao' =
+			
+			SWITCH(
+			    TRUE(),
+			    ISINSCOPE(dCategoria[CATEGORIA]),        [Destaque Maior Variacao Cluster],
+			    ISINSCOPE(dEmpresa[NOMEREDUZIDO]),     [Destaque Maior Variacao Empresa],
+			    ISINSCOPE(dFornecedores[Fornecedor]),  [Destaque Maior Variacao Fornecedor]
+			)
+		formatString: 0
+		lineageTag: c874cc7f-8150-40f8-87bb-72125ca558b6
+
+	measure 'Top Variacao Cluster' = ```
+			
+			VAR Top10Clusters = 
+			    TOPN(
+			        10,
+			        ALLSELECTED(dCategoria[CATEGORIA]),
+			        CALCULATE([Spend CY]),
+			        DESC
+			    )
+			RETURN
+			CALCULATE(
+			    FIRSTNONBLANK(dCategoria[CATEGORIA], 1),
+			    TOPN(
+			        1,
+			        Top10Clusters,
+			        ABS(CALCULATE([Var % Spend LY])),
+			        DESC
+			    )
+			)
+			```
+		lineageTag: b5ec0ec0-1318-4bb9-8af2-9a40d9e0280a
+
+	measure 'Top Variacao Empresa' = ```
+			
+			VAR Top10Empresas = 
+			    TOPN(
+			        10,
+			        ALLSELECTED(dEmpresa[NOMEREDUZIDO]),
+			        CALCULATE([Spend CY]),
+			        DESC
+			    )
+			RETURN
+			CALCULATE(
+			    FIRSTNONBLANK(dEmpresa[NOMEREDUZIDO], 1),
+			    TOPN(
+			        1,
+			        Top10Empresas,
+			        ABS(CALCULATE([Var % Spend LY])),
+			        DESC
+			    )
+			)
+			```
+		lineageTag: 769895e0-4f52-4fda-b495-65f49261ab87
+
+	measure 'Top Variacao Fornecedor' = ```
+			
+			VAR Top10Fornecedores = 
+			    TOPN(
+			        10,
+			        ALLSELECTED(dFornecedores[Fornecedor]),
+			        CALCULATE([Spend CY]),
+			        DESC
+			    )
+			RETURN
+			CALCULATE(
+			    FIRSTNONBLANK(dFornecedores[Fornecedor], 1),
+			    TOPN(
+			        1,
+			        Top10Fornecedores,
+			        ABS(CALCULATE([Var % Spend LY])),
+			        DESC
+			    )
+			)
+			```
+		lineageTag: 84948333-55e1-4c7e-826b-94bc44c7af59
+
+	measure 'Top Variacao Segmento' =
+			
+			SWITCH(
+			    TRUE(),
+			    ISINSCOPE(dCategoria[CATEGORIA]),        [Top Variacao Cluster],
+			    ISINSCOPE(dEmpresa[NOMEREDUZIDO]),     [Top Variacao Empresa],
+			    ISINSCOPE(dFornecedores[Fornecedor]),  [Top Variacao Fornecedor]
+			)
+		lineageTag: 4971d1fa-1d6b-4ff4-894b-d2db7afb0add
+
+	measure 'Top Variacao Segmento Card' = ```
+			
+			VAR Segmento = 
+			    SELECTEDVALUE('Segmento visualização'[Segmento visualização Pedido])
+			RETURN
+			SWITCH(
+			    Segmento,
+			    0, [Top Variacao Cluster],
+			    1, [Top Variacao Empresa],
+			    2, [Top Variacao Fornecedor]
+			)
+			```
+		lineageTag: 78d5f965-8b7a-414b-9489-fd93292e0cfe
+
+	measure 'Segmento Selecionado Detalhe' =
+			
+			COALESCE(
+			    SELECTEDVALUE(dCategoria[CATEGORIA]),
+			    SELECTEDVALUE(dEmpresa[NOMEREDUZIDO]),
+			    SELECTEDVALUE(dFornecedores[Fornecedor]),
+			    "Nenhum segmento selecionado"
+			)
+		lineageTag: 1bb70a0a-4bec-400d-a320-3502d373e629
+
+	measure 'Ranking Clusters PMP DESC' =
+			
+			RANKX(
+			    ALLSELECTED(dCategoria[CATEGORIA]),
+			    CALCULATE(
+			        [PMP Ponderado CY],
+			        ALLEXCEPT(dCategoria, dCategoria[CATEGORIA])
+			    ),
+			    ,
+			    DESC,
+			    DENSE
+			)
+		formatString: 0
+		lineageTag: f81b2656-4cc9-444b-81e6-3aa68cd5fc0a
+
+	measure 'Ranking Empresas PMP DESC' =
+			
+			RANKX(
+			    ALLSELECTED(dEmpresa[NOMEREDUZIDO]),
+			    CALCULATE(
+			        [PMP Ponderado CY],
+			        ALLEXCEPT(dEmpresa, dEmpresa[NOMEREDUZIDO])
+			    ),
+			    ,
+			    DESC,
+			    DENSE
+			)
+		formatString: 0
+		lineageTag: 65786d68-8711-48f0-b026-263a82a61c6a
+
+	measure 'Ranking Fornecedor PMP DESC' =
+			
+			RANKX(
+			    ALLSELECTED(dFornecedores[Fornecedor]),
+			    CALCULATE(
+			        [PMP Ponderado CY],
+			        ALLEXCEPT(dFornecedores, dFornecedores[Fornecedor])
+			    ),
+			    ,
+			    DESC,
+			    DENSE
+			)
+		formatString: 0
+		lineageTag: f1878982-4b79-4252-b878-900ef5a1e353
+
+	measure 'Tipo Ranking PMP DESC' =
+			
+			SWITCH(
+			    TRUE(),
+			    ISINSCOPE(dCategoria[CATEGORIA]),       [Ranking Clusters PMP DESC],
+			    ISINSCOPE(dEmpresa[NOMEREDUZIDO]),    [Ranking Empresas PMP DESC],
+			    ISINSCOPE(dFornecedores[Fornecedor]), [Ranking Fornecedor PMP DESC],
+			    [Ranking Empresas PMP DESC]
+			)
+		formatString: 0
+		lineageTag: ee1bb4c9-4821-4854-9f46-c1abd7d8de1b
+
+	measure 'Destaque Maior Var PMP Cluster' = ```
+			
+			VAR MaiorVariacao = 
+			    MAXX(
+			        ALLSELECTED(dCategoria[CATEGORIA]),
+			        ABS(CALCULATE([Var % PMP LY]))
+			    )
+			RETURN
+			IF(ABS([Var % PMP LY]) = MaiorVariacao, 1, 0)
+			```
+		formatString: 0
+		lineageTag: 1735ddab-e359-4a18-b83f-e73f99361e72
+
+	measure 'Destaque Maior Var PMP Empresa' = ```
+			
+			VAR MaiorVariacao = 
+			    MAXX(
+			        ALLSELECTED(dEmpresa[NOMEREDUZIDO]),
+			        ABS(CALCULATE([Var % PMP LY]))
+			    )
+			RETURN
+			IF(ABS([Var % PMP LY]) = MaiorVariacao, 1, 0)
+			```
+		formatString: 0
+		lineageTag: 499c35ab-b8d6-4f5b-8feb-dfed77f2a721
+
+	measure 'Destaque Maior Var PMP Fornecedor' = ```
+			
+			VAR MaiorVariacao = 
+			    MAXX(
+			        ALLSELECTED(dFornecedores[Fornecedor]),
+			        ABS(CALCULATE([Var % PMP LY]))
+			    )
+			RETURN
+			IF(ABS([Var % PMP LY]) = MaiorVariacao, 1, 0)
+			```
+		formatString: 0
+		lineageTag: 81d113d8-780e-4b96-b749-cc303e9023a3
+
+	measure 'Destaque Maior Var PMP' =
+			
+			SWITCH(
+			    TRUE(),
+			    ISINSCOPE(dCategoria[CATEGORIA]),       [Destaque Maior Var PMP Cluster],
+			    ISINSCOPE(dEmpresa[NOMEREDUZIDO]),    [Destaque Maior Var PMP Empresa],
+			    ISINSCOPE(dFornecedores[Fornecedor]), [Destaque Maior Var PMP Fornecedor]
+			)
+		formatString: 0
+		lineageTag: 4065f5c2-a80b-4acc-92b2-c4e8ed920184
+
+	measure 'Top Var PMP Cluster' = ```
+			
+			VAR Top10Clusters = 
+			    TOPN(
+			        10,
+			        ALLSELECTED(dCategoria[CATEGORIA]),
+			        CALCULATE([PMP Ponderado CY]),
+			        DESC
+			    )
+			RETURN
+			CALCULATE(
+			    FIRSTNONBLANK(dCategoria[CATEGORIA], 1),
+			    TOPN(
+			        1,
+			        Top10Clusters,
+			        ABS(CALCULATE([Var % PMP LY])),
+			        DESC
+			    )
+			)
+			```
+		lineageTag: da88f322-8d2a-44b1-92c3-8e04ce7c1e59
+
+	measure 'Top Var PMP Empresa' = ```
+			
+			VAR Top10Empresas = 
+			    TOPN(
+			        10,
+			        ALLSELECTED(dEmpresa[NOMEREDUZIDO]),
+			        CALCULATE([PMP Ponderado CY]),
+			        DESC
+			    )
+			RETURN
+			CALCULATE(
+			    FIRSTNONBLANK(dEmpresa[NOMEREDUZIDO], 1),
+			    TOPN(
+			        1,
+			        Top10Empresas,
+			        ABS(CALCULATE([Var % PMP LY])),
+			        DESC
+			    )
+			)
+			```
+		lineageTag: ca519b2a-506d-4159-90ef-9d1529b2434a
+
+	measure 'Top Var PMP Fornecedor' = ```
+			
+			VAR Top10Fornecedores = 
+			    TOPN(
+			        10,
+			        ALLSELECTED(dFornecedores[Fornecedor]),
+			        CALCULATE([PMP Ponderado CY]),
+			        DESC
+			    )
+			RETURN
+			CALCULATE(
+			    FIRSTNONBLANK(dFornecedores[Fornecedor], 1),
+			    TOPN(
+			        1,
+			        Top10Fornecedores,
+			        ABS(CALCULATE([Var % PMP LY])),
+			        DESC
+			    )
+			)
+			```
+		lineageTag: db94ac0d-1f81-460e-b3ac-97ad8468bf13
+
+	measure 'Top Var PMP Segmento Card' = ```
+			
+			VAR Segmento = 
+			    SELECTEDVALUE('Segmento visualização'[Segmento visualização Pedido])
+			RETURN
+			SWITCH(
+			    Segmento,
+			    0, [Top Var PMP Cluster],
+			    1, [Top Var PMP Empresa],
+			    2, [Top Var PMP Fornecedor]
+			)
+			```
+		lineageTag: ba212553-7acd-4f10-b57a-94c112ed5ca6
+
+	measure 'Destaque Bottom PMP Cluster' = ```
+			
+			VAR Bottom10Clusters = 
+			    FILTER(
+			        ALLSELECTED(dCategoria[CATEGORIA]),
+			        NOT ISBLANK(CALCULATE([PMP Ponderado CY]))
+			            && CALCULATE([PMP Ponderado CY]) <> 0
+			    )
+			VAR MaiorVariacao = 
+			    MAXX(
+			        Bottom10Clusters,
+			        ABS(CALCULATE([Var % PMP LY]))
+			    )
+			RETURN
+			IF(ABS([Var % PMP LY]) = MaiorVariacao, 1, 0)
+			```
+		formatString: 0
+		lineageTag: 6bcf08c2-87fc-42e1-9d64-38eaeeb77cd5
+
+	measure 'Destaque Bottom PMP Empresa' = ```
+			
+			VAR Bottom10Empresas = 
+			    FILTER(
+			        ALLSELECTED(dEmpresa[NOMEREDUZIDO]),
+			        NOT ISBLANK(CALCULATE([PMP Ponderado CY]))
+			            && CALCULATE([PMP Ponderado CY]) <> 0
+			    )
+			VAR MaiorVariacao = 
+			    MAXX(
+			        Bottom10Empresas,
+			        ABS(CALCULATE([Var % PMP LY]))
+			    )
+			RETURN
+			IF(ABS([Var % PMP LY]) = MaiorVariacao, 1, 0)
+			```
+		formatString: 0
+		lineageTag: 04a25e75-687a-45d0-bc8b-0011971d5be9
+
+	measure 'Destaque Bottom PMP Fornecedor' = ```
+			
+			VAR Bottom10Fornecedores = 
+			    FILTER(
+			        ALLSELECTED(dFornecedores[Fornecedor]),
+			        NOT ISBLANK(CALCULATE([PMP Ponderado CY]))
+			            && CALCULATE([PMP Ponderado CY]) <> 0
+			    )
+			VAR MaiorVariacao = 
+			    MAXX(
+			        Bottom10Fornecedores,
+			        ABS(CALCULATE([Var % PMP LY]))
+			    )
+			RETURN
+			IF(ABS([Var % PMP LY]) = MaiorVariacao, 1, 0)
+			```
+		formatString: 0
+		lineageTag: 53530053-e969-4fec-b525-bc5c3d06e3e8
+
+	measure 'Destaque Bottom PMP' =
+			
+			SWITCH(
+			    TRUE(),
+			    ISINSCOPE(dCategoria[CATEGORIA]),       [Destaque Bottom PMP Cluster],
+			    ISINSCOPE(dEmpresa[NOMEREDUZIDO]),    [Destaque Bottom PMP Empresa],
+			    ISINSCOPE(dFornecedores[Fornecedor]), [Destaque Bottom PMP Fornecedor]
+			)
+		formatString: 0
+		lineageTag: 3a471df1-f5a5-4713-87f3-6a9a896ba6a9
+
+	measure 'Bottom Ofensor PMP Cluster' = ```
+			
+			VAR Bottom10Clusters = 
+			    FILTER(
+			        ALLSELECTED(dCategoria[CATEGORIA]),
+			        NOT ISBLANK(CALCULATE([PMP Ponderado CY]))
+			            && CALCULATE([PMP Ponderado CY]) <> 0
+			    )
+			RETURN
+			CALCULATE(
+			    FIRSTNONBLANK(dCategoria[CATEGORIA], 1),
+			    TOPN(
+			        1,
+			        Bottom10Clusters,
+			        ABS(CALCULATE([Var % PMP LY])),
+			        DESC
+			    )
+			)
+			```
+		lineageTag: 033bef26-73e5-4025-b69b-3a6adbebe63f
+
+	measure 'Bottom Ofensor PMP Empresa' = ```
+			
+			VAR Bottom10Empresas = 
+			    FILTER(
+			        ALLSELECTED(dEmpresa[NOMEREDUZIDO]),
+			        NOT ISBLANK(CALCULATE([PMP Ponderado CY]))
+			            && CALCULATE([PMP Ponderado CY]) <> 0
+			    )
+			RETURN
+			CALCULATE(
+			    FIRSTNONBLANK(dEmpresa[NOMEREDUZIDO], 1),
+			    TOPN(
+			        1,
+			        Bottom10Empresas,
+			        ABS(CALCULATE([Var % PMP LY])),
+			        DESC
+			    )
+			)
+			```
+		lineageTag: 1ed8efc7-fde0-4a68-9505-b0345baa1b3f
+
+	measure 'Bottom Ofensor PMP Fornecedor' = ```
+			
+			VAR Bottom10Fornecedores = 
+			    FILTER(
+			        ALLSELECTED(dFornecedores[Fornecedor]),
+			        NOT ISBLANK(CALCULATE([PMP Ponderado CY]))
+			            && CALCULATE([PMP Ponderado CY]) <> 0
+			    )
+			RETURN
+			CALCULATE(
+			    FIRSTNONBLANK(dFornecedores[Fornecedor], 1),
+			    TOPN(
+			        1,
+			        Bottom10Fornecedores,
+			        ABS(CALCULATE([Var % PMP LY])),
+			        DESC
+			    )
+			)
+			```
+		lineageTag: 775d9fb5-50af-4469-a7a6-6145f0781c89
+
+	measure 'Top Ofensor PMP Card' = ```
+			
+			VAR Segmento = 
+			    SELECTEDVALUE('Segmento visualização'[Segmento visualização Pedido])
+			RETURN
+			SWITCH(
+			    Segmento,
+			    0, [Top Ofensor PMP Cluster],
+			    1, [Top Ofensor PMP Empresa],
+			    2, [Top Ofensor PMP Fornecedor]
+			)
+			```
+		lineageTag: 00ee394b-3506-49ef-b4e0-a21c2f017901
+
+	measure 'Bottom Ofensor PMP Card' = ```
+			
+			VAR Segmento = 
+			    SELECTEDVALUE('Segmento visualização'[Segmento visualização Pedido])
+			RETURN
+			SWITCH(
+			    Segmento,
+			    0, [Bottom Ofensor PMP Cluster],
+			    1, [Bottom Ofensor PMP Empresa],
+			    2, [Bottom Ofensor PMP Fornecedor]
+			)
+			```
+		lineageTag: 27ade858-baac-42c8-9743-60111a50cbc5
+
+	measure 'Top Ofensor PMP Cluster' = ```
+			
+			/*CALCULATE(
+			    FIRSTNONBLANK(dClusters[CLUSTERS], 1),
+			    TOPN(
+			        1,
+			        FILTER(
+			            ALLSELECTED(dClusters[CLUSTERS]),
+			            CALCULATE([Ranking Clusters PMP DESC]) <= 10
+			        ),
+			        ABS(CALCULATE([Var % PMP LY])),
+			        DESC
+			    )
+			)*/
+			
+			
+			
+			VAR Tabela = 
+			    ADDCOLUMNS(
+			        FILTER(
+			            ALLSELECTED(dCategoria[CATEGORIA]),
+			            NOT ISBLANK(CALCULATE([PMP Ponderado CY]))
+			                && CALCULATE([PMP Ponderado CY]) <> 0
+			        ),
+			        "@PMP", CALCULATE([PMP Ponderado CY]),
+			        "@Var", ABS(CALCULATE([Var % PMP LY]))
+			    )
+			VAR Top10 = 
+			    TOPN(10, Tabela, [@PMP], DESC)
+			VAR Ofensor = 
+			    TOPN(1, Top10, [@Var], DESC)
+			RETURN
+			MAXX(Ofensor, [CATEGORIA])
+			```
+		lineageTag: 6a3ec583-8f13-4f37-a844-182eb69036b0
+
+	measure 'Top Ofensor PMP Empresa' =
+			
+			CALCULATE(
+			    FIRSTNONBLANK(dEmpresa[NOMEREDUZIDO], 1),
+			    TOPN(
+			        1,
+			        FILTER(
+			            ALLSELECTED(dEmpresa[NOMEREDUZIDO]),
+			            CALCULATE([Ranking Empresas PMP DESC]) <= 10
+			        ),
+			        ABS(CALCULATE([Var % PMP LY])),
+			        DESC
+			    )
+			)
+		lineageTag: fe7ce5e0-638c-45ca-bd3c-2331c7d6f87a
+
+	measure 'Top Ofensor PMP Fornecedor' =
+			
+			CALCULATE(
+			    FIRSTNONBLANK(dFornecedores[Fornecedor], 1),
+			    TOPN(
+			        1,
+			        FILTER(
+			            ALLSELECTED(dFornecedores[Fornecedor]),
+			            CALCULATE([Ranking Fornecedor PMP DESC]) <= 10
+			        ),
+			        ABS(CALCULATE([Var % PMP LY])),
+			        DESC
+			    )
+			)
+		lineageTag: ce679d13-5e64-417f-bde4-94cb69f5328f
+
+	measure 'Teste Top 10 PMP' = ```
+			
+			VAR Tabela = 
+			    ADDCOLUMNS(
+			        FILTER(
+			            ALLSELECTED(dCategoria[CATEGORIA]),
+			            NOT ISBLANK(CALCULATE([PMP Ponderado CY]))
+			                && CALCULATE([PMP Ponderado CY]) <> 0
+			        ),
+			        "@PMP", CALCULATE([PMP Ponderado CY])
+			    )
+			VAR Top10 = 
+			    TOPN(10, Tabela, [@PMP], DESC)
+			RETURN
+			IF(
+			    CONTAINS(Top10, [CATEGORIA], MAX(dCategoria[CATEGORIA])),
+			    "Sim",
+			    "Não"
+			)
+			```
+		lineageTag: 5387ef9e-0cdf-4c4d-9a5b-a4841732811a
+
+	measure 'Ranking Clusters PMP DESC V2' = ```
+			
+			VAR Tabela = 
+			    ADDCOLUMNS(
+			        FILTER(
+			            ALLSELECTED(dCategoria[CATEGORIA]),
+			            NOT ISBLANK(CALCULATE([PMP Ponderado CY]))
+			                && CALCULATE([PMP Ponderado CY]) <> 0
+			        ),
+			        "@PMP", CALCULATE([PMP Ponderado CY])
+			    )
+			VAR Top10 = 
+			    TOPN(10, Tabela, [@PMP], DESC)
+			RETURN
+			IF(
+			    CONTAINS(Top10, [CATEGORIA], MAX(dCategoria[CATEGORIA])),
+			    RANKX(
+			        FILTER(
+			            ALLSELECTED(dCategoria[CATEGORIA]),
+			            NOT ISBLANK(CALCULATE([PMP Ponderado CY]))
+			                && CALCULATE([PMP Ponderado CY]) <> 0
+			        ),
+			        CALCULATE([PMP Ponderado CY]),
+			        ,
+			        DESC,
+			        DENSE
+			    ),
+			    BLANK()
+			)
+			```
+		formatString: 0
+		lineageTag: 9d67c061-b779-4436-b472-398944a6a1d1
+
+	measure ultimaCompra =
+			
+			IF(ISINSCOPE(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO]),
+			MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),BLANK())
+		formatString: General Date
+		lineageTag: 428e5834-21c5-450d-b832-551bb3be2db5
+
+	measure 'Data Ultima Compra' =
+			
+			VAR ProdutoAtual = MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO])
+			VAR DataEmissaoAtual = MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO])
+			RETURN
+			CALCULATE(
+			    MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			    FILTER(
+			        ALL(DCEVPB_SOLICITACAOTEMPOAPROVACAO),
+			        DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual
+			            && DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] < DataEmissaoAtual
+			    )
+			)
+		formatString: General Date
+		lineageTag: 65155f31-e20b-4b7a-a2db-c5aeae408bd9
+
+	measure 'Preco Ultima Compra' = ```
+			
+			VAR DataAtual = MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO])
+			VAR ProdutoAtual = SELECTEDVALUE(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO])
+			
+			-- 1. Encontra a data da última compra antes da data atual para este produto
+			VAR DataUltimaCompra = 
+			    CALCULATE(
+			        MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			        REMOVEFILTERS(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]), -- Limpa a data atual
+			        DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] < DataAtual,
+			        DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual
+			    )
+			
+			-- 2. Calcula o preço médio ponderado especificamente na data dessa última compra
+			VAR PrecoPonderadoAnterior = 
+			    CALCULATE(
+			        DIVIDE(
+			            SUMX(
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO,
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRUNITARIO] * DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE]
+			            ),
+			            SUM(DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE])
+			        ),
+			        REMOVEFILTERS(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			        DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] = DataUltimaCompra,
+			        DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual
+			    )
+			
+			RETURN
+			    PrecoPonderadoAnterior
+			```
+		lineageTag: 376befdd-07d3-4b16-be34-bc854c4fc248
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Var % Preco Ultima Compra' =
+			
+			VAR PrecoAtual = AVERAGE(DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRUNITARIO])
+			VAR PrecoAnterior = [Preco Ultima Compra]
+			RETURN
+			DIVIDE(
+			    PrecoAtual - PrecoAnterior,
+			    PrecoAnterior,
+			    BLANK()
+			)
+		lineageTag: ce9f4988-20bc-4fe5-8222-bbbf0e0d0cce
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Status Variacao Preco' =
+			
+			VAR Variacao = [Var % Preco Ultima Compra]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    ISBLANK(Variacao),        "Primeira compra",
+			    Variacao > 0.00,          "Penalty",
+			    Variacao< 0.00,         "Saving",
+			                         "Net"
+			)
+		lineageTag: 9f005b73-363e-4da7-b5e9-dba5bcf20858
+
+	measure 'Icone Info' = "ⓘ"
+		lineageTag: df1e97d1-d8f4-42c5-a229-37c5549f23c1
+
+	measure 'Saving Total' = ```
+			
+			SUMX(
+			    VALUES(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO]),
+			    VAR PrecoAtualPonderado = 
+			        DIVIDE(
+			            SUMX(
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO,
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRUNITARIO] * DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE]
+			            ),
+			            SUM(DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE])
+			        )
+			    VAR PrecoAnterior = [Preco Ultima Compra]
+			    VAR QtdAtual = SUM(DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE])
+			    VAR DeltaPreco = PrecoAnterior - PrecoAtualPonderado
+			    
+			    RETURN
+			        IF(
+			            NOT(ISBLANK(PrecoAnterior)) && DeltaPreco > 0,
+			            DeltaPreco * QtdAtual,
+			            0
+			        )
+			)
+			```
+		lineageTag: cd981126-72f5-47c8-9617-c9d2e2bb9383
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Penalty Total' = ```
+			
+			SUMX(
+			    VALUES(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO]),
+			    VAR PrecoAtualPonderado = 
+			        DIVIDE(
+			            SUMX(
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO,
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRUNITARIO] * DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE]
+			            ),
+			            SUM(DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE])
+			        )
+			    VAR PrecoAnterior = [Preco Ultima Compra]
+			    VAR QtdAtual = SUM(DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE])
+			    VAR DeltaPreco = PrecoAnterior - PrecoAtualPonderado
+			    
+			    RETURN
+			        IF(
+			            NOT(ISBLANK(PrecoAnterior)) && DeltaPreco < 0,
+			            ABS(DeltaPreco) * QtdAtual, -- O ABS transforma o valor negativo em positivo para exibição
+			            0
+			        )
+			)
+			```
+		lineageTag: 6cfd749b-de37-4996-a867-8ae3075846c0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Titulo planejamento compras CY' =
+			
+			SWITCH(
+			    MIN('Spend CY / Itens CY'[Spend / Itens]),
+			    "Spend", "Tipo de compra - Spend CY",
+			    "itens", "Tipo de compra - Itens CY"
+			)
+		lineageTag: 4ee93701-cbbb-4daa-b4c8-8f7457f162c3
+
+	measure 'Titulo planejamento compras LY' =
+			
+			SWITCH(
+			    MIN('Spend LY / Itens LY'[Spend / Itens]),
+			    "Spend", "Tipo de compra - Spend LY",
+			    "itens", "Tipo de compra - Itens LY"
+			)
+		lineageTag: 79cc95b9-bb34-45c0-916d-16e1d1f9eb6e
+
+	measure 'Spend Dinamico Comparativo' =
+			
+			VAR PeriodoVisivel = SELECTEDVALUE('Periodos_Comparativo'[Periodo])
+			RETURN
+			SWITCH(
+			    PeriodoVisivel,
+			    "Ano Atual", [Spend CY],
+			    "Ano Anterior", [Spend LY],
+			    [Spend CY] -- Valor padrão caso dê algum erro de contexto
+			)
+		lineageTag: f9eb66fc-1114-439a-8650-f44e40a63bd5
+
+	column Column
+		isHidden
+		formatString: 0
+		lineageTag: de203434-a6f2-4252-a0ae-c82688e1be2f
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Medidas = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = ed3467244ddc4759b549f2666c860c63
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

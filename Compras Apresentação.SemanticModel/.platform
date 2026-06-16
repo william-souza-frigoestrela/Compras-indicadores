@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Compras Apresentação"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "98f3657c-cfd4-4753-b8bf-15ccceebcb02"
+  }
+}

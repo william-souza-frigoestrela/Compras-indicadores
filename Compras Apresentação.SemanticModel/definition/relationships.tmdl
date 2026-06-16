@@ -1,0 +1,40 @@
+relationship 9753a48c-59c6-ded4-325d-41a1eae9dec3
+	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.NROEMPRESA
+	toColumn: dEmpresa.NROEMPRESA
+
+relationship 3184ae06-69c4-1588-9343-087d5c5865f7
+	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.COD_PRIORIDADE
+	toColumn: dPrioridade.COD_PRIORIDADE
+
+relationship 2b63b3f7-6e84-1437-6676-30f1f7f0b64b
+	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.DTAEMISSAO
+	toColumn: dCalendario.Date
+
+relationship 0469e5aa-8b65-9357-d994-0a3c0c9dba27
+	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.GRUPO
+	toColumn: dCategoria.GRUPO
+
+relationship 426291f6-f1d5-8f3f-ef74-27a23d51124d
+	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.SEQFORNECEDOR
+	toColumn: dFornecedores.SEQFORNECEDOR
+
+relationship a077e178-2075-68f8-8da2-7077c170c738
+	fromColumn: DCEVPBI_PEDIDOPRAZOPAGAMENTO.DTAEMISSAO
+	toColumn: dCalendario.Date
+
+relationship AutoDetected_8a93cd27-1913-413a-a42c-2e36b2c2b996
+	fromColumn: DCEVPBI_PEDIDOPRAZOPAGAMENTO.GRUPO
+	toColumn: dCategoria.GRUPO
+
+relationship AutoDetected_0656e453-70ba-411b-85e7-b7b9b7005aa7
+	fromColumn: DCEVPBI_PEDIDOPRAZOPAGAMENTO.SEQFORNECEDOR
+	toColumn: dFornecedores.SEQFORNECEDOR
+
+relationship 81ffde9d-e002-f521-c034-6c468100b934
+	fromColumn: DCEVPBI_PEDIDOPRAZOPAGAMENTO.NROEMPRESA
+	toColumn: dEmpresa.NROEMPRESA
+
+relationship AutoDetected_d43acac8-417e-4bab-b523-8a19fc3d759e
+	fromColumn: DCEVPBI_PEDIDOPRAZOPAGAMENTO.COD_PRIORIDADE
+	toColumn: dPrioridade.COD_PRIORIDADE
+

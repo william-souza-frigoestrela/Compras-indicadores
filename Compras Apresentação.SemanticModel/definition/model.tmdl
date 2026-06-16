@@ -1,0 +1,29 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pt-BR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["DCEVPB_SOLICITACAOTEMPOAPROVACAO","dEmpresa","dPrioridade","dCategoria","DCEVPBI_PEDIDOPRAZOPAGAMENTO","dFornecedores","Periodos_Comparativo"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DCEVPB_SOLICITACAOTEMPOAPROVACAO
+ref table dCalendario
+ref table Medidas
+ref table dEmpresa
+ref table dPrioridade
+ref table dCategoria
+ref table DCEVPBI_PEDIDOPRAZOPAGAMENTO
+ref table 'Segmento visualização'
+ref table dFornecedores
+ref table 'Spend CY / Itens CY'
+ref table 'Spend LY / Itens LY'
+ref table Periodos_Comparativo
+
+ref cultureInfo pt-BR
+

@@ -1,0 +1,349 @@
+table DCEVPB_SOLICITACAOTEMPOAPROVACAO
+	lineageTag: 19b536f3-ec44-4b32-b10e-2c74fefcfcc2
+
+	column NROEMPRESA
+		dataType: string
+		lineageTag: c4118ee4-0a55-4966-a67f-c06140bbd864
+		summarizeBy: none
+		sourceColumn: NROEMPRESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column NROSOLICITACAO
+		dataType: string
+		lineageTag: d663958a-a3bb-4884-9ac3-1f2da3c382c6
+		summarizeBy: none
+		sourceColumn: NROSOLICITACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DTASOLICITACAO
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 32bc2595-eea1-4552-b2b0-25f4ed492c92
+		summarizeBy: none
+		sourceColumn: DTASOLICITACAO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column STATUS
+		dataType: string
+		lineageTag: 96ab820c-edc3-4061-b177-4c5536a81db3
+		summarizeBy: none
+		sourceColumn: STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_PRIORIDADE
+		dataType: string
+		lineageTag: 170b298d-764f-4c68-9b8a-e25d414df9ac
+		summarizeBy: none
+		sourceColumn: COD_PRIORIDADE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEQSOLICITANTE
+		dataType: string
+		lineageTag: 5c22d4d9-dc49-4a1d-a74c-afdd710ad7da
+		summarizeBy: none
+		sourceColumn: SEQSOLICITANTE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SOLICITANTE
+		dataType: string
+		lineageTag: 77a784cf-cbf9-4200-88a9-318c3ebbb152
+		summarizeBy: none
+		sourceColumn: SOLICITANTE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CODTIPOCOTACAO
+		dataType: string
+		lineageTag: 19ca857e-16cf-4be8-9a65-dce145d4d867
+		summarizeBy: none
+		sourceColumn: CODTIPOCOTACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEQPRODUTO
+		dataType: string
+		lineageTag: 9b4efdd3-e6c8-4eaf-94f0-5cd2e141c7ac
+		summarizeBy: none
+		sourceColumn: SEQPRODUTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRICAO
+		dataType: string
+		lineageTag: 19041f25-d0b6-4bc3-89b7-98665891463c
+		summarizeBy: none
+		sourceColumn: DESCRICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column OBSERVACAO
+		dataType: string
+		lineageTag: 0a6eba61-0f14-4d1c-aeea-e3a687050d13
+		summarizeBy: none
+		sourceColumn: OBSERVACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTDSOLICITADA
+		dataType: double
+		lineageTag: ad2f2957-b04c-4dff-aacf-1a7dc35e5eb9
+		summarizeBy: sum
+		sourceColumn: QTDSOLICITADA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UNIDADE
+		dataType: string
+		lineageTag: b7cc27e9-7ed4-48c4-a14a-4164c497fb3d
+		summarizeBy: none
+		sourceColumn: UNIDADE
+
+		annotation SummarizationSetBy = Automatic
+
+	column GRUPOPROD
+		dataType: string
+		lineageTag: 95535593-7e2d-4d89-b528-7a7bf4cab128
+		summarizeBy: none
+		sourceColumn: GRUPOPROD
+
+		annotation SummarizationSetBy = Automatic
+
+	column GRUPO
+		dataType: string
+		lineageTag: cf955fd1-8e0a-4e9b-ba95-2e6ffc7ae2e0
+		summarizeBy: none
+		sourceColumn: GRUPO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SUBGRUPOPROD
+		dataType: string
+		lineageTag: 8024e0cd-9e3c-4713-9702-2a932d274c83
+		summarizeBy: none
+		sourceColumn: SUBGRUPOPROD
+
+		annotation SummarizationSetBy = Automatic
+
+	column SUBGRUPO
+		dataType: string
+		lineageTag: 5670beda-e8cb-4f3d-b7e7-3c7224a0d5bd
+		summarizeBy: none
+		sourceColumn: SUBGRUPO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEQCOTACAO
+		dataType: string
+		lineageTag: 2c1eb024-00a8-474d-9793-2201ff084331
+		summarizeBy: none
+		sourceColumn: SEQCOTACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DTAAPROVACAOPEDIDO
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 1aa26dcb-e4a7-4e11-9cea-edc6f505175e
+		summarizeBy: none
+		sourceColumn: DTAAPROVACAOPEDIDO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column NROPEDIDO
+		dataType: string
+		lineageTag: 130fe2db-7013-4f8e-9286-1fa3ae59c8c3
+		summarizeBy: none
+		sourceColumn: NROPEDIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRIMEIRA
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 2e3ec915-3dfb-471c-9a45-d13858132a0e
+		summarizeBy: none
+		sourceColumn: PRIMEIRA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SOLIAPROVACAO
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: ac364b00-d5d6-4467-b4f8-6ab9c8290112
+		summarizeBy: none
+		sourceColumn: SOLIAPROVACAO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DTAEMISSAO
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 64782eac-6f7a-4542-86b5-26d184289ec2
+		summarizeBy: none
+		sourceColumn: DTAEMISSAO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DATAHORAPEDIDO
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 3318aad2-8172-4511-aadb-0bad2713fa4c
+		summarizeBy: none
+		sourceColumn: DATAHORAPEDIDO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column VLRUNITARIO
+		dataType: double
+		formatString: 0.00
+		lineageTag: 54ce4142-df69-4397-ac0d-8237a1d1de78
+		summarizeBy: sum
+		sourceColumn: VLRUNITARIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column QUANTIDADE
+		dataType: double
+		lineageTag: cf9219a4-6e52-4a39-903c-80e6cc7329fe
+		summarizeBy: sum
+		sourceColumn: QUANTIDADE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VLRPRODUTO
+		dataType: double
+		formatString: 0.00
+		lineageTag: 98f48626-9658-4d72-927e-445314398e63
+		summarizeBy: sum
+		sourceColumn: VLRPRODUTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column VLRPRODUTOTOTAL
+		dataType: double
+		formatString: 0.00
+		lineageTag: 6751ed1f-53cf-471e-9dce-c6e35edde429
+		summarizeBy: sum
+		sourceColumn: VLRPRODUTOTOTAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEQPEDIDOITEM
+		dataType: string
+		lineageTag: 9ca34e88-77bc-48ee-8bec-d201d942747e
+		summarizeBy: none
+		sourceColumn: SEQPEDIDOITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEQFORNECEDOR
+		dataType: string
+		lineageTag: a0060369-c942-4bd6-9fed-81186b52dfee
+		summarizeBy: none
+		sourceColumn: SEQFORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column FORNECEDOR
+		dataType: string
+		lineageTag: cac22cfd-2edc-4be2-ac36-e93f20e9b359
+		summarizeBy: none
+		sourceColumn: FORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column VLRPEDIDO
+		dataType: double
+		formatString: 0.00
+		lineageTag: 59fced2f-2278-4752-af11-909be9f48f26
+		summarizeBy: sum
+		sourceColumn: VLRPEDIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOME
+		dataType: string
+		lineageTag: a37aa75e-a1a9-4f2a-9dbd-c78d15ecf615
+		summarizeBy: none
+		sourceColumn: NOME
+
+		annotation SummarizationSetBy = Automatic
+
+	column TEMPO
+		dataType: string
+		lineageTag: d1a6cf7c-cb5b-4765-a69f-85060dd09263
+		summarizeBy: none
+		sourceColumn: TEMPO
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATUSITEM
+		dataType: double
+		lineageTag: 5e89dc0a-4da2-4afc-8b73-4dcb69437095
+		summarizeBy: sum
+		sourceColumn: STATUSITEM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Detalhe pedido'
+		dataType: string
+		lineageTag: 9a425949-8203-4502-b10a-76572b681a0b
+		summarizeBy: none
+		sourceColumn: Detalhe pedido
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATEGORIA
+		dataType: string
+		lineageTag: 76e8fa63-1bd4-44d2-97df-a0b88c8fa896
+		summarizeBy: none
+		sourceColumn: CATEGORIA
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DCEVPB_SOLICITACAOTEMPOAPROVACAO = m
+		mode: import
+		source = ```
+				let
+				    Fonte = Oracle.Database("datavale", [HierarchicalNavigation=true]),
+				    DATAVALE = Fonte{[Schema="DATAVALE"]}[Data],
+				    DCEVPB_SOLICITACAOTEMPOAPROVACAO1 = DATAVALE{[Name="DCEVPB_SOLICITACAOTEMPOAPROVACAO"]}[Data],
+				    #"Tipo Alterado" = Table.TransformColumnTypes(DCEVPB_SOLICITACAOTEMPOAPROVACAO1,{{"DTASOLICITACAO", type date}, {"DTAAPROVACAOPEDIDO", type date}, {"PRIMEIRA", type date}, {"SOLIAPROVACAO", type date}, {"DTAEMISSAO", type date}, {"DATAHORAPEDIDO", type date}, {"NROEMPRESA", type text}, {"NROSOLICITACAO", type text}, {"STATUS", type text}, {"COD_PRIORIDADE", type text}, {"SEQSOLICITANTE", type text}, {"CODTIPOCOTACAO", type text}, {"SEQPRODUTO", type text}, {"GRUPOPROD", type text}, {"SUBGRUPOPROD", type text}, {"SEQCOTACAO", type text}, {"NROPEDIDO", type text}, {"SEQPEDIDOITEM", type text}, {"SEQFORNECEDOR", type text}}),
+				    
+				    // Substituição da lógica antiga pela nova coluna mesclada (Pedido | Forn | Desc)
+				    #"Coluna Mesclada Inserida" = Table.AddColumn(#"Tipo Alterado", "Detalhe pedido", each Text.Combine({"Pedido: " & Text.From([NROPEDIDO], "pt-BR"), "Forn: " & [FORNECEDOR], "Desc: " & [DESCRICAO]}, " | "), type text),
+				    #"Consultas Mescladas" = Table.NestedJoin(#"Coluna Mesclada Inserida", {"GRUPO"}, dCategoria, {"GRUPO"}, "dCategoria", JoinKind.LeftOuter),
+				    #"dCategoria Expandido" = Table.ExpandTableColumn(#"Consultas Mescladas", "dCategoria", {"CATEGORIA"}, {"CATEGORIA"}),
+				    #"Linhas Filtradas" = Table.SelectRows(#"dCategoria Expandido", each ([CATEGORIA] <> "ALIMENTOS" and [CATEGORIA] <> "ANIMAIS" and [CATEGORIA] <> "MATERIA PRIMA Animais" and [CATEGORIA] <> "MDI Insumo Agropecuário" and [CATEGORIA] <> "MRO Agropecuário" and [CATEGORIA] <> "PATRIMONIO Agropecuário" and [CATEGORIA] <> "PATRIMONIO Produção" and [CATEGORIA] <> "PRODUÇÃO") and ([NOME] <> "SOLICITAÇÃO SIMPLIFICADA") and ([SUBGRUPO] <> "AGUA E ESGOTO" and [SUBGRUPO] <> "ASSINATURA DE REVISTAS E JORNA" and [SUBGRUPO] <> "BRINQUEDO" and [SUBGRUPO] <> "CARNE C/ OSSO" and [SUBGRUPO] <> "CARNE COM OSSO RESF." and [SUBGRUPO] <> "CERTIFICADO DIGITAL" and [SUBGRUPO] <> "COMISSAO" and [SUBGRUPO] <> "CURSOS E TREINAMENTOS" and [SUBGRUPO] <> "ENERGIA ELETRICA" and [SUBGRUPO] <> "ESCOLTA E TRANSPORTES" and [SUBGRUPO] <> "EVENTOS" and [SUBGRUPO] <> "FAZENDA" and [SUBGRUPO] <> "HOSPEDAGENS E DESPESAS DE VIAG" and [SUBGRUPO] <> "IMPOSTOS E TAXAS" and [SUBGRUPO] <> "LICENCAS" and [SUBGRUPO] <> "MANUTENCAO EM EQUIPAMENTOS ADM" and [SUBGRUPO] <> "MANUTENCAO TELEFONIA" and [SUBGRUPO] <> "SERVICO ADUANEIRO" and [SUBGRUPO] <> "SERVICO COMERCIAL" and [SUBGRUPO] <> "SERVICO DE BUFFET E DECORACAO" and [SUBGRUPO] <> "SERVICO DE CARGA E DESCARGA" and [SUBGRUPO] <> "SERVICOS DE SAUDE"))
+				in
+				    #"Linhas Filtradas"
+				```
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+
