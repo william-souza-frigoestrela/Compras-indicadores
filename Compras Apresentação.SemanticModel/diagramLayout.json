@@ -5,13 +5,13 @@
       "ordinal": 0,
       "scrollPosition": {
         "x": 0,
-        "y": 0
+        "y": 81.741322539855872
       },
       "nodes": [
         {
           "location": {
-            "x": 460,
-            "y": 342
+            "x": 695.35863558889548,
+            "y": 831.03860209189634
           },
           "nodeIndex": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
           "nodeLineageTag": "19b536f3-ec44-4b32-b10e-2c74fefcfcc2",
@@ -19,11 +19,11 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 5
+          "zIndex": 11
         },
         {
           "location": {
-            "x": 696.35863558889537,
+            "x": 431.40400390798322,
             "y": 0
           },
           "nodeIndex": "dCalendario",
@@ -32,7 +32,7 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 2
+          "zIndex": 8
         },
         {
           "location": {
@@ -45,11 +45,11 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 3
+          "zIndex": 9
         },
         {
           "location": {
-            "x": 1152.5612862514404,
+            "x": 831.23332868097259,
             "y": 0
           },
           "nodeIndex": "dEmpresa",
@@ -58,12 +58,12 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 4
+          "zIndex": 10
         },
         {
           "location": {
             "x": 0,
-            "y": 298.222670202461
+            "y": 261.58000837424976
           },
           "nodeIndex": "dPrioridade",
           "nodeLineageTag": "c4f4ba06-38e8-4059-a8f7-28f44decd6d3",
@@ -71,11 +71,11 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 1
+          "zIndex": 7
         },
         {
           "location": {
-            "x": 1555.1719726441174,
+            "x": 1161.9680245644661,
             "y": 0
           },
           "nodeIndex": "Segmento visualização",
@@ -84,12 +84,12 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 1
         },
         {
           "location": {
-            "x": 56.365541386915083,
-            "y": 658.83328680972386
+            "x": 0,
+            "y": 485.48530969933984
           },
           "nodeIndex": "dFornecedores",
           "nodeLineageTag": "50ef0118-d831-46e5-b437-165073a36554",
@@ -97,12 +97,12 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 2
         },
         {
           "location": {
-            "x": 1196.4773158404562,
-            "y": 422.625306907923
+            "x": 1037.2226702024614,
+            "y": 828.51325331272449
           },
           "nodeIndex": "DCEVPBI_PEDIDOPRAZOPAGAMENTO",
           "nodeLineageTag": "91814723-1adc-4476-a64d-40c28ea44d0e",
@@ -110,19 +110,20 @@
             "height": 296,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 13
         },
         {
           "location": {
-            "x": 683.16534598775513,
-            "y": 814.53464005516207
+            "x": 1165.1572823434572,
+            "y": 238.11738283445436
           },
           "nodeIndex": "dCategoria",
+          "nodeLineageTag": "2ec63740-9497-4e71-a344-476f1ad67f45",
           "size": {
             "height": 128,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 3
         },
         {
           "location": {
@@ -134,7 +135,7 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 4
         },
         {
           "location": {
@@ -146,7 +147,46 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 2407.1719726441174,
+            "y": 407.26732002758104
+          },
+          "nodeIndex": "Periodos_Comparativo",
+          "nodeLineageTag": "3716b3dd-9f0d-4f54-bdc9-937a66987256",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1211.3721680432786,
+            "y": 428.95931221161447
+          },
+          "nodeIndex": "dComprador",
+          "nodeLineageTag": "619323da-f0e2-4c4d-b8eb-1ac44c0612c8",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 12
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 656.54594724222659
+          },
+          "nodeIndex": "dStatus",
+          "nodeLineageTag": "4ea1619a-cd5d-4e41-ac3f-d5aecff31e5e",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 14
         }
       ],
       "name": "Todas as tabelas",

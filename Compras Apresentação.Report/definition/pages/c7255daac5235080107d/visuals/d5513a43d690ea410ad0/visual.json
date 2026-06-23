@@ -20,35 +20,20 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dCalendario"
+                      "Entity": "dComprador"
                     }
                   },
-                  "Property": "Anomês"
+                  "Property": "NOME"
                 }
               },
-              "queryRef": "dCalendario.Anomês",
-              "nativeQueryRef": "Anomês",
+              "queryRef": "dComprador.NOME",
+              "nativeQueryRef": "NOME",
               "active": true
             }
           ]
         }
       },
       "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "dCalendario"
-                  }
-                },
-                "Property": "Anomês"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ],
         "isDefaultSort": true
       }
     },
@@ -60,21 +45,9 @@
         "levels": [
           {
             "queryRefs": [
-              "dCalendario.Anomês"
+              "dComprador.NOME"
             ],
             "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "dCalendario"
-                    }
-                  },
-                  "Property": "Anomês"
-                }
-              }
-            ],
             "isPinned": true
           }
         ],
@@ -116,7 +89,7 @@
                 "From": [
                   {
                     "Name": "d",
-                    "Entity": "dCalendario",
+                    "Entity": "dComprador",
                     "Type": 0
                   }
                 ],
@@ -132,7 +105,7 @@
                                   "Source": "d"
                                 }
                               },
-                              "Property": "Anomês"
+                              "Property": "NOME"
                             }
                           }
                         ],
@@ -140,35 +113,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'2026/01'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'2026/02'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'2026/03'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'2026/04'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'2026/05'"
+                                "Value": "'BERNARDO FERNANDES FAVARO DE OLIVEIRA'"
                               }
                             }
                           ]
@@ -275,6 +220,13 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "strictSingleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

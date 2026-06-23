@@ -12,131 +12,6 @@
     }
   },
   "filterConfig": {
-    "filters": [
-      {
-        "name": "1ad6c3c785508b470102",
-        "ordinal": 0,
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-              }
-            },
-            "Property": "SUBGRUPO"
-          }
-        },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Not": {
-                  "Expression": {
-                    "In": {
-                      "Expressions": [
-                        {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "d"
-                              }
-                            },
-                            "Property": "SUBGRUPO"
-                          }
-                        }
-                      ],
-                      "Values": [
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'SERVICOS JURIDICOS E ADMINISTR'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'IMPOSTOS E TAXAS'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'COMISSAO'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'PAGAMENTO PEDAGIO'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'SERVICO DE CARGA E DESCARGA'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'AGUA E ESGOTO'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'ASSINATURA DE REVISTAS E JORNA'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'SERVICOS DE SAUDE'"
-                            }
-                          }
-                        ]
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User",
-        "objects": {
-          "general": [
-            {
-              "properties": {
-                "isInvertedSelectionMode": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "true"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
-      }
-    ],
     "filterSortOrder": "Custom"
   },
   "objects": {
@@ -159,7 +34,7 @@
           "expanded": {
             "expr": {
               "Literal": {
-                "Value": "true"
+                "Value": "false"
               }
             }
           }
@@ -183,6 +58,11 @@
       "name": "RegisteredResources",
       "type": "RegisteredResources",
       "items": [
+        {
+          "name": "Detalhe_solicita__o7152070928706773.svg",
+          "path": "Detalhe_solicita__o7152070928706773.svg",
+          "type": "Image"
+        },
         {
           "name": "Detalhe_varia__o_PMP5896679019103331.svg",
           "path": "Detalhe_varia__o_PMP5896679019103331.svg",

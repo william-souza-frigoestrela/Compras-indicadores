@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "9ae52968ae41a2ce453a",
+  "name": "16c9f0f050e0c403d824",
   "position": {
-    "x": 191.81556195965419,
-    "y": 0,
-    "z": 0,
-    "height": 62.708933717579256,
-    "width": 280.34582132564844,
-    "tabOrder": 0
+    "x": 795.85996955859969,
+    "y": 16.560121765601217,
+    "z": 2002,
+    "height": 62.343987823439875,
+    "width": 222.10045662100455,
+    "tabOrder": 2002
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dComprador"
+                      "Entity": "dEmpresa"
                     }
                   },
-                  "Property": "NOME"
+                  "Property": "NOMEREDUZIDO"
                 }
               },
-              "queryRef": "dComprador.NOME",
-              "nativeQueryRef": "NOME",
+              "queryRef": "dEmpresa.NOMEREDUZIDO",
+              "nativeQueryRef": "NOMEREDUZIDO",
               "active": true
             }
           ]
@@ -45,7 +45,7 @@
         "levels": [
           {
             "queryRefs": [
-              "dComprador.NOME"
+              "dEmpresa.NOMEREDUZIDO"
             ],
             "isCollapsed": true,
             "isPinned": true
@@ -83,45 +83,11 @@
                 }
               }
             },
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "d",
-                    "Entity": "dComprador",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "d"
-                                }
-                              },
-                              "Property": "NOME"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'BERNARDO FERNANDES FAVARO DE OLIVEIRA'"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    }
-                  }
-                ]
+            "selfFilterEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
               }
             }
           }
@@ -174,7 +140,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Ano / Mês'"
+                  "Value": "'Empresa'"
                 }
               }
             }
@@ -222,13 +188,6 @@
                   "Value": "false"
                 }
               }
-            },
-            "strictSingleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
             }
           }
         }
@@ -266,11 +225,24 @@
         }
       ]
     },
-    "syncGroup": {
-      "groupName": "Anomês",
-      "fieldChanges": true,
-      "filterChanges": true
-    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "718d60c2e002d1e8dab9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dEmpresa"
+              }
+            },
+            "Property": "NOMEREDUZIDO"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

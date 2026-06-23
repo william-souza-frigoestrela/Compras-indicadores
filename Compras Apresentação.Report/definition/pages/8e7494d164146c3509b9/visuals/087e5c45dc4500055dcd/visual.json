@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "9ae52968ae41a2ce453a",
+  "name": "087e5c45dc4500055dcd",
   "position": {
-    "x": 191.81556195965419,
-    "y": 0,
-    "z": 0,
-    "height": 62.708933717579256,
-    "width": 280.34582132564844,
-    "tabOrder": 0
+    "x": 573.7595129375951,
+    "y": 16.560121765601217,
+    "z": 2000,
+    "height": 62.343987823439875,
+    "width": 222.10045662100455,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dComprador"
+                      "Entity": "dStatus"
                     }
                   },
-                  "Property": "NOME"
+                  "Property": "DESC STATUS"
                 }
               },
-              "queryRef": "dComprador.NOME",
-              "nativeQueryRef": "NOME",
+              "queryRef": "dStatus.DESC STATUS",
+              "nativeQueryRef": "DESC STATUS",
               "active": true
             }
           ]
@@ -45,7 +45,7 @@
         "levels": [
           {
             "queryRefs": [
-              "dComprador.NOME"
+              "dStatus.DESC STATUS"
             ],
             "isCollapsed": true,
             "isPinned": true
@@ -83,13 +83,20 @@
                 }
               }
             },
+            "selfFilterEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
             "filter": {
               "filter": {
                 "Version": 2,
                 "From": [
                   {
                     "Name": "d",
-                    "Entity": "dComprador",
+                    "Entity": "dStatus",
                     "Type": 0
                   }
                 ],
@@ -105,7 +112,7 @@
                                   "Source": "d"
                                 }
                               },
-                              "Property": "NOME"
+                              "Property": "DESC STATUS"
                             }
                           }
                         ],
@@ -113,7 +120,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'BERNARDO FERNANDES FAVARO DE OLIVEIRA'"
+                                "Value": "'COTAÇÃO APROVADA'"
                               }
                             }
                           ]
@@ -174,7 +181,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Ano / Mês'"
+                  "Value": "'Status'"
                 }
               }
             }
@@ -222,13 +229,6 @@
                   "Value": "false"
                 }
               }
-            },
-            "strictSingleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
             }
           }
         }
@@ -266,11 +266,24 @@
         }
       ]
     },
-    "syncGroup": {
-      "groupName": "Anomês",
-      "fieldChanges": true,
-      "filterChanges": true
-    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e8322915065881c2728a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dStatus"
+              }
+            },
+            "Property": "DESC STATUS"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

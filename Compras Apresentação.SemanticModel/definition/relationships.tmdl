@@ -38,3 +38,11 @@ relationship AutoDetected_d43acac8-417e-4bab-b523-8a19fc3d759e
 	fromColumn: DCEVPBI_PEDIDOPRAZOPAGAMENTO.COD_PRIORIDADE
 	toColumn: dPrioridade.COD_PRIORIDADE
 
+relationship 368deec8-4045-1f77-60b9-78d10c713a3b
+	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.NOME
+	toColumn: dComprador.NOME
+
+relationship 75f25e38-7e39-8694-5b56-a0edebaa2ad7
+	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.STATUS
+	toColumn: dStatus.STATUS
+
