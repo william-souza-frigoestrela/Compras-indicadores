@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "9ae52968ae41a2ce453a",
+  "name": "4a0a6c00b34ecc007ead",
   "position": {
-    "x": 191.81556195965419,
-    "y": 0,
+    "x": 293.21156773211567,
+    "y": 16.560121765601217,
     "z": 0,
-    "height": 62.708933717579256,
-    "width": 280.34582132564844,
+    "height": 62.343987823439875,
+    "width": 278.59969558599693,
     "tabOrder": 0
   },
   "visual": {
@@ -174,7 +174,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Ano / Mês'"
+                  "Value": "'Comprador'"
                 }
               }
             }
@@ -272,5 +272,23 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f6beaeec9379b031b130",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dComprador"
+              }
+            },
+            "Property": "NOME"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

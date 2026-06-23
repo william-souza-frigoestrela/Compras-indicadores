@@ -1155,6 +1155,17 @@ table Medidas
 			)
 		lineageTag: f9eb66fc-1114-439a-8650-f44e40a63bd5
 
+	measure 'Status Solicitação' =
+			
+			SWITCH(
+			SELECTEDVALUE(DCEVPB_SOLICITACAOTEMPOAPROVACAO[STATUS]),
+			3, "SOLICITAÇÃO APROVADA",
+			4, "COTAÇÃO PRÉ-APROVADA",
+			5, "COTAÇÃO APROVADA"
+			)
+		formatString: 0
+		lineageTag: ff16a188-3ff3-4788-94d9-0268a7727c36
+
 	column Column
 		isHidden
 		formatString: 0
