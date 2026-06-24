@@ -26,6 +26,7 @@ ref table 'Spend LY / Itens LY'
 ref table Periodos_Comparativo
 ref table dComprador
 ref table dStatus
+ref table pSolicitacao
 
 ref cultureInfo pt-BR
 

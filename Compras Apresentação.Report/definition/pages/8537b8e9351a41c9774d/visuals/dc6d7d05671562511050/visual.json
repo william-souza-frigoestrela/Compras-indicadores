@@ -557,20 +557,6 @@
         },
         "type": "Advanced",
         "howCreated": "User"
-      },
-      {
-        "name": "958784e0989063846963",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dFornecedores"
-              }
-            },
-            "Property": "Fornecedor"
-          }
-        },
-        "type": "Categorical"
       }
     ],
     "filterSortOrder": "Custom"
