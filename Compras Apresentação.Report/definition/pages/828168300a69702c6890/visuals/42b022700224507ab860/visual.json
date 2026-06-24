@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "16c9f0f050e0c403d824",
+  "name": "42b022700224507ab860",
   "position": {
-    "x": 795.85996955859969,
-    "y": 16.560121765601217,
-    "z": 3000,
-    "height": 62.343987823439875,
-    "width": 222.10045662100455,
-    "tabOrder": 3000
+    "x": 293.03504847129011,
+    "y": 15.272184936614467,
+    "z": 0,
+    "height": 62.997762863534682,
+    "width": 278.71737509321406,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dEmpresa"
+                      "Entity": "dComprador"
                     }
                   },
-                  "Property": "NOMEREDUZIDO"
+                  "Property": "NOME"
                 }
               },
-              "queryRef": "dEmpresa.NOMEREDUZIDO",
-              "nativeQueryRef": "NOMEREDUZIDO",
+              "queryRef": "dComprador.NOME",
+              "nativeQueryRef": "NOME",
               "active": true
             }
           ]
@@ -45,7 +45,7 @@
         "levels": [
           {
             "queryRefs": [
-              "dEmpresa.NOMEREDUZIDO"
+              "dComprador.NOME"
             ],
             "isCollapsed": true,
             "isPinned": true
@@ -80,13 +80,6 @@
                       "Percent": 0
                     }
                   }
-                }
-              }
-            },
-            "selfFilterEnabled": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
                 }
               }
             }
@@ -140,7 +133,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Empresa'"
+                  "Value": "'Comprador'"
                 }
               }
             }
@@ -185,6 +178,13 @@
             "singleSelect": {
               "expr": {
                 "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "strictSingleSelect": {
+              "expr": {
+                "Literal": {
                   "Value": "false"
                 }
               }
@@ -224,6 +224,11 @@
           }
         }
       ]
+    },
+    "syncGroup": {
+      "groupName": "Anomês",
+      "fieldChanges": true,
+      "filterChanges": true
     },
     "drillFilterOtherVisuals": true
   }

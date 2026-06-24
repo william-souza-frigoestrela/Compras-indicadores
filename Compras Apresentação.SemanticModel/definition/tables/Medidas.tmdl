@@ -1166,6 +1166,44 @@ table Medidas
 		formatString: 0
 		lineageTag: ff16a188-3ff3-4788-94d9-0268a7727c36
 
+	measure 'Solicitacoes criadas periodo' = DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[Empresa-Nropedido])
+		formatString: 0
+		lineageTag: fd4f5c6b-6834-42c2-868c-c359d08d6cd0
+
+	measure 'Solicitacao em aberto' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[Empresa-Nropedido]),
+			    DCEVPB_SOLICITACAOTEMPOAPROVACAO[STATUSITEM] <>5
+			)
+		formatString: 0
+		lineageTag: 028777e7-7e42-40a5-854c-b5db62804a3a
+
+	measure 'Itens solicitados no periodo' = DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO])
+		formatString: 0
+		lineageTag: 432cdfe3-cad5-42c7-8c4f-f7eafb568f33
+
+	measure 'Solicitacao urgente criada no periodo' =
+			
+			
+			
+			
+			
+			var solicitacao_urgente =
+			CALCULATE(DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[Empresa-Nropedido]),DCEVPB_SOLICITACAOTEMPOAPROVACAO[COD_PRIORIDADE]="1")
+			
+			RETURN
+			
+			solicitacao_urgente
+		formatString: 0
+		lineageTag: 319df8cf-c9e9-4d17-8fd1-28b5bc7c2960
+
+	measure '% Solicitação urgente perioro' =
+			
+			DIVIDE([Solicitacao urgente criada no periodo],[Solicitacoes criadas periodo],0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 7a1fbebc-ad31-412c-8970-2a198f5d70a7
+
 	column Column
 		isHidden
 		formatString: 0
