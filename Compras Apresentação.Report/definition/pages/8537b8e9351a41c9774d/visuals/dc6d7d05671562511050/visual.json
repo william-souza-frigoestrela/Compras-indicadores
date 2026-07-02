@@ -374,7 +374,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'TOP 10 PMP'"
+                  "Value": "'TOP 20 PMP'"
                 }
               }
             },
@@ -532,7 +532,7 @@
                   },
                   "Right": {
                     "Literal": {
-                      "Value": "10L"
+                      "Value": "20L"
                     }
                   }
                 }
@@ -557,6 +557,20 @@
         },
         "type": "Advanced",
         "howCreated": "User"
+      },
+      {
+        "name": "266ce2bc06694d2108be",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dFornecedores"
+              }
+            },
+            "Property": "Fornecedor"
+          }
+        },
+        "type": "Categorical"
       }
     ],
     "filterSortOrder": "Custom"

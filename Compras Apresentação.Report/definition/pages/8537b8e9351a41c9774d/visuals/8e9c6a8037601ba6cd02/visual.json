@@ -389,7 +389,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'BOTTOM 10 PMP'"
+                  "Value": "'BOTTOM 20 PMP'"
                 }
               }
             },
@@ -487,7 +487,7 @@
                       },
                       "Right": {
                         "Literal": {
-                          "Value": "10L"
+                          "Value": "20L"
                         }
                       }
                     }
@@ -570,6 +570,48 @@
             }
           ]
         }
+      },
+      {
+        "name": "d6f95a86e1ffdcb70700",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dFornecedores"
+              }
+            },
+            "Property": "Fornecedor"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "38e567f2f51896130763",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "PMP CY - Var LY"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "72bf507e9127d814cf6d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "PMP Ponderado LY"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
