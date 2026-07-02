@@ -1227,6 +1227,173 @@ table Medidas
 		formatString: 0
 		lineageTag: ae7ef9be-4004-4335-bbc4-bedd5aea2a52
 
+	measure 'Resultado Liquido Saving' =
+			
+			[Saving Total] - [Penalty Total]
+		lineageTag: 50f584d6-8617-4402-b652-4715d3ca00c3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Saving Total Format' =
+			
+			-- Label formatado para cartão
+			VAR Valor = [Saving Total]
+			RETURN
+			IF(
+			    ISBLANK(Valor) || Valor = 0,
+			    "R$ 0",
+			    "✔ " & FORMAT(Valor / 1000, "R$ #,##0.0K")
+			)
+		lineageTag: 13d37121-436d-4207-8303-cd7115b6ff10
+
+	measure 'Penalty Total Format' =
+			
+			VAR Valor = [Penalty Total]
+			RETURN
+			IF(
+			    ISBLANK(Valor) || Valor = 0,
+			    "R$ 0",
+			    "✖ " & FORMAT(Valor / 1000, "R$ #,##0.0K")
+			)
+		lineageTag: fa4dae76-3864-4b1a-accd-13c3207d2b66
+
+	measure 'Resultado Liquido Format' =
+			
+			VAR Valor = [Resultado Liquido Saving]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    Valor > 0, "⮝ " & FORMAT(Valor / 1000, "R$ #,##0.0K"),
+			    Valor < 0, "⮟ " & FORMAT(ABS(Valor) / 1000, "-R$ #,##0.0K"),
+			    "→ R$ 0"
+			)
+		lineageTag: 5af70e6f-2570-4281-96e5-ff226e3a330a
+
+	measure 'Classificacao Saving' = ```
+			
+			-- Classificação por item para matriz
+			VAR Liquido = 
+			    DIVIDE(
+			        SUMX(
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO,
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRUNITARIO] 
+			                * DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE]
+			        ),
+			        SUM(DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE])
+			    ) - [Preco Ultima Compra]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    ISBLANK([Preco Ultima Compra]), "Primeira Compra",
+			    Liquido < 0,                    "Saving",
+			    Liquido > 0,                    "Penalty",
+			                                    "Neutro"
+			)
+			```
+		lineageTag: 4e8be820-4eeb-4621-99f8-7c92c2d87cfc
+
+	measure 'Saving Unitario' = ```
+			
+			-- Saving unitário por item (para coluna na matriz)
+			VAR PrecoAtual = 
+			    DIVIDE(
+			        SUMX(
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO,
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRUNITARIO] 
+			                * DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE]
+			        ),
+			        SUM(DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE])
+			    )
+			VAR PrecoAnterior = [Preco Ultima Compra]
+			VAR Delta = PrecoAnterior - PrecoAtual
+			RETURN
+			IF(
+			    NOT ISBLANK(PrecoAnterior) && Delta > 0,
+			    Delta,
+			    BLANK()
+			)
+			```
+		lineageTag: 20f75081-9ade-4ad8-a581-29997e078dd0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Penalty Unitario' = ```
+			
+			-- Penalty unitário por item
+			VAR PrecoAtual = 
+			    DIVIDE(
+			        SUMX(
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO,
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRUNITARIO] 
+			                * DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE]
+			        ),
+			        SUM(DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE])
+			    )
+			VAR PrecoAnterior = [Preco Ultima Compra]
+			VAR Delta = PrecoAtual - PrecoAnterior
+			RETURN
+			IF(
+			    NOT ISBLANK(PrecoAnterior) && Delta > 0,
+			    Delta,
+			    BLANK()
+			)
+			```
+		lineageTag: d2cf3050-1047-450e-a901-bc797ba1ce4d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Qtd Itens Saving' = ```
+			
+			SUMX(
+			    VALUES(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO]),
+			    VAR PrecoAtual = 
+			        DIVIDE(
+			            SUMX(
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO,
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRUNITARIO] 
+			                    * DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE]
+			            ),
+			            SUM(DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE])
+			        )
+			    VAR PrecoAnterior = [Preco Ultima Compra]
+			    RETURN
+			    IF(
+			        NOT ISBLANK(PrecoAnterior) 
+			            && (PrecoAnterior - PrecoAtual) > 0,
+			        1,
+			        0
+			    )
+			)
+			```
+		formatString: 0
+		lineageTag: 58739b8d-17e5-4204-b6d8-7b1534e27923
+
+	measure 'Qtd Itens Penalty' = ```
+			
+			SUMX(
+			    VALUES(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO]),
+			    VAR PrecoAtual = 
+			        DIVIDE(
+			            SUMX(
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO,
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRUNITARIO] 
+			                    * DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE]
+			            ),
+			            SUM(DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE])
+			        )
+			    VAR PrecoAnterior = [Preco Ultima Compra]
+			    RETURN
+			    IF(
+			        NOT ISBLANK(PrecoAnterior) 
+			            && (PrecoAtual - PrecoAnterior) > 0,
+			        1,
+			        0
+			    )
+			)
+			```
+		formatString: 0
+		lineageTag: 1b374ff1-2d22-4576-8599-5070da549800
+
 	column Column
 		isHidden
 		formatString: 0
