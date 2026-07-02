@@ -376,7 +376,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'TOP 10 Spend'"
+                  "Value": "'TOP 20 Spend'"
                 }
               }
             },
@@ -499,7 +499,7 @@
                   },
                   "Right": {
                     "Literal": {
-                      "Value": "10L"
+                      "Value": "20L"
                     }
                   }
                 }
@@ -508,6 +508,62 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "c54786a1dd7efe82db26",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dFornecedores"
+              }
+            },
+            "Property": "Fornecedor"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4743a72070321e6daef4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Spend CY"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6a544a47247856ef5479",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Spend CY - Var LY"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "969210265de929bc62c7",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Spend LY format"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
