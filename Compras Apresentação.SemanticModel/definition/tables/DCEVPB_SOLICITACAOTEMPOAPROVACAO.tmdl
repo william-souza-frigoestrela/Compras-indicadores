@@ -189,8 +189,6 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation UnderlyingDateTimeDataType = Date
-
 	column DTAEMISSAO
 		dataType: dateTime
 		formatString: Short Date
@@ -210,8 +208,6 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 		sourceColumn: DATAHORAPEDIDO
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation UnderlyingDateTimeDataType = Date
 
 	column VLRUNITARIO
 		dataType: double
@@ -333,6 +329,22 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 
 		annotation SummarizationSetBy = Automatic
 
+	column MARCAFORNECEDOR
+		dataType: string
+		lineageTag: 73d7f2a9-8ed8-4fd3-981b-ac871eef51b6
+		summarizeBy: none
+		sourceColumn: MARCAFORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRICAOCOTACAO
+		dataType: string
+		lineageTag: bb21be7c-a30c-4f72-8000-eab2e2c78da9
+		summarizeBy: none
+		sourceColumn: DESCRICAOCOTACAO
+
+		annotation SummarizationSetBy = Automatic
+
 	partition DCEVPB_SOLICITACAOTEMPOAPROVACAO = m
 		mode: import
 		source = ```
@@ -340,7 +352,7 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 				    Fonte = Oracle.Database("datavale", [HierarchicalNavigation=true]),
 				    DATAVALE = Fonte{[Schema="DATAVALE"]}[Data],
 				    DCEVPB_SOLICITACAOTEMPOAPROVACAO1 = DATAVALE{[Name="DCEVPB_SOLICITACAOTEMPOAPROVACAO"]}[Data],
-				    #"Tipo Alterado" = Table.TransformColumnTypes(DCEVPB_SOLICITACAOTEMPOAPROVACAO1,{{"DTASOLICITACAO", type date}, {"DTAAPROVACAOPEDIDO", type date}, {"PRIMEIRA", type date}, {"SOLIAPROVACAO", type date}, {"DTAEMISSAO", type date}, {"DATAHORAPEDIDO", type date}, {"NROEMPRESA", type text}, {"NROSOLICITACAO", type text}, {"STATUS", type text}, {"COD_PRIORIDADE", type text}, {"SEQSOLICITANTE", type text}, {"CODTIPOCOTACAO", type text}, {"SEQPRODUTO", type text}, {"GRUPOPROD", type text}, {"SUBGRUPOPROD", type text}, {"SEQCOTACAO", type text}, {"NROPEDIDO", type text}, {"SEQPEDIDOITEM", type text}, {"SEQFORNECEDOR", type text}}),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(DCEVPB_SOLICITACAOTEMPOAPROVACAO1,{{"DTASOLICITACAO", type date}, {"DTAAPROVACAOPEDIDO", type date}, {"PRIMEIRA", type date}, {"SOLIAPROVACAO", type datetime}, {"DTAEMISSAO", type date}, {"DATAHORAPEDIDO", type datetime}, {"NROEMPRESA", type text}, {"NROSOLICITACAO", type text}, {"STATUS", type text}, {"COD_PRIORIDADE", type text}, {"SEQSOLICITANTE", type text}, {"CODTIPOCOTACAO", type text}, {"SEQPRODUTO", type text}, {"GRUPOPROD", type text}, {"SUBGRUPOPROD", type text}, {"SEQCOTACAO", type text}, {"NROPEDIDO", type text}, {"SEQPEDIDOITEM", type text}, {"SEQFORNECEDOR", type text}}),
 				    
 				    // Substituição da lógica antiga pela nova coluna mesclada (Pedido | Forn | Desc)
 				    #"Coluna Mesclada Inserida" = Table.AddColumn(#"Tipo Alterado", "Detalhe pedido", each Text.Combine({"Pedido: " & Text.From([NROPEDIDO], "pt-BR"), "Forn: " & [FORNECEDOR], "Desc: " & [DESCRICAO]}, " | "), type text),

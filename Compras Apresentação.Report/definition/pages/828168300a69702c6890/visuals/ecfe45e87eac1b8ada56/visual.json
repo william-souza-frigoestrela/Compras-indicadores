@@ -23,11 +23,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Solicitacao urgente criada no periodo"
+                  "Property": "Solic urgente"
                 }
               },
               "queryRef": "Medidas.Solicitacao urgente criada no periodo",
-              "nativeQueryRef": "Solicitacao urgente criada no periodo"
+              "nativeQueryRef": "Solic urgente"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "Medidas"
                   }
                 },
-                "Property": "Solicitacao urgente criada no periodo"
+                "Property": "Solic urgente"
               }
             },
             "direction": "Descending"

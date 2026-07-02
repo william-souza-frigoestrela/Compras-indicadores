@@ -113,6 +113,20 @@
                       "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
                     }
                   },
+                  "Property": "MARCAFORNECEDOR"
+                }
+              },
+              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.MARCAFORNECEDOR",
+              "nativeQueryRef": "MARCAFORNECEDOR"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                    }
+                  },
                   "Property": "UNIDADE"
                 }
               },
@@ -204,6 +218,20 @@
               "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.NOME",
               "nativeQueryRef": "COMPRADOR",
               "displayName": "COMPRADOR"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                    }
+                  },
+                  "Property": "DESCRICAOCOTACAO"
+                }
+              },
+              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.DESCRICAOCOTACAO",
+              "nativeQueryRef": "DESCRICAOCOTACAO"
             },
             {
               "field": {

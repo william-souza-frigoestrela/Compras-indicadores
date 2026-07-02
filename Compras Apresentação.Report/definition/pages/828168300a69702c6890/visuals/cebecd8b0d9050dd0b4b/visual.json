@@ -96,13 +96,6 @@
                               [
                                 {
                                   "Literal": {
-                                    "Value": "'''DCEVPB_SOLICITACAOTEMPOAPROVACAO''[NOME]'"
-                                  }
-                                }
-                              ],
-                              [
-                                {
-                                  "Literal": {
                                     "Value": "'''dStatus''[DESC STATUS]'"
                                   }
                                 }
@@ -118,6 +111,13 @@
                                 {
                                   "Literal": {
                                     "Value": "'''DCEVPB_SOLICITACAOTEMPOAPROVACAO''[GRUPO]'"
+                                  }
+                                }
+                              ],
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'''dEmpresa''[NOMEREDUZIDO]'"
                                   }
                                 }
                               ]
@@ -169,17 +169,6 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''DCEVPB_SOLICITACAOTEMPOAPROVACAO''[NOME]'"
-                                    }
-                                  }
-                                ]
-                              }
-                            ],
-                            [
-                              {
-                                "0": [
-                                  {
-                                    "Literal": {
                                       "Value": "'''dStatus''[DESC STATUS]'"
                                     }
                                   }
@@ -203,6 +192,17 @@
                                   {
                                     "Literal": {
                                       "Value": "'''DCEVPB_SOLICITACAOTEMPOAPROVACAO''[GRUPO]'"
+                                    }
+                                  }
+                                ]
+                              }
+                            ],
+                            [
+                              {
+                                "0": [
+                                  {
+                                    "Literal": {
+                                      "Value": "'''dEmpresa''[NOMEREDUZIDO]'"
                                     }
                                   }
                                 ]
@@ -232,9 +232,6 @@
                             "0": "Solicitante"
                           },
                           {
-                            "0": "Comprador"
-                          },
-                          {
                             "0": "Status"
                           },
                           {
@@ -242,6 +239,9 @@
                           },
                           {
                             "0": "Grupo"
+                          },
+                          {
+                            "0": "Empresa"
                           }
                         ]
                       }

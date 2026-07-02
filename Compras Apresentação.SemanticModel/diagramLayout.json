@@ -16,10 +16,11 @@
           "nodeIndex": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
           "nodeLineageTag": "19b536f3-ec44-4b32-b10e-2c74fefcfcc2",
           "size": {
-            "height": 300,
+            "height": 248,
             "width": 234
           },
-          "zIndex": 11
+          "zIndex": 11,
+          "expandedHeight": 300
         },
         {
           "location": {
@@ -164,8 +165,8 @@
         },
         {
           "location": {
-            "x": 1211.3721680432786,
-            "y": 428.95931221161447
+            "x": 1253.6521624604454,
+            "y": 417.68464703370336
           },
           "nodeIndex": "dComprador",
           "nodeLineageTag": "619323da-f0e2-4c4d-b8eb-1ac44c0612c8",

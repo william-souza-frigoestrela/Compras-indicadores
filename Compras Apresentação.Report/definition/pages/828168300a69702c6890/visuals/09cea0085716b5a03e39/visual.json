@@ -23,11 +23,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Itens solicitados no periodo"
+                  "Property": "Qtd itens"
                 }
               },
               "queryRef": "Medidas.Itens solicitados no periodo",
-              "nativeQueryRef": "Itens solicitados no periodo"
+              "nativeQueryRef": "Qtd itens"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "Medidas"
                   }
                 },
-                "Property": "Itens solicitados no periodo"
+                "Property": "Qtd itens"
               }
             },
             "direction": "Descending"

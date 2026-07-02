@@ -20,16 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dEmpresa"
+                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
                     }
                   },
-                  "Property": "NOMEREDUZIDO"
+                  "Property": "NOME"
                 }
               },
-              "queryRef": "dEmpresa.NOMEREDUZIDO",
-              "nativeQueryRef": "Empresa",
-              "active": true,
-              "displayName": "Empresa"
+              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.NOME",
+              "nativeQueryRef": "Comprador",
+              "displayName": "Comprador"
             }
           ],
           "fieldParameters": [
@@ -60,11 +59,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Solicitacoes criadas periodo"
+                  "Property": "Solic criadas"
                 }
               },
               "queryRef": "Medidas.Solicitacoes criadas periodo",
-              "nativeQueryRef": "Solicitacoes criadas periodo"
+              "nativeQueryRef": "Solic criadas"
             },
             {
               "field": {
@@ -74,25 +73,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Solicitacao em aberto"
-                }
-              },
-              "queryRef": "Medidas.Solicitacao em aberto",
-              "nativeQueryRef": "Solicitacao em aberto"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas"
-                    }
-                  },
-                  "Property": "Itens solicitados no periodo"
+                  "Property": "Qtd itens"
                 }
               },
               "queryRef": "Medidas.Itens solicitados no periodo",
-              "nativeQueryRef": "Itens solicitados no periodo"
+              "nativeQueryRef": "Qtd itens"
             },
             {
               "field": {
@@ -102,11 +87,39 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Solicitacao urgente criada no periodo"
+                  "Property": "Solic em aberto"
+                }
+              },
+              "queryRef": "Medidas.Solicitacao em aberto",
+              "nativeQueryRef": "Solic em aberto"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Qtd itens s/ pedido"
+                }
+              },
+              "queryRef": "Medidas.Qtd itens s/ pedido",
+              "nativeQueryRef": "Qtd itens s/ pedido"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Solic urgente"
                 }
               },
               "queryRef": "Medidas.Solicitacao urgente criada no periodo",
-              "nativeQueryRef": "Solicitacao urgente criada no periodo"
+              "nativeQueryRef": "Solic urgente"
             }
           ]
         }
@@ -118,10 +131,10 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "dEmpresa"
+                    "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
                   }
                 },
-                "Property": "NOMEREDUZIDO"
+                "Property": "NOME"
               }
             },
             "direction": "Ascending"
@@ -608,7 +621,7 @@
             "rowSubtotals": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },

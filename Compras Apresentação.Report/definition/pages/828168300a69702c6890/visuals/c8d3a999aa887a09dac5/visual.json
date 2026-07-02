@@ -23,11 +23,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Solicitacao em aberto"
+                  "Property": "Solic em aberto"
                 }
               },
               "queryRef": "Medidas.Solicitacao em aberto",
-              "nativeQueryRef": "Solicitacao em aberto"
+              "nativeQueryRef": "Solic em aberto"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "Medidas"
                   }
                 },
-                "Property": "Solicitacao em aberto"
+                "Property": "Solic em aberto"
               }
             },
             "direction": "Descending"

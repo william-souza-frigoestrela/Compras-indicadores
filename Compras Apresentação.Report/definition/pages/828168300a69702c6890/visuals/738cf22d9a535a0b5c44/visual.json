@@ -23,11 +23,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Solicitacoes criadas periodo"
+                  "Property": "Solic criadas"
                 }
               },
               "queryRef": "Medidas.Solicitacoes criadas periodo",
-              "nativeQueryRef": "Solicitacoes criadas periodo"
+              "nativeQueryRef": "Solic criadas"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "Medidas"
                   }
                 },
-                "Property": "Solicitacoes criadas periodo"
+                "Property": "Solic criadas"
               }
             },
             "direction": "Descending"
