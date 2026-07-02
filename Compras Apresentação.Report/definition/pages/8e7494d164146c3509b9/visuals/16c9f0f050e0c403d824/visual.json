@@ -4,10 +4,10 @@
   "position": {
     "x": 795.85996955859969,
     "y": 16.560121765601217,
-    "z": 2002,
+    "z": 3000,
     "height": 62.343987823439875,
     "width": 222.10045662100455,
-    "tabOrder": 2002
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "slicer",
@@ -226,23 +226,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "718d60c2e002d1e8dab9",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dEmpresa"
-              }
-            },
-            "Property": "NOMEREDUZIDO"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

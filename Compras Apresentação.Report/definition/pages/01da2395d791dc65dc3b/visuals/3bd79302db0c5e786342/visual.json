@@ -508,62 +508,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "1dce52051012b8c3ce74",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dFornecedores"
-              }
-            },
-            "Property": "Fornecedor"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "859468f1113a98791733",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Spend CY"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "813403deac182d331a23",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Spend CY - Var LY"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "9278ebb890580a3440c1",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Spend LY format"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

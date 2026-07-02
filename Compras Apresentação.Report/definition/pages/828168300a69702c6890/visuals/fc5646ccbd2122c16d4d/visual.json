@@ -1,209 +1,20 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "c07ec58288c24c17a006",
+  "name": "fc5646ccbd2122c16d4d",
   "position": {
-    "x": 49.144851657940663,
-    "y": 109.45898778359512,
-    "z": 2000,
-    "height": 549.52879581151831,
-    "width": 1192.8795811518326,
-    "tabOrder": 2000
+    "x": 292.90412876137157,
+    "y": 305.444366689993,
+    "z": 8000,
+    "height": 352.0223932820154,
+    "width": 942.30930720783761,
+    "tabOrder": 8000
   },
   "visual": {
-    "visualType": "tableEx",
+    "visualType": "pivotTable",
     "query": {
       "queryState": {
-        "Values": {
+        "Rows": {
           "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "dEmpresa"
-                    }
-                  },
-                  "Property": "NOMEREDUZIDO"
-                }
-              },
-              "queryRef": "dEmpresa.NOMEREDUZIDO",
-              "nativeQueryRef": "EMPRESA",
-              "displayName": "EMPRESA"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-                    }
-                  },
-                  "Property": "DTASOLICITACAO"
-                }
-              },
-              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.DTASOLICITACAO",
-              "nativeQueryRef": "DATA SOLICITAÇÃO",
-              "displayName": "DATA SOLICITAÇÃO"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-                    }
-                  },
-                  "Property": "DTAAPROVACAOPEDIDO"
-                }
-              },
-              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.DTAAPROVACAOPEDIDO",
-              "nativeQueryRef": "DATA APROVAÇÃO",
-              "displayName": "DATA APROVAÇÃO"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-                    }
-                  },
-                  "Property": "NROSOLICITACAO"
-                }
-              },
-              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.NROSOLICITACAO",
-              "nativeQueryRef": "NRO SOLICITAÇÃO",
-              "displayName": "NRO SOLICITAÇÃO"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-                    }
-                  },
-                  "Property": "SEQPRODUTO"
-                }
-              },
-              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.SEQPRODUTO",
-              "nativeQueryRef": "COD PRODUTO",
-              "displayName": "COD PRODUTO"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-                    }
-                  },
-                  "Property": "DESCRICAO"
-                }
-              },
-              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.DESCRICAO",
-              "nativeQueryRef": "PRODUTO",
-              "displayName": "PRODUTO"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-                    }
-                  },
-                  "Property": "MARCAFORNECEDOR"
-                }
-              },
-              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.MARCAFORNECEDOR",
-              "nativeQueryRef": "MARCAFORNECEDOR"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-                    }
-                  },
-                  "Property": "UNIDADE"
-                }
-              },
-              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.UNIDADE",
-              "nativeQueryRef": "UNIDADE"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-                    }
-                  },
-                  "Property": "QUANTIDADE"
-                }
-              },
-              "queryRef": "Sum(DCEVPB_SOLICITACAOTEMPOAPROVACAO.QUANTIDADE)",
-              "nativeQueryRef": "QUANTIDADE"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-                    }
-                  },
-                  "Property": "SOLICITANTE"
-                }
-              },
-              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.SOLICITANTE",
-              "nativeQueryRef": "SOLICITANTE"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-                    }
-                  },
-                  "Property": "GRUPO"
-                }
-              },
-              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.GRUPO",
-              "nativeQueryRef": "GRUPO"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-                    }
-                  },
-                  "Property": "SUBGRUPO"
-                }
-              },
-              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.SUBGRUPO",
-              "nativeQueryRef": "SUBGRUPO"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "dPrioridade"
-                    }
-                  },
-                  "Property": "DESC_PRIORIDADE"
-                }
-              },
-              "queryRef": "dPrioridade.DESC_PRIORIDADE",
-              "nativeQueryRef": "PRIORIDADE",
-              "displayName": "PRIORIDADE"
-            },
             {
               "field": {
                 "Column": {
@@ -216,36 +27,99 @@
                 }
               },
               "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.NOME",
-              "nativeQueryRef": "COMPRADOR",
-              "displayName": "COMPRADOR"
-            },
+              "nativeQueryRef": "Comprador",
+              "displayName": "Comprador"
+            }
+          ],
+          "fieldParameters": [
             {
-              "field": {
+              "parameterExpr": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                      "Entity": "pSolicitacao"
                     }
                   },
-                  "Property": "DESCRICAOCOTACAO"
+                  "Property": "pSolicitacao"
                 }
               },
-              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.DESCRICAOCOTACAO",
-              "nativeQueryRef": "DESCRICAOCOTACAO"
+              "index": 0,
+              "length": 1,
+              "sortDirection": "Ascending"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Solic criadas"
+                }
+              },
+              "queryRef": "Medidas.Solicitacoes criadas periodo",
+              "nativeQueryRef": "Solic criadas"
             },
             {
               "field": {
-                "Column": {
+                "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                      "Entity": "Medidas"
                     }
                   },
-                  "Property": "OBSERVACAO"
+                  "Property": "Qtd itens"
                 }
               },
-              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.OBSERVACAO",
-              "nativeQueryRef": "OBSERVACAO"
+              "queryRef": "Medidas.Itens solicitados no periodo",
+              "nativeQueryRef": "Qtd itens"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Solic em aberto"
+                }
+              },
+              "queryRef": "Medidas.Solicitacao em aberto",
+              "nativeQueryRef": "Solic em aberto"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Qtd itens s/ pedido"
+                }
+              },
+              "queryRef": "Medidas.Qtd itens s/ pedido",
+              "nativeQueryRef": "Qtd itens s/ pedido"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Solic urgente"
+                }
+              },
+              "queryRef": "Medidas.Solicitacao urgente criada no periodo",
+              "nativeQueryRef": "Solic urgente"
             }
           ]
         }
@@ -260,10 +134,10 @@
                     "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
                   }
                 },
-                "Property": "DTAAPROVACAOPEDIDO"
+                "Property": "NOME"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ]
       }
@@ -280,6 +154,13 @@
                       "Value": "'#252934'"
                     }
                   }
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -440,13 +321,6 @@
                   }
                 }
               }
-            },
-            "totals": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
             }
           }
         }
@@ -494,20 +368,6 @@
           },
           "selector": {
             "metadata": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.DESCRICAO"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "114D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "dEmpresa.NOMEREDUZIDO"
           }
         },
         {
@@ -679,13 +539,121 @@
           }
         }
       ],
-      "accessibility": [
+      "blankRows": [
         {
           "properties": {
-            "rowWithReferenceText": {
+            "showBlankRows": {
               "expr": {
                 "Literal": {
-                  "Value": "''"
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTotals": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Column"
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Row"
+          }
+        },
+        {
+          "properties": {
+            "columnSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "rowSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "perRowLevel": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "rowSubtotalsPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Bottom'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowTotal": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
                 }
               }
             }

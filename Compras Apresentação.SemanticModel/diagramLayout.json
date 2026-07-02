@@ -5,7 +5,7 @@
       "ordinal": 0,
       "scrollPosition": {
         "x": 0,
-        "y": 81.741322539855872
+        "y": 0
       },
       "nodes": [
         {
@@ -16,10 +16,11 @@
           "nodeIndex": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
           "nodeLineageTag": "19b536f3-ec44-4b32-b10e-2c74fefcfcc2",
           "size": {
-            "height": 300,
+            "height": 248,
             "width": 234
           },
-          "zIndex": 11
+          "zIndex": 11,
+          "expandedHeight": 300
         },
         {
           "location": {
@@ -114,8 +115,8 @@
         },
         {
           "location": {
-            "x": 1165.1572823434572,
-            "y": 238.11738283445436
+            "x": 1244.0799385888354,
+            "y": 242.34538227617102
           },
           "nodeIndex": "dCategoria",
           "nodeLineageTag": "2ec63740-9497-4e71-a344-476f1ad67f45",
@@ -164,8 +165,8 @@
         },
         {
           "location": {
-            "x": 1211.3721680432786,
-            "y": 428.95931221161447
+            "x": 1253.6521624604454,
+            "y": 417.68464703370336
           },
           "nodeIndex": "dComprador",
           "nodeLineageTag": "619323da-f0e2-4c4d-b8eb-1ac44c0612c8",
@@ -187,6 +188,19 @@
             "width": 234
           },
           "zIndex": 14
+        },
+        {
+          "location": {
+            "x": 2691.1719726441174,
+            "y": 489.51930104594817
+          },
+          "nodeIndex": "pSolicitacao",
+          "nodeLineageTag": "d642ee45-89ac-4b65-b9fc-25c940dae04f",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Todas as tabelas",

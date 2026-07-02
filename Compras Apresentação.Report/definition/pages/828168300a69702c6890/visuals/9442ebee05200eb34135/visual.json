@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "d4fbfe9122696c5b8db1",
+  "name": "9442ebee05200eb34135",
   "position": {
-    "x": 682.66666666666663,
-    "y": 0,
-    "z": 8000,
-    "height": 62.24313725490196,
-    "width": 180.70588235294119,
-    "tabOrder": 8000
+    "x": 573.7595129375951,
+    "y": 16.560121765601217,
+    "z": 1000,
+    "height": 62.343987823439875,
+    "width": 222.10045662100455,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DCEVPBI_PEDIDOPRAZOPAGAMENTO"
+                      "Entity": "dStatus"
                     }
                   },
-                  "Property": "TIPOPAGTO"
+                  "Property": "DESC STATUS"
                 }
               },
-              "queryRef": "DCEVPBI_PEDIDOPRAZOPAGAMENTO.TIPOPAGTO",
-              "nativeQueryRef": "TIPOPAGTO",
+              "queryRef": "dStatus.DESC STATUS",
+              "nativeQueryRef": "DESC STATUS",
               "active": true
             }
           ]
@@ -45,7 +45,7 @@
         "levels": [
           {
             "queryRefs": [
-              "DCEVPBI_PEDIDOPRAZOPAGAMENTO.TIPOPAGTO"
+              "dStatus.DESC STATUS"
             ],
             "isCollapsed": true,
             "isPinned": true
@@ -64,6 +64,13 @@
                   "Value": "'Dropdown'"
                 }
               }
+            },
+            "isInvertedSelectionMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }
@@ -80,6 +87,13 @@
                       "Percent": 0
                     }
                   }
+                }
+              }
+            },
+            "selfFilterEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -133,7 +147,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Tipo Pgto'"
+                  "Value": "'Status'"
                 }
               }
             }
@@ -168,17 +182,17 @@
       "selection": [
         {
           "properties": {
-            "singleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
             "selectAllCheckboxEnabled": {
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -217,11 +231,6 @@
           }
         }
       ]
-    },
-    "syncGroup": {
-      "groupName": "TIPOPAGTO",
-      "fieldChanges": true,
-      "filterChanges": true
     },
     "drillFilterOtherVisuals": true
   }

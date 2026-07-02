@@ -4,10 +4,10 @@
   "position": {
     "x": 573.7595129375951,
     "y": 16.560121765601217,
-    "z": 2000,
+    "z": 1000,
     "height": 62.343987823439875,
     "width": 222.10045662100455,
-    "tabOrder": 2000
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -267,23 +267,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "e8322915065881c2728a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dStatus"
-              }
-            },
-            "Property": "DESC STATUS"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

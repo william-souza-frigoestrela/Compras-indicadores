@@ -189,8 +189,6 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation UnderlyingDateTimeDataType = Date
-
 	column DTAEMISSAO
 		dataType: dateTime
 		formatString: Short Date
@@ -210,8 +208,6 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 		sourceColumn: DATAHORAPEDIDO
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation UnderlyingDateTimeDataType = Date
 
 	column VLRUNITARIO
 		dataType: double
@@ -325,6 +321,30 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 
 		annotation SummarizationSetBy = Automatic
 
+	column Empresa-Nropedido
+		dataType: string
+		lineageTag: ac2c9e63-7e59-4cd9-a328-ccf33313ef7d
+		summarizeBy: none
+		sourceColumn: Empresa-Nropedido
+
+		annotation SummarizationSetBy = Automatic
+
+	column MARCAFORNECEDOR
+		dataType: string
+		lineageTag: 73d7f2a9-8ed8-4fd3-981b-ac871eef51b6
+		summarizeBy: none
+		sourceColumn: MARCAFORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRICAOCOTACAO
+		dataType: string
+		lineageTag: bb21be7c-a30c-4f72-8000-eab2e2c78da9
+		summarizeBy: none
+		sourceColumn: DESCRICAOCOTACAO
+
+		annotation SummarizationSetBy = Automatic
+
 	partition DCEVPB_SOLICITACAOTEMPOAPROVACAO = m
 		mode: import
 		source = ```
@@ -332,15 +352,16 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 				    Fonte = Oracle.Database("datavale", [HierarchicalNavigation=true]),
 				    DATAVALE = Fonte{[Schema="DATAVALE"]}[Data],
 				    DCEVPB_SOLICITACAOTEMPOAPROVACAO1 = DATAVALE{[Name="DCEVPB_SOLICITACAOTEMPOAPROVACAO"]}[Data],
-				    #"Tipo Alterado" = Table.TransformColumnTypes(DCEVPB_SOLICITACAOTEMPOAPROVACAO1,{{"DTASOLICITACAO", type date}, {"DTAAPROVACAOPEDIDO", type date}, {"PRIMEIRA", type date}, {"SOLIAPROVACAO", type date}, {"DTAEMISSAO", type date}, {"DATAHORAPEDIDO", type date}, {"NROEMPRESA", type text}, {"NROSOLICITACAO", type text}, {"STATUS", type text}, {"COD_PRIORIDADE", type text}, {"SEQSOLICITANTE", type text}, {"CODTIPOCOTACAO", type text}, {"SEQPRODUTO", type text}, {"GRUPOPROD", type text}, {"SUBGRUPOPROD", type text}, {"SEQCOTACAO", type text}, {"NROPEDIDO", type text}, {"SEQPEDIDOITEM", type text}, {"SEQFORNECEDOR", type text}}),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(DCEVPB_SOLICITACAOTEMPOAPROVACAO1,{{"DTASOLICITACAO", type date}, {"DTAAPROVACAOPEDIDO", type date}, {"PRIMEIRA", type date}, {"SOLIAPROVACAO", type datetime}, {"DTAEMISSAO", type date}, {"DATAHORAPEDIDO", type datetime}, {"NROEMPRESA", type text}, {"NROSOLICITACAO", type text}, {"STATUS", type text}, {"COD_PRIORIDADE", type text}, {"SEQSOLICITANTE", type text}, {"CODTIPOCOTACAO", type text}, {"SEQPRODUTO", type text}, {"GRUPOPROD", type text}, {"SUBGRUPOPROD", type text}, {"SEQCOTACAO", type text}, {"NROPEDIDO", type text}, {"SEQPEDIDOITEM", type text}, {"SEQFORNECEDOR", type text}}),
 				    
 				    // Substituição da lógica antiga pela nova coluna mesclada (Pedido | Forn | Desc)
 				    #"Coluna Mesclada Inserida" = Table.AddColumn(#"Tipo Alterado", "Detalhe pedido", each Text.Combine({"Pedido: " & Text.From([NROPEDIDO], "pt-BR"), "Forn: " & [FORNECEDOR], "Desc: " & [DESCRICAO]}, " | "), type text),
 				    #"Consultas Mescladas" = Table.NestedJoin(#"Coluna Mesclada Inserida", {"GRUPO"}, dCategoria, {"GRUPO"}, "dCategoria", JoinKind.LeftOuter),
 				    #"dCategoria Expandido" = Table.ExpandTableColumn(#"Consultas Mescladas", "dCategoria", {"CATEGORIA"}, {"CATEGORIA"}),
-				    #"Linhas Filtradas" = Table.SelectRows(#"dCategoria Expandido", each ([CATEGORIA] <> "ALIMENTOS" and [CATEGORIA] <> "ANIMAIS" and [CATEGORIA] <> "MATERIA PRIMA Animais" and [CATEGORIA] <> "MDI Insumo Agropecuário" and [CATEGORIA] <> "MRO Agropecuário" and [CATEGORIA] <> "PATRIMONIO Agropecuário" and [CATEGORIA] <> "PATRIMONIO Produção" and [CATEGORIA] <> "PRODUÇÃO") and ([NOME] <> "SOLICITAÇÃO SIMPLIFICADA") and ([SUBGRUPO] <> "AGUA E ESGOTO" and [SUBGRUPO] <> "ASSINATURA DE REVISTAS E JORNA" and [SUBGRUPO] <> "BRINQUEDO" and [SUBGRUPO] <> "CARNE C/ OSSO" and [SUBGRUPO] <> "CARNE COM OSSO RESF." and [SUBGRUPO] <> "CERTIFICADO DIGITAL" and [SUBGRUPO] <> "COMISSAO" and [SUBGRUPO] <> "CURSOS E TREINAMENTOS" and [SUBGRUPO] <> "ENERGIA ELETRICA" and [SUBGRUPO] <> "ESCOLTA E TRANSPORTES" and [SUBGRUPO] <> "EVENTOS" and [SUBGRUPO] <> "FAZENDA" and [SUBGRUPO] <> "HOSPEDAGENS E DESPESAS DE VIAG" and [SUBGRUPO] <> "IMPOSTOS E TAXAS" and [SUBGRUPO] <> "LICENCAS" and [SUBGRUPO] <> "MANUTENCAO EM EQUIPAMENTOS ADM" and [SUBGRUPO] <> "MANUTENCAO TELEFONIA" and [SUBGRUPO] <> "SERVICO ADUANEIRO" and [SUBGRUPO] <> "SERVICO COMERCIAL" and [SUBGRUPO] <> "SERVICO DE BUFFET E DECORACAO" and [SUBGRUPO] <> "SERVICO DE CARGA E DESCARGA" and [SUBGRUPO] <> "SERVICOS DE SAUDE"))
+				    #"Linhas Filtradas" = Table.SelectRows(#"dCategoria Expandido", each ([CATEGORIA] <> "ALIMENTOS" and [CATEGORIA] <> "ANIMAIS" and [CATEGORIA] <> "MATERIA PRIMA Animais" and [CATEGORIA] <> "MDI Insumo Agropecuário" and [CATEGORIA] <> "MRO Agropecuário" and [CATEGORIA] <> "PATRIMONIO Agropecuário" and [CATEGORIA] <> "PATRIMONIO Produção" and [CATEGORIA] <> "PRODUÇÃO") and ([NOME] <> "SOLICITAÇÃO SIMPLIFICADA") and ([SUBGRUPO] <> "AGUA E ESGOTO" and [SUBGRUPO] <> "ASSINATURA DE REVISTAS E JORNA" and [SUBGRUPO] <> "BRINQUEDO" and [SUBGRUPO] <> "CARNE C/ OSSO" and [SUBGRUPO] <> "CARNE COM OSSO RESF." and [SUBGRUPO] <> "CERTIFICADO DIGITAL" and [SUBGRUPO] <> "COMISSAO" and [SUBGRUPO] <> "CURSOS E TREINAMENTOS" and [SUBGRUPO] <> "ENERGIA ELETRICA" and [SUBGRUPO] <> "ESCOLTA E TRANSPORTES" and [SUBGRUPO] <> "EVENTOS" and [SUBGRUPO] <> "FAZENDA" and [SUBGRUPO] <> "HOSPEDAGENS E DESPESAS DE VIAG" and [SUBGRUPO] <> "IMPOSTOS E TAXAS" and [SUBGRUPO] <> "LICENCAS" and [SUBGRUPO] <> "MANUTENCAO EM EQUIPAMENTOS ADM" and [SUBGRUPO] <> "MANUTENCAO TELEFONIA" and [SUBGRUPO] <> "SERVICO ADUANEIRO" and [SUBGRUPO] <> "SERVICO COMERCIAL" and [SUBGRUPO] <> "SERVICO DE BUFFET E DECORACAO" and [SUBGRUPO] <> "SERVICO DE CARGA E DESCARGA" and [SUBGRUPO] <> "SERVICOS DE SAUDE")),
+				    #"Coluna Mesclada Inserida1" = Table.AddColumn(#"Linhas Filtradas", "Empresa-Nropedido", each Text.Combine({[NROEMPRESA], [NROPEDIDO]}, "-"), type text)
 				in
-				    #"Linhas Filtradas"
+				    #"Coluna Mesclada Inserida1"
 				```
 
 	annotation PBI_NavigationStepName = Navegação
