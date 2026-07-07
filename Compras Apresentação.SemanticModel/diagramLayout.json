@@ -108,10 +108,11 @@
           "nodeIndex": "DCEVPBI_PEDIDOPRAZOPAGAMENTO",
           "nodeLineageTag": "91814723-1adc-4476-a64d-40c28ea44d0e",
           "size": {
-            "height": 296,
+            "height": 200,
             "width": 234
           },
-          "zIndex": 13
+          "zIndex": 13,
+          "expandedHeight": 296
         },
         {
           "location": {
