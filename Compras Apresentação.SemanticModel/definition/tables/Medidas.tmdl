@@ -1381,20 +1381,17 @@ table Medidas
 
 	measure 'Preco Atual' = ```
 			
+			
+			
 			VAR ProdutoAtual = MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO])
-			VAR UltimaData = 
-			    CALCULATE(
-			        MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
-			        ALLEXCEPT(
-			            DCEVPB_SOLICITACAOTEMPOAPROVACAO,
-			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO]
-			        )
-			    )
+			VAR UltimaData = MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO])
 			RETURN
 			CALCULATE(
 			    AVERAGE(DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRUNITARIO]),
 			    FILTER(
-			        DCEVPB_SOLICITACAOTEMPOAPROVACAO,
+			        ALL(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO], 
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO],
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRUNITARIO]),
 			        DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual
 			            && DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] = UltimaData
 			    )
@@ -1427,7 +1424,7 @@ table Medidas
 			        delta<0,"Penalty",
 			        if(ISBLANK(delta),
 			        BLANK(),
-			        "Net")
+			        "Neutro")
 			)
 		lineageTag: d6b1874e-227e-4207-a8af-867bd43a551b
 
@@ -1439,29 +1436,251 @@ table Medidas
 			)
 		lineageTag: 0354c97c-be8f-451d-8768-9a6e8ca19f08
 
-	measure 'Delta total' = ```
+	measure 'Delta Total' = ```
 			
 			VAR ProdutoAtual = MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO])
-			VAR UltimaData = 
+			VAR UltimaData = MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO])
+			VAR Quantidade = 
 			    CALCULATE(
-			        MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
-			        ALLEXCEPT(
-			            DCEVPB_SOLICITACAOTEMPOAPROVACAO,
-			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO]
+			        SUM(DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE]),
+			        FILTER(
+			            ALL(
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO],
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO],
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE]
+			            ),
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual
+			                && DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] = UltimaData
 			        )
 			    )
-			var delta_preco_unit = [Delta Preco Unitario]
+			VAR DeltaUnitario = [Delta Preco Unitario]
 			RETURN
-			CALCULATE(
-			    AVERAGE(DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE]),
-			    FILTER(
-			        DCEVPB_SOLICITACAOTEMPOAPROVACAO,
-			        DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual
-			            && DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] = UltimaData
-			    )
-			)*delta_preco_unit
+			IF(
+			    NOT ISBLANK(DeltaUnitario) && NOT ISBLANK(Quantidade),
+			    DeltaUnitario * Quantidade,
+			    BLANK()
+			)
 			```
 		lineageTag: 0273bd6a-e872-4f80-9fd4-2369eb6ac9e1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Resultado operacional' = ```
+			
+			VAR ProdutosVisiveis = 
+			    CALCULATETABLE(
+			        VALUES(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO]),
+			        ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO)
+			    )
+			RETURN
+			SUMX(
+			    ProdutosVisiveis,
+			    VAR ProdutoAtual = DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO]
+			    VAR UltimaData = 
+			        CALCULATE(
+			            MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			            FILTER(
+			                ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO),
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual
+			            )
+			        )
+			    VAR PrecoAtual = 
+			        CALCULATE(
+			            AVERAGE(DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRUNITARIO]),
+			            FILTER(
+			                ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO),
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual
+			                    && DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] = UltimaData
+			            )
+			        )
+			    VAR DataAnterior = 
+			        CALCULATE(
+			            MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			            REMOVEFILTERS(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			            FILTER(
+			                ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO),
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual
+			                    && DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] < UltimaData
+			            )
+			        )
+			    VAR PrecoAnterior = 
+			        CALCULATE(
+			            AVERAGE(DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRUNITARIO]),
+			            REMOVEFILTERS(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			            FILTER(
+			                ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO),
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual
+			                    && DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] = DataAnterior
+			            )
+			        )
+			    VAR Quantidade = 
+			        CALCULATE(
+			            SUM(DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE]),
+			            FILTER(
+			                ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO),
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual
+			                    && DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] = UltimaData
+			            )
+			        )
+			    VAR DeltaUnitario = 
+			        IF(
+			            NOT ISBLANK(PrecoAnterior),
+			            PrecoAnterior - PrecoAtual,
+			            BLANK()
+			        )
+			    RETURN
+			    IF(
+			        NOT ISBLANK(DeltaUnitario) && NOT ISBLANK(Quantidade),
+			        DeltaUnitario * Quantidade,
+			        BLANK()
+			    )
+			)
+			```
+		lineageTag: 033dd52d-0655-41c1-b2bf-ec07ad79529d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Saving Consolidado' = ```
+			
+			VAR ProdutosVisiveis = 
+			    CALCULATETABLE(
+			        VALUES(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO]),
+			        ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO)
+			    )
+			RETURN
+			SUMX(
+			    ProdutosVisiveis,
+			    VAR ProdutoAtual = DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO]
+			    VAR UltimaData = 
+			        CALCULATE(
+			            MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			            FILTER(
+			                ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO),
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual
+			            )
+			        )
+			    VAR PrecoAtual = 
+			        CALCULATE(
+			            AVERAGE(DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRUNITARIO]),
+			            FILTER(
+			                ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO),
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual
+			                    && DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] = UltimaData
+			            )
+			        )
+			    VAR DataAnterior = 
+			        CALCULATE(
+			            MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			            REMOVEFILTERS(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			            FILTER(
+			                ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO),
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual
+			                    && DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] < UltimaData
+			            )
+			        )
+			    VAR PrecoAnterior = 
+			        CALCULATE(
+			            AVERAGE(DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRUNITARIO]),
+			            REMOVEFILTERS(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			            FILTER(
+			                ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO),
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual
+			                    && DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] = DataAnterior
+			            )
+			        )
+			    VAR Quantidade = 
+			        CALCULATE(
+			            SUM(DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE]),
+			            FILTER(
+			                ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO),
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual
+			                    && DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] = UltimaData
+			            )
+			        )
+			    VAR DeltaUnitario = PrecoAnterior - PrecoAtual
+			    RETURN
+			    IF(
+			        NOT ISBLANK(PrecoAnterior) 
+			            && NOT ISBLANK(Quantidade)
+			            && DeltaUnitario > 0,
+			        DeltaUnitario * Quantidade,
+			        BLANK()
+			    )
+			)
+			```
+		lineageTag: b0afda9b-d220-4b55-be7a-f2430f405965
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Penalty Consolidado' = ```
+			
+			VAR ProdutosVisiveis = 
+			    CALCULATETABLE(
+			        VALUES(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO]),
+			        ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO)
+			    )
+			RETURN
+			SUMX(
+			    ProdutosVisiveis,
+			    VAR ProdutoAtual = DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO]
+			    VAR UltimaData = 
+			        CALCULATE(
+			            MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			            FILTER(
+			                ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO),
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual
+			            )
+			        )
+			    VAR PrecoAtual = 
+			        CALCULATE(
+			            AVERAGE(DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRUNITARIO]),
+			            FILTER(
+			                ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO),
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual
+			                    && DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] = UltimaData
+			            )
+			        )
+			    VAR DataAnterior = 
+			        CALCULATE(
+			            MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			            REMOVEFILTERS(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			            FILTER(
+			                ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO),
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual
+			                    && DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] < UltimaData
+			            )
+			        )
+			    VAR PrecoAnterior = 
+			        CALCULATE(
+			            AVERAGE(DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRUNITARIO]),
+			            REMOVEFILTERS(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			            FILTER(
+			                ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO),
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual
+			                    && DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] = DataAnterior
+			            )
+			        )
+			    VAR Quantidade = 
+			        CALCULATE(
+			            SUM(DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE]),
+			            FILTER(
+			                ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO),
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual
+			                    && DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] = UltimaData
+			            )
+			        )
+			    VAR DeltaUnitario = PrecoAtual - PrecoAnterior
+			    RETURN
+			    IF(
+			        NOT ISBLANK(PrecoAnterior) 
+			            && NOT ISBLANK(Quantidade)
+			            && DeltaUnitario > 0,
+			        DeltaUnitario * Quantidade,
+			        BLANK()
+			    )
+			)
+			```
+		lineageTag: d22168d6-f200-4fb3-96fd-9e098badce08
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 

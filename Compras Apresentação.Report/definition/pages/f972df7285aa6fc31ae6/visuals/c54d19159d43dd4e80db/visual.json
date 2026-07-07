@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dStatus"
+                      "Entity": "dComprador"
                     }
                   },
-                  "Property": "DESC STATUS"
+                  "Property": "NOME"
                 }
               },
-              "queryRef": "dStatus.DESC STATUS",
-              "nativeQueryRef": "DESC STATUS",
+              "queryRef": "dComprador.NOME",
+              "nativeQueryRef": "NOME",
               "active": true
             }
           ]
@@ -45,7 +45,7 @@
         "levels": [
           {
             "queryRefs": [
-              "dStatus.DESC STATUS"
+              "dComprador.NOME"
             ],
             "isCollapsed": true,
             "isPinned": true
@@ -88,47 +88,6 @@
                 "Literal": {
                   "Value": "true"
                 }
-              }
-            },
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "d",
-                    "Entity": "dStatus",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "d"
-                                }
-                              },
-                              "Property": "DESC STATUS"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'COTAÇÃO APROVADA'"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    }
-                  }
-                ]
               }
             }
           }
@@ -181,7 +140,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Status'"
+                  "Value": "'Comprador'"
                 }
               }
             }
@@ -267,5 +226,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9e606eee56d35bb60579",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dComprador"
+              }
+            },
+            "Property": "NOME"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

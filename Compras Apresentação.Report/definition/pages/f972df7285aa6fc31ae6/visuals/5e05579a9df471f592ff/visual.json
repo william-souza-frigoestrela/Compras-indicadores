@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "5e05579a9df471f592ff",
   "position": {
-    "x": 34.856278366111951,
-    "y": 242.05748865355525,
+    "x": 35,
+    "y": 241.66666666666669,
     "z": 4000,
-    "height": 300.15128593040851,
-    "width": 1209.319213313162,
+    "height": 390.83333333333337,
+    "width": 1209.1666666666667,
     "tabOrder": 4000
   },
   "visual": {
@@ -29,26 +29,30 @@
               "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.DESCRICAO",
               "nativeQueryRef": "DESCRICAO",
               "active": true
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-                    }
-                  },
-                  "Property": "SEQPRODUTO"
-                }
-              },
-              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.SEQPRODUTO",
-              "nativeQueryRef": "SEQPRODUTO",
-              "active": true
             }
           ]
         },
         "Values": {
           "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "SEQPRODUTO"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(DCEVPB_SOLICITACAOTEMPOAPROVACAO.SEQPRODUTO)",
+              "nativeQueryRef": "Primeiro SEQPRODUTO"
+            },
             {
               "field": {
                 "Measure": {
@@ -141,11 +145,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Delta total"
+                  "Property": "Delta Total"
                 }
               },
               "queryRef": "Medidas.Delta total",
-              "nativeQueryRef": "Delta total"
+              "nativeQueryRef": "Delta Total"
             }
           ]
         }
@@ -154,13 +158,13 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Medidas"
+                    "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
                   }
                 },
-                "Property": "Delta total"
+                "Property": "DESCRICAO"
               }
             },
             "direction": "Descending"
@@ -192,25 +196,6 @@
               }
             ],
             "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "DCEVPB_SOLICITACAOTEMPOAPROVACAO.SEQPRODUTO"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-                    }
-                  },
-                  "Property": "SEQPRODUTO"
-                }
-              }
-            ],
-            "isPinned": true
           }
         ],
         "root": {
@@ -230,25 +215,40 @@
       }
     ],
     "objects": {
-      "columnWidth": [
+      "columnHeaders": [
         {
           "properties": {
-            "value": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#343845'"
+                    }
+                  }
+                }
+              }
+            },
+            "alignment": {
               "expr": {
                 "Literal": {
-                  "Value": "303.39937368670127D"
+                  "Value": "'Left'"
                 }
               }
             }
-          },
-          "selector": {
-            "metadata": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.DESCRICAO"
           }
-        }
-      ],
-      "columnHeaders": [
-        {
-          "properties": {}
         }
       ],
       "subTotals": [
@@ -265,6 +265,261 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridHorizontalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#252934'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "fontColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "fontColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "Medidas"
+                                    }
+                                  },
+                                  "Property": "Destaque Maior Variacao"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "1D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#a38600'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Medidas.Spend - Var LY"
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dClusters.CLUSTERS"
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "281.54519497149704D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.DESCRICAO"
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'None'"
                 }
               }
             }
@@ -383,7 +638,7 @@
                 "Entity": "Medidas"
               }
             },
-            "Property": "Delta total"
+            "Property": "Delta Total"
           }
         },
         "type": "Advanced"
@@ -441,6 +696,25 @@
         },
         "howCreated": "User",
         "isLockedInViewMode": true
+      },
+      {
+        "name": "70074dabc515ffc008ce",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                  }
+                },
+                "Property": "SEQPRODUTO"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
