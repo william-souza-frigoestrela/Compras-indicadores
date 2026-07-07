@@ -345,6 +345,14 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 
 		annotation SummarizationSetBy = Automatic
 
+	column MARCASOLICITADA
+		dataType: string
+		lineageTag: ab0e7344-5381-4ba7-ad0b-2ffd012150e8
+		summarizeBy: none
+		sourceColumn: MARCASOLICITADA
+
+		annotation SummarizationSetBy = Automatic
+
 	partition DCEVPB_SOLICITACAOTEMPOAPROVACAO = m
 		mode: import
 		source = ```

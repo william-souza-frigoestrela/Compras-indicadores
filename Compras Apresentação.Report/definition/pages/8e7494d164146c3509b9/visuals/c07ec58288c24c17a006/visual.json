@@ -113,11 +113,11 @@
                       "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
                     }
                   },
-                  "Property": "MARCAFORNECEDOR"
+                  "Property": "MARCASOLICITADA"
                 }
               },
-              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.MARCAFORNECEDOR",
-              "nativeQueryRef": "MARCAFORNECEDOR"
+              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.MARCASOLICITADA",
+              "nativeQueryRef": "MARCASOLICITADA"
             },
             {
               "field": {
@@ -246,6 +246,20 @@
               },
               "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.OBSERVACAO",
               "nativeQueryRef": "OBSERVACAO"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                    }
+                  },
+                  "Property": "DESCRICAOCOTACAO"
+                }
+              },
+              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.DESCRICAOCOTACAO",
+              "nativeQueryRef": "DESCRICAOCOTACAO"
             }
           ]
         }

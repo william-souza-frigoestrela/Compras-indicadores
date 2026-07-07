@@ -20,16 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                      "Entity": "dCalendario"
                     }
                   },
-                  "Property": "SOLIAPROVACAO"
+                  "Property": "Date"
                 }
               },
-              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.SOLIAPROVACAO",
-              "nativeQueryRef": "Dta Aprovação",
-              "active": true,
-              "displayName": "Dta Aprovação"
+              "queryRef": "dCalendario.Date",
+              "nativeQueryRef": "Date",
+              "active": true
             }
           ]
         }
@@ -41,10 +40,10 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                    "Entity": "dCalendario"
                   }
                 },
-                "Property": "SOLIAPROVACAO"
+                "Property": "Date"
               }
             },
             "direction": "Ascending"
@@ -60,7 +59,7 @@
             "startDate": {
               "expr": {
                 "Literal": {
-                  "Value": "datetime'2025-06-30T00:00:00'"
+                  "Value": "datetime'2026-06-22T00:00:00'"
                 }
               }
             },
@@ -90,7 +89,7 @@
                 "From": [
                   {
                     "Name": "d",
-                    "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
+                    "Entity": "dCalendario",
                     "Type": 0
                   }
                 ],
@@ -108,12 +107,12 @@
                                     "Source": "d"
                                   }
                                 },
-                                "Property": "SOLIAPROVACAO"
+                                "Property": "Date"
                               }
                             },
                             "Right": {
                               "Literal": {
-                                "Value": "datetime'2025-06-30T00:00:00'"
+                                "Value": "datetime'2026-06-22T00:00:00'"
                               }
                             }
                           }
@@ -128,7 +127,7 @@
                                     "Source": "d"
                                   }
                                 },
-                                "Property": "SOLIAPROVACAO"
+                                "Property": "Date"
                               }
                             },
                             "Right": {
@@ -179,6 +178,20 @@
                       "Percent": 0
                     }
                   }
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'wf_standard-font, helvetica, arial, sans-serif'"
                 }
               }
             }
@@ -235,6 +248,13 @@
                   }
                 }
               }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
             }
           }
         }
@@ -289,5 +309,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "8ab1ce5fdbf31b16dc0a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dCalendario"
+              }
+            },
+            "Property": "Date"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }
