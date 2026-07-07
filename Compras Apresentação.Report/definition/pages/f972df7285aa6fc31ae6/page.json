@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
-  "name": "8e7494d164146c3509b9",
-  "displayName": "Detalhe Solicitação",
+  "name": "f972df7285aa6fc31ae6",
+  "displayName": "Saving",
   "displayOption": "FitToPage",
   "height": 720,
   "width": 1280,

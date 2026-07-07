@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "e19e923809cdfd74f919",
   "position": {
-    "x": 871.40392156862742,
-    "y": 3.0117647058823529,
-    "z": 16001,
-    "height": 59.231372549019611,
-    "width": 332.29803921568629,
-    "tabOrder": 16001
+    "x": 920.39408866995075,
+    "y": 0,
+    "z": 16000,
+    "height": 59.408866995073893,
+    "width": 283.74384236453204,
+    "tabOrder": 16000
   },
   "visual": {
     "visualType": "slicer",
@@ -121,6 +121,13 @@
                   "Value": "'Comprador'"
                 }
               }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
             }
           }
         }
@@ -173,6 +180,20 @@
                       "Value": "'#0B1327'"
                     }
                   }
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "padding": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }

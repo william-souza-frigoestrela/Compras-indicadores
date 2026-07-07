@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "9ae52968ae41a2ce453a",
+  "name": "c54d19159d43dd4e80db",
   "position": {
-    "x": 191.5270935960591,
-    "y": 0,
-    "z": 0,
-    "height": 57.635467980295566,
-    "width": 280.19704433497537,
-    "tabOrder": 0
+    "x": 573.7595129375951,
+    "y": 16.560121765601217,
+    "z": 1000,
+    "height": 62.343987823439875,
+    "width": 222.10045662100455,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dCalendario"
+                      "Entity": "dStatus"
                     }
                   },
-                  "Property": "Anomês"
+                  "Property": "DESC STATUS"
                 }
               },
-              "queryRef": "dCalendario.Anomês",
-              "nativeQueryRef": "Anomês",
+              "queryRef": "dStatus.DESC STATUS",
+              "nativeQueryRef": "DESC STATUS",
               "active": true
             }
           ]
@@ -45,7 +45,7 @@
         "levels": [
           {
             "queryRefs": [
-              "dCalendario.Anomês"
+              "dStatus.DESC STATUS"
             ],
             "isCollapsed": true,
             "isPinned": true
@@ -83,13 +83,20 @@
                 }
               }
             },
+            "selfFilterEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
             "filter": {
               "filter": {
                 "Version": 2,
                 "From": [
                   {
                     "Name": "d",
-                    "Entity": "dCalendario",
+                    "Entity": "dStatus",
                     "Type": 0
                   }
                 ],
@@ -105,7 +112,7 @@
                                   "Source": "d"
                                 }
                               },
-                              "Property": "Anomês"
+                              "Property": "DESC STATUS"
                             }
                           }
                         ],
@@ -113,42 +120,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'2026/01'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'2026/02'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'2026/03'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'2026/04'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'2026/05'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'2026/06'"
+                                "Value": "'COTAÇÃO APROVADA'"
                               }
                             }
                           ]
@@ -187,20 +159,6 @@
                   }
                 }
               }
-            },
-            "textSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            },
-            "padding": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
             }
           }
         }
@@ -223,14 +181,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Ano / Mês'"
-                }
-              }
-            },
-            "textSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
+                  "Value": "'Status'"
                 }
               }
             }
@@ -278,13 +229,6 @@
                   "Value": "false"
                 }
               }
-            },
-            "strictSingleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
             }
           }
         }
@@ -321,11 +265,6 @@
           }
         }
       ]
-    },
-    "syncGroup": {
-      "groupName": "Anomês",
-      "fieldChanges": true,
-      "filterChanges": true
     },
     "drillFilterOtherVisuals": true
   }

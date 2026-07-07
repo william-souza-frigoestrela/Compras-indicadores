@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "9ae52968ae41a2ce453a",
+  "name": "2572a591c8f3052d6d07",
   "position": {
-    "x": 191.5270935960591,
+    "x": 623.3497536945813,
     "y": 0,
-    "z": 0,
+    "z": 16001,
     "height": 57.635467980295566,
-    "width": 280.19704433497537,
-    "tabOrder": 0
+    "width": 297.04433497536945,
+    "tabOrder": 16001
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,29 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dCalendario"
+                      "Entity": "dCategoria"
                     }
                   },
-                  "Property": "Anomês"
+                  "Property": "CATEGORIA"
                 }
               },
-              "queryRef": "dCalendario.Anomês",
-              "nativeQueryRef": "Anomês",
+              "queryRef": "dCategoria.CATEGORIA",
+              "nativeQueryRef": "CATEGORIA",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dCategoria"
+                    }
+                  },
+                  "Property": "GRUPO"
+                }
+              },
+              "queryRef": "dCategoria.GRUPO",
+              "nativeQueryRef": "GRUPO",
               "active": true
             }
           ]
@@ -45,13 +60,57 @@
         "levels": [
           {
             "queryRefs": [
-              "dCalendario.Anomês"
+              "dCategoria.CATEGORIA"
             ],
             "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dCategoria"
+                    }
+                  },
+                  "Property": "CATEGORIA"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "dCategoria.GRUPO"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dCategoria"
+                    }
+                  },
+                  "Property": "GRUPO"
+                }
+              }
+            ],
             "isPinned": true
           }
         ],
-        "root": {}
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'MATRIZ ENERGETICA'"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
       }
     ],
     "objects": {
@@ -89,7 +148,7 @@
                 "From": [
                   {
                     "Name": "d",
-                    "Entity": "dCalendario",
+                    "Entity": "dCategoria",
                     "Type": 0
                   }
                 ],
@@ -105,7 +164,7 @@
                                   "Source": "d"
                                 }
                               },
-                              "Property": "Anomês"
+                              "Property": "CATEGORIA"
                             }
                           }
                         ],
@@ -113,45 +172,60 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'2026/01'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'2026/02'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'2026/03'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'2026/04'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'2026/05'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'2026/06'"
+                                "Value": "'MATRIZ ENERGETICA'"
                               }
                             }
                           ]
+                        ]
+                      }
+                    },
+                    "Annotations": {
+                      "filterExpressionMetadata": {
+                        "expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "dCategoria"
+                                }
+                              },
+                              "Property": "GRUPO"
+                            }
+                          }
+                        ],
+                        "decomposedIdentities": {
+                          "values": [
+                            [
+                              {
+                                "0": [
+                                  {
+                                    "Literal": {
+                                      "Value": "'MATRIZ ENERGETICA'"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          ],
+                          "columns": [
+                            {
+                              "value": {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "dCategoria"
+                                    }
+                                  },
+                                  "Property": "CATEGORIA"
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        "valueMap": [
+                          {
+                            "0": "MATRIZ ENERGETICA"
+                          }
                         ]
                       }
                     }
@@ -223,7 +297,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Ano / Mês'"
+                  "Value": "'Grupo'"
                 }
               }
             },
@@ -321,11 +395,6 @@
           }
         }
       ]
-    },
-    "syncGroup": {
-      "groupName": "Anomês",
-      "fieldChanges": true,
-      "filterChanges": true
     },
     "drillFilterOtherVisuals": true
   }
