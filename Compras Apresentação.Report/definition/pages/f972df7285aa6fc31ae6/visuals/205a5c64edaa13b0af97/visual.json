@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "047269c8f14d8e464645",
+  "name": "205a5c64edaa13b0af97",
   "position": {
-    "x": 293.21156773211567,
-    "y": 16.560121765601217,
-    "z": 0,
-    "height": 62.343987823439875,
-    "width": 278.59969558599693,
-    "tabOrder": 0
+    "x": 361.83006535947709,
+    "y": 17.777777777777779,
+    "z": 8000,
+    "height": 57.51633986928104,
+    "width": 280.2614379084967,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "slicer",
@@ -130,27 +130,6 @@
                                 "Value": "'2026/03'"
                               }
                             }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'2026/04'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'2026/05'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'2026/06'"
-                              }
-                            }
                           ]
                         ]
                       }
@@ -187,6 +166,20 @@
                   }
                 }
               }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "padding": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
             }
           }
         }
@@ -209,7 +202,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Comprador'"
+                  "Value": "'Ano / Mês'"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
                 }
               }
             }
@@ -302,7 +302,7 @@
       ]
     },
     "syncGroup": {
-      "groupName": "Anomês",
+      "groupName": "Anomês1",
       "fieldChanges": true,
       "filterChanges": true
     },

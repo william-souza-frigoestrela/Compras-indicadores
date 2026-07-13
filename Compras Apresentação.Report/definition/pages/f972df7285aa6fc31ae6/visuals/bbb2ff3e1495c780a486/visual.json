@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "bbb2ff3e1495c780a486",
   "position": {
-    "x": 795.85996955859969,
-    "y": 16.560121765601217,
-    "z": 2000,
-    "height": 62.343987823439875,
-    "width": 222.10045662100455,
-    "tabOrder": 2000
+    "x": 1015.4248366013071,
+    "y": 16.732026143790854,
+    "z": 1000,
+    "height": 61.699346405228752,
+    "width": 221.69934640522874,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -233,23 +233,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "f1d4b36e0b69ea92f734",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dEmpresa"
-              }
-            },
-            "Property": "NOMEREDUZIDO"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }
