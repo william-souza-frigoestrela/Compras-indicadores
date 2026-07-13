@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "3e604e09dba8717ec032",
   "position": {
-    "x": 35.454545454545453,
-    "y": 100.90909090909091,
-    "z": 4002,
-    "height": 70,
-    "width": 303.63636363636363,
-    "tabOrder": 4001
+    "x": 35.555555555555557,
+    "y": 100.3921568627451,
+    "z": 3000,
+    "height": 69.019607843137251,
+    "width": 176.73202614379085,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,7 +23,7 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Saving Consolidado"
+                  "Property": "Saving Consolidado CY"
                 }
               },
               "queryRef": "Medidas.Saving Consolidado",
@@ -42,7 +42,7 @@
                     "Entity": "Medidas"
                   }
                 },
-                "Property": "Saving Consolidado"
+                "Property": "Saving Consolidado CY"
               }
             },
             "direction": "Descending"

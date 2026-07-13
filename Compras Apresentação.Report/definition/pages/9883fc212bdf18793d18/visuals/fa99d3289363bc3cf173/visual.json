@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "f176adc8d96869a5ba6e",
+  "name": "fa99d3289363bc3cf173",
   "position": {
-    "x": 567.843137254902,
-    "y": 100.3921568627451,
-    "z": 5000,
-    "height": 69.019607843137251,
-    "width": 216.47058823529412,
-    "tabOrder": 5000
+    "x": 34.388059701492537,
+    "y": 91.701492537313428,
+    "z": 1000,
+    "height": 69.731343283582092,
+    "width": 230.20895522388059,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,11 +23,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Resultado operacional CY"
+                  "Property": "Saving Consolidado CY"
                 }
               },
-              "queryRef": "Medidas.Resultado operacional",
-              "nativeQueryRef": "Resultado operacional"
+              "queryRef": "Medidas.Saving Consolidado",
+              "nativeQueryRef": "Saving Consolidado CY"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "Medidas"
                   }
                 },
-                "Property": "Resultado operacional CY"
+                "Property": "Saving Consolidado CY"
               }
             },
             "direction": "Descending"
@@ -265,7 +265,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Resultado Operacional'"
+                  "Value": "'Saving'"
                 }
               }
             },
@@ -332,6 +332,19 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

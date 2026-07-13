@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "c54d19159d43dd4e80db",
+  "name": "c3e5505ee4033e214582",
   "position": {
-    "x": 645.751633986928,
-    "y": 14.640522875816993,
-    "z": 0,
-    "height": 61.699346405228752,
-    "width": 366.01307189542484,
-    "tabOrder": 0
+    "x": 361.83006535947709,
+    "y": 16.732026143790851,
+    "z": 4000,
+    "height": 57.51633986928104,
+    "width": 280.2614379084967,
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dComprador"
+                      "Entity": "dCalendario"
                     }
                   },
-                  "Property": "NOME"
+                  "Property": "Anomês"
                 }
               },
-              "queryRef": "dComprador.NOME",
-              "nativeQueryRef": "NOME",
+              "queryRef": "dCalendario.Anomês",
+              "nativeQueryRef": "Anomês",
               "active": true
             }
           ]
@@ -45,7 +45,7 @@
         "levels": [
           {
             "queryRefs": [
-              "dComprador.NOME"
+              "dCalendario.Anomês"
             ],
             "isCollapsed": true,
             "isPinned": true
@@ -83,11 +83,59 @@
                 }
               }
             },
-            "selfFilterEnabled": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "d",
+                    "Entity": "dCalendario",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "d"
+                                }
+                              },
+                              "Property": "Anomês"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'2026/01'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'2026/02'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'2026/03'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                ]
               }
             }
           }
@@ -118,6 +166,20 @@
                   }
                 }
               }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "padding": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
             }
           }
         }
@@ -140,7 +202,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Comprador'"
+                  "Value": "'Ano / Mês'"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
                 }
               }
             }
@@ -188,6 +257,13 @@
                   "Value": "false"
                 }
               }
+            },
+            "strictSingleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -224,6 +300,11 @@
           }
         }
       ]
+    },
+    "syncGroup": {
+      "groupName": "Anomês1",
+      "fieldChanges": true,
+      "filterChanges": true
     },
     "drillFilterOtherVisuals": true
   }

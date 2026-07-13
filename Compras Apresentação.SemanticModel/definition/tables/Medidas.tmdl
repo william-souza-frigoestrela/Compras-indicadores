@@ -982,8 +982,7 @@ table Medidas
 
 	measure ultimaCompra =
 			
-			IF(ISINSCOPE(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO]),
-			MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),BLANK())
+			MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO])
 		formatString: General Date
 		lineageTag: 428e5834-21c5-450d-b832-551bb3be2db5
 
@@ -1465,7 +1464,7 @@ table Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Resultado operacional' = ```
+	measure 'Resultado operacional CY' = ```
 			
 			VAR ProdutosVisiveis = 
 			    CALCULATETABLE(
@@ -1540,7 +1539,7 @@ table Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Saving Consolidado' = ```
+	measure 'Saving Consolidado CY' = ```
 			
 			VAR ProdutosVisiveis = 
 			    CALCULATETABLE(
@@ -1612,7 +1611,7 @@ table Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Penalty Consolidado' = ```
+	measure 'Penalty Consolidado CY' = ```
 			
 			VAR ProdutosVisiveis = 
 			    CALCULATETABLE(
@@ -1683,6 +1682,344 @@ table Medidas
 		lineageTag: d22168d6-f200-4fb3-96fd-9e098badce08
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Resultado Operacional Mensal' =
+			
+			SUMX(
+			    VALUES(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO]),
+			
+			    VAR ProdutoAtual =
+			        MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO])
+			
+			    VAR UltimaDataMes =
+			        CALCULATE(
+			            MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO])
+			        )
+			
+			    VAR DataAnterior =
+			        CALCULATE(
+			            MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			            REMOVEFILTERS(dCalendario),
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual,
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] < UltimaDataMes
+			        )
+			
+			    VAR PrecoAtual =
+			        CALCULATE(
+			            MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRUNITARIO]),
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual,
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] = UltimaDataMes
+			        )
+			
+			    VAR PrecoAnterior =
+			        CALCULATE(
+			            MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRUNITARIO]),
+			            REMOVEFILTERS(dCalendario),
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual,
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] = DataAnterior
+			        )
+			
+			    VAR QuantidadeMes =
+			        CALCULATE(
+			            SUM(DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE]),
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual,
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] = UltimaDataMes
+			        )
+			
+			    RETURN
+			        COALESCE(
+			            (PrecoAnterior - PrecoAtual) * QuantidadeMes,
+			            0
+			        )
+			)
+		lineageTag: 42be2a9b-9ea8-4da2-a773-e4359c3b7719
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Teste Data' = ```
+			
+			MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO])
+			
+			```
+		formatString: General Date
+		lineageTag: 939b9f54-9d11-4844-99cb-aaa170980ea2
+
+	measure 'Debug Delta' =
+			
+			SUMX(
+			    VALUES(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO]),
+			
+			    VAR ProdutoAtual =
+			        MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO])
+			
+			    VAR UltimaDataMes =
+			        CALCULATE(
+			            MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO])
+			        )
+			
+			    VAR DataAnterior =
+			        CALCULATE(
+			            MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			            REMOVEFILTERS(dCalendario),
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual,
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] < UltimaDataMes
+			        )
+			
+			    RETURN
+			        IF(NOT ISBLANK(DataAnterior),1,0)
+			)
+		formatString: 0
+		lineageTag: 4310f925-ad86-4cc6-ae2b-f9fdeb7b59f3
+
+	measure 'Resultado Operacional Snapshot' = ```
+			
+			CALCULATE(
+			    [Resultado operacional CY],
+			    FILTER(
+			        ALL(dCalendario[Date]),
+			        dCalendario[Date] <= MAX(dCalendario[Date])
+			    )
+			)
+			
+			```
+		lineageTag: 837bbd2d-f3a5-4598-86bc-d0f749c8bcb9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Resultado Operacional Mensalizado' = ```
+			
+			-- 1. Captura o último dia do mês corrente no eixo do gráfico
+			VAR UltimoDiaDoMes = MAX(DCalendario[Date]) 
+			
+			RETURN
+			    CALCULATE(
+			        [Resultado operacional CY], -- Sua medida original do Card, sem alterar nenhuma linha
+			        FILTER(
+			            ALLSELECTED(DCalendario), -- Mantém os filtros dos seus segmentadores da tela
+			            DCalendario[Date] <= UltimoDiaDoMes -- Permite que a medida olhe para trás para achar o histórico anterior
+			        )
+			    )
+			```
+		lineageTag: 6828b200-d2d7-4f9d-a17c-dee3a06dd98b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Resultado Operacional Mensal CY' =
+			
+			VAR MesDoEixo = MAX(DCalendario[Anomês]) -- Captura o mês específico da linha do gráfico
+			
+			RETURN
+			    CALCULATE(
+			        [Resultado operacional CY], -- Sua medida original do Card
+			        FILTER(
+			            ALLSELECTED(DCalendario),
+			            DCalendario[Anomês] = MesDoEixo -- Força a medida a rodar como se APENAS esse mês estivesse selecionado
+			        )
+			    )
+		formatString: 0.00
+		lineageTag: 95c1e5e9-fc55-4660-9ac8-64d9f62d483b
+
+	measure 'Resultado Operacional Mensal LY' = ```
+			
+			
+			CALCULATE([Resultado Operacional Mensal CY],
+			SAMEPERIODLASTYEAR(dCalendario[Date])
+			)
+			
+			```
+		formatString: 0.00
+		lineageTag: 6f939a45-66cb-487c-adad-2c4359b3fb98
+
+	measure 'Resultado operacional dinamico CY' = ```
+			
+			-- 1. Cria a lista de produtos respeitando o filtro da linha da matriz (Fornecedor, Empresa ou Categoria)
+			VAR ProdutosVisiveis = 
+			    CALCULATETABLE(
+			        VALUES(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO]),
+			        ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO])
+			    )
+			RETURN
+			SUMX(
+			    ProdutosVisiveis,
+			    VAR ProdutoAtual = DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO]
+			    
+			    -- 2. Encontra a última data liberando apenas os filtros de data e produto, preservando o segmento da matriz
+			    VAR UltimaData = 
+			        CALCULATE(
+			            MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			            ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual
+			        )
+			        
+			    -- 3. Preço Atual
+			    VAR PrecoAtual = 
+			        CALCULATE(
+			            AVERAGE(DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRUNITARIO]),
+			            ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual,
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] = UltimaData
+			        )
+			        
+			    -- 4. Data Anterior
+			    VAR DataAnterior = 
+			        CALCULATE(
+			            MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			            ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual,
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] < UltimaData
+			        )
+			        
+			    -- 5. Preço Anterior
+			    VAR PrecoAnterior = 
+			        CALCULATE(
+			            AVERAGE(DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRUNITARIO]),
+			            ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual,
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] = DataAnterior
+			        )
+			        
+			    -- 6. Quantidade
+			    VAR Quantidade = 
+			        CALCULATE(
+			            SUM(DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE]),
+			            ALLSELECTED(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual,
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] = UltimaData
+			        )
+			        
+			    VAR DeltaUnitario = 
+			        IF(
+			            NOT ISBLANK(PrecoAnterior),
+			            PrecoAnterior - PrecoAtual,
+			            BLANK()
+			        )
+			        
+			    RETURN
+			    IF(
+			        NOT ISBLANK(DeltaUnitario) && NOT ISBLANK(Quantidade),
+			        DeltaUnitario * Quantidade,
+			        BLANK()
+			    )
+			)
+			```
+		formatString: 0.00
+		lineageTag: 2b816645-445b-4dba-adef-120fffc3f0a0
+
+	measure 'Resultado operacional dinamico LY' = ```
+			
+			
+			CALCULATE([Resultado operacional dinamico CY],
+			SAMEPERIODLASTYEAR(dCalendario[Date])
+			)
+			
+			```
+		formatString: 0.00
+		lineageTag: 75f4fa38-162f-4c77-9ab1-91d1375d20c3
+
+	measure 'Var % Resultado operacional mensal LY' =
+			
+			IF([Resultado operacional dinamico CY]<>BLANK() &&
+			[Resultado operacional dinamico LY] <> BLANK() ,
+			DIVIDE(
+			    [Resultado Operacional Mensal CY] - [Resultado operacional dinamico LY],
+			    [Resultado Operacional Mensal LY]
+			)
+			,
+			BLANK()
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 954a07f1-39c1-4353-b45d-6faf927e6ab4
+
+	measure 'Saving Consolidado LY' =
+			
+			CALCULATE([Saving Consolidado CY],
+			SAMEPERIODLASTYEAR(dCalendario[Date]))
+		lineageTag: 98da683b-5623-40ed-921a-66de8bba0e7c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Penalty Consolidado LY' =
+			
+			CALCULATE([Penalty Consolidado CY],
+			SAMEPERIODLASTYEAR(dCalendario[Date]))
+		lineageTag: 5e0a7fed-5c13-4cd8-b459-eace1ac5bd84
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Resultado Consolidado LY' =
+			
+			CALCULATE([Resultado operacional CY],
+			SAMEPERIODLASTYEAR(dCalendario[Date]))
+		lineageTag: 7d342e10-fdf5-4b72-8fc2-19c1feda7421
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Var % Saving LY' =
+			
+			VAR Atual = [Saving Consolidado CY]
+			VAR Anterior = [Saving Consolidado LY]
+			VAR Diferenca = Atual - Anterior
+			
+			RETURN
+			    DIVIDE(Diferenca, Anterior, 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 98288932-2588-44f0-86a1-c85099d69d56
+
+	measure '% Variação Label saving' =
+			
+			VAR vVariacao = [Var % Saving LY]
+			RETURN
+			    FORMAT(vVariacao, "  ⮝ +0.0% ;  ⮟ -0.0% ;  → 0%")
+		lineageTag: 175eca25-a3ea-40b0-bf00-f17a359ec651
+
+	measure 'Var % Penalty LY' =
+			
+			VAR Atual = [Penalty Consolidado CY]
+			VAR Anterior = [Penalty Consolidado LY]
+			VAR Diferenca = Atual - Anterior
+			
+			RETURN
+			    DIVIDE(Diferenca, Anterior, 0)
+		lineageTag: 24bb3b89-7a56-44b7-9404-0e11691eb722
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Variação Label penalty' =
+			
+			VAR vVariacao = [Var % Penalty LY]
+			RETURN
+			    FORMAT(vVariacao, "  ⮝ +0.0% ;  ⮟ -0.0% ;  → 0%")
+		lineageTag: 6f3520e9-4239-4ee0-98e3-66c92d46ca22
+
+	measure 'Resultado Operacional LY' = ```
+			
+			CALCULATE([Resultado operacional CY],
+			    SAMEPERIODLASTYEAR(dCalendario[Date])
+			    
+			)
+			```
+		lineageTag: 6c6345a9-9983-4d35-b76b-4461755abf03
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Var % Resultado operacional LY' =
+			
+			VAR Atual = [Resultado operacional CY]
+			VAR Anterior = [Resultado operacional LY]
+			VAR Diferenca = Atual - Anterior
+			
+			RETURN
+			    DIVIDE(Diferenca, Anterior, 0)
+		lineageTag: 6fc1c56f-a2e9-4dda-a9e3-9349ef96a066
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Variação Label operacional' =
+			
+			VAR vVariacao = [Var % Resultado operacional LY]
+			RETURN
+			    FORMAT(vVariacao, "  ⮝ +0.0% ;  ⮟ -0.0% ;  → 0%")
+		lineageTag: 69e4bbbd-add7-4c14-8543-e04f910a4531
 
 	column Column
 		isHidden

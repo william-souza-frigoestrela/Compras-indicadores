@@ -7171,55 +7171,1613 @@ cultureInfo pt-BR
 			          }
 			        }
 			      ]
-			    }
-			  },
-			  "Relationships": {
-			    "dcevpbi_pedidoprazopagamento_has_d_empresa": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_PEDIDOPRAZOPAGAMENTO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_pedidoprazopagamento": {
-			          "Target": {
-			            "Entity": "dcevpbi_pedidoprazopagamento"
-			          }
-			        },
-			        "d_empresa": {
-			          "Target": {
-			            "Entity": "d_empresa"
-			          }
+			    },
+			    "dcevpb_solicitacaotempoaprovacao.empresanropedido": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
+			          "ConceptualProperty": "Empresa-Nropedido"
 			        }
 			      },
-			      "Phrasings": [
+			      "State": "Generated",
+			      "Terms": [
 			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_pedidoprazopagamento"
-			            },
-			            "Object": {
-			              "Role": "d_empresa"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_pedidoprazopagamentos_have_d_empresas"
+			          "empresa-nropedido": {
+			            "State": "Generated"
+			          }
 			        },
 			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_empresa"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_pedidoprazopagamento"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_empresas_have_dcevpbi_pedidoprazopagamentos"
+			          "empresa nropedido": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
 			        }
 			      ]
 			    },
+			    "dcevpb_solicitacaotempoaprovacao.marcafornecedor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
+			          "ConceptualProperty": "MARCAFORNECEDOR"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "marcafornecedor": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao.descricaocotacao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
+			          "ConceptualProperty": "DESCRICAOCOTACAO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "descricaocotacao": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao.marcasolicitada": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
+			          "ConceptualProperty": "MARCASOLICITADA"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "marcasolicitada": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.solic_criadas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Solic criadas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "solic criadas": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.solic_em_aberto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Solic em aberto"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "solic em aberto": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.qtd_itens": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Qtd itens"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "qtd itens": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.solic_urgente": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Solic urgente"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "solic urgente": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.solicitação_urgente_perioro": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "% Solicitação urgente perioro"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% solicitação urgente perioro": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage solicitação urgente perioro": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "pct solicitação urgente perioro": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "medida.aprovação_mais_antiga": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Aprovação mais antiga"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "aprovação mais antiga": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.qtd_itens_s__pedido": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Qtd itens s/ pedido"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "qtd itens s/ pedido": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "qtd itens s": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "qtd itens s pedido": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "pedido": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "medida.resultado_liquido_saving": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Resultado Liquido Saving"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "resultado liquido saving": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.saving_total_format": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Saving Total Format"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "saving total format": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "format": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "total format": {
+			            "Type": "Noun",
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "saving aggregate format": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "saving overall format": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "aggregate format": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "overall format": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "saving total arrangement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "saving total setup": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "saving total presentation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "saving total organization": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "saving total layout": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "saving total system": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        }
+			      ]
+			    },
+			    "medida.penalty_total_format": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Penalty Total Format"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "penalty total format": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "format": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "total format": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "penalty aggregate format": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "penalty overall format": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "aggregate format": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "overall format": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "penalty total arrangement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "penalty total setup": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "penalty total presentation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "penalty total organization": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "penalty total layout": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "penalty total system": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        }
+			      ]
+			    },
+			    "medida.resultado_liquido_format": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Resultado Liquido Format"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "resultado liquido format": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "resultado liquido arrangement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "resultado liquido setup": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "resultado liquido presentation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "resultado liquido organization": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "resultado liquido layout": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "resultado liquido system": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "resultado liquido set-up": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "resultado liquido plan": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "resultado liquido design": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "resultado liquido structure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "medida.classificacao_saving": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Classificacao Saving"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "classificacao saving": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.saving_unitario": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Saving Unitario"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "saving unitario": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "reduction unitario": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        },
+			        {
+			          "cutback unitario": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        }
+			      ]
+			    },
+			    "medida.penalty_unitario": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Penalty Unitario"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "penalty unitario": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.qtd_itens_saving": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Qtd Itens Saving"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "qtd itens saving": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.qtd_itens_penalty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Qtd Itens Penalty"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "qtd itens penalty": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "qtd iten consequence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "qtd iten drawback": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "qtd iten disadvantage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "qtd iten forfeit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "qtd iten price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "qtd iten punishment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "qtd iten penalization": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "qtd iten fine": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "qtd iten sentence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        }
+			      ]
+			    },
+			    "medida.valor_unitario": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Valor Unitario"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "valor unitario": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.preco_atual": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Preco Atual"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "preco atual": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.delta_preco_unitario": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Delta Preco Unitario"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "delta preco unitario": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.classificacao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Classificacao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "classificacao": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.data_compra_atual": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Data Compra Atual"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "data compra atual": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "information compra atual": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "fact compra atual": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "info compra atual": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "statistic compra atual": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "document compra atual": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "figure compra atual": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "record compra atual": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "medida.delta_total": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Delta Total"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "delta total": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "delta aggregate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "delta overall": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "medida.resultado_operacional": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Resultado operacional CY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "resultado operacional": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.saving_consolidado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Saving Consolidado CY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "saving consolidado": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "reduction consolidado": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        },
+			        {
+			          "cutback consolidado": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.451
+			          }
+			        }
+			      ]
+			    },
+			    "medida.penalty_consolidado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Penalty Consolidado CY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "penalty consolidado": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.resultado_operacional_mensal": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Resultado Operacional Mensal"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "resultado operacional mensal": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.teste_data": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Teste Data"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "teste data": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "teste information": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "teste fact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "teste info": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "teste statistic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "teste document": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "teste figure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "teste record": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "medida.debug_delta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Debug Delta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "debug delta": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "delta": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "debug estuary": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "debug outlet": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "estuary": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "outlet": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "debug mouth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "debug channel": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "mouth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "channel": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "p_solicitacao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "pSolicitacao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "p solicitacao": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "pSolicitacao": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "p_solicitacao.p_solicitacao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "pSolicitacao",
+			          "ConceptualProperty": "pSolicitacao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "p solicitacao": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "p solicitacao name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "pSolicitacao": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "p_solicitacao.pSolicitacao_campos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "pSolicitacao",
+			          "ConceptualProperty": "pSolicitacao Campos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "pSolicitacao campos": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "p_solicitacao.pSolicitacao_pedido": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "pSolicitacao",
+			          "ConceptualProperty": "pSolicitacao Pedido"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "pSolicitacao pedido": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.resultado_operacional_snapshot": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Resultado Operacional Snapshot"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "resultado operacional snapshot": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "resultado operacional Polaroid": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "resultado operacional portrait": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "resultado operacional photo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "resultado operacional photograph": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "resultado operacional picture": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "resultado operacional snap": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "resultado operacional print": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "resultado operacional shot": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "resultado operacional idea": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "resultado operacional description": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        }
+			      ]
+			    },
+			    "medida.resultado_operacional_mensalizado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Resultado Operacional Mensalizado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "resultado operacional mensalizado": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.resultado_operacional_mensal_CY": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Resultado Operacional Mensal CY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "resultado operacional mensal CY": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Resultado Operacional CY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "medida.resultado_operacional_mensal_LY": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Resultado Operacional Mensal LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "resultado operacional mensal LY": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Resultado Operacional LY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "medida.resultado_operacional_dinamico_CY": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Resultado operacional dinamico CY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "resultado operacional dinamico CY": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.resultado_operacional_dinamico_LY": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Resultado operacional dinamico LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "resultado operacional dinamico LY": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.var__resultado_operacional_LY": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Var % Resultado operacional mensal LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "var % resultado operacional LY": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "var percentage resultado operacional ly": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "var pct resultado operacional ly": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
 			    "dcevpbi_pedidoprazopagamento_has_d_fornecedore": {
 			      "Binding": {
 			        "ConceptualEntity": "DCEVPBI_PEDIDOPRAZOPAGAMENTO"
@@ -7691,6 +9249,1359 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "d_empresas_have_dcevpb_solicitacaotempoaprovacaos"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_var__resultado_operacional_LY": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.var__resultado_operacional_LY": {
+			          "Target": {
+			            "Entity": "medida.var__resultado_operacional_LY"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.var__resultado_operacional_LY"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_var__resultado_operacional_LY"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_resultado_operacional_dinamico_LY": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.resultado_operacional_dinamico_LY": {
+			          "Target": {
+			            "Entity": "medida.resultado_operacional_dinamico_LY"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.resultado_operacional_dinamico_LY"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_resultado_operacional_dinamico_LY"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_resultado_operacional_dinamico_CY": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.resultado_operacional_dinamico_CY": {
+			          "Target": {
+			            "Entity": "medida.resultado_operacional_dinamico_CY"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.resultado_operacional_dinamico_CY"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_resultado_operacional_dinamico_CY"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_resultado_operacional_mensal_LY": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.resultado_operacional_mensal_LY": {
+			          "Target": {
+			            "Entity": "medida.resultado_operacional_mensal_LY"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.resultado_operacional_mensal_LY"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_resultado_operacional_mensal_LY"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_resultado_operacional_mensal_CY": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.resultado_operacional_mensal_CY": {
+			          "Target": {
+			            "Entity": "medida.resultado_operacional_mensal_CY"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.resultado_operacional_mensal_CY"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_resultado_operacional_mensal_CY"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_resultado_operacional_mensalizado": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.resultado_operacional_mensalizado": {
+			          "Target": {
+			            "Entity": "medida.resultado_operacional_mensalizado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.resultado_operacional_mensalizado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_resultado_operacional_mensalizado"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_resultado_operacional_snapshot": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.resultado_operacional_snapshot": {
+			          "Target": {
+			            "Entity": "medida.resultado_operacional_snapshot"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.resultado_operacional_snapshot"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_resultado_operacional_snapshot"
+			        }
+			      ]
+			    },
+			    "p_solicitacao_has_p_solicitacao": {
+			      "Binding": {
+			        "ConceptualEntity": "pSolicitacao"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "p_solicitacao": {
+			          "Target": {
+			            "Entity": "p_solicitacao"
+			          }
+			        },
+			        "p_solicitacao.p_solicitacao": {
+			          "Target": {
+			            "Entity": "p_solicitacao.p_solicitacao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "p_solicitacao"
+			            },
+			            "Object": {
+			              "Role": "p_solicitacao.p_solicitacao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "p_solicitacaos_have_p_solicitacaos"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "p_solicitacao"
+			            },
+			            "Name": {
+			              "Role": "p_solicitacao.p_solicitacao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "p_solicitacaos_are_names_IDs_of_p_solicitacaos"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_debug_delta": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.debug_delta": {
+			          "Target": {
+			            "Entity": "medida.debug_delta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.debug_delta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_debug_delta"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_teste_data": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.teste_data": {
+			          "Target": {
+			            "Entity": "medida.teste_data"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.teste_data"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_teste_data"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_resultado_operacional_mensal": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.resultado_operacional_mensal": {
+			          "Target": {
+			            "Entity": "medida.resultado_operacional_mensal"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.resultado_operacional_mensal"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_resultado_operacional_mensal"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_penalty_consolidado": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.penalty_consolidado": {
+			          "Target": {
+			            "Entity": "medida.penalty_consolidado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.penalty_consolidado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_penalty_consolidado"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_saving_consolidado": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.saving_consolidado": {
+			          "Target": {
+			            "Entity": "medida.saving_consolidado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.saving_consolidado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_saving_consolidado"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_resultado_operacional": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.resultado_operacional": {
+			          "Target": {
+			            "Entity": "medida.resultado_operacional"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.resultado_operacional"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_resultado_operacional"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_delta_total": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.delta_total": {
+			          "Target": {
+			            "Entity": "medida.delta_total"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.delta_total"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_delta_total"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_data_compra_atual": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.data_compra_atual": {
+			          "Target": {
+			            "Entity": "medida.data_compra_atual"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.data_compra_atual"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_data_compra_atual"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_classificacao": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.classificacao": {
+			          "Target": {
+			            "Entity": "medida.classificacao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.classificacao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_classificacao"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_delta_preco_unitario": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.delta_preco_unitario": {
+			          "Target": {
+			            "Entity": "medida.delta_preco_unitario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.delta_preco_unitario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_delta_preco_unitario"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_preco_atual": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.preco_atual": {
+			          "Target": {
+			            "Entity": "medida.preco_atual"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.preco_atual"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_preco_atual"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_valor_unitario": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.valor_unitario": {
+			          "Target": {
+			            "Entity": "medida.valor_unitario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.valor_unitario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_valor_unitario"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_qtd_itens_penalty": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.qtd_itens_penalty": {
+			          "Target": {
+			            "Entity": "medida.qtd_itens_penalty"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.qtd_itens_penalty"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_qtd_itens_penalty"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_qtd_itens_saving": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.qtd_itens_saving": {
+			          "Target": {
+			            "Entity": "medida.qtd_itens_saving"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.qtd_itens_saving"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_qtd_itens_saving"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_penalty_unitario": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.penalty_unitario": {
+			          "Target": {
+			            "Entity": "medida.penalty_unitario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.penalty_unitario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_penalty_unitario"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_saving_unitario": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.saving_unitario": {
+			          "Target": {
+			            "Entity": "medida.saving_unitario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.saving_unitario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_saving_unitario"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_classificacao_saving": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.classificacao_saving": {
+			          "Target": {
+			            "Entity": "medida.classificacao_saving"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.classificacao_saving"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_classificacao_saving"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_resultado_liquido_format": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.resultado_liquido_format": {
+			          "Target": {
+			            "Entity": "medida.resultado_liquido_format"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.resultado_liquido_format"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_resultado_liquido_format"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_penalty_total_format": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.penalty_total_format": {
+			          "Target": {
+			            "Entity": "medida.penalty_total_format"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.penalty_total_format"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_penalty_total_format"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_saving_total_format": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.saving_total_format": {
+			          "Target": {
+			            "Entity": "medida.saving_total_format"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.saving_total_format"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_saving_total_format"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Prepositions": [
+			              {
+			                "saving": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "medida.saving_total_format"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_are_saving_saving_total_format"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_resultado_liquido_saving": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.resultado_liquido_saving": {
+			          "Target": {
+			            "Entity": "medida.resultado_liquido_saving"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.resultado_liquido_saving"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_resultado_liquido_saving"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_qtd_itens_s__pedido": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.qtd_itens_s__pedido": {
+			          "Target": {
+			            "Entity": "medida.qtd_itens_s__pedido"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.qtd_itens_s__pedido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_qtd_itens_s__pedido"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_aprovação_mais_antiga": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.aprovação_mais_antiga": {
+			          "Target": {
+			            "Entity": "medida.aprovação_mais_antiga"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.aprovação_mais_antiga"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_aprovação_mais_antiga"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_solicitação_urgente_perioro": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.solicitação_urgente_perioro": {
+			          "Target": {
+			            "Entity": "medida.solicitação_urgente_perioro"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.solicitação_urgente_perioro"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have__solicitação_urgente_perioro"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_solic_urgente": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.solic_urgente": {
+			          "Target": {
+			            "Entity": "medida.solic_urgente"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.solic_urgente"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_solic_urgente"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_qtd_itens": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.qtd_itens": {
+			          "Target": {
+			            "Entity": "medida.qtd_itens"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.qtd_itens"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_qtd_itens"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_solic_em_aberto": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.solic_em_aberto": {
+			          "Target": {
+			            "Entity": "medida.solic_em_aberto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.solic_em_aberto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_solic_em_aberto"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_solic_criadas": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.solic_criadas": {
+			          "Target": {
+			            "Entity": "medida.solic_criadas"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.solic_criadas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_solic_criadas"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_marcasolicitada": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "dcevpb_solicitacaotempoaprovacao.marcasolicitada": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao.marcasolicitada"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao.marcasolicitada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_marcasolicitadas"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_descricaocotacao": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "dcevpb_solicitacaotempoaprovacao.descricaocotacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao.descricaocotacao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao.descricaocotacao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_descricaocotacaos"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_marcafornecedor": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "dcevpb_solicitacaotempoaprovacao.marcafornecedor": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao.marcafornecedor"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao.marcafornecedor"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_marcafornecedors"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_empresanropedido": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "dcevpb_solicitacaotempoaprovacao.empresanropedido": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao.empresanropedido"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao.empresanropedido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_empresanropedidos"
 			        }
 			      ]
 			    },
@@ -14073,6 +16984,52 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_nrosolicitacaos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoprazopagamento_has_d_empresa": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOPRAZOPAGAMENTO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoprazopagamento": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoprazopagamento"
+			          }
+			        },
+			        "d_empresa": {
+			          "Target": {
+			            "Entity": "d_empresa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoprazopagamento"
+			            },
+			            "Object": {
+			              "Role": "d_empresa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoprazopagamentos_have_d_empresas"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_empresa"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoprazopagamento"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_empresas_have_dcevpbi_pedidoprazopagamentos"
 			        }
 			      ]
 			    },

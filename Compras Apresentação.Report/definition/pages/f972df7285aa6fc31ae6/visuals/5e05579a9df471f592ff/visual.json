@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "5e05579a9df471f592ff",
   "position": {
-    "x": 35,
-    "y": 241.66666666666669,
-    "z": 4000,
-    "height": 390.83333333333337,
-    "width": 1209.1666666666667,
-    "tabOrder": 4000
+    "x": 35.555555555555557,
+    "y": 196.60130718954247,
+    "z": 2000,
+    "height": 481.04575163398692,
+    "width": 1207.8431372549019,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -158,13 +158,13 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                    "Entity": "Medidas"
                   }
                 },
-                "Property": "DESCRICAO"
+                "Property": "Delta Total"
               }
             },
             "direction": "Descending"
@@ -532,118 +532,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "76e4fb5875bab6781dce",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-              }
-            },
-            "Property": "DESCRICAO"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "31265e037224dbdfe4e8",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Preco Ultima Compra"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "59be00a042c29772d84f",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Data Ultima Compra"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "8bd1df3d092238a59706",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Preco Atual"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "67a3f27fb9c8e8a2f006",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Delta Preco Unitario"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "8e208f70c8728256a2b7",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Classificacao"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "cfeed28b3cccd682b205",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Data Compra Atual"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "d421bb4bdcd30c6f1d7f",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Delta Total"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
         "name": "2d6333c0ea16188d6626",
         "field": {
           "Measure": {
@@ -694,27 +582,7 @@
             }
           ]
         },
-        "howCreated": "User",
         "isLockedInViewMode": true
-      },
-      {
-        "name": "70074dabc515ffc008ce",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-                  }
-                },
-                "Property": "SEQPRODUTO"
-              }
-            },
-            "Function": 3
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

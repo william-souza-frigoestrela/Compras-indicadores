@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "e08bb291cc93fbcef21b",
   "position": {
-    "x": 445.45454545454544,
-    "y": 100.90909090909091,
-    "z": 4003,
-    "height": 70,
-    "width": 303.63636363636363,
-    "tabOrder": 4002
+    "x": 302.22222222222223,
+    "y": 100.3921568627451,
+    "z": 4000,
+    "height": 69.019607843137251,
+    "width": 177.77777777777777,
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,7 +23,7 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Penalty Consolidado"
+                  "Property": "Penalty Consolidado CY"
                 }
               },
               "queryRef": "Medidas.Penalty Consolidado",
@@ -42,7 +42,7 @@
                     "Entity": "Medidas"
                   }
                 },
-                "Property": "Penalty Consolidado"
+                "Property": "Penalty Consolidado CY"
               }
             },
             "direction": "Descending"
