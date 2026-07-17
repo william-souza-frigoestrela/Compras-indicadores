@@ -1228,9 +1228,10 @@ table Medidas
 	measure 'Resultado Liquido Saving' =
 			
 			[Saving Total] - [Penalty Total]
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: 50f584d6-8617-4402-b652-4715d3ca00c3
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure 'Saving Total Format' =
 			
@@ -1535,9 +1536,10 @@ table Medidas
 			    )
 			)
 			```
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: 033dd52d-0655-41c1-b2bf-ec07ad79529d
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure 'Saving Consolidado CY' = ```
 			
@@ -1732,9 +1734,10 @@ table Medidas
 			            0
 			        )
 			)
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: 42be2a9b-9ea8-4da2-a773-e4359c3b7719
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure 'Teste Data' = ```
 			
@@ -1782,9 +1785,10 @@ table Medidas
 			)
 			
 			```
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: 837bbd2d-f3a5-4598-86bc-d0f749c8bcb9
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure 'Resultado Operacional Mensalizado' = ```
 			
@@ -1800,9 +1804,10 @@ table Medidas
 			        )
 			    )
 			```
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: 6828b200-d2d7-4f9d-a17c-dee3a06dd98b
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure 'Resultado Operacional Mensal CY' =
 			
@@ -1816,8 +1821,10 @@ table Medidas
 			            DCalendario[Anomês] = MesDoEixo -- Força a medida a rodar como se APENAS esse mês estivesse selecionado
 			        )
 			    )
-		formatString: 0.00
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: 95c1e5e9-fc55-4660-9ac8-64d9f62d483b
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure 'Resultado Operacional Mensal LY' = ```
 			
@@ -1827,8 +1834,10 @@ table Medidas
 			)
 			
 			```
-		formatString: 0.00
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: 6f939a45-66cb-487c-adad-2c4359b3fb98
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure 'Resultado operacional dinamico CY' = ```
 			
@@ -1902,8 +1911,10 @@ table Medidas
 			    )
 			)
 			```
-		formatString: 0.00
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: 2b816645-445b-4dba-adef-120fffc3f0a0
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure 'Resultado operacional dinamico LY' = ```
 			
@@ -1913,8 +1924,10 @@ table Medidas
 			)
 			
 			```
-		formatString: 0.00
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: 75f4fa38-162f-4c77-9ab1-91d1375d20c3
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure 'Var % Resultado operacional mensal LY' =
 			
@@ -1950,9 +1963,10 @@ table Medidas
 			
 			CALCULATE([Resultado operacional CY],
 			SAMEPERIODLASTYEAR(dCalendario[Date]))
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: 7d342e10-fdf5-4b72-8fc2-19c1feda7421
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure 'Var % Saving LY' =
 			
@@ -1998,9 +2012,10 @@ table Medidas
 			    
 			)
 			```
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: 6c6345a9-9983-4d35-b76b-4461755abf03
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure 'Var % Resultado operacional LY' =
 			
