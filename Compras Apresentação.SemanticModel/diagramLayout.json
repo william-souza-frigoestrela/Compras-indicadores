@@ -5,7 +5,7 @@
       "ordinal": 0,
       "scrollPosition": {
         "x": 0,
-        "y": 0
+        "y": 88.787988276050342
       },
       "nodes": [
         {
@@ -16,11 +16,10 @@
           "nodeIndex": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
           "nodeLineageTag": "19b536f3-ec44-4b32-b10e-2c74fefcfcc2",
           "size": {
-            "height": 248,
+            "height": 300,
             "width": 234
           },
-          "zIndex": 11,
-          "expandedHeight": 300
+          "zIndex": 11
         },
         {
           "location": {
@@ -30,10 +29,11 @@
           "nodeIndex": "dCalendario",
           "nodeLineageTag": "66c2ee74-5a6a-4394-a31b-150a14799414",
           "size": {
-            "height": 200,
+            "height": 104,
             "width": 234
           },
-          "zIndex": 8
+          "zIndex": 8,
+          "expandedHeight": 200
         },
         {
           "location": {
