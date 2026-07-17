@@ -7172,28 +7172,6 @@ cultureInfo pt-BR
 			        }
 			      ]
 			    },
-			    "dcevpb_solicitacaotempoaprovacao.empresanropedido": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
-			          "ConceptualProperty": "Empresa-Nropedido"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "empresa-nropedido": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "empresa nropedido": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        }
-			      ]
-			    },
 			    "dcevpb_solicitacaotempoaprovacao.marcafornecedor": {
 			      "Definition": {
 			        "Binding": {

@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dCalendario"
+                      "Entity": "dComprador"
                     }
                   },
-                  "Property": "Anomês"
+                  "Property": "NOME"
                 }
               },
-              "queryRef": "dCalendario.Anomês",
-              "nativeQueryRef": "Anomês",
+              "queryRef": "dComprador.NOME",
+              "nativeQueryRef": "NOME",
               "active": true
             }
           ]
@@ -45,7 +45,7 @@
         "levels": [
           {
             "queryRefs": [
-              "dCalendario.Anomês"
+              "dComprador.NOME"
             ],
             "isCollapsed": true,
             "isPinned": true
@@ -62,6 +62,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Dropdown'"
+                }
+              }
+            },
+            "isInvertedSelectionMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -81,47 +88,6 @@
                     }
                   }
                 }
-              }
-            },
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "d",
-                    "Entity": "dCalendario",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "d"
-                                }
-                              },
-                              "Property": "Anomês"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'2026/06'"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    }
-                  }
-                ]
               }
             }
           }

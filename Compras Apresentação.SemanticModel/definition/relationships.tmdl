@@ -46,3 +46,8 @@ relationship 75f25e38-7e39-8694-5b56-a0edebaa2ad7
 	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.STATUS
 	toColumn: dStatus.STATUS
 
+relationship 15059b8c-e10c-48a1-5171-7021080796cd
+	isActive: false
+	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.SOLIAPROVACAO
+	toColumn: dCalendario.Date
+

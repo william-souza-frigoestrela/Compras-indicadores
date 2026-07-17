@@ -321,14 +321,6 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 
 		annotation SummarizationSetBy = Automatic
 
-	column Empresa-Nropedido
-		dataType: string
-		lineageTag: ac2c9e63-7e59-4cd9-a328-ccf33313ef7d
-		summarizeBy: none
-		sourceColumn: Empresa-Nropedido
-
-		annotation SummarizationSetBy = Automatic
-
 	column MARCAFORNECEDOR
 		dataType: string
 		lineageTag: 73d7f2a9-8ed8-4fd3-981b-ac871eef51b6
@@ -353,6 +345,14 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 
 		annotation SummarizationSetBy = Automatic
 
+	column Empresa-Nrosolicitacao
+		dataType: string
+		lineageTag: baa45195-25a9-4bbe-a2bb-988707982bab
+		summarizeBy: none
+		sourceColumn: Empresa-Nrosolicitacao
+
+		annotation SummarizationSetBy = Automatic
+
 	partition DCEVPB_SOLICITACAOTEMPOAPROVACAO = m
 		mode: import
 		source = ```
@@ -367,7 +367,7 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 				    #"Consultas Mescladas" = Table.NestedJoin(#"Coluna Mesclada Inserida", {"GRUPO"}, dCategoria, {"GRUPO"}, "dCategoria", JoinKind.LeftOuter),
 				    #"dCategoria Expandido" = Table.ExpandTableColumn(#"Consultas Mescladas", "dCategoria", {"CATEGORIA"}, {"CATEGORIA"}),
 				    #"Linhas Filtradas" = Table.SelectRows(#"dCategoria Expandido", each ([CATEGORIA] <> "ALIMENTOS" and [CATEGORIA] <> "ANIMAIS" and [CATEGORIA] <> "MATERIA PRIMA Animais" and [CATEGORIA] <> "MDI Insumo Agropecuário" and [CATEGORIA] <> "MRO Agropecuário" and [CATEGORIA] <> "PATRIMONIO Agropecuário" and [CATEGORIA] <> "PATRIMONIO Produção" and [CATEGORIA] <> "PRODUÇÃO") and ([NOME] <> "SOLICITAÇÃO SIMPLIFICADA") and ([SUBGRUPO] <> "AGUA E ESGOTO" and [SUBGRUPO] <> "ASSINATURA DE REVISTAS E JORNA" and [SUBGRUPO] <> "BRINQUEDO" and [SUBGRUPO] <> "CARNE C/ OSSO" and [SUBGRUPO] <> "CARNE COM OSSO RESF." and [SUBGRUPO] <> "CERTIFICADO DIGITAL" and [SUBGRUPO] <> "COMISSAO" and [SUBGRUPO] <> "CURSOS E TREINAMENTOS" and [SUBGRUPO] <> "ENERGIA ELETRICA" and [SUBGRUPO] <> "ESCOLTA E TRANSPORTES" and [SUBGRUPO] <> "EVENTOS" and [SUBGRUPO] <> "FAZENDA" and [SUBGRUPO] <> "HOSPEDAGENS E DESPESAS DE VIAG" and [SUBGRUPO] <> "IMPOSTOS E TAXAS" and [SUBGRUPO] <> "LICENCAS" and [SUBGRUPO] <> "MANUTENCAO EM EQUIPAMENTOS ADM" and [SUBGRUPO] <> "MANUTENCAO TELEFONIA" and [SUBGRUPO] <> "SERVICO ADUANEIRO" and [SUBGRUPO] <> "SERVICO COMERCIAL" and [SUBGRUPO] <> "SERVICO DE BUFFET E DECORACAO" and [SUBGRUPO] <> "SERVICO DE CARGA E DESCARGA" and [SUBGRUPO] <> "SERVICOS DE SAUDE")),
-				    #"Coluna Mesclada Inserida1" = Table.AddColumn(#"Linhas Filtradas", "Empresa-Nropedido", each Text.Combine({[NROEMPRESA], [NROPEDIDO]}, "-"), type text)
+				    #"Coluna Mesclada Inserida1" = Table.AddColumn(#"Linhas Filtradas", "Empresa-Nrosolicitacao", each Text.Combine({[NROEMPRESA], [NROSOLICITACAO]}, "-"), type text)
 				in
 				    #"Coluna Mesclada Inserida1"
 				```
