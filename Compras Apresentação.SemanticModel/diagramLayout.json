@@ -5,7 +5,7 @@
       "ordinal": 0,
       "scrollPosition": {
         "x": 0,
-        "y": 74.6946568036614
+        "y": 0
       },
       "nodes": [
         {
@@ -203,19 +203,6 @@
             "width": 234
           },
           "zIndex": 1
-        },
-        {
-          "location": {
-            "x": 2975.1719726441174,
-            "y": 475.51930104594817
-          },
-          "nodeIndex": "pStatus_Item",
-          "nodeLineageTag": "ad4dc104-993e-4072-abc6-73489f812dff",
-          "size": {
-            "height": 152,
-            "width": 234
-          },
-          "zIndex": 2
         },
         {
           "location": {

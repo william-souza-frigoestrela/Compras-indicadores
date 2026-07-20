@@ -355,7 +355,7 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 
 	column DATA_SOLIAPROVACAO
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		lineageTag: b5040422-50a6-415a-8c60-82a73e1e9d1a
 		summarizeBy: none
 		sourceColumn: DATA_SOLIAPROVACAO
