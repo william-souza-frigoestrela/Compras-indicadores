@@ -68,7 +68,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''dFornecedores''[Fornecedor]'"
+                                "Value": "'''dCategoria''[CATEGORIA]'"
                               }
                             }
                           ]
@@ -96,7 +96,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''dFornecedores''[Fornecedor]'"
+                                      "Value": "'''dCategoria''[CATEGORIA]'"
                                     }
                                   }
                                 ]
@@ -120,7 +120,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "FORNECEDOR"
+                            "0": "CATEGORIA"
                           }
                         ]
                       }

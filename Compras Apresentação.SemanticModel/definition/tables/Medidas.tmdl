@@ -2085,6 +2085,40 @@ table Medidas
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 43a730ba-43b5-4b20-8af3-0960abf99c58
 
+	measure 'Valor geral 1_oferta' =
+			
+			SUM(DCEVPBI_PEDIDOPRAZOPAGAMENTO[VLRUNITARIO])
+		lineageTag: aeeb2181-8a8c-40a3-b648-869983f67c2e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Valor Geral Pago'
+		lineageTag: ff9c4269-c0c9-498e-80d6-91db711b4c26
+
+	measure Cost = ```
+			
+			var valor_unit_prazo = SUM(DCEVPBI_SOLICITACAPRECOSAPROVADO[VLRUNITPRAZO])
+			
+			var valor_unit_pago = sum(DCEVPBI_SOLICITACAPRECOSAPROVADO[VLRUNITPAGO])
+			
+			return 
+			
+			valor_unit_prazo-valor_unit_pago
+			```
+		lineageTag: fe29ee30-8340-4dc9-afaf-81d001bdd2e5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '1ª Oferta' = sum(DCEVPBI_SOLICITACAPRECOSAPROVADO[VLRUNITPRAZO])
+		lineageTag: eda537eb-cc3d-4229-bc51-ebaf00325b11
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Valor pago' = sum(DCEVPBI_SOLICITACAPRECOSAPROVADO[VLRUNITPAGO])
+		lineageTag: afb81837-5859-4d2c-9d1e-57702a08b546
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Column
 		isHidden
 		formatString: 0

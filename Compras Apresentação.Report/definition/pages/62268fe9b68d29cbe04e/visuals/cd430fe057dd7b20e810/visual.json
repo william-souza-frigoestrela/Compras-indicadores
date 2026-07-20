@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "24beab5592a14d0a9ca7",
+  "name": "cd430fe057dd7b20e810",
   "position": {
-    "x": 1107.1044776119404,
-    "y": 109.85074626865672,
-    "z": 12000,
-    "height": 64,
-    "width": 142.32835820895522,
-    "tabOrder": 12000
+    "x": 658.81773399014776,
+    "y": 93.103448275862064,
+    "z": 2000,
+    "height": 56.748768472906406,
+    "width": 180,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,34 +23,31 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "% Variação Label operacional"
+                  "Property": "Spend LY"
                 }
               },
-              "queryRef": "Medidas.% Variação Label operacional",
-              "nativeQueryRef": "% Variação Label operacional"
-            }
-          ]
-        },
-        "Tooltips": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas"
-                    }
-                  },
-                  "Property": "Penalty Consolidado LY"
-                }
-              },
-              "queryRef": "Medidas.Penalty Consolidado LY",
-              "nativeQueryRef": "Penalty Consolidado LY"
+              "queryRef": "Medidas.Gastos impostos LY",
+              "nativeQueryRef": "Spend LY"
             }
           ]
         }
       },
       "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Medidas"
+                  }
+                },
+                "Property": "Spend LY"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
         "isDefaultSort": true
       }
     },
@@ -102,66 +99,6 @@
                 }
               }
             }
-          }
-        }
-      ],
-      "outline": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Medidas.Gastos com impostos"
-          }
-        }
-      ],
-      "divider": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Medidas.Gastos com impostos"
           }
         }
       ],
@@ -229,9 +166,97 @@
           "selector": {
             "metadata": "Medidas.Gastos com impostos"
           }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas.Gastos impostos LY"
+          }
+        }
+      ],
+      "outline": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas.Gastos com impostos"
+          }
+        },
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "divider": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas.Gastos com impostos"
+          }
+        },
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
         }
       ],
       "label": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas.Gastos com impostos"
+          }
+        },
         {
           "properties": {
             "show": {
@@ -256,72 +281,6 @@
           },
           "selector": {
             "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Medidas.Gastos com impostos"
-          }
-        }
-      ],
-      "border": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        }
-      ],
-      "overFlow": [
-        {
-          "properties": {
-            "overFlowStyle": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
-            "overFlowDirection": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "padding": [
-        {
-          "properties": {
-            "paddingUniform": {
-              "expr": {
-                "Literal": {
-                  "Value": "9L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Medidas.Gastos com impostos"
           }
         }
       ],
@@ -548,6 +507,58 @@
             "metadata": "Medidas.Gastos com impostos"
           }
         }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "overFlow": [
+        {
+          "properties": {
+            "overFlowStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "overFlowDirection": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "paddingUniform": {
+              "expr": {
+                "Literal": {
+                  "Value": "9L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas.Gastos com impostos"
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -557,7 +568,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Vs LY'"
+                  "Value": "'Spend LY'"
                 }
               }
             },
@@ -604,27 +615,21 @@
           }
         }
       ],
-      "background": [
+      "spacing": [
         {
           "properties": {
-            "show": {
+            "verticalSpacing": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
+                  "Value": "2D"
                 }
               }
             }
+          },
+          "selector": {
+            "id": "default"
           }
-        }
-      ],
-      "spacing": [
+        },
         {
           "properties": {
             "customizeSpacing": {
@@ -649,19 +654,25 @@
               }
             }
           }
-        },
+        }
+      ],
+      "background": [
         {
           "properties": {
-            "verticalSpacing": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "2D"
+                  "Value": "false"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }
-          },
-          "selector": {
-            "id": "default"
           }
         }
       ],
@@ -672,19 +683,6 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "visualTooltip": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
                 }
               }
             }

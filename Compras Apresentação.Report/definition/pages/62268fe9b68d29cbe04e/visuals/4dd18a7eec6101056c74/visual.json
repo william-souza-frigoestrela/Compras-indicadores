@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "1b1692b72fa29c8924d7",
+  "name": "4dd18a7eec6101056c74",
   "position": {
-    "x": 293.24758842443731,
-    "y": 79.228295819935681,
-    "z": 6000,
-    "height": 61.736334405144689,
-    "width": 278.84244372990355,
-    "tabOrder": 6000
+    "x": 191.5270935960591,
+    "y": 0,
+    "z": 0,
+    "height": 57.635467980295566,
+    "width": 280.19704433497537,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                      "Entity": "dComprador"
                     }
                   },
-                  "Property": "NROSOLICITACAO"
+                  "Property": "NOME"
                 }
               },
-              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.NROSOLICITACAO",
-              "nativeQueryRef": "NROSOLICITACAO",
+              "queryRef": "dComprador.NOME",
+              "nativeQueryRef": "NOME",
               "active": true
             }
           ]
@@ -45,7 +45,7 @@
         "levels": [
           {
             "queryRefs": [
-              "DCEVPB_SOLICITACAOTEMPOAPROVACAO.NROSOLICITACAO"
+              "dComprador.NOME"
             ],
             "isCollapsed": true,
             "isPinned": true
@@ -64,6 +64,13 @@
                   "Value": "'Dropdown'"
                 }
               }
+            },
+            "isInvertedSelectionMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }
@@ -80,13 +87,6 @@
                       "Percent": 0
                     }
                   }
-                }
-              }
-            },
-            "selfFilterEnabled": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
                 }
               }
             }
@@ -118,6 +118,20 @@
                   }
                 }
               }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "padding": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
             }
           }
         }
@@ -140,7 +154,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Nro Solicitação'"
+                  "Value": "'Ano / Mês'"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
                 }
               }
             }
@@ -188,6 +209,13 @@
                   "Value": "false"
                 }
               }
+            },
+            "strictSingleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -224,6 +252,11 @@
           }
         }
       ]
+    },
+    "syncGroup": {
+      "groupName": "Anomês",
+      "fieldChanges": true,
+      "filterChanges": true
     },
     "drillFilterOtherVisuals": true
   }

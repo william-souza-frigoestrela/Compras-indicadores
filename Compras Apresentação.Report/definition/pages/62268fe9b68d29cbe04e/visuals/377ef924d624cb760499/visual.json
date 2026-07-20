@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "24beab5592a14d0a9ca7",
+  "name": "377ef924d624cb760499",
   "position": {
-    "x": 1107.1044776119404,
-    "y": 109.85074626865672,
-    "z": 12000,
-    "height": 64,
-    "width": 142.32835820895522,
-    "tabOrder": 12000
+    "x": 408.76847290640393,
+    "y": 89.556650246305423,
+    "z": 6000,
+    "height": 63.842364532019708,
+    "width": 158.7192118226601,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,29 +23,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "% Variação Label operacional"
+                  "Property": "% Variação Label spend"
                 }
               },
-              "queryRef": "Medidas.% Variação Label operacional",
-              "nativeQueryRef": "% Variação Label operacional"
-            }
-          ]
-        },
-        "Tooltips": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas"
-                    }
-                  },
-                  "Property": "Penalty Consolidado LY"
-                }
-              },
-              "queryRef": "Medidas.Penalty Consolidado LY",
-              "nativeQueryRef": "Penalty Consolidado LY"
+              "queryRef": "Medidas.% Variação Label spend",
+              "nativeQueryRef": "% Variação Label spend"
             }
           ]
         }
@@ -228,6 +210,20 @@
           },
           "selector": {
             "metadata": "Medidas.Gastos com impostos"
+          }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas.% Variação Label spend"
           }
         }
       ],
@@ -672,19 +668,6 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "visualTooltip": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
                 }
               }
             }
