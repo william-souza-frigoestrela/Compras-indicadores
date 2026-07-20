@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "c07ec58288c24c17a006",
   "position": {
-    "x": 49.144851657940663,
-    "y": 109.45898778359512,
+    "x": 49.389067524115752,
+    "y": 167.71704180064307,
     "z": 2000,
-    "height": 549.52879581151831,
-    "width": 1192.8795811518326,
+    "height": 490.80385852090029,
+    "width": 1192.5401929260449,
     "tabOrder": 2000
   },
   "visual": {
@@ -117,7 +117,8 @@
                 }
               },
               "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.MARCASOLICITADA",
-              "nativeQueryRef": "MARCASOLICITADA"
+              "nativeQueryRef": "MARCA_SOLICITADA",
+              "displayName": "MARCA_SOLICITADA"
             },
             {
               "field": {
@@ -231,7 +232,8 @@
                 }
               },
               "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.DESCRICAOCOTACAO",
-              "nativeQueryRef": "DESCRICAOCOTACAO"
+              "nativeQueryRef": "DESCRICAO_COTACAO",
+              "displayName": "DESCRICAO_COTACAO"
             },
             {
               "field": {
@@ -259,7 +261,8 @@
                 }
               },
               "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.DESCRICAOCOTACAO",
-              "nativeQueryRef": "DESCRICAOCOTACAO"
+              "nativeQueryRef": "DESCRICAO_COTACAO",
+              "displayName": "DESCRICAO_COTACAO"
             }
           ]
         }

@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                      "Entity": "dCalendario"
                     }
                   },
-                  "Property": "SOLIAPROVACAO"
+                  "Property": "Date"
                 }
               },
-              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.SOLIAPROVACAO",
-              "nativeQueryRef": "SOLIAPROVACAO",
+              "queryRef": "dCalendario.Date",
+              "nativeQueryRef": "Date",
               "active": true
             }
           ]
@@ -40,10 +40,10 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                    "Entity": "dCalendario"
                   }
                 },
-                "Property": "SOLIAPROVACAO"
+                "Property": "Date"
               }
             },
             "direction": "Ascending"
@@ -59,14 +59,14 @@
             "startDate": {
               "expr": {
                 "Literal": {
-                  "Value": "datetime'2026-01-01T00:00:00'"
+                  "Value": "datetime'2025-11-22T00:00:00'"
                 }
               }
             },
             "endDate": {
               "expr": {
                 "Literal": {
-                  "Value": "datetime'2026-07-17T16:23:40'"
+                  "Value": "datetime'2026-07-17T00:00:00'"
                 }
               }
             },
@@ -88,8 +88,8 @@
                 "Version": 2,
                 "From": [
                   {
-                    "Name": "d",
-                    "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
+                    "Name": "d1",
+                    "Entity": "dCalendario",
                     "Type": 0
                   }
                 ],
@@ -104,15 +104,15 @@
                               "Column": {
                                 "Expression": {
                                   "SourceRef": {
-                                    "Source": "d"
+                                    "Source": "d1"
                                   }
                                 },
-                                "Property": "SOLIAPROVACAO"
+                                "Property": "Date"
                               }
                             },
                             "Right": {
                               "Literal": {
-                                "Value": "datetime'2026-01-01T00:00:00'"
+                                "Value": "datetime'2025-11-22T00:00:00'"
                               }
                             }
                           }
@@ -124,10 +124,10 @@
                               "Column": {
                                 "Expression": {
                                   "SourceRef": {
-                                    "Source": "d"
+                                    "Source": "d1"
                                   }
                                 },
-                                "Property": "SOLIAPROVACAO"
+                                "Property": "Date"
                               }
                             },
                             "Right": {
@@ -178,6 +178,20 @@
                       "Percent": 0
                     }
                   }
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Data Solicitação Aprovada'"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
                 }
               }
             }
