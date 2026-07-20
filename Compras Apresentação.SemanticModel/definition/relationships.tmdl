@@ -46,8 +46,12 @@ relationship 75f25e38-7e39-8694-5b56-a0edebaa2ad7
 	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.STATUS
 	toColumn: dStatus.STATUS
 
-relationship 15059b8c-e10c-48a1-5171-7021080796cd
+relationship 08fc06f6-958f-f399-e089-4b81900db0cc
 	isActive: false
-	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.SOLIAPROVACAO
+	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.DATA_SOLIAPROVACAO
 	toColumn: dCalendario.Date
+
+relationship AutoDetected_16f0bac0-bb6b-4c4f-9e34-218ed31afd10
+	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.STATUSITEM
+	toColumn: d_Status_item.STATUSITEM
 

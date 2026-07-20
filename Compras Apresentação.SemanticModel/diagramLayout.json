@@ -5,21 +5,22 @@
       "ordinal": 0,
       "scrollPosition": {
         "x": 0,
-        "y": 88.787988276050342
+        "y": 74.6946568036614
       },
       "nodes": [
         {
           "location": {
-            "x": 695.35863558889548,
-            "y": 831.03860209189634
+            "x": 615.02664619627853,
+            "y": 980.427915699219
           },
           "nodeIndex": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
           "nodeLineageTag": "19b536f3-ec44-4b32-b10e-2c74fefcfcc2",
           "size": {
-            "height": 300,
+            "height": 272,
             "width": 234
           },
-          "zIndex": 11
+          "zIndex": 12,
+          "expandedHeight": 300
         },
         {
           "location": {
@@ -32,7 +33,7 @@
             "height": 104,
             "width": 234
           },
-          "zIndex": 8,
+          "zIndex": 9,
           "expandedHeight": 200
         },
         {
@@ -46,7 +47,7 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 9
+          "zIndex": 10
         },
         {
           "location": {
@@ -59,7 +60,7 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 10
+          "zIndex": 11
         },
         {
           "location": {
@@ -72,7 +73,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 7
+          "zIndex": 8
         },
         {
           "location": {
@@ -85,7 +86,7 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 1
+          "zIndex": 3
         },
         {
           "location": {
@@ -98,12 +99,12 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 2
+          "zIndex": 4
         },
         {
           "location": {
-            "x": 1037.2226702024614,
-            "y": 828.51325331272449
+            "x": 945.61601563193335,
+            "y": 979.31190006728616
           },
           "nodeIndex": "DCEVPBI_PEDIDOPRAZOPAGAMENTO",
           "nodeLineageTag": "91814723-1adc-4476-a64d-40c28ea44d0e",
@@ -111,7 +112,7 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 13,
+          "zIndex": 14,
           "expandedHeight": 296
         },
         {
@@ -125,7 +126,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 3
+          "zIndex": 15
         },
         {
           "location": {
@@ -137,7 +138,7 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 4
+          "zIndex": 5
         },
         {
           "location": {
@@ -149,7 +150,7 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 5
+          "zIndex": 6
         },
         {
           "location": {
@@ -162,7 +163,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 6
+          "zIndex": 7
         },
         {
           "location": {
@@ -175,7 +176,7 @@
             "height": 104,
             "width": 234
           },
-          "zIndex": 12
+          "zIndex": 13
         },
         {
           "location": {
@@ -188,7 +189,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 14
+          "zIndex": 16
         },
         {
           "location": {
@@ -199,6 +200,32 @@
           "nodeLineageTag": "d642ee45-89ac-4b65-b9fc-25c940dae04f",
           "size": {
             "height": 152,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 2975.1719726441174,
+            "y": 475.51930104594817
+          },
+          "nodeIndex": "pStatus_Item",
+          "nodeLineageTag": "ad4dc104-993e-4072-abc6-73489f812dff",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 1250.8722378286932,
+            "y": 549.5299595244594
+          },
+          "nodeIndex": "d_Status_item",
+          "nodeLineageTag": "a4618919-163d-4fa9-be5f-dc725375d607",
+          "size": {
+            "height": 128,
             "width": 234
           },
           "zIndex": 0

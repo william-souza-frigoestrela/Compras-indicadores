@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "087e5c45dc4500055dcd",
+  "name": "1b1692b72fa29c8924d7",
   "position": {
-    "x": 574.14790996784564,
-    "y": 16.463022508038584,
-    "z": 1000,
-    "height": 62.765273311897104,
-    "width": 242.82958199356912,
-    "tabOrder": 1000
+    "x": 293.24758842443731,
+    "y": 79.228295819935681,
+    "z": 3003,
+    "height": 61.736334405144689,
+    "width": 278.84244372990355,
+    "tabOrder": 3003
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dStatus"
+                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
                     }
                   },
-                  "Property": "DESC STATUS"
+                  "Property": "NROSOLICITACAO"
                 }
               },
-              "queryRef": "dStatus.DESC STATUS",
-              "nativeQueryRef": "DESC STATUS",
+              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.NROSOLICITACAO",
+              "nativeQueryRef": "NROSOLICITACAO",
               "active": true
             }
           ]
@@ -45,7 +45,7 @@
         "levels": [
           {
             "queryRefs": [
-              "dStatus.DESC STATUS"
+              "DCEVPB_SOLICITACAOTEMPOAPROVACAO.NROSOLICITACAO"
             ],
             "isCollapsed": true,
             "isPinned": true
@@ -88,54 +88,6 @@
                 "Literal": {
                   "Value": "true"
                 }
-              }
-            },
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "d",
-                    "Entity": "dStatus",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "d"
-                                }
-                              },
-                              "Property": "DESC STATUS"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'COTAÇÃO PRÉ-APROVADA'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'SOLICITAÇÃO APROVADA'"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    }
-                  }
-                ]
               }
             }
           }
@@ -188,7 +140,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Status'"
+                  "Value": "'Nro Solicitação'"
                 }
               }
             }

@@ -8,7 +8,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_QueryOrder = ["DCEVPB_SOLICITACAOTEMPOAPROVACAO","dEmpresa","dPrioridade","dCategoria","DCEVPBI_PEDIDOPRAZOPAGAMENTO","dFornecedores","Periodos_Comparativo","dComprador","dStatus"]
+annotation PBI_QueryOrder = ["DCEVPB_SOLICITACAOTEMPOAPROVACAO","dEmpresa","dPrioridade","dCategoria","DCEVPBI_PEDIDOPRAZOPAGAMENTO","dFornecedores","Periodos_Comparativo","dComprador","dStatus","d_Status_item"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -27,6 +27,7 @@ ref table Periodos_Comparativo
 ref table dComprador
 ref table dStatus
 ref table pSolicitacao
+ref table d_Status_item
 
 ref cultureInfo pt-BR
 

@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "087e5c45dc4500055dcd",
+  "name": "1c65bb6942f49f13131d",
   "position": {
     "x": 574.14790996784564,
-    "y": 16.463022508038584,
-    "z": 1000,
-    "height": 62.765273311897104,
+    "y": 79.228295819935681,
+    "z": 3002,
+    "height": 61.736334405144689,
     "width": 242.82958199356912,
-    "tabOrder": 1000
+    "tabOrder": 3002
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dStatus"
+                      "Entity": "d_Status_item"
                     }
                   },
-                  "Property": "DESC STATUS"
+                  "Property": "Desc_status_item"
                 }
               },
-              "queryRef": "dStatus.DESC STATUS",
-              "nativeQueryRef": "DESC STATUS",
+              "queryRef": "d_Status_item.Desc_status_item",
+              "nativeQueryRef": "Desc_status_item",
               "active": true
             }
           ]
@@ -45,7 +45,7 @@
         "levels": [
           {
             "queryRefs": [
-              "dStatus.DESC STATUS"
+              "d_Status_item.Desc_status_item"
             ],
             "isCollapsed": true,
             "isPinned": true
@@ -88,54 +88,6 @@
                 "Literal": {
                   "Value": "true"
                 }
-              }
-            },
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "d",
-                    "Entity": "dStatus",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "d"
-                                }
-                              },
-                              "Property": "DESC STATUS"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'COTAÇÃO PRÉ-APROVADA'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'SOLICITAÇÃO APROVADA'"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    }
-                  }
-                ]
               }
             }
           }

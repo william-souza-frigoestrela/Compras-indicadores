@@ -28,7 +28,6 @@
               },
               "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.NOME",
               "nativeQueryRef": "Comprador",
-              "active": true,
               "displayName": "Comprador"
             }
           ],

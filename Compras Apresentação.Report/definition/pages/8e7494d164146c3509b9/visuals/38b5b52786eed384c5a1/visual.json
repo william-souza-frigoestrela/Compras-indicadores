@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "95e4255c3da77078d104",
+  "name": "38b5b52786eed384c5a1",
   "position": {
-    "x": 1017.9604261796043,
-    "y": 16.560121765601217,
-    "z": 4000,
-    "height": 84.748858447488587,
-    "width": 217.22983257229831,
-    "tabOrder": 4000
+    "x": 1017.620578778135,
+    "y": 16.463022508038584,
+    "z": 3001,
+    "height": 109.06752411575562,
+    "width": 217.10610932475882,
+    "tabOrder": 3001
   },
   "visual": {
     "visualType": "slicer",
@@ -20,16 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                      "Entity": "dCalendario"
                     }
                   },
-                  "Property": "SOLIAPROVACAO"
+                  "Property": "Date"
                 }
               },
-              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.SOLIAPROVACAO",
-              "nativeQueryRef": "Dta Aprovação",
-              "active": true,
-              "displayName": "Dta Aprovação"
+              "queryRef": "dCalendario.Date",
+              "nativeQueryRef": "Date",
+              "active": true
             }
           ]
         }
@@ -41,10 +40,10 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                    "Entity": "dCalendario"
                   }
                 },
-                "Property": "SOLIAPROVACAO"
+                "Property": "Date"
               }
             },
             "direction": "Ascending"
@@ -60,14 +59,14 @@
             "startDate": {
               "expr": {
                 "Literal": {
-                  "Value": "datetime'2025-04-08T00:00:00'"
+                  "Value": "datetime'2025-11-22T00:00:00'"
                 }
               }
             },
             "endDate": {
               "expr": {
                 "Literal": {
-                  "Value": "datetime'2026-05-14T00:00:00'"
+                  "Value": "datetime'2026-07-17T00:00:00'"
                 }
               }
             },
@@ -89,8 +88,8 @@
                 "Version": 2,
                 "From": [
                   {
-                    "Name": "d",
-                    "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
+                    "Name": "d1",
+                    "Entity": "dCalendario",
                     "Type": 0
                   }
                 ],
@@ -105,15 +104,15 @@
                               "Column": {
                                 "Expression": {
                                   "SourceRef": {
-                                    "Source": "d"
+                                    "Source": "d1"
                                   }
                                 },
-                                "Property": "SOLIAPROVACAO"
+                                "Property": "Date"
                               }
                             },
                             "Right": {
                               "Literal": {
-                                "Value": "datetime'2025-04-08T00:00:00'"
+                                "Value": "datetime'2025-11-22T00:00:00'"
                               }
                             }
                           }
@@ -125,15 +124,15 @@
                               "Column": {
                                 "Expression": {
                                   "SourceRef": {
-                                    "Source": "d"
+                                    "Source": "d1"
                                   }
                                 },
-                                "Property": "SOLIAPROVACAO"
+                                "Property": "Date"
                               }
                             },
                             "Right": {
                               "Literal": {
-                                "Value": "datetime'2026-05-15T00:00:00'"
+                                "Value": "datetime'2026-07-18T00:00:00'"
                               }
                             }
                           }
@@ -179,6 +178,20 @@
                       "Percent": 0
                     }
                   }
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Data Solicitação Aprovada'"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
                 }
               }
             }
