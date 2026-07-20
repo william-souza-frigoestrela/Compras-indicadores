@@ -10,7 +10,7 @@
     "tabOrder": 3000
   },
   "visual": {
-    "visualType": "lineChart",
+    "visualType": "areaChart",
     "query": {
       "queryState": {
         "Category": {
@@ -42,12 +42,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Spend CY"
+                  "Property": "1ª Oferta"
                 }
               },
-              "queryRef": "Medidas.Gastos com impostos",
-              "nativeQueryRef": "Spend CY",
-              "displayName": "Spend CY"
+              "queryRef": "Medidas.1ª Oferta",
+              "nativeQueryRef": "1ª Oferta"
             },
             {
               "field": {
@@ -57,11 +56,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Spend LY"
+                  "Property": "Valor pago"
                 }
               },
-              "queryRef": "Medidas.Gastos impostos LY",
-              "nativeQueryRef": "Spend LY"
+              "queryRef": "Medidas.Valor pago",
+              "nativeQueryRef": "Valor pago"
             }
           ]
         }
@@ -117,6 +116,13 @@
                       "Value": "'#FFFFFF'"
                     }
                   }
+                }
+              }
+            },
+            "matchLineColor": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -181,10 +187,24 @@
             "areaShow": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
+          }
+        },
+        {
+          "properties": {
+            "areaMatchStrokeColor": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas.1ª Oferta"
           }
         }
       ],
@@ -233,8 +253,8 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 1,
-                      "Percent": 0.6
+                      "ColorId": 8,
+                      "Percent": 0
                     }
                   }
                 }
@@ -242,7 +262,7 @@
             }
           },
           "selector": {
-            "metadata": "Medidas.Gastos com impostos"
+            "metadata": "Medidas.1ª Oferta"
           }
         },
         {
@@ -252,7 +272,7 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 8,
+                      "ColorId": 1,
                       "Percent": 0.6
                     }
                   }
@@ -261,7 +281,7 @@
             }
           },
           "selector": {
-            "metadata": "Medidas.Gastos impostos LY"
+            "metadata": "Medidas.Valor pago"
           }
         }
       ]
