@@ -5,7 +5,7 @@
       "ordinal": 0,
       "scrollPosition": {
         "x": 0,
-        "y": 560.9145926010799
+        "y": 269.18263112262883
       },
       "nodes": [
         {
@@ -19,7 +19,7 @@
             "height": 296,
             "width": 234
           },
-          "zIndex": 12,
+          "zIndex": 13,
           "expandedHeight": 300
         },
         {
@@ -33,7 +33,7 @@
             "height": 104,
             "width": 234
           },
-          "zIndex": 9,
+          "zIndex": 10,
           "expandedHeight": 200
         },
         {
@@ -47,7 +47,7 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 10
+          "zIndex": 11
         },
         {
           "location": {
@@ -60,7 +60,7 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 11
+          "zIndex": 12
         },
         {
           "location": {
@@ -73,7 +73,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 8
+          "zIndex": 9
         },
         {
           "location": {
@@ -86,7 +86,7 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 3
+          "zIndex": 4
         },
         {
           "location": {
@@ -99,7 +99,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 4
+          "zIndex": 5
         },
         {
           "location": {
@@ -138,7 +138,7 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 5
+          "zIndex": 6
         },
         {
           "location": {
@@ -150,7 +150,7 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 6
+          "zIndex": 7
         },
         {
           "location": {
@@ -163,7 +163,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 7
+          "zIndex": 8
         },
         {
           "location": {
@@ -176,7 +176,7 @@
             "height": 104,
             "width": 234
           },
-          "zIndex": 13
+          "zIndex": 17
         },
         {
           "location": {
@@ -202,7 +202,7 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 1
+          "zIndex": 3
         },
         {
           "location": {
@@ -215,7 +215,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 1
         },
         {
           "location": {
@@ -225,11 +225,10 @@
           "nodeIndex": "DCEVPBI_SOLICITACAPRECOSAPROVADO",
           "nodeLineageTag": "3f94f010-3472-4511-ae96-7c313640afec",
           "size": {
-            "height": 104,
+            "height": 300,
             "width": 234
           },
-          "zIndex": 0,
-          "expandedHeight": 300
+          "zIndex": 2
         }
       ],
       "name": "Todas as tabelas",

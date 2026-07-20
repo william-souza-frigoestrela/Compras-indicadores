@@ -59,3 +59,7 @@ relationship f139c6a8-f209-f8e2-1f3e-daddb6b11c37
 	fromColumn: DCEVPBI_SOLICITACAPRECOSAPROVADO.DTASOLICITACAO
 	toColumn: dCalendario.Date
 
+relationship 7889c9f3-6b87-ab41-d1f8-e3d452d6ecad
+	fromColumn: DCEVPBI_SOLICITACAPRECOSAPROVADO.NROEMPRESA
+	toColumn: dEmpresa.NROEMPRESA
+

@@ -20,21 +20,6 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dComprador"
-                    }
-                  },
-                  "Property": "NOME"
-                }
-              },
-              "queryRef": "dComprador.NOME",
-              "nativeQueryRef": "NOME",
-              "active": true
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
                       "Entity": "dEmpresa"
                     }
                   },
@@ -43,6 +28,21 @@
               },
               "queryRef": "dEmpresa.NOMEREDUZIDO",
               "nativeQueryRef": "NOMEREDUZIDO",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dComprador"
+                    }
+                  },
+                  "Property": "NOME"
+                }
+              },
+              "queryRef": "dComprador.NOME",
+              "nativeQueryRef": "NOME",
               "active": false
             }
           ]
@@ -95,6 +95,42 @@
         }
       }
     },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "dEmpresa.NOMEREDUZIDO"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dEmpresa"
+                    }
+                  },
+                  "Property": "NOMEREDUZIDO"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "dComprador.NOME"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
     "objects": {
       "columnHeaders": [
         {
