@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "fc5646ccbd2122c16d4d",
   "position": {
-    "x": 292.90412876137157,
-    "y": 305.444366689993,
+    "x": 262.37942122186496,
+    "y": 305.59485530546624,
     "z": 8000,
-    "height": 352.0223932820154,
-    "width": 942.30930720783761,
+    "height": 351.89710610932474,
+    "width": 972.34726688102887,
     "tabOrder": 8000
   },
   "visual": {
@@ -28,6 +28,7 @@
               },
               "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.NOME",
               "nativeQueryRef": "Comprador",
+              "active": true,
               "displayName": "Comprador"
             }
           ],
@@ -64,6 +65,20 @@
               },
               "queryRef": "Medidas.Solicitacoes criadas periodo",
               "nativeQueryRef": "Solic criadas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Solic aberto mais antiga"
+                }
+              },
+              "queryRef": "Medidas.Solic mais antiga",
+              "nativeQueryRef": "Solic aberto mais antiga"
             },
             {
               "field": {
@@ -115,11 +130,39 @@
                       "Entity": "Medidas"
                     }
                   },
+                  "Property": "Valor total pedidos"
+                }
+              },
+              "queryRef": "Medidas.Valor total pedidos",
+              "nativeQueryRef": "Valor total pedidos"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
                   "Property": "Solic urgente"
                 }
               },
               "queryRef": "Medidas.Solicitacao urgente criada no periodo",
               "nativeQueryRef": "Solic urgente"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Eficiência"
+                }
+              },
+              "queryRef": "Medidas.Eficiência (itensSolicitados vs itensEntregues)",
+              "nativeQueryRef": "Eficiência"
             }
           ]
         }
@@ -304,6 +347,211 @@
               }
             ],
             "metadata": "Medidas.Spend - Var LY"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Medidas.Solicitacoes criadas periodo"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "Medidas.Solicitacoes criadas periodo"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "Medidas"
+                                        }
+                                      },
+                                      "Property": "Eficiência"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.8D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "Medidas"
+                                        }
+                                      },
+                                      "Property": "Eficiência"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "2D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#00B186'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "Medidas"
+                                        }
+                                      },
+                                      "Property": "Eficiência"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.4D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "Medidas"
+                                        }
+                                      },
+                                      "Property": "Eficiência"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.8D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#FFA200'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "Medidas"
+                                        }
+                                      },
+                                      "Property": "Eficiência"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "Medidas"
+                                        }
+                                      },
+                                      "Property": "Eficiência"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.4D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#D94C4C'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Medidas.Eficiência (itensSolicitados vs itensEntregues)"
           }
         }
       ],
@@ -536,6 +784,34 @@
           },
           "selector": {
             "metadata": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.OBSERVACAO"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "101.37620196939572D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas.Solicitacao urgente criada no periodo"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "171.10611404146317D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas.Eficiência (itensSolicitados vs itensEntregues)"
           }
         }
       ],

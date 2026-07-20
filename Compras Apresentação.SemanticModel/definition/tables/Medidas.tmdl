@@ -2050,6 +2050,41 @@ table Medidas
 			    FORMAT(vVariacao, "  ⮝ +0.0% ;  ⮟ -0.0% ;  → 0%")
 		lineageTag: 69e4bbbd-add7-4c14-8543-e04f910a4531
 
+	measure 'Solic aberto mais antiga' = ```
+			
+			 
+			CALCULATE(
+			    MIN(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATA_SOLIAPROVACAO]),
+			    DCEVPB_SOLICITACAOTEMPOAPROVACAO[STATUS] <>"5",
+			    USERELATIONSHIP(dCalendario[Date],DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATA_SOLIAPROVACAO])
+			)
+			    
+			
+			```
+		formatString: Short Date
+		lineageTag: ea0eaffb-610d-412e-b71b-d24b8ae033a6
+
+	measure 'Valor total pedidos' = ```
+			
+			sum(DCEVPB_SOLICITACAOTEMPOAPROVACAO[VLRPRODUTOTOTAL])
+			
+			```
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		lineageTag: 3c001ab0-e5cc-4c34-aa0f-e89d127d6373
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure Eficiência =
+			
+			
+			var vr1 = [Qtd itens]-[Qtd itens s/ pedido]
+			VAR Vr2 = [Qtd itens]
+			RETURN
+			IF(vr1 = 0 && Vr2 > 0, 0,
+			DIVIDE(vr1,Vr2,1))
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 43a730ba-43b5-4b20-8af3-0960abf99c58
+
 	column Column
 		isHidden
 		formatString: 0
