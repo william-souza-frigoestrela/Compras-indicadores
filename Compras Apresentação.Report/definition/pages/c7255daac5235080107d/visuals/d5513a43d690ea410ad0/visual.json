@@ -20,21 +20,18 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dComprador"
+                      "Entity": "dCalendario"
                     }
                   },
-                  "Property": "NOME"
+                  "Property": "Anomês nome"
                 }
               },
-              "queryRef": "dComprador.NOME",
-              "nativeQueryRef": "NOME",
+              "queryRef": "dCalendario.Anomês nome",
+              "nativeQueryRef": "Anomês nome",
               "active": true
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "isDefaultSort": true
       }
     },
     "expansionStates": [
@@ -45,7 +42,7 @@
         "levels": [
           {
             "queryRefs": [
-              "dComprador.NOME"
+              "dCalendario.Anomês nome"
             ],
             "isCollapsed": true,
             "isPinned": true
@@ -62,13 +59,6 @@
               "expr": {
                 "Literal": {
                   "Value": "'Dropdown'"
-                }
-              }
-            },
-            "isInvertedSelectionMode": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
                 }
               }
             }

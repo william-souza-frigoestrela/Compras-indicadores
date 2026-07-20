@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "9ae52968ae41a2ce453a",
+  "name": "063cf32cedee2e10b8ba",
   "position": {
-    "x": 191.5270935960591,
+    "x": 178.2901056676273,
     "y": 0,
-    "z": 0,
-    "height": 57.635467980295566,
-    "width": 280.19704433497537,
-    "tabOrder": 0
+    "z": 17001,
+    "height": 62.708933717579256,
+    "width": 280.34582132564844,
+    "tabOrder": 17001
   },
   "visual": {
     "visualType": "slicer",
@@ -20,20 +20,35 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dComprador"
+                      "Entity": "dCalendario"
                     }
                   },
-                  "Property": "NOME"
+                  "Property": "Anomês"
                 }
               },
-              "queryRef": "dComprador.NOME",
-              "nativeQueryRef": "NOME",
+              "queryRef": "dCalendario.Anomês",
+              "nativeQueryRef": "Anomês",
               "active": true
             }
           ]
         }
       },
       "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dCalendario"
+                  }
+                },
+                "Property": "Anomês"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
         "isDefaultSort": true
       }
     },
@@ -45,9 +60,21 @@
         "levels": [
           {
             "queryRefs": [
-              "dComprador.NOME"
+              "dCalendario.Anomês"
             ],
             "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dCalendario"
+                    }
+                  },
+                  "Property": "Anomês"
+                }
+              }
+            ],
             "isPinned": true
           }
         ],
@@ -62,13 +89,6 @@
               "expr": {
                 "Literal": {
                   "Value": "'Dropdown'"
-                }
-              }
-            },
-            "isInvertedSelectionMode": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
                 }
               }
             }
@@ -88,6 +108,75 @@
                     }
                   }
                 }
+              }
+            },
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "d",
+                    "Entity": "dCalendario",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "d"
+                                }
+                              },
+                              "Property": "Anomês"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'2026/02'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'2026/03'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'2026/04'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'2026/05'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'2026/01'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                ]
               }
             }
           }
@@ -118,20 +207,6 @@
                   }
                 }
               }
-            },
-            "textSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            },
-            "padding": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
             }
           }
         }
@@ -155,13 +230,6 @@
               "expr": {
                 "Literal": {
                   "Value": "'Ano / Mês'"
-                }
-              }
-            },
-            "textSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
                 }
               }
             }
@@ -209,13 +277,6 @@
                   "Value": "false"
                 }
               }
-            },
-            "strictSingleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
             }
           }
         }
@@ -252,11 +313,6 @@
           }
         }
       ]
-    },
-    "syncGroup": {
-      "groupName": "Anomês",
-      "fieldChanges": true,
-      "filterChanges": true
     },
     "drillFilterOtherVisuals": true
   }
