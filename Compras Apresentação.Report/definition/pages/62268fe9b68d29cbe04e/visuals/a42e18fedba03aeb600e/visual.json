@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "a42e18fedba03aeb600e",
   "position": {
-    "x": 659.25165077035945,
-    "y": 184.06456346294937,
+    "x": 37.564196625091704,
+    "y": 177.49082905355831,
     "z": 7000,
     "height": 480.82171680117386,
     "width": 586.00146735143062,
@@ -43,6 +43,21 @@
               },
               "queryRef": "DCEVPBI_SOLICITACAPRECOSAPROVADO.NOMERAZAO",
               "nativeQueryRef": "NOMERAZAO",
+              "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+                    }
+                  },
+                  "Property": "Detalhe Cost"
+                }
+              },
+              "queryRef": "DCEVPBI_SOLICITACAPRECOSAPROVADO.Detalhe Cost",
+              "nativeQueryRef": "Detalhe Cost",
               "active": false
             }
           ]
@@ -123,6 +138,25 @@
           {
             "queryRefs": [
               "DCEVPBI_SOLICITACAPRECOSAPROVADO.NOMERAZAO"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+                    }
+                  },
+                  "Property": "NOMERAZAO"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "DCEVPBI_SOLICITACAPRECOSAPROVADO.Detalhe Cost"
             ],
             "isCollapsed": true,
             "isPinned": true

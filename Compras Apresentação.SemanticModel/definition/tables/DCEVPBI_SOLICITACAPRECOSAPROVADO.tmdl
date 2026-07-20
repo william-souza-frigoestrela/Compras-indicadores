@@ -134,16 +134,24 @@ table DCEVPBI_SOLICITACAPRECOSAPROVADO
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'DCEVPB_SOLICITACAOTEMPOAPROVACAO.DATA_SOLIAPROVACAO'
+	column DATA_SOLIAPROVACAO
 		dataType: dateTime
 		formatString: Long Date
-		lineageTag: cf944f2d-120b-4d1d-8348-e6077aec87eb
+		lineageTag: 038968af-4111-4f82-b457-aedb57e8467e
 		summarizeBy: none
-		sourceColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.DATA_SOLIAPROVACAO
+		sourceColumn: DATA_SOLIAPROVACAO
 
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Detalhe Cost'
+		dataType: string
+		lineageTag: 0ed8ea84-e26a-4ef1-a692-1dbdffee62fd
+		summarizeBy: none
+		sourceColumn: Detalhe Cost
+
+		annotation SummarizationSetBy = Automatic
 
 	partition DCEVPBI_SOLICITACAPRECOSAPROVADO = m
 		mode: import
@@ -154,9 +162,10 @@ table DCEVPBI_SOLICITACAPRECOSAPROVADO
 				    DCEVPBI_SOLICITACAPRECOSAPROVADO1 = DATAVALE{[Name="DCEVPBI_SOLICITACAPRECOSAPROVADO"]}[Data],
 				    #"Tipo Alterado" = Table.TransformColumnTypes(DCEVPBI_SOLICITACAPRECOSAPROVADO1,{{"SEQSOLICITACAO", type text}, {"DTASOLICITACAO", type date}, {"NROEMPRESA", type text}, {"NROSOLICITACAO", type text}, {"SEQPRODUTO", type text}, {"NROPEDIDO", type text}, {"SEQFORNECEDOR", type text}}),
 				    #"Consultas Mescladas" = Table.NestedJoin(#"Tipo Alterado", {"NROPEDIDO", "NROEMPRESA"}, DCEVPB_SOLICITACAOTEMPOAPROVACAO, {"NROPEDIDO", "NROEMPRESA"}, "DCEVPB_SOLICITACAOTEMPOAPROVACAO", JoinKind.LeftOuter),
-				    #"DCEVPB_SOLICITACAOTEMPOAPROVACAO Expandido" = Table.ExpandTableColumn(#"Consultas Mescladas", "DCEVPB_SOLICITACAOTEMPOAPROVACAO", {"DATA_SOLIAPROVACAO"}, {"DCEVPB_SOLICITACAOTEMPOAPROVACAO.DATA_SOLIAPROVACAO"})
+				    #"DCEVPB_SOLICITACAOTEMPOAPROVACAO Expandido" = Table.ExpandTableColumn(#"Consultas Mescladas", "DCEVPB_SOLICITACAOTEMPOAPROVACAO", {"DATA_SOLIAPROVACAO"}, {"DATA_SOLIAPROVACAO"}),
+				    #"Coluna Mesclada Inserida" = Table.AddColumn(#"DCEVPB_SOLICITACAOTEMPOAPROVACAO Expandido", "Detalhe Cost", each Text.Combine({"Nro Pedido", [NROPEDIDO]," - ","Nro solicitação", [NROSOLICITACAO]," - ", "Desc:", [DESCRICAO]}, " "))
 				in
-				    #"DCEVPB_SOLICITACAOTEMPOAPROVACAO Expandido"
+				    #"Coluna Mesclada Inserida"
 
 	annotation PBI_NavigationStepName = Navegação
 
