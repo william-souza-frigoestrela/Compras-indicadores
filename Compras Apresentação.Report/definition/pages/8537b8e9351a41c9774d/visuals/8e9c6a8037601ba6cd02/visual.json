@@ -20,15 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dFornecedores"
+                      "Entity": "dCategoria"
                     }
                   },
-                  "Property": "Fornecedor"
+                  "Property": "CATEGORIA"
                 }
               },
-              "queryRef": "dFornecedores.Fornecedor",
-              "nativeQueryRef": "FORNECEDOR",
-              "displayName": "FORNECEDOR"
+              "queryRef": "dCategoria.CATEGORIA",
+              "nativeQueryRef": "CATEGORIA",
+              "displayName": "CATEGORIA"
             },
             {
               "field": {

@@ -10,16 +10,16 @@
       "nodes": [
         {
           "location": {
-            "x": 615.02664619627853,
-            "y": 980.427915699219
+            "x": 316.248018981633,
+            "y": 1165.0505579875141
           },
           "nodeIndex": "DCEVPB_SOLICITACAOTEMPOAPROVACAO",
           "nodeLineageTag": "19b536f3-ec44-4b32-b10e-2c74fefcfcc2",
           "size": {
-            "height": 272,
+            "height": 296,
             "width": 234
           },
-          "zIndex": 12,
+          "zIndex": 13,
           "expandedHeight": 300
         },
         {
@@ -33,7 +33,7 @@
             "height": 104,
             "width": 234
           },
-          "zIndex": 9,
+          "zIndex": 10,
           "expandedHeight": 200
         },
         {
@@ -47,7 +47,7 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 10
+          "zIndex": 11
         },
         {
           "location": {
@@ -60,7 +60,7 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 11
+          "zIndex": 12
         },
         {
           "location": {
@@ -73,7 +73,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 8
+          "zIndex": 9
         },
         {
           "location": {
@@ -86,7 +86,7 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 3
+          "zIndex": 4
         },
         {
           "location": {
@@ -99,12 +99,12 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 4
+          "zIndex": 5
         },
         {
           "location": {
-            "x": 945.61601563193335,
-            "y": 979.31190006728616
+            "x": 565.0960658774319,
+            "y": 1168.162541797298
           },
           "nodeIndex": "DCEVPBI_PEDIDOPRAZOPAGAMENTO",
           "nodeLineageTag": "91814723-1adc-4476-a64d-40c28ea44d0e",
@@ -138,7 +138,7 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 5
+          "zIndex": 6
         },
         {
           "location": {
@@ -150,7 +150,7 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 6
+          "zIndex": 7
         },
         {
           "location": {
@@ -163,7 +163,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 7
+          "zIndex": 8
         },
         {
           "location": {
@@ -176,7 +176,7 @@
             "height": 104,
             "width": 234
           },
-          "zIndex": 13
+          "zIndex": 17
         },
         {
           "location": {
@@ -202,7 +202,7 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 1
+          "zIndex": 3
         },
         {
           "location": {
@@ -215,7 +215,20 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 845.66958716614806,
+            "y": 1170.0151994383843
+          },
+          "nodeIndex": "DCEVPBI_SOLICITACAPRECOSAPROVADO",
+          "nodeLineageTag": "3f94f010-3472-4511-ae96-7c313640afec",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 2
         }
       ],
       "name": "Todas as tabelas",

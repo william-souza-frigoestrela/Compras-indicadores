@@ -20,15 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dFornecedores"
+                      "Entity": "dCategoria"
                     }
                   },
-                  "Property": "Fornecedor"
+                  "Property": "CATEGORIA"
                 }
               },
-              "queryRef": "dFornecedores.Fornecedor",
-              "nativeQueryRef": "FORNECEDOR",
-              "displayName": "FORNECEDOR"
+              "queryRef": "dCategoria.CATEGORIA",
+              "nativeQueryRef": "CATEGORIA",
+              "displayName": "CATEGORIA"
             },
             {
               "field": {
@@ -444,8 +444,7 @@
             "Property": "CATEGORIA"
           }
         },
-        "type": "Categorical",
-        "howCreated": "User"
+        "type": "Categorical"
       },
       {
         "name": "7fd4066a1c31b7357217",

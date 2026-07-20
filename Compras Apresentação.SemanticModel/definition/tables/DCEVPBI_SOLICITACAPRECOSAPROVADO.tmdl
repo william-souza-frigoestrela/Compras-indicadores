@@ -1,0 +1,164 @@
+table DCEVPBI_SOLICITACAPRECOSAPROVADO
+	lineageTag: 3f94f010-3472-4511-ae96-7c313640afec
+
+	column SEQSOLICITACAO
+		dataType: string
+		lineageTag: 2931848e-ec9d-4581-81a9-ba3a222dd7b4
+		summarizeBy: none
+		sourceColumn: SEQSOLICITACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DTASOLICITACAO
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 68865d71-c0c0-4a53-9cd6-1a6498ac2092
+		summarizeBy: none
+		sourceColumn: DTASOLICITACAO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column NROEMPRESA
+		dataType: string
+		lineageTag: 037769cf-b42b-4b39-90c6-724d18541749
+		summarizeBy: none
+		sourceColumn: NROEMPRESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column NROSOLICITACAO
+		dataType: string
+		lineageTag: 29bcbf53-48ef-450c-ab9d-b750dbb81e90
+		summarizeBy: none
+		sourceColumn: NROSOLICITACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEQPRODUTO
+		dataType: string
+		lineageTag: 844c277f-29e4-4982-a589-c6179f4c0509
+		summarizeBy: none
+		sourceColumn: SEQPRODUTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRICAO
+		dataType: string
+		lineageTag: 7dd1ec2d-d162-4403-a65e-3254c78f200d
+		summarizeBy: none
+		sourceColumn: DESCRICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column QUANTIDADE
+		dataType: double
+		lineageTag: 2dc4113e-162c-4ad2-a6b0-631be73923ca
+		summarizeBy: sum
+		sourceColumn: QUANTIDADE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VLRUNITPRAZO
+		dataType: double
+		lineageTag: 5253f912-5682-4926-a102-73cadb801434
+		summarizeBy: sum
+		sourceColumn: VLRUNITPRAZO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VLRNEGOCPRAZO
+		dataType: double
+		lineageTag: 6390703a-217c-4582-b588-b3c4a5c8f400
+		summarizeBy: sum
+		sourceColumn: VLRNEGOCPRAZO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VLRUNITPAGO
+		dataType: double
+		lineageTag: 176a969a-f738-481b-af88-a8c97174c244
+		summarizeBy: sum
+		sourceColumn: VLRUNITPAGO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NROPEDIDO
+		dataType: string
+		lineageTag: e8cd4405-27f8-49a8-84a5-5b2e3b997b27
+		summarizeBy: none
+		sourceColumn: NROPEDIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEQFORNECEDOR
+		dataType: string
+		lineageTag: a3d05139-9b36-4045-944f-8cc42344fbc6
+		summarizeBy: none
+		sourceColumn: SEQFORNECEDOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOMERAZAO
+		dataType: string
+		lineageTag: 526a4691-1fac-49ad-a588-e43f565c0ff1
+		summarizeBy: none
+		sourceColumn: NOMERAZAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATUS
+		dataType: string
+		lineageTag: 9ee9ced2-6e4b-4522-83cd-4c101d68c25e
+		summarizeBy: none
+		sourceColumn: STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column VLRPEDIDO
+		dataType: double
+		lineageTag: 368d3f58-df77-44b2-80fb-b6a8cfeb7ec0
+		summarizeBy: sum
+		sourceColumn: VLRPEDIDO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'DCEVPB_SOLICITACAOTEMPOAPROVACAO.DATA_SOLIAPROVACAO'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: cf944f2d-120b-4d1d-8348-e6077aec87eb
+		summarizeBy: none
+		sourceColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.DATA_SOLIAPROVACAO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition DCEVPBI_SOLICITACAPRECOSAPROVADO = m
+		mode: import
+		source =
+				let
+				    Fonte = Oracle.Database("datavale", [HierarchicalNavigation=true]),
+				    DATAVALE = Fonte{[Schema="DATAVALE"]}[Data],
+				    DCEVPBI_SOLICITACAPRECOSAPROVADO1 = DATAVALE{[Name="DCEVPBI_SOLICITACAPRECOSAPROVADO"]}[Data],
+				    #"Tipo Alterado" = Table.TransformColumnTypes(DCEVPBI_SOLICITACAPRECOSAPROVADO1,{{"SEQSOLICITACAO", type text}, {"DTASOLICITACAO", type date}, {"NROEMPRESA", type text}, {"NROSOLICITACAO", type text}, {"SEQPRODUTO", type text}, {"NROPEDIDO", type text}, {"SEQFORNECEDOR", type text}}),
+				    #"Consultas Mescladas" = Table.NestedJoin(#"Tipo Alterado", {"NROPEDIDO", "NROEMPRESA"}, DCEVPB_SOLICITACAOTEMPOAPROVACAO, {"NROPEDIDO", "NROEMPRESA"}, "DCEVPB_SOLICITACAOTEMPOAPROVACAO", JoinKind.LeftOuter),
+				    #"DCEVPB_SOLICITACAOTEMPOAPROVACAO Expandido" = Table.ExpandTableColumn(#"Consultas Mescladas", "DCEVPB_SOLICITACAOTEMPOAPROVACAO", {"DATA_SOLIAPROVACAO"}, {"DCEVPB_SOLICITACAOTEMPOAPROVACAO.DATA_SOLIAPROVACAO"})
+				in
+				    #"DCEVPB_SOLICITACAOTEMPOAPROVACAO Expandido"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

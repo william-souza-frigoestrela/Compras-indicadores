@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "1b1692b72fa29c8924d7",
+  "name": "063cf32cedee2e10b8ba",
   "position": {
-    "x": 293.24758842443731,
-    "y": 79.228295819935681,
-    "z": 6000,
-    "height": 61.736334405144689,
-    "width": 278.84244372990355,
-    "tabOrder": 6000
+    "x": 178.2901056676273,
+    "y": 0,
+    "z": 17001,
+    "height": 62.708933717579256,
+    "width": 280.34582132564844,
+    "tabOrder": 17001
   },
   "visual": {
     "visualType": "slicer",
@@ -20,20 +20,35 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                      "Entity": "dCalendario"
                     }
                   },
-                  "Property": "NROSOLICITACAO"
+                  "Property": "Anomês"
                 }
               },
-              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.NROSOLICITACAO",
-              "nativeQueryRef": "NROSOLICITACAO",
+              "queryRef": "dCalendario.Anomês",
+              "nativeQueryRef": "Anomês",
               "active": true
             }
           ]
         }
       },
       "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dCalendario"
+                  }
+                },
+                "Property": "Anomês"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
         "isDefaultSort": true
       }
     },
@@ -45,9 +60,21 @@
         "levels": [
           {
             "queryRefs": [
-              "DCEVPB_SOLICITACAOTEMPOAPROVACAO.NROSOLICITACAO"
+              "dCalendario.Anomês"
             ],
             "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dCalendario"
+                    }
+                  },
+                  "Property": "Anomês"
+                }
+              }
+            ],
             "isPinned": true
           }
         ],
@@ -83,11 +110,73 @@
                 }
               }
             },
-            "selfFilterEnabled": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "d",
+                    "Entity": "dCalendario",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "d"
+                                }
+                              },
+                              "Property": "Anomês"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'2026/02'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'2026/03'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'2026/04'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'2026/05'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'2026/01'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                ]
               }
             }
           }
@@ -140,7 +229,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Nro Solicitação'"
+                  "Value": "'Ano / Mês'"
                 }
               }
             }
