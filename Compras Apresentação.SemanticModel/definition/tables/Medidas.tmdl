@@ -2105,19 +2105,22 @@ table Medidas
 			
 			valor_unit_prazo-valor_unit_pago
 			```
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: fe29ee30-8340-4dc9-afaf-81d001bdd2e5
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure '1ª Oferta' = sum(DCEVPBI_SOLICITACAPRECOSAPROVADO[VLRUNITPRAZO])
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: eda537eb-cc3d-4229-bc51-ebaf00325b11
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure 'Valor pago' = sum(DCEVPBI_SOLICITACAPRECOSAPROVADO[VLRUNITPAGO])
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: afb81837-5859-4d2c-9d1e-57702a08b546
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	column Column
 		isHidden

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "a42e18fedba03aeb600e",
   "position": {
-    "x": 659.06890130353815,
-    "y": 202.60707635009311,
+    "x": 659.25165077035945,
+    "y": 202.84666177549522,
     "z": 7000,
-    "height": 179.96275605214151,
-    "width": 586.36871508379886,
+    "height": 462.039618488628,
+    "width": 586.00146735143062,
     "tabOrder": 7000
   },
   "visual": {
@@ -35,14 +35,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dComprador"
+                      "Entity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
                     }
                   },
-                  "Property": "NOME"
+                  "Property": "NOMERAZAO"
                 }
               },
-              "queryRef": "dComprador.NOME",
-              "nativeQueryRef": "NOME",
+              "queryRef": "DCEVPBI_SOLICITACAPRECOSAPROVADO.NOMERAZAO",
+              "nativeQueryRef": "NOMERAZAO",
               "active": false
             }
           ]
@@ -122,7 +122,7 @@
           },
           {
             "queryRefs": [
-              "dComprador.NOME"
+              "DCEVPBI_SOLICITACAPRECOSAPROVADO.NOMERAZAO"
             ],
             "isCollapsed": true,
             "isPinned": true
@@ -294,7 +294,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -412,6 +412,76 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "c1b5e7b1702eb87a3504",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dEmpresa"
+              }
+            },
+            "Property": "NOMEREDUZIDO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3f1434415017da854500",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "1ª Oferta"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3dca6a45531ebd58d86c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Valor pago"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "51e41c120a1935c3da1a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Cost"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4a6a945979b6890a20e5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+              }
+            },
+            "Property": "NOMERAZAO"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }
