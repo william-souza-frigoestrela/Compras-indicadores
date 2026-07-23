@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "5e05579a9df471f592ff",
   "position": {
-    "x": 35.555555555555557,
-    "y": 196.60130718954247,
+    "x": 35.987841945288757,
+    "y": 196.47416413373861,
     "z": 2000,
-    "height": 481.04575163398692,
-    "width": 1207.8431372549019,
+    "height": 481.45896656534956,
+    "width": 1221.6413373860182,
     "tabOrder": 2000
   },
   "visual": {
@@ -51,7 +51,8 @@
                 }
               },
               "queryRef": "Min(DCEVPB_SOLICITACAOTEMPOAPROVACAO.SEQPRODUTO)",
-              "nativeQueryRef": "Primeiro SEQPRODUTO"
+              "nativeQueryRef": "SEQPRODUTO",
+              "displayName": "SEQPRODUTO"
             },
             {
               "field": {
@@ -583,6 +584,123 @@
           ]
         },
         "isLockedInViewMode": true
+      },
+      {
+        "name": "ba9fcfc5720b204ddc85",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+              }
+            },
+            "Property": "DESCRICAO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "76220471715cd93a49c3",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                  }
+                },
+                "Property": "SEQPRODUTO"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "809bd91f33bb8a771989",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Data Compra Atual"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b14fe9fbddcb5427000d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Preco Atual"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "abacbf7c7d0a08ea4ac0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Preco Ultima Compra"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f3e7f5c0b31d6a05b03c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Data Ultima Compra"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3d076e39cad6615e6809",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Delta Preco Unitario"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3dd14b2c5dd73de50a07",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Delta Total"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

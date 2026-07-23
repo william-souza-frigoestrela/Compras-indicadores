@@ -1411,8 +1411,10 @@ table Medidas
 			    )
 			)
 			```
-		formatString: 0.0000
+		formatString: "R$"\ #,0.0000;-"R$"\ #,0.0000;"R$"\ #,0.0000
 		lineageTag: 2c301e60-332c-42d7-b69c-4c4389a87031
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure 'Delta Preco Unitario' =
 			
@@ -1424,8 +1426,10 @@ table Medidas
 			    BLANK(),
 			    PrecoAnterior - PrecoAtual
 			)
-		formatString: 0.0000
+		formatString: "R$"\ #,0.0000;-"R$"\ #,0.0000;"R$"\ #,0.0000
 		lineageTag: 33f91c07-a3e1-4e6d-b9d7-103c02317875
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure Classificacao =
 			
@@ -1475,9 +1479,10 @@ table Medidas
 			    BLANK()
 			)
 			```
+		formatString: "R$"\ #,0.0000;-"R$"\ #,0.0000;"R$"\ #,0.0000
 		lineageTag: 0273bd6a-e872-4f80-9fd4-2369eb6ac9e1
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure 'Resultado operacional CY' = ```
 			
