@@ -1948,16 +1948,19 @@ table Medidas
 
 		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
-	measure 'Var % Resultado operacional mensal LY' =
+	measure 'Var % Resultado operacional dinamico LY' =
 			
-			IF([Resultado operacional dinamico CY]<>BLANK() &&
-			[Resultado operacional dinamico LY] <> BLANK() ,
-			DIVIDE(
-			    [Resultado Operacional Mensal CY] - [Resultado operacional dinamico LY],
-			    [Resultado Operacional Mensal LY]
-			)
-			,
-			BLANK()
+			VAR CY = [Resultado operacional dinamico CY]
+			VAR LY = [Resultado operacional dinamico LY]
+			
+			RETURN
+			IF(
+			    NOT ISBLANK(CY) && NOT ISBLANK(LY),
+			    DIVIDE(
+			        CY - LY,
+			        ABS(LY)
+			    ),
+			    BLANK()
 			)
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 954a07f1-39c1-4353-b45d-6faf927e6ab4
