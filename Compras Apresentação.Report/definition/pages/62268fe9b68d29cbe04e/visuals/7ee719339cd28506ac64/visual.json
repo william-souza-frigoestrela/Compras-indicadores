@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "7ee719339cd28506ac64",
   "position": {
-    "x": 920.39408866995075,
-    "y": 0,
-    "z": 16000,
+    "x": 458.56697819314644,
+    "y": 2.6583592938733127,
+    "z": 4000,
     "height": 59.408866995073893,
     "width": 283.74384236453204,
-    "tabOrder": 16000
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dComprador"
+                      "Entity": "dEmpresa"
                     }
                   },
-                  "Property": "NOME"
+                  "Property": "NOMEREDUZIDO"
                 }
               },
-              "queryRef": "dComprador.NOME",
-              "nativeQueryRef": "NOME",
+              "queryRef": "dEmpresa.NOMEREDUZIDO",
+              "nativeQueryRef": "NOMEREDUZIDO",
               "active": true
             }
           ]
@@ -42,6 +42,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Dropdown'"
+                }
+              }
+            },
+            "isInvertedSelectionMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -111,7 +118,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Comprador'"
+                  "Value": "'Empresa'"
                 }
               }
             },
@@ -265,5 +272,23 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "690a9ec1486a1c59700b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dEmpresa"
+              }
+            },
+            "Property": "NOMEREDUZIDO"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

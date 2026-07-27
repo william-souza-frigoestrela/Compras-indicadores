@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "7954eb148a299b08dac5",
   "position": {
     "x": 470.83921568627449,
@@ -68,7 +68,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''dCategoria''[CATEGORIA]'"
+                                "Value": "'''dEmpresa''[NOMEREDUZIDO]'"
                               }
                             }
                           ]
@@ -96,7 +96,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''dCategoria''[CATEGORIA]'"
+                                      "Value": "'''dEmpresa''[NOMEREDUZIDO]'"
                                     }
                                   }
                                 ]
@@ -120,7 +120,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "CATEGORIA"
+                            "0": "EMPRESA"
                           }
                         ]
                       }

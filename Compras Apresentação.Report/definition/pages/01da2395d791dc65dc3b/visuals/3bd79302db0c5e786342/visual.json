@@ -4,10 +4,10 @@
   "position": {
     "x": 659.06890130353815,
     "y": 202.60707635009311,
-    "z": 7000,
+    "z": 6000,
     "height": 179.96275605214151,
     "width": 586.36871508379886,
-    "tabOrder": 7000
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "tableEx",
@@ -508,62 +508,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "b6a62baf8635a207a07e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dCategoria"
-              }
-            },
-            "Property": "CATEGORIA"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "853c83a6470a48dbd520",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Spend CY"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "1eb969fe9193ddae1922",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Spend CY - Var LY"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "f4393beb99cd0a304cdd",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Spend LY format"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

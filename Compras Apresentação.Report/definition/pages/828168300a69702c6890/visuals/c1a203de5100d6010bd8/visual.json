@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "c1a203de5100d6010bd8",
   "position": {
     "x": 1017.620578778135,
@@ -59,7 +59,7 @@
             "startDate": {
               "expr": {
                 "Literal": {
-                  "Value": "datetime'2025-11-22T00:00:00'"
+                  "Value": "datetime'2025-01-01T00:00:00'"
                 }
               }
             },
@@ -88,7 +88,7 @@
                 "Version": 2,
                 "From": [
                   {
-                    "Name": "d1",
+                    "Name": "d",
                     "Entity": "dCalendario",
                     "Type": 0
                   }
@@ -104,7 +104,7 @@
                               "Column": {
                                 "Expression": {
                                   "SourceRef": {
-                                    "Source": "d1"
+                                    "Source": "d"
                                   }
                                 },
                                 "Property": "Date"
@@ -112,7 +112,7 @@
                             },
                             "Right": {
                               "Literal": {
-                                "Value": "datetime'2025-11-22T00:00:00'"
+                                "Value": "datetime'2025-01-01T00:00:00'"
                               }
                             }
                           }
@@ -124,7 +124,7 @@
                               "Column": {
                                 "Expression": {
                                   "SourceRef": {
-                                    "Source": "d1"
+                                    "Source": "d"
                                   }
                                 },
                                 "Property": "Date"

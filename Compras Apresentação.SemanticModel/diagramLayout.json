@@ -70,7 +70,7 @@
           "nodeIndex": "dPrioridade",
           "nodeLineageTag": "c4f4ba06-38e8-4059-a8f7-28f44decd6d3",
           "size": {
-            "height": 128,
+            "height": 163.23332868097236,
             "width": 234
           },
           "zIndex": 9
@@ -219,8 +219,8 @@
         },
         {
           "location": {
-            "x": 845.66958716614806,
-            "y": 1170.0151994383843
+            "x": 910.49891193913709,
+            "y": 1157.3312011132343
           },
           "nodeIndex": "DCEVPBI_SOLICITACAPRECOSAPROVADO",
           "nodeLineageTag": "3f94f010-3472-4511-ae96-7c313640afec",
