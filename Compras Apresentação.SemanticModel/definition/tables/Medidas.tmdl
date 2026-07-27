@@ -1997,7 +1997,7 @@ table Medidas
 			VAR Diferenca = Atual - Anterior
 			
 			RETURN
-			    DIVIDE(Diferenca, Anterior, 0)
+			    DIVIDE(Diferenca, ABS(Anterior), 0)
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 98288932-2588-44f0-86a1-c85099d69d56
 
