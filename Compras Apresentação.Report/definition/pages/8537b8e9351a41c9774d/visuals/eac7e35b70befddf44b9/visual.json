@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "eac7e35b70befddf44b9",
   "position": {
     "x": 871.40392156862742,
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dComprador"
+                      "Entity": "dEmpresa"
                     }
                   },
-                  "Property": "NOME"
+                  "Property": "NOMEREDUZIDO"
                 }
               },
-              "queryRef": "dComprador.NOME",
-              "nativeQueryRef": "NOME",
+              "queryRef": "dEmpresa.NOMEREDUZIDO",
+              "nativeQueryRef": "NOMEREDUZIDO",
               "active": true
             }
           ]
@@ -42,6 +42,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Dropdown'"
+                }
+              }
+            },
+            "isInvertedSelectionMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

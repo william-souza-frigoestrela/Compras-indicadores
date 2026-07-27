@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "c649b53b80b80a6c038e",
   "position": {
     "x": 661.129860601614,
     "y": 177.49082905355831,
-    "z": 3000,
+    "z": 0,
     "height": 493.96918561995597,
     "width": 584.123257520176,
-    "tabOrder": 3000
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "areaChart",
@@ -326,5 +326,51 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a9dcde60131ec540ddb4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dCalendario"
+              }
+            },
+            "Property": "Mês abreviado"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e00c5f1900b661c0bde4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "1ª Oferta"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "08f11c416a35b001bcd9",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Valor pago"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

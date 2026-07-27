@@ -49,7 +49,7 @@ table Medidas
 			
 			DIVIDE(
 			    [Spend CY] - [Spend LY],
-			    [Spend LY]
+			    abs([Spend LY])
 			)
 			
 			```
@@ -1044,7 +1044,7 @@ table Medidas
 			RETURN
 			DIVIDE(
 			    PrecoAtual - PrecoAnterior,
-			    PrecoAnterior,
+			    ABS(PrecoAnterior),
 			    BLANK()
 			)
 		lineageTag: ce9f4988-20bc-4fe5-8222-bbbf0e0d0cce
@@ -2129,6 +2129,17 @@ table Medidas
 		lineageTag: afb81837-5859-4d2c-9d1e-57702a08b546
 
 		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Qtd itens c/ pedido' = ```
+			
+			CALCULATE(
+			    COUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO]),
+			    not ISBLANK(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPEDIDOITEM]),
+			    USERELATIONSHIP(dCalendario[Date],DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATA_SOLIAPROVACAO])	
+			)
+			```
+		formatString: 0
+		lineageTag: 07a2e063-6874-4ca3-be26-d274100f973e
 
 	column Column
 		isHidden

@@ -63,3 +63,7 @@ relationship 7889c9f3-6b87-ab41-d1f8-e3d452d6ecad
 	fromColumn: DCEVPBI_SOLICITACAPRECOSAPROVADO.NROEMPRESA
 	toColumn: dEmpresa.NROEMPRESA
 
+relationship ae5b59fa-56af-e46d-f6f5-fe7d86bac8ee
+	fromColumn: DCEVPBI_SOLICITACAPRECOSAPROVADO.SEQFORNECEDOR
+	toColumn: dFornecedores.SEQFORNECEDOR
+

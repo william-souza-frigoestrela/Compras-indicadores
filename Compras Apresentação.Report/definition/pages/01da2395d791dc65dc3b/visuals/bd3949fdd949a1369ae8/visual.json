@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "bd3949fdd949a1369ae8",
   "position": {
     "x": 471.72413793103448,
     "y": 0,
-    "z": 15000,
+    "z": 14000,
     "height": 62.068965517241381,
     "width": 151.62561576354679,
-    "tabOrder": 15000
+    "tabOrder": 14000
   },
   "visual": {
     "visualType": "slicer",
@@ -68,7 +68,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''dCategoria''[CATEGORIA]'"
+                                "Value": "'''dEmpresa''[NOMEREDUZIDO]'"
                               }
                             }
                           ]
@@ -96,7 +96,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''dCategoria''[CATEGORIA]'"
+                                      "Value": "'''dEmpresa''[NOMEREDUZIDO]'"
                                     }
                                   }
                                 ]
@@ -120,7 +120,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "CATEGORIA"
+                            "0": "EMPRESA"
                           }
                         ]
                       }

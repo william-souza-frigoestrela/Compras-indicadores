@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "a42e18fedba03aeb600e",
   "position": {
     "x": 37.564196625091704,
     "y": 177.49082905355831,
-    "z": 7000,
+    "z": 1000,
     "height": 480.82171680117386,
     "width": 586.00146735143062,
-    "tabOrder": 7000
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -43,7 +43,7 @@
               },
               "queryRef": "DCEVPBI_SOLICITACAPRECOSAPROVADO.NOMERAZAO",
               "nativeQueryRef": "NOMERAZAO",
-              "active": false
+              "active": true
             },
             {
               "field": {
@@ -58,7 +58,7 @@
               },
               "queryRef": "DCEVPBI_SOLICITACAPRECOSAPROVADO.Detalhe Cost",
               "nativeQueryRef": "Detalhe Cost",
-              "active": false
+              "active": true
             }
           ]
         },
@@ -108,6 +108,23 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+                  }
+                },
+                "Property": "NOMERAZAO"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
     "expansionStates": [
@@ -162,7 +179,53 @@
             "isPinned": true
           }
         ],
-        "root": {}
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'001-FRIG.MATRIZ'"
+                  }
+                }
+              ],
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'10COMPLIK SERVICOS DE APOIO ADMINISTRATIVO E ASSESSORIA EMPRESARIAL LTDA'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                }
+              ]
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'104-ALIM.S.L.G.'"
+                  }
+                }
+              ],
+              "isToggled": true,
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'CENCI  CIA LTDA'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                }
+              ]
+            }
+          ]
+        }
       }
     ],
     "objects": {
@@ -407,6 +470,20 @@
           "selector": {
             "metadata": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.FORNECEDOR"
           }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "361.23157342810686D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "DCEVPBI_SOLICITACAPRECOSAPROVADO.NOMERAZAO"
+          }
         }
       ],
       "grid": [
@@ -643,21 +720,35 @@
         "howCreated": "User"
       },
       {
-        "name": "c1b5e7b1702eb87a3504",
+        "name": "ceb914f137d454249d78",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "dEmpresa"
+                "Entity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
               }
             },
-            "Property": "NOMEREDUZIDO"
+            "Property": "NOMERAZAO"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "3f1434415017da854500",
+        "name": "758670f75d50c36090bb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+              }
+            },
+            "Property": "Detalhe Cost"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3a55355b20be144e4b82",
         "field": {
           "Measure": {
             "Expression": {
@@ -671,7 +762,7 @@
         "type": "Advanced"
       },
       {
-        "name": "3dca6a45531ebd58d86c",
+        "name": "deddd56860eb7d745a50",
         "field": {
           "Measure": {
             "Expression": {
@@ -685,7 +776,7 @@
         "type": "Advanced"
       },
       {
-        "name": "51e41c120a1935c3da1a",
+        "name": "8893efae956b7e0d0a5a",
         "field": {
           "Measure": {
             "Expression": {
@@ -699,15 +790,15 @@
         "type": "Advanced"
       },
       {
-        "name": "4a6a945979b6890a20e5",
+        "name": "0b5229c46c93c7090031",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+                "Entity": "dEmpresa"
               }
             },
-            "Property": "NOMERAZAO"
+            "Property": "NOMEREDUZIDO"
           }
         },
         "type": "Categorical"
