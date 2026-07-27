@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "24beab5592a14d0a9ca7",
   "position": {
     "x": 1107.1044776119404,
@@ -693,5 +693,37 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5024937b7e70274167a3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "% Variação Label operacional"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3820bb11b106c78128da",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Penalty Consolidado LY"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
