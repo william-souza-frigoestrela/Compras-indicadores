@@ -235,7 +235,7 @@ table Medidas
 			
 			DIVIDE(
 			    [PMP Ponderado CY] - [PMP Ponderado LY],
-			    [PMP Ponderado LY]
+			    abs([PMP Ponderado LY])
 			)
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 6702d852-3c48-4f3b-9dd1-f82270b2af55
@@ -1997,7 +1997,7 @@ table Medidas
 			VAR Diferenca = Atual - Anterior
 			
 			RETURN
-			    DIVIDE(Diferenca, Anterior, 0)
+			    DIVIDE(Diferenca, ABS(Anterior), 0)
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 98288932-2588-44f0-86a1-c85099d69d56
 
@@ -2015,7 +2015,7 @@ table Medidas
 			VAR Diferenca = Atual - Anterior
 			
 			RETURN
-			    DIVIDE(Diferenca, Anterior, 0)
+			    DIVIDE(Diferenca, ABS(Anterior), 0)
 		lineageTag: 24bb3b89-7a56-44b7-9404-0e11691eb722
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -2046,7 +2046,7 @@ table Medidas
 			VAR Diferenca = Atual - Anterior
 			
 			RETURN
-			    DIVIDE(Diferenca, Anterior, 0)
+			    DIVIDE(Diferenca, ABS(Anterior), 0)
 		lineageTag: 6fc1c56f-a2e9-4dda-a9e3-9349ef96a066
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
