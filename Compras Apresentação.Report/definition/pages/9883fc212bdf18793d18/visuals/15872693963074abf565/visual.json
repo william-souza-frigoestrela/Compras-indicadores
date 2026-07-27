@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "15872693963074abf565",
   "position": {
     "x": 45.36953242835596,
@@ -52,11 +52,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Var % Resultado operacional mensal LY"
+                  "Property": "Var % Resultado operacional dinamico LY"
                 }
               },
               "queryRef": "Medidas.Var % Resultado operacional LY",
-              "nativeQueryRef": "Var % Resultado operacional mensal LY"
+              "nativeQueryRef": "Var % Resultado operacional dinamico LY"
             },
             {
               "field": {
@@ -447,6 +447,62 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "96ed9f1448968a23007d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dCategoria"
+              }
+            },
+            "Property": "CATEGORIA"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9572c424c05476e38d16",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Resultado operacional dinamico CY"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "dce21a180aedc00b7834",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Var % Resultado operacional dinamico LY"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d5019e9ea96930653387",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Resultado operacional dinamico LY"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

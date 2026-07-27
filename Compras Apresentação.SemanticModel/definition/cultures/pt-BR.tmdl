@@ -8735,7 +8735,7 @@ cultureInfo pt-BR
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Medidas",
-			          "ConceptualProperty": "Var % Resultado operacional mensal LY"
+			          "ConceptualProperty": "Var % Resultado operacional dinamico LY"
 			        }
 			      },
 			      "State": "Generated",
