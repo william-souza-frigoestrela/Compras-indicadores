@@ -235,7 +235,7 @@ table Medidas
 			
 			DIVIDE(
 			    [PMP Ponderado CY] - [PMP Ponderado LY],
-			    [PMP Ponderado LY]
+			    abs([PMP Ponderado LY])
 			)
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 6702d852-3c48-4f3b-9dd1-f82270b2af55

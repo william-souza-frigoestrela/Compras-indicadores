@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "3bd79302db0c5e786342",
   "position": {
     "x": 659.06890130353815,
@@ -508,6 +508,62 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "b6a62baf8635a207a07e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dCategoria"
+              }
+            },
+            "Property": "CATEGORIA"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "853c83a6470a48dbd520",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Spend CY"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1eb969fe9193ddae1922",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Spend CY - Var LY"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f4393beb99cd0a304cdd",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Spend LY format"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
