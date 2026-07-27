@@ -2015,7 +2015,7 @@ table Medidas
 			VAR Diferenca = Atual - Anterior
 			
 			RETURN
-			    DIVIDE(Diferenca, Anterior, 0)
+			    DIVIDE(Diferenca, ABS(Anterior), 0)
 		lineageTag: 24bb3b89-7a56-44b7-9404-0e11691eb722
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
