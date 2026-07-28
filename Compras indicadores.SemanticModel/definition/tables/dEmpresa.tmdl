@@ -1,0 +1,40 @@
+table dEmpresa
+	lineageTag: 99b6a162-75d0-494d-9951-6058f5bfd84b
+
+	column NROEMPRESA
+		dataType: string
+		lineageTag: a8ce0376-7049-40f8-9540-2630caefcdee
+		summarizeBy: none
+		sourceColumn: NROEMPRESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column FANTASIA
+		dataType: string
+		lineageTag: f55c8058-f7b8-490a-943d-4078c84f80e1
+		summarizeBy: none
+		sourceColumn: FANTASIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column NOMEREDUZIDO
+		dataType: string
+		lineageTag: d288e16b-be04-43b0-8cff-58b2eda3952a
+		summarizeBy: none
+		sourceColumn: NOMEREDUZIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dEmpresa = m
+		mode: import
+		source =
+				let
+				    Fonte = Oracle.Database("datavale", [HierarchicalNavigation=true, Query="SELECT E.NROEMPRESA,E.FANTASIA,E.NOMEREDUZIDO FROM GE_EMPRESA E"]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Fonte,{{"NROEMPRESA", type text}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

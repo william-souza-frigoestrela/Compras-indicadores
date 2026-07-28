@@ -1,0 +1,33 @@
+table dCategoria
+	lineageTag: 2ec63740-9497-4e71-a344-476f1ad67f45
+
+	column GRUPO
+		dataType: string
+		lineageTag: 68bd797d-5dd9-46ab-8ff2-4d3bf679d425
+		summarizeBy: none
+		sourceColumn: GRUPO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CATEGORIA
+		dataType: string
+		lineageTag: a7886ec3-8d07-4db0-8a05-aa07a3d4e163
+		summarizeBy: none
+		sourceColumn: CATEGORIA
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dCategoria = m
+		mode: import
+		source =
+				let
+				    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("jVZLbttIEL1Kw6sZIImCbLIusUtyDZrddJNtGPJ4QcuEQYxEBvpkMdtZZDWHGGSRA8wRdLFUky2SskTHO0L96veq6pXu768gwjQ1lkx69e4qtkbAsthuD/9vynp79fBuCBAoQKLF6C3YZBLDjSMNR2ycV/tdUR1+HL7XLVhTDJSK+6m5JW3SBw+EDC2BSCy/CajKdV5ue7QS9+idtuDgoH1OwKK69kkqzKzR1GYZQYJ3QpabYldPqHpqPloLax0q4EyNjcAXxy5g5lIznnFGt0ZQbKakaAHSvBpgauIp9DkMvYm4WOZVucwD0GV041BIFBFYjan4TdItWk7ld1+nohh1ZtKAbth6layAEdFEGG7I61hLWmJf8+avYldWz81bZLQ8xuZ3SYIr3G93mzJflX/nT/VLlIhMZukPR6/BXca8czIhZFRX2/26fTuWLT6FR1l+LTbbMF7IhCqYo07FHC2oEATXj/kqfy6qMxRX5tLM180/Msmyq2PcJj38Y4Ryh385iNELmMOICQ9iAqFs3zkTO546OHxjB13X34vsA13EJ9ZkGIEJhb4XmNCf+48fP31OxbkBisE6jc/cDLidEXj/FlrnCTABMS8Er+vzpv5SLPeH/3hjWzxa25R97EX5tVz1Lz74+ALPIcUwh5YWAjXaOWYcvn21cBe6PEgh2dRP+97FW3epa2SL9VGZP+lasltE6mImCubWJBg5GEraWd3KMU8zTlVn6Mnl5k05AE8fjVcUOsCOxQwWqCV0OZ9HCAtHTa9ndNfNxUUqT9CpURJ+jWyEjqKLciVwVfDaBYHpba5JWnBqYNV3vEd5IWRKNDPu+gkdRWIaWcq87B/5lvElHOmZsfyb57MFHnfjBVDB1FgYelT5Y73Jd7VXkqGFEuDueIDAnogJi0ZQt5hXTPcBz+k0HAZPyTzX6wAN0xFaHorkYfNHZIJxQuqaDyTZ8ZVJNLrRN84j80vbzADa25BO83n4xrN9ycbIDxycL0SCC24Fd3hOqHlL+sbd7Mt1uewNnBeUcFQook4TYVWui2oXxLZDzoCbFiHL5+Dwrx/3q2E/OnTTwAsy1F4DL/QXluXU+k3K0ZnwTsaDzF4Um7B+86L66+6mPPckoT12PaunJ88aFTR3YjHzH9wW/i+jI6DRtqbulyeZb4Of/u7Qnus9E6za9Pha9QfOsr49/AQ=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [GRUPO = _t, CLUSTERS = _t]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Fonte,{{"GRUPO", type text}, {"CLUSTERS", type text}}),
+				    #"Colunas Renomeadas" = Table.RenameColumns(#"Tipo Alterado",{{"CLUSTERS", "CATEGORIA"}})
+				in
+				    #"Colunas Renomeadas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

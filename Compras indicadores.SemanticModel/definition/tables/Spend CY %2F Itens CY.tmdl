@@ -1,0 +1,48 @@
+table 'Spend CY / Itens CY'
+	lineageTag: b545e6eb-5eeb-46ad-8714-b318f95b3c8a
+
+	column 'Spend / Itens'
+		lineageTag: 2ea0addf-da30-4e54-ba53-bbf335ae1c0a
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Spend / Quant Pedido'
+
+		relatedColumnDetails
+			groupByColumn: 'Spend / Quant Campos'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Spend / Quant Campos'
+		isHidden
+		lineageTag: 47a0c783-b536-428d-a95c-b1f44acfab1b
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Spend / Quant Pedido'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Spend / Quant Pedido'
+		isHidden
+		formatString: 0
+		lineageTag: 111adc8f-b48a-423d-b291-f44e0b17ac84
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Spend CY / Itens CY' = calculated
+		mode: import
+		source =
+				{
+				    ("Spend", NAMEOF('Medidas'[Spend CY]), 0),
+				    ("Itens", NAMEOF('Medidas'[Qtd itens CY]), 1)
+				}
+
+	annotation PBI_Id = 8d8bdd7b8be5418780c237f12b37265d
+

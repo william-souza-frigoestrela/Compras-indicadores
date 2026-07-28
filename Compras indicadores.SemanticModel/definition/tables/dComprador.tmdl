@@ -1,0 +1,25 @@
+table dComprador
+	lineageTag: 619323da-f0e2-4c4d-b8eb-1ac44c0612c8
+
+	column NOME
+		dataType: string
+		lineageTag: ac0d22b6-9187-42b6-b6a0-f1b6065455c5
+		summarizeBy: none
+		sourceColumn: NOME
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dComprador = m
+		mode: import
+		source =
+				let
+				    Fonte = DCEVPB_SOLICITACAOTEMPOAPROVACAO,
+				    #"Outras Colunas Removidas" = Table.SelectColumns(Fonte,{"NOME"}),
+				    #"Duplicatas Removidas" = Table.Distinct(#"Outras Colunas Removidas")
+				in
+				    #"Duplicatas Removidas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+
