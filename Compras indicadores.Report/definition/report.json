@@ -1,0 +1,127 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY26SU05",
+      "reportVersionAtImport": {
+        "visual": "2.9.0",
+        "report": "3.3.0",
+        "page": "2.3.1"
+      },
+      "type": "SharedResources"
+    }
+  },
+  "filterConfig": {
+    "filterSortOrder": "Custom"
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY26SU05",
+          "path": "BaseThemes/CY26SU05.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Cost38129689871566264.svg",
+          "path": "Cost38129689871566264.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Detalhe_Operacional10083119995754786.svg",
+          "path": "Detalhe_Operacional10083119995754786.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Detalhe_solicita__o9932654958452993.svg",
+          "path": "Detalhe_solicita__o9932654958452993.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Detalhe_varia__o_PMP5896679019103331.svg",
+          "path": "Detalhe_varia__o_PMP5896679019103331.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Detalhe_varia__o_spend29522258372333654.svg",
+          "path": "Detalhe_varia__o_spend29522258372333654.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Fundo_tela3700413029803118.svg",
+          "path": "Fundo_tela3700413029803118.svg",
+          "type": "Image"
+        },
+        {
+          "name": "PMP21610652596651025.svg",
+          "path": "PMP21610652596651025.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Resultado_operacional04920238340453986.svg",
+          "path": "Resultado_operacional04920238340453986.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Solicitacao3623499547933646.svg",
+          "path": "Solicitacao3623499547933646.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Spend07255611038506693.svg",
+          "path": "Spend07255611038506693.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Urgencias_por_unidade9740586556425498.svg",
+          "path": "Urgencias_por_unidade9740586556425498.svg",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}

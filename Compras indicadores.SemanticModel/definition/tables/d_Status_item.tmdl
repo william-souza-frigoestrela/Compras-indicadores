@@ -1,0 +1,36 @@
+table d_Status_item
+	lineageTag: a4618919-163d-4fa9-be5f-dc725375d607
+
+	column STATUSITEM
+		dataType: double
+		lineageTag: 3803f520-5866-45e4-95f1-0c164445e791
+		summarizeBy: none
+		sourceColumn: STATUSITEM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Desc_status_item
+		dataType: string
+		lineageTag: 93b8b483-03f3-4954-ab58-daab7e2fc726
+		summarizeBy: none
+		sourceColumn: Desc_status_item
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_Status_item = m
+		mode: import
+		source =
+				let
+				    Fonte = DCEVPB_SOLICITACAOTEMPOAPROVACAO,
+				    #"Outras Colunas Removidas" = Table.SelectColumns(Fonte,{"STATUSITEM"}),
+				    #"Duplicatas Removidas" = Table.Distinct(#"Outras Colunas Removidas"),
+				    #"Coluna Condicional Adicionada" = Table.AddColumn(#"Duplicatas Removidas", "Desc_status_item", each if [STATUSITEM] = 5 then "Cotação Aprovada" else if [STATUSITEM] = 9 then "Cancelado" else if [STATUSITEM] = 3 then "Solicitação Aprovada" else if [STATUSITEM] = 4 then "Cotação Pré-aprovada" else null, type text)
+				in
+				    #"Coluna Condicional Adicionada"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,252 @@
+table dCalendario
+	lineageTag: 66c2ee74-5a6a-4394-a31b-150a14799414
+	dataCategory: Time
+
+	column Date
+		isKey
+		formatString: Short Date
+		lineageTag: 34393577-d656-4be6-8003-b63320f2060c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data
+		lineageTag: 20c53ecf-82e4-4926-9d36-e2fec9a22622
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Data]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ano2
+		formatString: 0
+		lineageTag: 6aa0b563-a405-4675-95c5-7a7a41493679
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Ano2]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ano
+		lineageTag: 56787fb5-0f1b-4ef7-8ed8-6ac68c1fa8a6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Ano]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anomês nome'
+		lineageTag: 447d7144-6583-42ba-bef8-2b51a082f5fa
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Anomês nome]
+		sortByColumn: 'Mês num'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Anomês
+		lineageTag: 1d38b068-06f7-4be4-9829-684f22193fda
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Anomês]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Trim num'
+		formatString: 0
+		lineageTag: b43d9e50-7dbc-424d-8fc0-4a095e445001
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Trim num]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Trim nome'
+		lineageTag: 07f3b791-e3f1-476a-bb78-1d4771878fb3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Trim nome]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mês num'
+		formatString: 0
+		lineageTag: 0c46d84b-00bd-4596-8cb0-88fb6e7b89c4
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Mês num]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mês nome'
+		lineageTag: 0d062153-816d-471f-8eb0-8f4f63b65844
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Mês nome]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mês abreviado'
+		lineageTag: 766eb797-72b8-4ffb-adeb-f28bced89223
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Mês abreviado]
+		sortByColumn: 'Mês num'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dia
+		formatString: 0
+		lineageTag: 6145c902-1d28-4ac4-a72c-de1da24af5e7
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Dia]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dia da semana'
+		formatString: 0
+		lineageTag: 931b6e9f-55fa-468d-9c0a-cd858ec2f10e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Dia da semana]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dia da semana nome'
+		lineageTag: 829cbb89-b7aa-419a-8b53-ed53e1f550b5
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Dia da semana nome]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Semana num'
+		formatString: 0
+		lineageTag: 1b1bece3-e284-47c8-8764-c9ca10cc54f8
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Semana num]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dia de trabalho'
+		lineageTag: 2dd76fc2-2d54-4ab0-b913-687b2690622f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Dia de trabalho]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ano atual'
+		lineageTag: 3f38be79-3217-4fe2-a086-d920f3797738
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Ano atual]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mês atual'
+		lineageTag: 223daa2a-64f5-4b30-bb6b-2ed90da9de00
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Mês atual]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dia atual'
+		lineageTag: 74cb0910-6e8a-4299-829e-c4cb81a05278
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Dia atual]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ano móvel'
+		formatString: 0
+		lineageTag: 8f7ae9d8-5bb5-4204-b1f9-7737718bbbe5
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Ano móvel]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Trim. móvel'
+		formatString: 0
+		lineageTag: fefb2b15-9a7d-4e34-a3f9-a3cc603fa55e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Trim. móvel]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mês móvel'
+		formatString: 0
+		lineageTag: dcbf3033-d3d0-4000-aaf6-bfd43c779036
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Mês móvel]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Semana móvel'
+		formatString: 0
+		lineageTag: 901b3cad-6def-4e8a-9bd2-0ba872ca81d4
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Semana móvel]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dia movel'
+		formatString: 0
+		lineageTag: 06f5d91a-f1fe-4b91-9578-e43fea16b7c9
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Dia movel]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dCalendario = calculated
+		mode: import
+		source =
+				
+				--VAR vAnoMin = YEAR(MIN(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTASOLICITACAO]))
+				VAR vAnoMin = YEAR(DATE(2025,01,01))
+				VAR vAnoMax = YEAR(MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTASOLICITACAO]))
+				VAR vMesMax = MONTH(MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTASOLICITACAO]))
+				var vDiaMax = DAY(MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTASOLICITACAO]))
+				VAR vDataInicial = DATE(vAnoMin, 01, 01)
+				VAR vDataFinal = DATE(vAnoMax, vMesMax, vDiaMax)
+				RETURN
+				ADDCOLUMNS(
+				    CALENDAR(vDataInicial, vDataFinal),
+				    "Data" , IF(YEAR([Date])=YEAR(TODAY()) && MONTH([Date])=MONTH(TODAY()) && DAY([Date]) = DAY(TODAY()), "Hoje", FORMAT ( [Date],"dd/mm/yyyy")),
+				    "Ano2", YEAR([Date]),
+				    "Ano" , if (YEAR ( [Date] )= YEAR(TODAY()),"Ano atual",FORMAT([Date],"yyyy")),
+				    "Anomês nome", FORMAT ( [Date], "mmm/yy"),
+				    "Anomês" , FORMAT([Date],"yyyy/mm"),
+				    "Trim num" , QUARTER([Date]),
+				    "Trim nome", FORMAT ([Date], "\Qq" ),
+				    "Mês num" , MONTH ( [Date] ),
+				    "Mês nome", IF(YEAR([Date])=YEAR(TODAY()) && MONTH([Date])=MONTH(TODAY()), "Mês atual", FORMAT ( [Date],"mmmm")),
+				    "Mês abreviado", FORMAT ( [Date], "mmm" ),
+				    "Dia" , DAY([Date]),
+				    "Dia da semana",WEEKDAY([Date],2),
+				    "Dia da semana nome", left(FORMAT ([Date],"dddd"),3),
+				    "Semana num",WEEKDAY([Date]),
+				    "Dia de trabalho", IF(WEEKDAY([Date],2)=1||WEEKDAY([Date],2)=7,"N","S"),
+				    "Ano atual" , IF(YEAR([Date])=YEAR(TODAY()),"S","N"),
+				    "Mês atual" , IF(YEAR([Date])=YEAR(TODAY()) && MONTH([Date])=MONTH(TODAY()),"S","N"),
+				    "Dia atual" , IF(YEAR([Date])=YEAR(TODAY()) && MONTH([Date])=MONTH(TODAY()) && DAY([Date])=DAY(TODAY()),"S","N"),
+				    "Ano móvel" , DATEDIFF(TODAY(),[Date],YEAR),
+				    "Trim. móvel",DATEDIFF(TODAY(),[Date],QUARTER),
+				    "Mês móvel",DATEDIFF(TODAY(),[Date],MONTH),
+				    "Semana móvel",DATEDIFF(TODAY(),[Date],WEEK),
+				    "Dia movel",DATEDIFF(TODAY(),[Date],DAY)
+				)
+
+	annotation PBI_Id = 7e9024cce955415b901d1cb9a381d910
+

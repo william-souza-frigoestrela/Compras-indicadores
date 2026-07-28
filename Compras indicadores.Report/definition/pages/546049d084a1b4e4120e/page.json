@@ -1,0 +1,222 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "546049d084a1b4e4120e",
+  "displayName": "Detalhe variação PMP",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ddd0af087ae4c35eb880",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dFornecedores"
+              }
+            },
+            "Property": "Fornecedor"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "c635c7a9cd92180201ec",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dCategoria"
+              }
+            },
+            "Property": "CATEGORIA"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "7334b011618cc2b94a16",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dEmpresa"
+              }
+            },
+            "Property": "NOMEREDUZIDO"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "4bcd8902b5090b07b64b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dFornecedores"
+              }
+            },
+            "Property": "Fornecedor"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "dFornecedores",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "Fornecedor"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'SECRETARIA DA FAZENDA EST'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "1de81dd23c25bdbda3c5",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "1e1bb4b89d55b580444b",
+        "boundFilter": "c635c7a9cd92180201ec",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dCategoria"
+              }
+            },
+            "Property": "CATEGORIA"
+          }
+        }
+      },
+      {
+        "name": "96fd96ef87100842d9d4",
+        "boundFilter": "7334b011618cc2b94a16",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dEmpresa"
+              }
+            },
+            "Property": "NOMEREDUZIDO"
+          }
+        }
+      },
+      {
+        "name": "2f0f182dc79621aa30d3",
+        "boundFilter": "4bcd8902b5090b07b64b",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dFornecedores"
+              }
+            },
+            "Property": "Fornecedor"
+          }
+        }
+      }
+    ]
+  },
+  "objects": {
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "313L"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "background": [
+      {
+        "properties": {
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Detalhe variação PMP.svg'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "Detalhe_varia__o_PMP5896679019103331.svg"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Normal'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "631b94d43ee0ceb00253",
+      "target": "111982ac06043cd3e728",
+      "type": "DataFilter"
+    }
+  ]
+}

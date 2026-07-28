@@ -1,0 +1,140 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "ef93e43d0aa9cb045acc",
+  "position": {
+    "x": 10.049261083743842,
+    "y": 2.9556650246305418,
+    "z": 0,
+    "height": 185.02463054187191,
+    "width": 310.04926108374383,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Regras consideradas para o relatório:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#ffffff"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Data de referencia é a data da emissão do pedido;",
+                    "textStyle": {
+                      "color": "#ffffff"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Relatório Datavale referencia está em:",
+                    "textStyle": {
+                      "color": "#ffffff"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Compras > Relatório > Cotação > Pedidos por período (período a partir da Data de Emissão);",
+                    "textStyle": {
+                      "color": "#ffffff"
+                    }
+                  }
+                ],
+                "indent": 1
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Status do Item Cancelado não incluído;",
+                    "textStyle": {
+                      "color": "#ffffff"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Status do Pedido Cancelado não incluído;",
+                    "textStyle": {
+                      "color": "#ffffff"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Sempre considerado o valor do pedido.",
+                    "textStyle": {
+                      "color": "#ffffff"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Valor "
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
