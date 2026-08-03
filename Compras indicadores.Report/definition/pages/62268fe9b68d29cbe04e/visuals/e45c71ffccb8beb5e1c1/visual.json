@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "27b0657e04680b81ca4d",
+  "name": "e45c71ffccb8beb5e1c1",
   "position": {
-    "x": 34.30321592649311,
-    "y": 92.128637059724355,
-    "z": 6001,
+    "x": 799.75497702909649,
+    "y": 91.148545176110261,
+    "z": 6003,
     "height": 69.586523736600313,
-    "width": 360.67381316998473,
-    "tabOrder": 6001
+    "width": 394.97702909647779,
+    "tabOrder": 6003
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,11 +23,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "1ª Oferta CY"
+                  "Property": "Cost CY"
                 }
               },
-              "queryRef": "Medidas.1ª Oferta",
-              "nativeQueryRef": "1ª Oferta CY"
+              "queryRef": "Medidas.Cost",
+              "nativeQueryRef": "Cost CY"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "Medidas"
                   }
                 },
-                "Property": "1ª Oferta CY"
+                "Property": "Cost CY"
               }
             },
             "direction": "Descending"
@@ -265,7 +265,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Valor Geral 1ª Oferta'"
+                  "Value": "'Valor Geral Pago'"
                 }
               }
             },
@@ -353,5 +353,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "3b9c208e4790018022e9",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Cost CY"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

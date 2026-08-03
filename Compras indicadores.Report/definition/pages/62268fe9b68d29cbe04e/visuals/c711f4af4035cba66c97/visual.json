@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "c711f4af4035cba66c97",
   "position": {
-    "x": 661.47783251231533,
-    "y": 91.330049261083744,
+    "x": 413.59877488514547,
+    "y": 92.128637059724355,
     "z": 6002,
-    "height": 69.731343283582092,
-    "width": 230.20895522388059,
+    "height": 69.586523736600313,
+    "width": 316.56967840735069,
     "tabOrder": 6002
   },
   "visual": {
@@ -23,11 +23,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Valor pago"
+                  "Property": "Valor pago CY"
                 }
               },
               "queryRef": "Medidas.Valor pago",
-              "nativeQueryRef": "Valor pago"
+              "nativeQueryRef": "Valor pago CY"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "Medidas"
                   }
                 },
-                "Property": "Valor pago"
+                "Property": "Valor pago CY"
               }
             },
             "direction": "Descending"

@@ -2103,7 +2103,7 @@ table Medidas
 	measure 'Valor Geral Pago'
 		lineageTag: ff9c4269-c0c9-498e-80d6-91db711b4c26
 
-	measure Cost = ```
+	measure 'Cost CY' = ```
 			
 			var valor_unit_prazo = SUM(DCEVPBI_SOLICITACAPRECOSAPROVADO[VLRUNITPRAZO])
 			
@@ -2118,13 +2118,13 @@ table Medidas
 
 		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
-	measure '1ª Oferta' = sum(DCEVPBI_SOLICITACAPRECOSAPROVADO[VLRUNITPRAZO])
+	measure '1ª Oferta CY' = sum(DCEVPBI_SOLICITACAPRECOSAPROVADO[VLRUNITPRAZO])
 		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: eda537eb-cc3d-4229-bc51-ebaf00325b11
 
 		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
-	measure 'Valor pago' = sum(DCEVPBI_SOLICITACAPRECOSAPROVADO[VLRUNITPAGO])
+	measure 'Valor pago CY' = sum(DCEVPBI_SOLICITACAPRECOSAPROVADO[VLRUNITPAGO])
 		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: afb81837-5859-4d2c-9d1e-57702a08b546
 
@@ -2141,8 +2141,35 @@ table Medidas
 		formatString: 0
 		lineageTag: 07a2e063-6874-4ca3-be26-d274100f973e
 
-	measure 'Cost saldo' = [Valor Geral Pago]-[Valor geral 1_oferta]
-		lineageTag: cfa891c0-f20f-4db9-808b-706ac702e467
+	measure '1ª Oferta LY' =
+			
+			CALCULATE(
+			    SUM(DCEVPBI_SOLICITACAPRECOSAPROVADO[VLRUNITPRAZO]),
+			    SAMEPERIODLASTYEAR(dCalendario[Date])
+			)
+		lineageTag: 836805f1-f424-43af-9601-988b46022f67
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Valor pago LY' =
+			
+			CALCULATE(
+			    sum(DCEVPBI_SOLICITACAPRECOSAPROVADO[VLRUNITPAGO]),
+			    dCalendario[Date]
+			)
+		lineageTag: bf7bff92-80e8-4c05-b03f-4a1d58a10c60
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Coas LY' =
+			
+			CALCULATE(
+			    [Cost CY],
+			    SAMEPERIODLASTYEAR(
+			        dCalendario[Date]
+			    )
+			)
+		lineageTag: e4da0608-2ca6-4938-849a-32bd7aed3a29
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 

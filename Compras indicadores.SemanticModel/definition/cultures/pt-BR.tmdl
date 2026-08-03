@@ -9440,7 +9440,7 @@ cultureInfo pt-BR
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Medidas",
-			          "ConceptualProperty": "Cost"
+			          "ConceptualProperty": "Cost CY"
 			        }
 			      },
 			      "State": "Generated",
@@ -9536,7 +9536,7 @@ cultureInfo pt-BR
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Medidas",
-			          "ConceptualProperty": "1ª Oferta"
+			          "ConceptualProperty": "1ª Oferta CY"
 			        }
 			      },
 			      "State": "Generated",
@@ -9552,7 +9552,7 @@ cultureInfo pt-BR
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Medidas",
-			          "ConceptualProperty": "Valor pago"
+			          "ConceptualProperty": "Valor pago CY"
 			        }
 			      },
 			      "State": "Generated",

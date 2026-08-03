@@ -42,11 +42,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "1ª Oferta"
+                  "Property": "1ª Oferta CY"
                 }
               },
               "queryRef": "Medidas.1ª Oferta",
-              "nativeQueryRef": "1ª Oferta"
+              "nativeQueryRef": "1ª Oferta CY"
             },
             {
               "field": {
@@ -56,11 +56,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Valor pago"
+                  "Property": "Valor pago CY"
                 }
               },
               "queryRef": "Medidas.Valor pago",
-              "nativeQueryRef": "Valor pago"
+              "nativeQueryRef": "Valor pago CY"
             }
           ]
         }
