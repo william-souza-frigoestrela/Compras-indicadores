@@ -2161,7 +2161,7 @@ table Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Coas LY' =
+	measure 'Cost LY' =
 			
 			CALCULATE(
 			    [Cost CY],
@@ -2170,6 +2170,18 @@ table Medidas
 			    )
 			)
 		lineageTag: e4da0608-2ca6-4938-849a-32bd7aed3a29
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Var % Cost LY' =
+			
+			VAR Atual =  [Cost CY]
+			VAR Anterior =  [Cost LY]
+			VAR Diferenca = Atual - Anterior
+			
+			RETURN
+			    DIVIDE(Diferenca, ABS(Anterior), 0)
+		lineageTag: 77db1da5-d08f-466f-8373-1f5fea7a1ef7
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
