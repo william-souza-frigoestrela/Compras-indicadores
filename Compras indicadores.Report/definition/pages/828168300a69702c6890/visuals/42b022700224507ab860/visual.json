@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "42b022700224507ab860",
   "position": {
     "x": 293.03504847129011,
@@ -20,37 +20,20 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dCalendario"
+                      "Entity": "dComprador"
                     }
                   },
-                  "Property": "Anomês nome"
+                  "Property": "NOME"
                 }
               },
-              "queryRef": "dCalendario.Anomês nome",
-              "nativeQueryRef": "Anomês nome",
+              "queryRef": "dComprador.NOME",
+              "nativeQueryRef": "NOME",
               "active": true
             }
           ]
         }
       }
     },
-    "expansionStates": [
-      {
-        "roles": [
-          "Values"
-        ],
-        "levels": [
-          {
-            "queryRefs": [
-              "dCalendario.Anomês nome"
-            ],
-            "isCollapsed": true,
-            "isPinned": true
-          }
-        ],
-        "root": {}
-      }
-    ],
     "objects": {
       "data": [
         {

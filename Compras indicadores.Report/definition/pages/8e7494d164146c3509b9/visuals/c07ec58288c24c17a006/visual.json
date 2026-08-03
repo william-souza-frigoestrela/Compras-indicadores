@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "c07ec58288c24c17a006",
   "position": {
     "x": 49.389067524115752,
@@ -53,12 +53,12 @@
                       "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
                     }
                   },
-                  "Property": "DTAAPROVACAOPEDIDO"
+                  "Property": "SOLIAPROVACAO"
                 }
               },
-              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.DTAAPROVACAOPEDIDO",
-              "nativeQueryRef": "DATA APROVAÇÃO",
-              "displayName": "DATA APROVAÇÃO"
+              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.SOLIAPROVACAO",
+              "nativeQueryRef": "SOLIC. APROVACAO",
+              "displayName": "SOLIC. APROVACAO"
             },
             {
               "field": {
@@ -277,7 +277,7 @@
                     "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
                   }
                 },
-                "Property": "DTAAPROVACAOPEDIDO"
+                "Property": "DTASOLICITACAO"
               }
             },
             "direction": "Descending"
@@ -539,20 +539,6 @@
           },
           "selector": {
             "metadata": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.DTASOLICITACAO"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "137.51750454297664D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.DTAAPROVACAOPEDIDO"
           }
         },
         {
