@@ -2185,6 +2185,18 @@ table Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Var % 1 Oferta LY' =
+			
+			VAR Atual = [1ª Oferta CY]
+			VAR Anterior = [1ª Oferta LY]
+			VAR Diferenca = Atual - Anterior
+			
+			RETURN
+			    DIVIDE(Diferenca, ABS(Anterior), 0)
+		lineageTag: 4fe05726-ff58-46e4-9ff9-3d71448dd930
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Column
 		isHidden
 		formatString: 0
