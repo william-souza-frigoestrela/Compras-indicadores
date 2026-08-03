@@ -9552,7 +9552,7 @@ cultureInfo pt-BR
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Medidas",
-			          "ConceptualProperty": "Valor pago CY"
+			          "ConceptualProperty": "Valor pago cost CY"
 			        }
 			      },
 			      "State": "Generated",

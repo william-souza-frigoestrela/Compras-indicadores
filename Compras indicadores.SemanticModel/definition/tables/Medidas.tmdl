@@ -2124,7 +2124,7 @@ table Medidas
 
 		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
-	measure 'Valor pago CY' = sum(DCEVPBI_SOLICITACAPRECOSAPROVADO[VLRUNITPAGO])
+	measure 'Valor pago cost CY' = sum(DCEVPBI_SOLICITACAPRECOSAPROVADO[VLRUNITPAGO])
 		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: afb81837-5859-4d2c-9d1e-57702a08b546
 
@@ -2151,7 +2151,7 @@ table Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Valor pago LY' =
+	measure 'Valor pago cost LY' =
 			
 			CALCULATE(
 			    sum(DCEVPBI_SOLICITACAPRECOSAPROVADO[VLRUNITPAGO]),
@@ -2194,6 +2194,18 @@ table Medidas
 			RETURN
 			    DIVIDE(Diferenca, ABS(Anterior), 0)
 		lineageTag: 4fe05726-ff58-46e4-9ff9-3d71448dd930
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Var % Geral pago cost LY' =
+			
+			VAR Atual = [Valor pago cost CY]
+			VAR Anterior = [Valor pago cost LY]
+			VAR Diferenca = Atual - Anterior
+			
+			RETURN
+			    DIVIDE(Diferenca, ABS(Anterior), 0)
+		lineageTag: 65f214d5-63c2-47d1-8fb4-440a955296e8
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 

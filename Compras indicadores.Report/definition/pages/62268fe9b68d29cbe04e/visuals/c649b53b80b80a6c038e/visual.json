@@ -56,11 +56,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Valor pago CY"
+                  "Property": "Valor pago cost CY"
                 }
               },
               "queryRef": "Medidas.Valor pago",
-              "nativeQueryRef": "Valor pago CY"
+              "nativeQueryRef": "Valor pago cost CY"
             }
           ]
         }
