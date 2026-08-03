@@ -293,7 +293,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Evolução spend mensal (CY vs LY)'"
+                  "Value": "'Evolução Cost mensal'"
                 }
               }
             },

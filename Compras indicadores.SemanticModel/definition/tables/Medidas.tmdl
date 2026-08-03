@@ -2147,9 +2147,10 @@ table Medidas
 			    SUM(DCEVPBI_SOLICITACAPRECOSAPROVADO[VLRUNITPRAZO]),
 			    SAMEPERIODLASTYEAR(dCalendario[Date])
 			)
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: 836805f1-f424-43af-9601-988b46022f67
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure 'Valor pago cost LY' =
 			
@@ -2157,9 +2158,10 @@ table Medidas
 			    sum(DCEVPBI_SOLICITACAPRECOSAPROVADO[VLRUNITPAGO]),
 			    dCalendario[Date]
 			)
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: bf7bff92-80e8-4c05-b03f-4a1d58a10c60
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure 'Cost LY' =
 			
@@ -2169,9 +2171,10 @@ table Medidas
 			        dCalendario[Date]
 			    )
 			)
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: e4da0608-2ca6-4938-849a-32bd7aed3a29
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure 'Var % Cost LY' =
 			
@@ -2181,9 +2184,8 @@ table Medidas
 			
 			RETURN
 			    DIVIDE(Diferenca, ABS(Anterior), 0)
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 77db1da5-d08f-466f-8373-1f5fea7a1ef7
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Var % 1 Oferta LY' =
 			
@@ -2193,9 +2195,8 @@ table Medidas
 			
 			RETURN
 			    DIVIDE(Diferenca, ABS(Anterior), 0)
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 4fe05726-ff58-46e4-9ff9-3d71448dd930
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Var % Geral pago cost LY' =
 			
@@ -2205,9 +2206,8 @@ table Medidas
 			
 			RETURN
 			    DIVIDE(Diferenca, ABS(Anterior), 0)
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 65f214d5-63c2-47d1-8fb4-440a955296e8
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Column
 		isHidden

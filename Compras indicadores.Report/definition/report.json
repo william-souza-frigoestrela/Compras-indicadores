@@ -59,8 +59,8 @@
       "type": "RegisteredResources",
       "items": [
         {
-          "name": "Cost38129689871566264.svg",
-          "path": "Cost38129689871566264.svg",
+          "name": "Cost6933952133200202.svg",
+          "path": "Cost6933952133200202.svg",
           "type": "Image"
         },
         {
@@ -122,6 +122,10 @@
     "defaultDrillFilterOtherVisuals": true,
     "allowChangeFilterTypes": true,
     "useEnhancedTooltips": true,
-    "useDefaultAggregateDisplayName": true
+    "useDefaultAggregateDisplayName": true,
+    "queryLimitOption": "None",
+    "customMemoryLimit": "1048576",
+    "customTimeoutLimit": "225",
+    "locale": "pt-BR"
   }
 }

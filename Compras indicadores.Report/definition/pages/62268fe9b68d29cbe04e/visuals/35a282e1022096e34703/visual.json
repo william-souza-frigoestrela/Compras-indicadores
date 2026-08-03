@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "e45c71ffccb8beb5e1c1",
+  "name": "35a282e1022096e34703",
   "position": {
-    "x": 872.28177641653906,
-    "y": 83.307810107197554,
-    "z": 7000,
-    "height": 69.586523736600313,
-    "width": 214.64012251148546,
-    "tabOrder": 7000
+    "x": 1086.9218989280246,
+    "y": 86.248085758039821,
+    "z": 8000,
+    "height": 63.705972434915779,
+    "width": 158.77488514548239,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,43 +23,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Cost CY"
+                  "Property": "Var % Cost LY"
                 }
               },
-              "queryRef": "Medidas.Cost",
-              "nativeQueryRef": "Cost CY"
-            }
-          ]
-        },
-        "Tooltips": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas"
-                    }
-                  },
-                  "Property": "Cost CY"
-                }
-              },
-              "queryRef": "Medidas.Cost",
-              "nativeQueryRef": "Cost CY"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medidas"
-                    }
-                  },
-                  "Property": "Cost LY"
-                }
-              },
-              "queryRef": "Medidas.Cost LY",
-              "nativeQueryRef": "Cost LY"
+              "queryRef": "Medidas.Var % Cost LY",
+              "nativeQueryRef": "Var % Cost LY"
             }
           ]
         }
@@ -74,7 +42,7 @@
                     "Entity": "Medidas"
                   }
                 },
-                "Property": "Cost CY"
+                "Property": "Var % Cost LY"
               }
             },
             "direction": "Descending"
@@ -109,6 +77,20 @@
                   "Value": "false"
                 }
               }
+            },
+            "paddingUniform": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            },
+            "paddingIndividual": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           },
           "selector": {
@@ -120,7 +102,7 @@
             "columnCount": {
               "expr": {
                 "Literal": {
-                  "Value": "5L"
+                  "Value": "1L"
                 }
               }
             },
@@ -224,7 +206,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "8D"
                 }
               }
             },
@@ -250,7 +232,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "12D"
                 }
               }
             }
@@ -586,7 +568,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Saldo Cost'"
+                  "Value": "'Vs LY'"
                 }
               }
             },
@@ -626,7 +608,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "8D"
                 }
               }
             }
@@ -701,19 +683,6 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "visualTooltip": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
                 }
               }
             }
