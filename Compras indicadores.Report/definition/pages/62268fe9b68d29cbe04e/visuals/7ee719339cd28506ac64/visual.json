@@ -272,23 +272,5 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "690a9ec1486a1c59700b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dEmpresa"
-              }
-            },
-            "Property": "NOMEREDUZIDO"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }
