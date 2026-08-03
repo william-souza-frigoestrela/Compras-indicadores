@@ -2141,6 +2141,11 @@ table Medidas
 		formatString: 0
 		lineageTag: 07a2e063-6874-4ca3-be26-d274100f973e
 
+	measure 'Cost saldo' = [Valor Geral Pago]-[Valor geral 1_oferta]
+		lineageTag: cfa891c0-f20f-4db9-808b-706ac702e467
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Column
 		isHidden
 		formatString: 0
