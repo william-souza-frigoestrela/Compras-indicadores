@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "087e5c45dc4500055dcd",
   "position": {
     "x": 574.14790996784564,
@@ -117,13 +117,6 @@
                           }
                         ],
                         "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'COTAÇÃO PRÉ-APROVADA'"
-                              }
-                            }
-                          ],
                           [
                             {
                               "Literal": {

@@ -490,16 +490,6 @@ cultureInfo pt-BR
 			            "State": "Generated",
 			            "Weight": 0.7
 			          }
-			        },
-			        {
-			          "DATA APROVAÇÃO": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ],
 			      "SemanticType": "Time"
@@ -561,6 +551,16 @@ cultureInfo pt-BR
 			          "date": {
 			            "State": "Generated",
 			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "SOLIC. APROVACAO": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ],
@@ -8731,7 +8731,7 @@ cultureInfo pt-BR
 			        }
 			      ]
 			    },
-			    "medida.var__resultado_operacional_mensal_LY": {
+			    "medida.var__resultado_operacional_dinamico_LY": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Medidas",
@@ -8741,7 +8741,7 @@ cultureInfo pt-BR
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "var % resultado operacional mensal LY": {
+			          "var % resultado operacional dinamico LY": {
 			            "State": "Generated"
 			          }
 			        }
@@ -10059,6 +10059,9 @@ cultureInfo pt-BR
 			        }
 			      },
 			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
 			      "Terms": [
 			        {
 			          "seqfornecedor": {
@@ -10420,9 +10423,1156 @@ cultureInfo pt-BR
 			          }
 			        }
 			      ]
+			    },
+			    "medida.qtd_itens_c__pedido": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Qtd itens c/ pedido"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "qtd itens c/ pedido": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "qtd itens c": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "qtd itens c pedido": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "pedido": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado.nome": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO",
+			          "ConceptualProperty": "NOME"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "nome": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "dcevpbi_pedidoprazopagamento_has_d_empresa": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOPRAZOPAGAMENTO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoprazopagamento": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoprazopagamento"
+			          }
+			        },
+			        "d_empresa": {
+			          "Target": {
+			            "Entity": "d_empresa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoprazopagamento"
+			            },
+			            "Object": {
+			              "Role": "d_empresa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoprazopagamentos_have_d_empresas"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_empresa"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoprazopagamento"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_empresas_have_dcevpbi_pedidoprazopagamentos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoprazopagamento_has_d_fornecedore": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOPRAZOPAGAMENTO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoprazopagamento": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoprazopagamento"
+			          }
+			        },
+			        "d_fornecedore": {
+			          "Target": {
+			            "Entity": "d_fornecedore"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoprazopagamento"
+			            },
+			            "Object": {
+			              "Role": "d_fornecedore"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoprazopagamentos_have_d_fornecedores"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_fornecedore"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoprazopagamento"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_fornecedores_have_dcevpbi_pedidoprazopagamentos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoprazopagamento_has_d_categoria": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOPRAZOPAGAMENTO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoprazopagamento": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoprazopagamento"
+			          }
+			        },
+			        "d_categoria": {
+			          "Target": {
+			            "Entity": "d_categoria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoprazopagamento"
+			            },
+			            "Object": {
+			              "Role": "d_categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoprazopagamentos_have_d_categorias"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_categoria"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoprazopagamento"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_categorias_have_dcevpbi_pedidoprazopagamentos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoprazopagamento_has_d_calendario": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOPRAZOPAGAMENTO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoprazopagamento": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoprazopagamento"
+			          }
+			        },
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoprazopagamento"
+			            },
+			            "Object": {
+			              "Role": "d_calendario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoprazopagamentos_have_d_calendarios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoprazopagamento"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_dcevpbi_pedidoprazopagamentos"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_d_status_item": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "d_status_item": {
+			          "Target": {
+			            "Entity": "d_status_item"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "d_status_item"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_d_status_items"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_status_item"
+			            },
+			            "Object": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_status_items_have_dcevpb_solicitacaotempoaprovacaos"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_d_status": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "d_status": {
+			          "Target": {
+			            "Entity": "d_status"
+			          },
+			          "Nouns": [
+			            {
+			              "status": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "d_status"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_d_statuses"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_status"
+			            },
+			            "Object": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_statuses_have_dcevpb_solicitacaotempoaprovacaos"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_d_comprador": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "d_comprador": {
+			          "Target": {
+			            "Entity": "d_comprador"
+			          },
+			          "Nouns": [
+			            {
+			              "nome": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "d_comprador"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_d_compradors"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_comprador"
+			            },
+			            "Object": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_compradors_have_dcevpb_solicitacaotempoaprovacaos"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_d_fornecedore": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "d_fornecedore": {
+			          "Target": {
+			            "Entity": "d_fornecedore"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "d_fornecedore"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_d_fornecedores"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_fornecedore"
+			            },
+			            "Object": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_fornecedores_have_dcevpb_solicitacaotempoaprovacaos"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_d_categoria": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "d_categoria": {
+			          "Target": {
+			            "Entity": "d_categoria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "d_categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_d_categorias"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_categoria"
+			            },
+			            "Object": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_categorias_have_dcevpb_solicitacaotempoaprovacaos"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_d_calendario": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "d_calendario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_d_calendarios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_dcevpb_solicitacaotempoaprovacaos"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_d_prioridade": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "d_prioridade": {
+			          "Target": {
+			            "Entity": "d_prioridade"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "d_prioridade"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_d_prioridades"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_prioridade"
+			            },
+			            "Object": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_prioridades_have_dcevpb_solicitacaotempoaprovacaos"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_d_empresa": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "d_empresa": {
+			          "Target": {
+			            "Entity": "d_empresa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "d_empresa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_d_empresas"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_empresa"
+			            },
+			            "Object": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_empresas_have_dcevpb_solicitacaotempoaprovacaos"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_qtd_itens_c__pedido": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpb_solicitacaotempoaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpb_solicitacaotempoaprovacao"
+			          }
+			        },
+			        "medida.qtd_itens_c__pedido": {
+			          "Target": {
+			            "Entity": "medida.qtd_itens_c__pedido"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpb_solicitacaotempoaprovacao"
+			            },
+			            "Object": {
+			              "Role": "medida.qtd_itens_c__pedido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_qtd_itens_c__pedido"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_detalhe_cost": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "dcevpbi_solicitacaprecosaprovado.detalhe_cost": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado.detalhe_cost"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado.detalhe_cost"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_detalhe_costs"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_data_soliaprovacao": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "dcevpbi_solicitacaprecosaprovado.data_soliaprovacao": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado.data_soliaprovacao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado.data_soliaprovacao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_data_soliaprovacaos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_vlrpedido": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "dcevpbi_solicitacaprecosaprovado.vlrpedido": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado.vlrpedido"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado.vlrpedido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_vlrpedidos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_status": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "dcevpbi_solicitacaprecosaprovado.status": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado.status"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado.status"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_statuses"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_nomerazao": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "dcevpbi_solicitacaprecosaprovado.nomerazao": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado.nomerazao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado.nomerazao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_nomerazaos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_nropedido": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "dcevpbi_solicitacaprecosaprovado.nropedido": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado.nropedido"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado.nropedido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_nropedidos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_vlrunitpago": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "dcevpbi_solicitacaprecosaprovado.vlrunitpago": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado.vlrunitpago"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado.vlrunitpago"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_vlrunitpagos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_vlrnegocprazo": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "dcevpbi_solicitacaprecosaprovado.vlrnegocprazo": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado.vlrnegocprazo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado.vlrnegocprazo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_vlrnegocprazos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_vlrunitprazo": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "dcevpbi_solicitacaprecosaprovado.vlrunitprazo": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado.vlrunitprazo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado.vlrunitprazo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_vlrunitprazos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_quantidade": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "dcevpbi_solicitacaprecosaprovado.quantidade": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado.quantidade"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado.quantidade"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_quantidades"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_descricao": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "dcevpbi_solicitacaprecosaprovado.descricao": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado.descricao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado.descricao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_descricaos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_seqproduto": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "dcevpbi_solicitacaprecosaprovado.seqproduto": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado.seqproduto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado.seqproduto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_seqprodutos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_nrosolicitacao": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "dcevpbi_solicitacaprecosaprovado.nrosolicitacao": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado.nrosolicitacao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado.nrosolicitacao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_nrosolicitacaos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_dtasolicitacao": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "dcevpbi_solicitacaprecosaprovado.dtasolicitacao": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado.dtasolicitacao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado.dtasolicitacao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_dtasolicitacaos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_seqsolicitacao": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "dcevpbi_solicitacaprecosaprovado.seqsolicitacao": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado.seqsolicitacao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado.seqsolicitacao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_seqsolicitacaos"
+			        }
+			      ]
+			    },
 			    "d_status_item_has_desc_status_item": {
 			      "Binding": {
 			        "ConceptualEntity": "d_Status_item"
@@ -11176,7 +12326,7 @@ cultureInfo pt-BR
 			        }
 			      ]
 			    },
-			    "dcevpb_solicitacaotempoaprovacao_has_medida_var__resultado_operacional_mensal_LY": {
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_var__resultado_operacional_dinamico_LY": {
 			      "Binding": {
 			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
 			      },
@@ -11187,9 +12337,9 @@ cultureInfo pt-BR
 			            "Entity": "dcevpb_solicitacaotempoaprovacao"
 			          }
 			        },
-			        "medida.var__resultado_operacional_mensal_LY": {
+			        "medida.var__resultado_operacional_dinamico_LY": {
 			          "Target": {
-			            "Entity": "medida.var__resultado_operacional_mensal_LY"
+			            "Entity": "medida.var__resultado_operacional_dinamico_LY"
 			          }
 			        }
 			      },
@@ -11200,12 +12350,12 @@ cultureInfo pt-BR
 			              "Role": "dcevpb_solicitacaotempoaprovacao"
 			            },
 			            "Object": {
-			              "Role": "medida.var__resultado_operacional_mensal_LY"
+			              "Role": "medida.var__resultado_operacional_dinamico_LY"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_var__resultado_operacional_mensal_LY"
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_var__resultado_operacional_dinamico_LY"
 			        }
 			      ]
 			    },
@@ -18845,1100 +19995,6 @@ cultureInfo pt-BR
 			        }
 			      ]
 			    },
-			    "dcevpbi_solicitacaprecosaprovado_has_seqsolicitacao": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_solicitacaprecosaprovado": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado"
-			          }
-			        },
-			        "dcevpbi_solicitacaprecosaprovado.seqsolicitacao": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado.seqsolicitacao"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado.seqsolicitacao"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_seqsolicitacaos"
-			        }
-			      ]
-			    },
-			    "dcevpbi_solicitacaprecosaprovado_has_dtasolicitacao": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_solicitacaprecosaprovado": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado"
-			          }
-			        },
-			        "dcevpbi_solicitacaprecosaprovado.dtasolicitacao": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado.dtasolicitacao"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado.dtasolicitacao"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_dtasolicitacaos"
-			        }
-			      ]
-			    },
-			    "dcevpbi_solicitacaprecosaprovado_has_nrosolicitacao": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_solicitacaprecosaprovado": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado"
-			          }
-			        },
-			        "dcevpbi_solicitacaprecosaprovado.nrosolicitacao": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado.nrosolicitacao"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado.nrosolicitacao"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_nrosolicitacaos"
-			        }
-			      ]
-			    },
-			    "dcevpbi_solicitacaprecosaprovado_has_seqproduto": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_solicitacaprecosaprovado": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado"
-			          }
-			        },
-			        "dcevpbi_solicitacaprecosaprovado.seqproduto": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado.seqproduto"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado.seqproduto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_seqprodutos"
-			        }
-			      ]
-			    },
-			    "dcevpbi_solicitacaprecosaprovado_has_descricao": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_solicitacaprecosaprovado": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado"
-			          }
-			        },
-			        "dcevpbi_solicitacaprecosaprovado.descricao": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado.descricao"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado.descricao"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_descricaos"
-			        }
-			      ]
-			    },
-			    "dcevpbi_solicitacaprecosaprovado_has_quantidade": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_solicitacaprecosaprovado": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado"
-			          }
-			        },
-			        "dcevpbi_solicitacaprecosaprovado.quantidade": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado.quantidade"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado.quantidade"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_quantidades"
-			        }
-			      ]
-			    },
-			    "dcevpbi_solicitacaprecosaprovado_has_vlrunitprazo": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_solicitacaprecosaprovado": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado"
-			          }
-			        },
-			        "dcevpbi_solicitacaprecosaprovado.vlrunitprazo": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado.vlrunitprazo"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado.vlrunitprazo"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_vlrunitprazos"
-			        }
-			      ]
-			    },
-			    "dcevpbi_solicitacaprecosaprovado_has_vlrnegocprazo": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_solicitacaprecosaprovado": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado"
-			          }
-			        },
-			        "dcevpbi_solicitacaprecosaprovado.vlrnegocprazo": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado.vlrnegocprazo"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado.vlrnegocprazo"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_vlrnegocprazos"
-			        }
-			      ]
-			    },
-			    "dcevpbi_solicitacaprecosaprovado_has_vlrunitpago": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_solicitacaprecosaprovado": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado"
-			          }
-			        },
-			        "dcevpbi_solicitacaprecosaprovado.vlrunitpago": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado.vlrunitpago"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado.vlrunitpago"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_vlrunitpagos"
-			        }
-			      ]
-			    },
-			    "dcevpbi_solicitacaprecosaprovado_has_nropedido": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_solicitacaprecosaprovado": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado"
-			          }
-			        },
-			        "dcevpbi_solicitacaprecosaprovado.nropedido": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado.nropedido"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado.nropedido"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_nropedidos"
-			        }
-			      ]
-			    },
-			    "dcevpbi_solicitacaprecosaprovado_has_seqfornecedor": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_solicitacaprecosaprovado": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado"
-			          }
-			        },
-			        "dcevpbi_solicitacaprecosaprovado.seqfornecedor": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado.seqfornecedor"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado.seqfornecedor"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_seqfornecedors"
-			        }
-			      ]
-			    },
-			    "dcevpbi_solicitacaprecosaprovado_has_nomerazao": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_solicitacaprecosaprovado": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado"
-			          }
-			        },
-			        "dcevpbi_solicitacaprecosaprovado.nomerazao": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado.nomerazao"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado.nomerazao"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_nomerazaos"
-			        }
-			      ]
-			    },
-			    "dcevpbi_solicitacaprecosaprovado_has_status": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_solicitacaprecosaprovado": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado"
-			          }
-			        },
-			        "dcevpbi_solicitacaprecosaprovado.status": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado.status"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado.status"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_statuses"
-			        }
-			      ]
-			    },
-			    "dcevpbi_solicitacaprecosaprovado_has_vlrpedido": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_solicitacaprecosaprovado": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado"
-			          }
-			        },
-			        "dcevpbi_solicitacaprecosaprovado.vlrpedido": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado.vlrpedido"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado.vlrpedido"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_vlrpedidos"
-			        }
-			      ]
-			    },
-			    "dcevpbi_solicitacaprecosaprovado_has_data_soliaprovacao": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_solicitacaprecosaprovado": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado"
-			          }
-			        },
-			        "dcevpbi_solicitacaprecosaprovado.data_soliaprovacao": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado.data_soliaprovacao"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado.data_soliaprovacao"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_data_soliaprovacaos"
-			        }
-			      ]
-			    },
-			    "dcevpbi_solicitacaprecosaprovado_has_detalhe_cost": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_solicitacaprecosaprovado": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado"
-			          }
-			        },
-			        "dcevpbi_solicitacaprecosaprovado.detalhe_cost": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado.detalhe_cost"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado.detalhe_cost"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_detalhe_costs"
-			        }
-			      ]
-			    },
-			    "dcevpb_solicitacaotempoaprovacao_has_d_empresa": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpb_solicitacaotempoaprovacao": {
-			          "Target": {
-			            "Entity": "dcevpb_solicitacaotempoaprovacao"
-			          }
-			        },
-			        "d_empresa": {
-			          "Target": {
-			            "Entity": "d_empresa"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpb_solicitacaotempoaprovacao"
-			            },
-			            "Object": {
-			              "Role": "d_empresa"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_d_empresas"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_empresa"
-			            },
-			            "Object": {
-			              "Role": "dcevpb_solicitacaotempoaprovacao"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_empresas_have_dcevpb_solicitacaotempoaprovacaos"
-			        }
-			      ]
-			    },
-			    "dcevpb_solicitacaotempoaprovacao_has_d_prioridade": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpb_solicitacaotempoaprovacao": {
-			          "Target": {
-			            "Entity": "dcevpb_solicitacaotempoaprovacao"
-			          }
-			        },
-			        "d_prioridade": {
-			          "Target": {
-			            "Entity": "d_prioridade"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpb_solicitacaotempoaprovacao"
-			            },
-			            "Object": {
-			              "Role": "d_prioridade"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_d_prioridades"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_prioridade"
-			            },
-			            "Object": {
-			              "Role": "dcevpb_solicitacaotempoaprovacao"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_prioridades_have_dcevpb_solicitacaotempoaprovacaos"
-			        }
-			      ]
-			    },
-			    "dcevpb_solicitacaotempoaprovacao_has_d_calendario": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpb_solicitacaotempoaprovacao": {
-			          "Target": {
-			            "Entity": "dcevpb_solicitacaotempoaprovacao"
-			          }
-			        },
-			        "d_calendario": {
-			          "Target": {
-			            "Entity": "d_calendario"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpb_solicitacaotempoaprovacao"
-			            },
-			            "Object": {
-			              "Role": "d_calendario"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_d_calendarios"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_calendario"
-			            },
-			            "Object": {
-			              "Role": "dcevpb_solicitacaotempoaprovacao"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_calendarios_have_dcevpb_solicitacaotempoaprovacaos"
-			        }
-			      ]
-			    },
-			    "dcevpb_solicitacaotempoaprovacao_has_d_categoria": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpb_solicitacaotempoaprovacao": {
-			          "Target": {
-			            "Entity": "dcevpb_solicitacaotempoaprovacao"
-			          }
-			        },
-			        "d_categoria": {
-			          "Target": {
-			            "Entity": "d_categoria"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpb_solicitacaotempoaprovacao"
-			            },
-			            "Object": {
-			              "Role": "d_categoria"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_d_categorias"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_categoria"
-			            },
-			            "Object": {
-			              "Role": "dcevpb_solicitacaotempoaprovacao"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_categorias_have_dcevpb_solicitacaotempoaprovacaos"
-			        }
-			      ]
-			    },
-			    "dcevpb_solicitacaotempoaprovacao_has_d_fornecedore": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpb_solicitacaotempoaprovacao": {
-			          "Target": {
-			            "Entity": "dcevpb_solicitacaotempoaprovacao"
-			          }
-			        },
-			        "d_fornecedore": {
-			          "Target": {
-			            "Entity": "d_fornecedore"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpb_solicitacaotempoaprovacao"
-			            },
-			            "Object": {
-			              "Role": "d_fornecedore"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_d_fornecedores"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_fornecedore"
-			            },
-			            "Object": {
-			              "Role": "dcevpb_solicitacaotempoaprovacao"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_fornecedores_have_dcevpb_solicitacaotempoaprovacaos"
-			        }
-			      ]
-			    },
-			    "dcevpb_solicitacaotempoaprovacao_has_d_comprador": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpb_solicitacaotempoaprovacao": {
-			          "Target": {
-			            "Entity": "dcevpb_solicitacaotempoaprovacao"
-			          }
-			        },
-			        "d_comprador": {
-			          "Target": {
-			            "Entity": "d_comprador"
-			          },
-			          "Nouns": [
-			            {
-			              "nome": {
-			                "State": "Generated"
-			              }
-			            }
-			          ]
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpb_solicitacaotempoaprovacao"
-			            },
-			            "Object": {
-			              "Role": "d_comprador"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_d_compradors"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_comprador"
-			            },
-			            "Object": {
-			              "Role": "dcevpb_solicitacaotempoaprovacao"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_compradors_have_dcevpb_solicitacaotempoaprovacaos"
-			        }
-			      ]
-			    },
-			    "dcevpb_solicitacaotempoaprovacao_has_d_status": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpb_solicitacaotempoaprovacao": {
-			          "Target": {
-			            "Entity": "dcevpb_solicitacaotempoaprovacao"
-			          }
-			        },
-			        "d_status": {
-			          "Target": {
-			            "Entity": "d_status"
-			          },
-			          "Nouns": [
-			            {
-			              "status": {
-			                "State": "Generated"
-			              }
-			            }
-			          ]
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpb_solicitacaotempoaprovacao"
-			            },
-			            "Object": {
-			              "Role": "d_status"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_d_statuses"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_status"
-			            },
-			            "Object": {
-			              "Role": "dcevpb_solicitacaotempoaprovacao"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_statuses_have_dcevpb_solicitacaotempoaprovacaos"
-			        }
-			      ]
-			    },
-			    "dcevpb_solicitacaotempoaprovacao_has_d_status_item": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpb_solicitacaotempoaprovacao": {
-			          "Target": {
-			            "Entity": "dcevpb_solicitacaotempoaprovacao"
-			          }
-			        },
-			        "d_status_item": {
-			          "Target": {
-			            "Entity": "d_status_item"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpb_solicitacaotempoaprovacao"
-			            },
-			            "Object": {
-			              "Role": "d_status_item"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_d_status_items"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_status_item"
-			            },
-			            "Object": {
-			              "Role": "dcevpb_solicitacaotempoaprovacao"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_status_items_have_dcevpb_solicitacaotempoaprovacaos"
-			        }
-			      ]
-			    },
-			    "dcevpbi_pedidoprazopagamento_has_d_calendario": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_PEDIDOPRAZOPAGAMENTO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_pedidoprazopagamento": {
-			          "Target": {
-			            "Entity": "dcevpbi_pedidoprazopagamento"
-			          }
-			        },
-			        "d_calendario": {
-			          "Target": {
-			            "Entity": "d_calendario"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_pedidoprazopagamento"
-			            },
-			            "Object": {
-			              "Role": "d_calendario"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_pedidoprazopagamentos_have_d_calendarios"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_calendario"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_pedidoprazopagamento"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_calendarios_have_dcevpbi_pedidoprazopagamentos"
-			        }
-			      ]
-			    },
-			    "dcevpbi_pedidoprazopagamento_has_d_categoria": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_PEDIDOPRAZOPAGAMENTO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_pedidoprazopagamento": {
-			          "Target": {
-			            "Entity": "dcevpbi_pedidoprazopagamento"
-			          }
-			        },
-			        "d_categoria": {
-			          "Target": {
-			            "Entity": "d_categoria"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_pedidoprazopagamento"
-			            },
-			            "Object": {
-			              "Role": "d_categoria"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_pedidoprazopagamentos_have_d_categorias"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_categoria"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_pedidoprazopagamento"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_categorias_have_dcevpbi_pedidoprazopagamentos"
-			        }
-			      ]
-			    },
-			    "dcevpbi_pedidoprazopagamento_has_d_fornecedore": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_PEDIDOPRAZOPAGAMENTO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_pedidoprazopagamento": {
-			          "Target": {
-			            "Entity": "dcevpbi_pedidoprazopagamento"
-			          }
-			        },
-			        "d_fornecedore": {
-			          "Target": {
-			            "Entity": "d_fornecedore"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_pedidoprazopagamento"
-			            },
-			            "Object": {
-			              "Role": "d_fornecedore"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_pedidoprazopagamentos_have_d_fornecedores"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_fornecedore"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_pedidoprazopagamento"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_fornecedores_have_dcevpbi_pedidoprazopagamentos"
-			        }
-			      ]
-			    },
-			    "dcevpbi_pedidoprazopagamento_has_d_empresa": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_PEDIDOPRAZOPAGAMENTO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_pedidoprazopagamento": {
-			          "Target": {
-			            "Entity": "dcevpbi_pedidoprazopagamento"
-			          }
-			        },
-			        "d_empresa": {
-			          "Target": {
-			            "Entity": "d_empresa"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_pedidoprazopagamento"
-			            },
-			            "Object": {
-			              "Role": "d_empresa"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_pedidoprazopagamentos_have_d_empresas"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_empresa"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_pedidoprazopagamento"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_empresas_have_dcevpbi_pedidoprazopagamentos"
-			        }
-			      ]
-			    },
 			    "dcevpbi_pedidoprazopagamento_has_d_prioridade": {
 			      "Binding": {
 			        "ConceptualEntity": "DCEVPBI_PEDIDOPRAZOPAGAMENTO"
@@ -20074,6 +20130,105 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "d_empresas_have_dcevpbi_solicitacaprecosaprovados"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_d_fornecedore": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "d_fornecedore": {
+			          "Target": {
+			            "Entity": "d_fornecedore"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "d_fornecedore"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_d_fornecedores"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_fornecedore"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_fornecedores_have_dcevpbi_solicitacaprecosaprovados"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_d_comprador": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "d_comprador": {
+			          "Target": {
+			            "Entity": "d_comprador"
+			          },
+			          "Nouns": [
+			            {
+			              "nome": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "d_comprador"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_d_compradors"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_comprador"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_compradors_have_dcevpbi_solicitacaprecosaprovados"
 			        }
 			      ]
 			    }
