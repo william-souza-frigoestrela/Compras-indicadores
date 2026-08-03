@@ -42,11 +42,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "1ª Oferta"
+                  "Property": "1ª Oferta CY"
                 }
               },
               "queryRef": "Medidas.1ª Oferta",
-              "nativeQueryRef": "1ª Oferta"
+              "nativeQueryRef": "1ª Oferta CY"
             },
             {
               "field": {
@@ -56,11 +56,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Valor pago"
+                  "Property": "Valor pago cost CY"
                 }
               },
               "queryRef": "Medidas.Valor pago",
-              "nativeQueryRef": "Valor pago"
+              "nativeQueryRef": "Valor pago cost CY"
             }
           ]
         }
@@ -293,7 +293,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Evolução spend mensal (CY vs LY)'"
+                  "Value": "'Evolução Cost mensal'"
                 }
               }
             },
@@ -326,51 +326,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "a9dcde60131ec540ddb4",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dCalendario"
-              }
-            },
-            "Property": "Mês abreviado"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "e00c5f1900b661c0bde4",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "1ª Oferta"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "08f11c416a35b001bcd9",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Valor pago"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -87,11 +87,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "1ª Oferta"
+                  "Property": "1ª Oferta CY"
                 }
               },
               "queryRef": "Medidas.1ª Oferta",
-              "nativeQueryRef": "1ª Oferta"
+              "nativeQueryRef": "1ª Oferta CY"
             },
             {
               "field": {
@@ -101,11 +101,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Valor pago"
+                  "Property": "Valor pago cost CY"
                 }
               },
               "queryRef": "Medidas.Valor pago",
-              "nativeQueryRef": "Valor pago"
+              "nativeQueryRef": "Valor pago cost CY"
             },
             {
               "field": {
@@ -115,11 +115,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Cost"
+                  "Property": "Cost CY"
                 }
               },
               "queryRef": "Medidas.Cost",
-              "nativeQueryRef": "Cost"
+              "nativeQueryRef": "Cost CY"
             }
           ]
         }
@@ -128,16 +128,16 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+                    "Entity": "Medidas"
                   }
                 },
-                "Property": "NOMERAZAO"
+                "Property": "Valor pago cost CY"
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ]
       }
@@ -309,7 +309,7 @@
                                       "Entity": "Medidas"
                                     }
                                   },
-                                  "Property": "Cost"
+                                  "Property": "Cost CY"
                                 }
                               },
                               "Right": {
@@ -336,7 +336,7 @@
                                       "Entity": "Medidas"
                                     }
                                   },
-                                  "Property": "Cost"
+                                  "Property": "Cost CY"
                                 }
                               },
                               "Right": {
@@ -363,7 +363,7 @@
                                       "Entity": "Medidas"
                                     }
                                   },
-                                  "Property": "Cost"
+                                  "Property": "Cost CY"
                                 }
                               },
                               "Right": {
@@ -694,90 +694,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "ceb914f137d454249d78",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
-              }
-            },
-            "Property": "NOMERAZAO"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "758670f75d50c36090bb",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
-              }
-            },
-            "Property": "Detalhe Cost"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "3a55355b20be144e4b82",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "1ª Oferta"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "deddd56860eb7d745a50",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Valor pago"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "8893efae956b7e0d0a5a",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Cost"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "0b5229c46c93c7090031",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dEmpresa"
-              }
-            },
-            "Property": "NOMEREDUZIDO"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }
