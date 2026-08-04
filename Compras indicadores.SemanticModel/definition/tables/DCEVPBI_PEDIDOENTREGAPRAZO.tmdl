@@ -54,13 +54,14 @@ table DCEVPBI_PEDIDOENTREGAPRAZO
 
 	column QUANTIDADE
 		dataType: double
+		formatString: 0
 		lineageTag: c9438bf3-8290-400d-894c-41ec4cb63c13
 		summarizeBy: sum
 		sourceColumn: QUANTIDADE
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"isDecimal":true}
 
 	column VLRUNITARIO
 		dataType: double
@@ -115,13 +116,14 @@ table DCEVPBI_PEDIDOENTREGAPRAZO
 
 	column QTDNF
 		dataType: double
+		formatString: 0
 		lineageTag: a7b91d29-562d-4d34-ba3a-a6797cd239ce
 		summarizeBy: sum
 		sourceColumn: QTDNF
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"isDecimal":true}
 
 	column VLRUNITARIONF
 		dataType: double
