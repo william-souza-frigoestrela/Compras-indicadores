@@ -9436,7 +9436,7 @@ cultureInfo pt-BR
 			        }
 			      ]
 			    },
-			    "medida.cost": {
+			    "medida.cost_CY": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Medidas",
@@ -9446,93 +9446,29 @@ cultureInfo pt-BR
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "cost": {
+			          "cost CY": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "price": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
+			          "CY": {
+			            "State": "Generated",
+			            "Weight": 0.97
 			          }
 			        },
 			        {
-			          "charge": {
-			            "Type": "Noun",
+			          "Cost": {
 			            "State": "Suggested",
 			            "Source": {
-			              "Agent": "Thesaurus"
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
 			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "rate": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "fee": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "expenditure": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
-			          }
-			        },
-			        {
-			          "budget": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.452
-			          }
-			        },
-			        {
-			          "outlay": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.452
-			          }
-			        },
-			        {
-			          "expense": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.452
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
 			    },
-			    "medida.entity_1ª_oferta": {
+			    "medida.entity_1ª_oferta_CY": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Medidas",
@@ -9542,13 +9478,23 @@ cultureInfo pt-BR
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "1ª oferta": {
+			          "1ª oferta CY": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "1ª Oferta": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
 			    },
-			    "medida.valor_pago": {
+			    "medida.valor_pago_cost_CY": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Medidas",
@@ -9558,14 +9504,40 @@ cultureInfo pt-BR
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "valor pago": {
+			          "valor pago cost CY": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "pago": {
+			          "CY": {
 			            "State": "Generated",
 			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "pago cost CY": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "Valor pago cost": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Valor Pago": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -10476,9 +10448,301 @@ cultureInfo pt-BR
 			          }
 			        }
 			      ]
+			    },
+			    "medida.entity_1ª_oferta_LY": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "1ª Oferta LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "1ª oferta LY": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.valor_pago_cost_LY": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Valor pago cost LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "valor pago cost LY": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "LY": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "pago cost LY": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "medida.cost_LY": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Cost LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cost LY": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "LY": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "medida.var__cost_LY": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Var % Cost LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "var % cost LY": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "var percentage cost ly": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "var pct cost ly": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "medida.var__1_oferta_LY": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Var % 1 Oferta LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "var % 1 oferta LY": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "var percentage 1 oferta ly": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "var pct 1 oferta ly": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "medida.var__geral_pago_cost_LY": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Var % Geral pago cost LY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "var % geral pago cost LY": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "dcevpbi_solicitacaprecosaprovado_has_d_empresa": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "d_empresa": {
+			          "Target": {
+			            "Entity": "d_empresa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "d_empresa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_d_empresas"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_empresa"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_empresas_have_dcevpbi_solicitacaprecosaprovados"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_d_calendario": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "d_calendario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_d_calendarios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_dcevpbi_solicitacaprecosaprovados"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoprazopagamento_has_d_prioridade": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOPRAZOPAGAMENTO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoprazopagamento": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoprazopagamento"
+			          }
+			        },
+			        "d_prioridade": {
+			          "Target": {
+			            "Entity": "d_prioridade"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoprazopagamento"
+			            },
+			            "Object": {
+			              "Role": "d_prioridade"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoprazopagamentos_have_d_prioridades"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_prioridade"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoprazopagamento"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_prioridades_have_dcevpbi_pedidoprazopagamentos"
+			        }
+			      ]
+			    },
 			    "dcevpbi_pedidoprazopagamento_has_d_empresa": {
 			      "Binding": {
 			        "ConceptualEntity": "DCEVPBI_PEDIDOPRAZOPAGAMENTO"
@@ -11042,6 +11306,204 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "d_empresas_have_dcevpb_solicitacaotempoaprovacaos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_medida_var__geral_pago_cost_LY": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "medida.var__geral_pago_cost_LY": {
+			          "Target": {
+			            "Entity": "medida.var__geral_pago_cost_LY"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "medida.var__geral_pago_cost_LY"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_var__geral_pago_cost_LY"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_medida_var__1_oferta_LY": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "medida.var__1_oferta_LY": {
+			          "Target": {
+			            "Entity": "medida.var__1_oferta_LY"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "medida.var__1_oferta_LY"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_var__1_oferta_LY"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_medida_var__cost_LY": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "medida.var__cost_LY": {
+			          "Target": {
+			            "Entity": "medida.var__cost_LY"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "medida.var__cost_LY"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_var__cost_LY"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_medida_cost_LY": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "medida.cost_LY": {
+			          "Target": {
+			            "Entity": "medida.cost_LY"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "medida.cost_LY"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_cost_LY"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_medida_valor_pago_cost_LY": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "medida.valor_pago_cost_LY": {
+			          "Target": {
+			            "Entity": "medida.valor_pago_cost_LY"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "medida.valor_pago_cost_LY"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_valor_pago_cost_LY"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_medida_entity_1ª_oferta_LY": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "medida.entity_1ª_oferta_LY": {
+			          "Target": {
+			            "Entity": "medida.entity_1ª_oferta_LY"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "medida.entity_1ª_oferta_LY"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_1ª_oferta_LY"
 			        }
 			      ]
 			    },
@@ -11639,7 +12101,7 @@ cultureInfo pt-BR
 			        }
 			      ]
 			    },
-			    "dcevpbi_solicitacaprecosaprovado_has_medida_valor_pago": {
+			    "dcevpbi_solicitacaprecosaprovado_has_medida_valor_pago_cost_CY": {
 			      "Binding": {
 			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
 			      },
@@ -11650,9 +12112,9 @@ cultureInfo pt-BR
 			            "Entity": "dcevpbi_solicitacaprecosaprovado"
 			          }
 			        },
-			        "medida.valor_pago": {
+			        "medida.valor_pago_cost_CY": {
 			          "Target": {
-			            "Entity": "medida.valor_pago"
+			            "Entity": "medida.valor_pago_cost_CY"
 			          }
 			        }
 			      },
@@ -11663,16 +12125,16 @@ cultureInfo pt-BR
 			              "Role": "dcevpbi_solicitacaprecosaprovado"
 			            },
 			            "Object": {
-			              "Role": "medida.valor_pago"
+			              "Role": "medida.valor_pago_cost_CY"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_valor_pago"
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_valor_pago_cost_CY"
 			        }
 			      ]
 			    },
-			    "dcevpbi_solicitacaprecosaprovado_has_medida_entity_1ª_oferta": {
+			    "dcevpbi_solicitacaprecosaprovado_has_medida_entity_1ª_oferta_CY": {
 			      "Binding": {
 			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
 			      },
@@ -11683,9 +12145,9 @@ cultureInfo pt-BR
 			            "Entity": "dcevpbi_solicitacaprecosaprovado"
 			          }
 			        },
-			        "medida.entity_1ª_oferta": {
+			        "medida.entity_1ª_oferta_CY": {
 			          "Target": {
-			            "Entity": "medida.entity_1ª_oferta"
+			            "Entity": "medida.entity_1ª_oferta_CY"
 			          }
 			        }
 			      },
@@ -11696,16 +12158,16 @@ cultureInfo pt-BR
 			              "Role": "dcevpbi_solicitacaprecosaprovado"
 			            },
 			            "Object": {
-			              "Role": "medida.entity_1ª_oferta"
+			              "Role": "medida.entity_1ª_oferta_CY"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_1ª_oferta"
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_1ª_oferta_CY"
 			        }
 			      ]
 			    },
-			    "dcevpbi_solicitacaprecosaprovado_has_medida_cost": {
+			    "dcevpbi_solicitacaprecosaprovado_has_medida_cost_CY": {
 			      "Binding": {
 			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
 			      },
@@ -11716,9 +12178,9 @@ cultureInfo pt-BR
 			            "Entity": "dcevpbi_solicitacaprecosaprovado"
 			          }
 			        },
-			        "medida.cost": {
+			        "medida.cost_CY": {
 			          "Target": {
-			            "Entity": "medida.cost"
+			            "Entity": "medida.cost_CY"
 			          }
 			        }
 			      },
@@ -11729,39 +12191,12 @@ cultureInfo pt-BR
 			              "Role": "dcevpbi_solicitacaprecosaprovado"
 			            },
 			            "Object": {
-			              "Role": "medida.cost"
+			              "Role": "medida.cost_CY"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_cost"
-			        },
-			        {
-			          "Adjective": {
-			            "Subject": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            },
-			            "Adjectives": [
-			              {
-			                "expensive": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Antonyms": [
-			              {
-			                "cheap": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Measurement": {
-			              "Role": "medida.cost"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cost_indicates_how_expensive_dcevpbi_solicitacaprecosaprovados_are"
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_cost_CY"
 			        }
 			      ]
 			    },
@@ -19992,144 +20427,6 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_nrosolicitacaos"
-			        }
-			      ]
-			    },
-			    "dcevpbi_pedidoprazopagamento_has_d_prioridade": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_PEDIDOPRAZOPAGAMENTO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_pedidoprazopagamento": {
-			          "Target": {
-			            "Entity": "dcevpbi_pedidoprazopagamento"
-			          }
-			        },
-			        "d_prioridade": {
-			          "Target": {
-			            "Entity": "d_prioridade"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_pedidoprazopagamento"
-			            },
-			            "Object": {
-			              "Role": "d_prioridade"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_pedidoprazopagamentos_have_d_prioridades"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_prioridade"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_pedidoprazopagamento"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_prioridades_have_dcevpbi_pedidoprazopagamentos"
-			        }
-			      ]
-			    },
-			    "dcevpbi_solicitacaprecosaprovado_has_d_calendario": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_solicitacaprecosaprovado": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado"
-			          }
-			        },
-			        "d_calendario": {
-			          "Target": {
-			            "Entity": "d_calendario"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            },
-			            "Object": {
-			              "Role": "d_calendario"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_d_calendarios"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_calendario"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_calendarios_have_dcevpbi_solicitacaprecosaprovados"
-			        }
-			      ]
-			    },
-			    "dcevpbi_solicitacaprecosaprovado_has_d_empresa": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_solicitacaprecosaprovado": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado"
-			          }
-			        },
-			        "d_empresa": {
-			          "Target": {
-			            "Entity": "d_empresa"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            },
-			            "Object": {
-			              "Role": "d_empresa"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_d_empresas"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_empresa"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_empresas_have_dcevpbi_solicitacaprecosaprovados"
 			        }
 			      ]
 			    },
