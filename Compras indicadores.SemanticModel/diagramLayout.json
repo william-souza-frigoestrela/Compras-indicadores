@@ -4,8 +4,8 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 91.606654570528136,
-        "y": 551.04926057040768
+        "x": 0,
+        "y": 2.8186662944777887
       },
       "nodes": [
         {
@@ -239,11 +239,10 @@
           "nodeIndex": "DCEVPBI_PEDIDOENTREGAPRAZO",
           "nodeLineageTag": "0b510e20-1ed3-42d7-9aaa-ee6da672d1cd",
           "size": {
-            "height": 128,
+            "height": 300,
             "width": 234
           },
-          "zIndex": 18,
-          "expandedHeight": 300
+          "zIndex": 18
         }
       ],
       "name": "Todas as tabelas",

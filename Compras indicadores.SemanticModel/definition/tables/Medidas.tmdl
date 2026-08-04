@@ -2209,6 +2209,33 @@ table Medidas
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 65f214d5-63c2-47d1-8fb4-440a955296e8
 
+	measure 'Desvio Dias' =
+			
+			var dtachegada = SELECTEDVALUE(DCEVPBI_PEDIDOENTREGAPRAZO[DTACHEGADA])
+			
+			var dtaprevista = SELECTEDVALUE(DCEVPBI_PEDIDOENTREGAPRAZO[DTAPREVISTA])
+			
+			var dif_dias = DATEDIFF(dtaprevista,dtachegada,DAY)
+			RETURN
+			
+			dif_dias
+		formatString: 0
+		lineageTag: f1dcc0a5-671b-4879-89fd-f85c9b01f1a9
+
+	measure 'Status Entrega' =
+			
+			var desvio_dias = SELECTEDVALUE(DCEVPBI_PEDIDOENTREGAPRAZO[Desvio Dias ])
+			RETURN
+			
+			SWITCH(
+			    TRUE(),
+			    desvio_dias > 0, "Atraso",
+			    desvio_dias < 0, "Adiantado",
+			    desvio_dias = 0, "No prazo",
+			    "Nulo"
+			)
+		lineageTag: 1b55ec9d-6980-4e0a-a222-a166fe53fffa
+
 	column Column
 		isHidden
 		formatString: 0

@@ -151,6 +151,31 @@ table DCEVPBI_PEDIDOENTREGAPRAZO
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column 'Desvio Dias '
+		dataType: int64
+		formatString: 0
+		lineageTag: f92d8ac8-afbe-4ebc-a4b0-6bba43d2659a
+		summarizeBy: sum
+		sourceColumn: "Desvio Dias "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status Entrega'
+		dataType: string
+		lineageTag: 3c111774-e6b8-4fd9-b47b-1c4138c000b2
+		summarizeBy: none
+		sourceColumn: Status Entrega
+
+		annotation SummarizationSetBy = Automatic
+
+	column Entrega
+		dataType: string
+		lineageTag: 163eff53-0e21-474c-8343-88fdef1a4f13
+		summarizeBy: none
+		sourceColumn: Entrega
+
+		annotation SummarizationSetBy = Automatic
+
 	partition DCEVPBI_PEDIDOENTREGAPRAZO = m
 		mode: import
 		source =
@@ -158,9 +183,13 @@ table DCEVPBI_PEDIDOENTREGAPRAZO
 				    Fonte = Oracle.Database("datavale", [HierarchicalNavigation=true]),
 				    DATAVALE = Fonte{[Schema="DATAVALE"]}[Data],
 				    DCEVPBI_PEDIDOENTREGAPRAZO1 = DATAVALE{[Name="DCEVPBI_PEDIDOENTREGAPRAZO"]}[Data],
-				    #"Tipo Alterado" = Table.TransformColumnTypes(DCEVPBI_PEDIDOENTREGAPRAZO1,{{"SEQPEDIDO", type text}, {"DTAPEDIDO", type date}, {"NROEMPRESA", type text}, {"NROPEDIDO", type text}, {"SEQPRODUTO", type text}, {"DTAPREVISTA", type date}, {"DTANF", type date}, {"DTACHEGADA", type date}, {"NRONOTAFISCAL", type text}})
+				    #"Tipo Alterado" = Table.TransformColumnTypes(DCEVPBI_PEDIDOENTREGAPRAZO1,{{"SEQPEDIDO", type text}, {"DTAPEDIDO", type date}, {"NROEMPRESA", type text}, {"NROPEDIDO", type text}, {"SEQPRODUTO", type text}, {"DTAPREVISTA", type date}, {"DTANF", type date}, {"DTACHEGADA", type date}, {"NRONOTAFISCAL", type text}}),
+				    #"Linhas Filtradas2" = Table.SelectRows(#"Tipo Alterado", each [DTACHEGADA] <> null and [DTACHEGADA] <> ""),
+				    #"Subtração da Data Inserida" = Table.AddColumn(#"Linhas Filtradas2", "Desvio Dias ", each Duration.Days([DTACHEGADA] - [DTAPREVISTA]), Int64.Type),
+				    #"Coluna Condicional Adicionada" = Table.AddColumn(#"Subtração da Data Inserida", "Status Entrega", each if [#"Desvio Dias "] = 0 then "No prazo" else if [#"Desvio Dias "] > 0 then "Atraso" else if [#"Desvio Dias "] < 0 then "Adiantado" else "Nulo"),
+				    #"Coluna Condicional Adicionada1" = Table.AddColumn(#"Coluna Condicional Adicionada", "Entrega", each if [QTDNF] >= [QUANTIDADE] then "Entrega Total" else if [QTDNF] < [QUANTIDADE] then "Entrega Parcial" else "Nulo")
 				in
-				    #"Tipo Alterado"
+				    #"Coluna Condicional Adicionada1"
 
 	annotation PBI_NavigationStepName = Navegação
 
