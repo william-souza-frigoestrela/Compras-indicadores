@@ -2261,6 +2261,10 @@ table Medidas
 		formatString: 0
 		lineageTag: 886e908b-e3e1-47a7-aa29-03a2a5d0b318
 
+	measure '% OTIF' = DIVIDE([Qtd pedidos OTIF ok],[Qtd pedidos OTIF],0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 62e69155-9bf6-41cd-a2c7-68e11f745f35
+
 	column Column
 		isHidden
 		formatString: 0
