@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "dEmpresa.NOMEREDUZIDO",
-              "nativeQueryRef": "NOMEREDUZIDO"
+              "nativeQueryRef": "EMPRESA",
+              "displayName": "EMPRESA"
             },
             {
               "field": {
@@ -97,7 +98,8 @@
                 }
               },
               "queryRef": "Sum(DCEVPBI_PEDIDOENTREGAPRAZO.Desvio Dias )",
-              "nativeQueryRef": "Desvio Dias "
+              "nativeQueryRef": "DESVIO DIAS",
+              "displayName": "DESVIO DIAS"
             },
             {
               "field": {
@@ -111,7 +113,8 @@
                 }
               },
               "queryRef": "DCEVPBI_PEDIDOENTREGAPRAZO.Status Entrega",
-              "nativeQueryRef": "Status Entrega"
+              "nativeQueryRef": "STATUS ENTREGA",
+              "displayName": "STATUS ENTREGA"
             },
             {
               "field": {
@@ -153,7 +156,8 @@
                 }
               },
               "queryRef": "DCEVPBI_PEDIDOENTREGAPRAZO.Entrega",
-              "nativeQueryRef": "Entrega"
+              "nativeQueryRef": "SITUAÇÃO ENTREGA",
+              "displayName": "SITUAÇÃO ENTREGA"
             },
             {
               "field": {

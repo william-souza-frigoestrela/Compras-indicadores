@@ -10602,9 +10602,744 @@ cultureInfo pt-BR
 			          }
 			        }
 			      ]
+			    },
+			    "medida.desvio_dias": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Desvio Dias"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "desvio dias": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.status_entrega": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Status Entrega"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "status entrega": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "category entrega": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "importance entrega": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "prestige entrega": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "prominence entrega": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "condition entrega": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "class entrega": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "grade entrega": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "level entrega": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "position entrega": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "rank entrega": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dcevpbi pedidoentregaprazo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DCEVPBI_PEDIDOENTREGAPRAZO": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo.seqpedido": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO",
+			          "ConceptualProperty": "SEQPEDIDO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "seqpedido": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo.dtapedido": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO",
+			          "ConceptualProperty": "DTAPEDIDO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dtapedido": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "dcevpbi_pedidoentregaprazo.nroempresa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO",
+			          "ConceptualProperty": "NROEMPRESA"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "nroempresa": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo.nropedido": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO",
+			          "ConceptualProperty": "NROPEDIDO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nropedido": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo.seqproduto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO",
+			          "ConceptualProperty": "SEQPRODUTO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "seqproduto": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo.descricao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO",
+			          "ConceptualProperty": "DESCRICAO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "descricao": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo.quantidade": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO",
+			          "ConceptualProperty": "QUANTIDADE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "quantidade": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo.vlrunitario": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO",
+			          "ConceptualProperty": "VLRUNITARIO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "vlrunitario": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo.dtaprevista": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO",
+			          "ConceptualProperty": "DTAPREVISTA"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dtaprevista": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "dcevpbi_pedidoentregaprazo.dtanf": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO",
+			          "ConceptualProperty": "DTANF"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dtanf": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "dcevpbi_pedidoentregaprazo.dtachegada": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO",
+			          "ConceptualProperty": "DTACHEGADA"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dtachegada": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "dcevpbi_pedidoentregaprazo.nronotafiscal": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO",
+			          "ConceptualProperty": "NRONOTAFISCAL"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nronotafiscal": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo.qtdnf": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO",
+			          "ConceptualProperty": "QTDNF"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "qtdnf": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo.vlrunitarionf": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO",
+			          "ConceptualProperty": "VLRUNITARIONF"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "vlrunitarionf": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo.status": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO",
+			          "ConceptualProperty": "STATUS"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "status": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "importance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "prestige": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "prominence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "condition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "grade": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "level": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "position": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo.vlrpedido": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO",
+			          "ConceptualProperty": "VLRPEDIDO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "vlrpedido": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo.desvio_dias": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO",
+			          "ConceptualProperty": "Desvio Dias "
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "desvio dias": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo.status_entrega": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO",
+			          "ConceptualProperty": "Status Entrega"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "status entrega": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "category entrega": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "importance entrega": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "prestige entrega": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "prominence entrega": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "condition entrega": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "class entrega": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "grade entrega": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "level entrega": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "position entrega": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "rank entrega": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo.entrega": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO",
+			          "ConceptualProperty": "Entrega"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "entrega": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "SITUAÇÃO ENTREGA": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "dcevpbi_solicitacaprecosaprovado_has_d_fornecedore": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "d_fornecedore": {
+			          "Target": {
+			            "Entity": "d_fornecedore"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "d_fornecedore"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_d_fornecedores"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_fornecedore"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_fornecedores_have_dcevpbi_solicitacaprecosaprovados"
+			        }
+			      ]
+			    },
 			    "dcevpbi_solicitacaprecosaprovado_has_d_empresa": {
 			      "Binding": {
 			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
@@ -11306,6 +12041,666 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "d_empresas_have_dcevpb_solicitacaotempoaprovacaos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo_has_entrega": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoentregaprazo": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo"
+			          }
+			        },
+			        "dcevpbi_pedidoentregaprazo.entrega": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo.entrega"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoentregaprazo"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoentregaprazo.entrega"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoentregaprazos_have_entregas"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo_has_status_entrega": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoentregaprazo": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo"
+			          }
+			        },
+			        "dcevpbi_pedidoentregaprazo.status_entrega": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo.status_entrega"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoentregaprazo"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoentregaprazo.status_entrega"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoentregaprazos_have_status_entregas"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo_has_desvio_dias": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoentregaprazo": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo"
+			          }
+			        },
+			        "dcevpbi_pedidoentregaprazo.desvio_dias": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo.desvio_dias"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoentregaprazo"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoentregaprazo.desvio_dias"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoentregaprazos_have_desvio_dias"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo_has_vlrpedido": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoentregaprazo": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo"
+			          }
+			        },
+			        "dcevpbi_pedidoentregaprazo.vlrpedido": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo.vlrpedido"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoentregaprazo"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoentregaprazo.vlrpedido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoentregaprazos_have_vlrpedidos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo_has_status": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoentregaprazo": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo"
+			          }
+			        },
+			        "dcevpbi_pedidoentregaprazo.status": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo.status"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoentregaprazo"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoentregaprazo.status"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoentregaprazos_have_statuses"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo_has_vlrunitarionf": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoentregaprazo": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo"
+			          }
+			        },
+			        "dcevpbi_pedidoentregaprazo.vlrunitarionf": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo.vlrunitarionf"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoentregaprazo"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoentregaprazo.vlrunitarionf"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoentregaprazos_have_vlrunitarionfs"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo_has_qtdnf": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoentregaprazo": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo"
+			          }
+			        },
+			        "dcevpbi_pedidoentregaprazo.qtdnf": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo.qtdnf"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoentregaprazo"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoentregaprazo.qtdnf"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoentregaprazos_have_qtdnfs"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo_has_nronotafiscal": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoentregaprazo": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo"
+			          }
+			        },
+			        "dcevpbi_pedidoentregaprazo.nronotafiscal": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo.nronotafiscal"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoentregaprazo"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoentregaprazo.nronotafiscal"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoentregaprazos_have_nronotafiscals"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo_has_dtachegada": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoentregaprazo": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo"
+			          }
+			        },
+			        "dcevpbi_pedidoentregaprazo.dtachegada": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo.dtachegada"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoentregaprazo"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoentregaprazo.dtachegada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoentregaprazos_have_dtachegadas"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo_has_dtanf": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoentregaprazo": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo"
+			          }
+			        },
+			        "dcevpbi_pedidoentregaprazo.dtanf": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo.dtanf"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoentregaprazo"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoentregaprazo.dtanf"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoentregaprazos_have_dtanfs"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo_has_dtaprevista": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoentregaprazo": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo"
+			          }
+			        },
+			        "dcevpbi_pedidoentregaprazo.dtaprevista": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo.dtaprevista"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoentregaprazo"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoentregaprazo.dtaprevista"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoentregaprazos_have_dtaprevistas"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo_has_vlrunitario": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoentregaprazo": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo"
+			          }
+			        },
+			        "dcevpbi_pedidoentregaprazo.vlrunitario": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo.vlrunitario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoentregaprazo"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoentregaprazo.vlrunitario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoentregaprazos_have_vlrunitarios"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo_has_quantidade": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoentregaprazo": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo"
+			          }
+			        },
+			        "dcevpbi_pedidoentregaprazo.quantidade": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo.quantidade"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoentregaprazo"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoentregaprazo.quantidade"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoentregaprazos_have_quantidades"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo_has_descricao": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoentregaprazo": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo"
+			          }
+			        },
+			        "dcevpbi_pedidoentregaprazo.descricao": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo.descricao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoentregaprazo"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoentregaprazo.descricao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoentregaprazos_have_descricaos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo_has_seqproduto": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoentregaprazo": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo"
+			          }
+			        },
+			        "dcevpbi_pedidoentregaprazo.seqproduto": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo.seqproduto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoentregaprazo"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoentregaprazo.seqproduto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoentregaprazos_have_seqprodutos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo_has_nropedido": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoentregaprazo": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo"
+			          }
+			        },
+			        "dcevpbi_pedidoentregaprazo.nropedido": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo.nropedido"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoentregaprazo"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoentregaprazo.nropedido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoentregaprazos_have_nropedidos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo_has_dtapedido": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoentregaprazo": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo"
+			          }
+			        },
+			        "dcevpbi_pedidoentregaprazo.dtapedido": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo.dtapedido"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoentregaprazo"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoentregaprazo.dtapedido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoentregaprazos_have_dtapedidos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo_has_seqpedido": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoentregaprazo": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo"
+			          }
+			        },
+			        "dcevpbi_pedidoentregaprazo.seqpedido": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo.seqpedido"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoentregaprazo"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoentregaprazo.seqpedido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoentregaprazos_have_seqpedidos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo_has_medida_status_entrega": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoentregaprazo": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo"
+			          }
+			        },
+			        "medida.status_entrega": {
+			          "Target": {
+			            "Entity": "medida.status_entrega"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoentregaprazo"
+			            },
+			            "Object": {
+			              "Role": "medida.status_entrega"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoentregaprazos_have_status_entrega"
+			        }
+			      ]
+			    },
+			    "medida_has_desvio_dias": {
+			      "Binding": {
+			        "ConceptualEntity": "Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "medida": {
+			          "Target": {
+			            "Entity": "medida"
+			          }
+			        },
+			        "medida.desvio_dias": {
+			          "Target": {
+			            "Entity": "medida.desvio_dias"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "medida"
+			            },
+			            "Object": {
+			              "Role": "medida.desvio_dias"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "medidas_have_desvio_dias"
 			        }
 			      ]
 			    },
@@ -12197,6 +13592,33 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dcevpbi_solicitacaprecosaprovados_have_cost_CY"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Adjectives": [
+			              {
+			                "expensive": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Antonyms": [
+			              {
+			                "cheap": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "medida.cost_CY"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "cost_CY_indicates_how_expensive_dcevpbi_solicitacaprecosaprovados_are"
 			        }
 			      ]
 			    },
@@ -20430,52 +21852,6 @@ cultureInfo pt-BR
 			        }
 			      ]
 			    },
-			    "dcevpbi_solicitacaprecosaprovado_has_d_fornecedore": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_solicitacaprecosaprovado": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado"
-			          }
-			        },
-			        "d_fornecedore": {
-			          "Target": {
-			            "Entity": "d_fornecedore"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            },
-			            "Object": {
-			              "Role": "d_fornecedore"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_d_fornecedores"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_fornecedore"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_fornecedores_have_dcevpbi_solicitacaprecosaprovados"
-			        }
-			      ]
-			    },
 			    "dcevpbi_solicitacaprecosaprovado_has_d_comprador": {
 			      "Binding": {
 			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
@@ -20526,6 +21902,98 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "d_compradors_have_dcevpbi_solicitacaprecosaprovados"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo_has_d_empresa": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoentregaprazo": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo"
+			          }
+			        },
+			        "d_empresa": {
+			          "Target": {
+			            "Entity": "d_empresa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoentregaprazo"
+			            },
+			            "Object": {
+			              "Role": "d_empresa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoentregaprazos_have_d_empresas"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_empresa"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoentregaprazo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_empresas_have_dcevpbi_pedidoentregaprazos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo_has_d_calendario": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_pedidoentregaprazo": {
+			          "Target": {
+			            "Entity": "dcevpbi_pedidoentregaprazo"
+			          }
+			        },
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_pedidoentregaprazo"
+			            },
+			            "Object": {
+			              "Role": "d_calendario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_pedidoentregaprazos_have_d_calendarios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_pedidoentregaprazo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_dcevpbi_pedidoentregaprazos"
 			        }
 			      ]
 			    }
