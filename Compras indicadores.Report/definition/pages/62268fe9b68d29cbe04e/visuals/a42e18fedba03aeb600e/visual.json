@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "a42e18fedba03aeb600e",
   "position": {
-    "x": 37.564196625091704,
-    "y": 177.49082905355831,
+    "x": 37.647058823529413,
+    "y": 177.21664275466284,
     "z": 1000,
-    "height": 480.82171680117386,
-    "width": 586.00146735143062,
+    "height": 236.90100430416067,
+    "width": 1195.5236728837876,
     "tabOrder": 1000
   },
   "visual": {
@@ -91,7 +91,8 @@
                 }
               },
               "queryRef": "Medidas.1ª Oferta",
-              "nativeQueryRef": "1ª Oferta CY"
+              "nativeQueryRef": "1ª Oferta",
+              "displayName": "1ª Oferta"
             },
             {
               "field": {
@@ -105,7 +106,8 @@
                 }
               },
               "queryRef": "Medidas.Valor pago",
-              "nativeQueryRef": "Valor pago cost CY"
+              "nativeQueryRef": "Valor pago cost",
+              "displayName": "Valor pago cost"
             },
             {
               "field": {
@@ -119,7 +121,8 @@
                 }
               },
               "queryRef": "Medidas.Cost",
-              "nativeQueryRef": "Cost CY"
+              "nativeQueryRef": "Cost ",
+              "displayName": "Cost "
             }
           ]
         }
@@ -153,6 +156,18 @@
               "dComprador.NOME"
             ],
             "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dComprador"
+                    }
+                  },
+                  "Property": "NOME"
+                }
+              }
+            ],
             "isPinned": true
           },
           {
@@ -201,7 +216,107 @@
             "isPinned": true
           }
         ],
-        "root": {}
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'LUDMILA KAUANE CORTEZ DA SILVA'"
+                  }
+                }
+              ],
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'072-OESTE GRAX'"
+                      }
+                    }
+                  ],
+                  "isToggled": true,
+                  "children": [
+                    {
+                      "identityValues": [
+                        {
+                          "Literal": {
+                            "Value": "'DUPPS DO BRASIL INDUSTRIA E COMERCIO LTDA.'"
+                          }
+                        }
+                      ],
+                      "isToggled": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'BERNARDO FERNANDES FAVARO DE OLIVEIRA'"
+                  }
+                }
+              ],
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'002-FRIG.CARNE'"
+                      }
+                    }
+                  ],
+                  "children": [
+                    {
+                      "identityValues": [
+                        {
+                          "Literal": {
+                            "Value": "'KELVIN CAMOTE LIMA'"
+                          }
+                        }
+                      ],
+                      "isToggled": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'VINICIUS HIDEKI DE OLIVEIRA TATSUMI'"
+                  }
+                }
+              ],
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'002-FRIG.CARNE'"
+                      }
+                    }
+                  ],
+                  "children": [
+                    {
+                      "identityValues": [
+                        {
+                          "Literal": {
+                            "Value": "'MADEF - INDUSTRIA DE EQUIPAMENTOS DE REFRIGERACAO LTDA'"
+                          }
+                        }
+                      ],
+                      "isToggled": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
       }
     ],
     "objects": {
@@ -459,6 +574,62 @@
           },
           "selector": {
             "metadata": "DCEVPBI_SOLICITACAPRECOSAPROVADO.NOMERAZAO"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "156.87875195546974D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas.Valor pago"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "150.22027601958143D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas.1ª Oferta"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "147.7701767637779D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas.Cost"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "697.7312257480803D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dComprador.NOME"
           }
         }
       ],

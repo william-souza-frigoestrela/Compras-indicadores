@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "dc6d7d05671562511050",
   "position": {
     "x": 656.6852886405959,
@@ -20,15 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dCategoria"
+                      "Entity": "dEmpresa"
                     }
                   },
-                  "Property": "CATEGORIA"
+                  "Property": "NOMEREDUZIDO"
                 }
               },
-              "queryRef": "dCategoria.CATEGORIA",
-              "nativeQueryRef": "CATEGORIA",
-              "displayName": "CATEGORIA"
+              "queryRef": "dEmpresa.NOMEREDUZIDO",
+              "nativeQueryRef": "EMPRESA",
+              "displayName": "EMPRESA"
             },
             {
               "field": {
@@ -444,7 +444,8 @@
             "Property": "CATEGORIA"
           }
         },
-        "type": "Categorical"
+        "type": "Categorical",
+        "howCreated": "User"
       },
       {
         "name": "7fd4066a1c31b7357217",

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "c649b53b80b80a6c038e",
   "position": {
-    "x": 661.129860601614,
-    "y": 177.49082905355831,
+    "x": 33.974175035868,
+    "y": 445.33715925394546,
     "z": 0,
-    "height": 493.96918561995597,
-    "width": 584.123257520176,
+    "height": 225.88235294117646,
+    "width": 1211.1334289813485,
     "tabOrder": 0
   },
   "visual": {
@@ -46,7 +46,8 @@
                 }
               },
               "queryRef": "Medidas.1ª Oferta",
-              "nativeQueryRef": "1ª Oferta CY"
+              "nativeQueryRef": "1ª Oferta",
+              "displayName": "1ª Oferta"
             },
             {
               "field": {
@@ -60,7 +61,8 @@
                 }
               },
               "queryRef": "Medidas.Valor pago",
-              "nativeQueryRef": "Valor pago cost CY"
+              "nativeQueryRef": "Valor Pago",
+              "displayName": "Valor Pago"
             }
           ]
         }
@@ -175,6 +177,27 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "logAxisScale": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "invertAxis": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "roundRange": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
