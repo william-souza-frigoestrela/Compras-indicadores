@@ -2,7 +2,7 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "121277fbc09ec653bb3e",
   "position": {
-    "x": 544.09495548961422,
+    "x": 581.12759643916911,
     "y": 92.106824925816014,
     "z": 4004,
     "height": 69.586523736600313,
@@ -257,6 +257,20 @@
           },
           "selector": {
             "metadata": "Medidas.Gastos com impostos"
+          }
+        },
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medidas.Qtd pedidos OTIF"
           }
         }
       ],
