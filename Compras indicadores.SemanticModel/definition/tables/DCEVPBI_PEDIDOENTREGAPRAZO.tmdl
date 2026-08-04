@@ -11,7 +11,7 @@ table DCEVPBI_PEDIDOENTREGAPRAZO
 
 	column DTAPEDIDO
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		lineageTag: f551a22b-3280-45ab-87e8-7a86a505c736
 		summarizeBy: none
 		sourceColumn: DTAPEDIDO
@@ -74,7 +74,7 @@ table DCEVPBI_PEDIDOENTREGAPRAZO
 
 	column DTAPREVISTA
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		lineageTag: 300a9267-fa36-4ed4-ad09-d49dd6623c78
 		summarizeBy: none
 		sourceColumn: DTAPREVISTA
@@ -85,7 +85,7 @@ table DCEVPBI_PEDIDOENTREGAPRAZO
 
 	column DTANF
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		lineageTag: 02ee160a-350d-4935-b8e9-17e52a0b4ef6
 		summarizeBy: none
 		sourceColumn: DTANF
@@ -96,7 +96,7 @@ table DCEVPBI_PEDIDOENTREGAPRAZO
 
 	column DTACHEGADA
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		lineageTag: b6f7abf8-d76a-440b-9679-7f91d8fec8e5
 		summarizeBy: none
 		sourceColumn: DTACHEGADA
@@ -158,10 +158,9 @@ table DCEVPBI_PEDIDOENTREGAPRAZO
 				    Fonte = Oracle.Database("datavale", [HierarchicalNavigation=true]),
 				    DATAVALE = Fonte{[Schema="DATAVALE"]}[Data],
 				    DCEVPBI_PEDIDOENTREGAPRAZO1 = DATAVALE{[Name="DCEVPBI_PEDIDOENTREGAPRAZO"]}[Data],
-				    #"Tipo Alterado" = Table.TransformColumnTypes(DCEVPBI_PEDIDOENTREGAPRAZO1,{{"SEQPEDIDO", type text}, {"DTAPEDIDO", type date}, {"NROEMPRESA", type text}, {"NROPEDIDO", type text}, {"SEQPRODUTO", type text}, {"DTAPREVISTA", type date}, {"DTANF", type date}, {"DTACHEGADA", type date}, {"NRONOTAFISCAL", type text}}),
-				    #"Consultas Mescladas" = Table.NestedJoin(#"Tipo Alterado", {"NROEMPRESA", "NROPEDIDO"}, DCEVPB_SOLICITACAOTEMPOAPROVACAO, {"NROEMPRESA", "NROPEDIDO"}, "DCEVPB_SOLICITACAOTEMPOAPROVACAO", JoinKind.LeftOuter)
+				    #"Tipo Alterado" = Table.TransformColumnTypes(DCEVPBI_PEDIDOENTREGAPRAZO1,{{"SEQPEDIDO", type text}, {"DTAPEDIDO", type date}, {"NROEMPRESA", type text}, {"NROPEDIDO", type text}, {"SEQPRODUTO", type text}, {"DTAPREVISTA", type date}, {"DTANF", type date}, {"DTACHEGADA", type date}, {"NRONOTAFISCAL", type text}})
 				in
-				    #"Consultas Mescladas"
+				    #"Tipo Alterado"
 
 	annotation PBI_NavigationStepName = Navegação
 

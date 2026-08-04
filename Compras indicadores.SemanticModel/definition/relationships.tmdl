@@ -75,3 +75,7 @@ relationship AutoDetected_3241ef48-87a2-451c-be36-8688413beb48
 	fromColumn: DCEVPBI_PEDIDOENTREGAPRAZO.NROEMPRESA
 	toColumn: dEmpresa.NROEMPRESA
 
+relationship 477e2b25-3c61-5ee3-8a07-a13e6a0e7a1f
+	fromColumn: DCEVPBI_PEDIDOENTREGAPRAZO.DTAPEDIDO
+	toColumn: dCalendario.Date
+
