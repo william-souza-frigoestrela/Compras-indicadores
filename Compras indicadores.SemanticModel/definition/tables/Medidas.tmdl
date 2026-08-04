@@ -2236,10 +2236,19 @@ table Medidas
 			)
 		lineageTag: 1b55ec9d-6980-4e0a-a222-a166fe53fffa
 
-	measure 'Media dias entrega' = AVERAGE(DCEVPBI_PEDIDOENTREGAPRAZO[Desvio Dias ])
+	measure 'Media dias entrega' = AVERAGE(DCEVPBI_PEDIDOENTREGAPRAZO[Dias Entrega])
 		lineageTag: 9374a136-ca09-4550-8d8e-9bd98b11392b
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Media dias desvio' = AVERAGE(DCEVPBI_PEDIDOENTREGAPRAZO[Desvio Dias ])
+		lineageTag: 741432ac-236d-426a-b41a-f5d125e85557
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Qtd_pedidos_Otiff = DISTINCTCOUNT(DCEVPBI_PEDIDOENTREGAPRAZO[NROPEDIDO])
+		formatString: 0
+		lineageTag: c7936bd1-9ca5-4509-a795-4bc8c7fb7b62
 
 	column Column
 		isHidden
