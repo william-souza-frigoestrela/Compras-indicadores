@@ -2252,6 +2252,15 @@ table Medidas
 		formatString: 0
 		lineageTag: b868080e-4c35-4bee-87da-5a2a1f5cbeb5
 
+	measure 'Qtd pedidos OTIF ok' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(DCEVPBI_PEDIDOENTREGAPRAZO[NroEmpresa-NroPedido]),
+			    DCEVPBI_PEDIDOENTREGAPRAZO[Status OTIF]= "OTIF"
+			)
+		formatString: 0
+		lineageTag: 886e908b-e3e1-47a7-aa29-03a2a5d0b318
+
 	column Column
 		isHidden
 		formatString: 0
