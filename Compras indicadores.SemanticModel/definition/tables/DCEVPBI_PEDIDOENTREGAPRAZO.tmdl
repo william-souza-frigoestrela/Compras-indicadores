@@ -1,0 +1,169 @@
+table DCEVPBI_PEDIDOENTREGAPRAZO
+	lineageTag: 0b510e20-1ed3-42d7-9aaa-ee6da672d1cd
+
+	column SEQPEDIDO
+		dataType: string
+		lineageTag: 74b39d1a-bf80-470c-ae28-cc0b45a7e713
+		summarizeBy: none
+		sourceColumn: SEQPEDIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DTAPEDIDO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f551a22b-3280-45ab-87e8-7a86a505c736
+		summarizeBy: none
+		sourceColumn: DTAPEDIDO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column NROEMPRESA
+		dataType: string
+		lineageTag: ed16259d-9358-473e-b3d3-4442eaca71c9
+		summarizeBy: none
+		sourceColumn: NROEMPRESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column NROPEDIDO
+		dataType: string
+		lineageTag: 08dfc09b-0a3f-431c-8b95-d71ce09f7f6d
+		summarizeBy: none
+		sourceColumn: NROPEDIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEQPRODUTO
+		dataType: string
+		lineageTag: 310655ea-a558-4e70-a7d3-ac48665e53ea
+		summarizeBy: none
+		sourceColumn: SEQPRODUTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRICAO
+		dataType: string
+		lineageTag: 0e3ae842-a713-45d9-8e64-c4a8d1cb381b
+		summarizeBy: none
+		sourceColumn: DESCRICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column QUANTIDADE
+		dataType: double
+		lineageTag: c9438bf3-8290-400d-894c-41ec4cb63c13
+		summarizeBy: sum
+		sourceColumn: QUANTIDADE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VLRUNITARIO
+		dataType: double
+		lineageTag: 5f94dd2a-4129-43b9-a10a-7e1917d7170e
+		summarizeBy: sum
+		sourceColumn: VLRUNITARIO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DTAPREVISTA
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 300a9267-fa36-4ed4-ad09-d49dd6623c78
+		summarizeBy: none
+		sourceColumn: DTAPREVISTA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DTANF
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 02ee160a-350d-4935-b8e9-17e52a0b4ef6
+		summarizeBy: none
+		sourceColumn: DTANF
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DTACHEGADA
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b6f7abf8-d76a-440b-9679-7f91d8fec8e5
+		summarizeBy: none
+		sourceColumn: DTACHEGADA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column NRONOTAFISCAL
+		dataType: string
+		lineageTag: 255b1279-c419-41b0-9499-59e83c8ec4ba
+		summarizeBy: none
+		sourceColumn: NRONOTAFISCAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTDNF
+		dataType: double
+		lineageTag: a7b91d29-562d-4d34-ba3a-a6797cd239ce
+		summarizeBy: sum
+		sourceColumn: QTDNF
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VLRUNITARIONF
+		dataType: double
+		lineageTag: d268fd2d-6e83-4a41-b172-db819879317c
+		summarizeBy: sum
+		sourceColumn: VLRUNITARIONF
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column STATUS
+		dataType: string
+		lineageTag: 2de0c78b-ef24-475b-8d8c-e85df6b81932
+		summarizeBy: none
+		sourceColumn: STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column VLRPEDIDO
+		dataType: double
+		lineageTag: 20914184-4145-41f2-8134-5b529ece7bfc
+		summarizeBy: sum
+		sourceColumn: VLRPEDIDO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition DCEVPBI_PEDIDOENTREGAPRAZO = m
+		mode: import
+		source =
+				let
+				    Fonte = Oracle.Database("datavale", [HierarchicalNavigation=true]),
+				    DATAVALE = Fonte{[Schema="DATAVALE"]}[Data],
+				    DCEVPBI_PEDIDOENTREGAPRAZO1 = DATAVALE{[Name="DCEVPBI_PEDIDOENTREGAPRAZO"]}[Data],
+				    #"Tipo Alterado" = Table.TransformColumnTypes(DCEVPBI_PEDIDOENTREGAPRAZO1,{{"SEQPEDIDO", type text}, {"DTAPEDIDO", type date}, {"NROEMPRESA", type text}, {"NROPEDIDO", type text}, {"SEQPRODUTO", type text}, {"DTAPREVISTA", type date}, {"DTANF", type date}, {"DTACHEGADA", type date}, {"NRONOTAFISCAL", type text}}),
+				    #"Consultas Mescladas" = Table.NestedJoin(#"Tipo Alterado", {"NROEMPRESA", "NROPEDIDO"}, DCEVPB_SOLICITACAOTEMPOAPROVACAO, {"NROEMPRESA", "NROPEDIDO"}, "DCEVPB_SOLICITACAOTEMPOAPROVACAO", JoinKind.LeftOuter)
+				in
+				    #"Consultas Mescladas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

@@ -71,3 +71,7 @@ relationship AutoDetected_499c0f7b-9a73-4c6a-96f2-4c925f42b00f
 	fromColumn: DCEVPBI_SOLICITACAPRECOSAPROVADO.NOME
 	toColumn: dComprador.NOME
 
+relationship AutoDetected_3241ef48-87a2-451c-be36-8688413beb48
+	fromColumn: DCEVPBI_PEDIDOENTREGAPRAZO.NROEMPRESA
+	toColumn: dEmpresa.NROEMPRESA
+
