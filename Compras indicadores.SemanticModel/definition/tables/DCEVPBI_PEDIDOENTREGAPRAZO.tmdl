@@ -1,0 +1,236 @@
+table DCEVPBI_PEDIDOENTREGAPRAZO
+	lineageTag: 0b510e20-1ed3-42d7-9aaa-ee6da672d1cd
+
+	column SEQPEDIDO
+		dataType: string
+		lineageTag: 74b39d1a-bf80-470c-ae28-cc0b45a7e713
+		summarizeBy: none
+		sourceColumn: SEQPEDIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DTAPEDIDO
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: f551a22b-3280-45ab-87e8-7a86a505c736
+		summarizeBy: none
+		sourceColumn: DTAPEDIDO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column NROEMPRESA
+		dataType: string
+		lineageTag: ed16259d-9358-473e-b3d3-4442eaca71c9
+		summarizeBy: none
+		sourceColumn: NROEMPRESA
+
+		annotation SummarizationSetBy = Automatic
+
+	column NROPEDIDO
+		dataType: string
+		lineageTag: 08dfc09b-0a3f-431c-8b95-d71ce09f7f6d
+		summarizeBy: none
+		sourceColumn: NROPEDIDO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEQPRODUTO
+		dataType: string
+		lineageTag: 310655ea-a558-4e70-a7d3-ac48665e53ea
+		summarizeBy: none
+		sourceColumn: SEQPRODUTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESCRICAO
+		dataType: string
+		lineageTag: 0e3ae842-a713-45d9-8e64-c4a8d1cb381b
+		summarizeBy: none
+		sourceColumn: DESCRICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column QUANTIDADE
+		dataType: double
+		formatString: 0
+		lineageTag: c9438bf3-8290-400d-894c-41ec4cb63c13
+		summarizeBy: sum
+		sourceColumn: QUANTIDADE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column VLRUNITARIO
+		dataType: double
+		lineageTag: 5f94dd2a-4129-43b9-a10a-7e1917d7170e
+		summarizeBy: sum
+		sourceColumn: VLRUNITARIO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DTAPREVISTA
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 300a9267-fa36-4ed4-ad09-d49dd6623c78
+		summarizeBy: none
+		sourceColumn: DTAPREVISTA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DTANF
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 02ee160a-350d-4935-b8e9-17e52a0b4ef6
+		summarizeBy: none
+		sourceColumn: DTANF
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DTACHEGADA
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: b6f7abf8-d76a-440b-9679-7f91d8fec8e5
+		summarizeBy: none
+		sourceColumn: DTACHEGADA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column NRONOTAFISCAL
+		dataType: string
+		lineageTag: 255b1279-c419-41b0-9499-59e83c8ec4ba
+		summarizeBy: none
+		sourceColumn: NRONOTAFISCAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTDNF
+		dataType: double
+		formatString: 0
+		lineageTag: a7b91d29-562d-4d34-ba3a-a6797cd239ce
+		summarizeBy: sum
+		sourceColumn: QTDNF
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column VLRUNITARIONF
+		dataType: double
+		lineageTag: d268fd2d-6e83-4a41-b172-db819879317c
+		summarizeBy: sum
+		sourceColumn: VLRUNITARIONF
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column STATUS
+		dataType: string
+		lineageTag: 2de0c78b-ef24-475b-8d8c-e85df6b81932
+		summarizeBy: none
+		sourceColumn: STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column VLRPEDIDO
+		dataType: double
+		lineageTag: 20914184-4145-41f2-8134-5b529ece7bfc
+		summarizeBy: sum
+		sourceColumn: VLRPEDIDO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Desvio Dias '
+		dataType: int64
+		formatString: 0
+		lineageTag: f92d8ac8-afbe-4ebc-a4b0-6bba43d2659a
+		summarizeBy: sum
+		sourceColumn: "Desvio Dias "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status Entrega'
+		dataType: string
+		lineageTag: 3c111774-e6b8-4fd9-b47b-1c4138c000b2
+		summarizeBy: none
+		sourceColumn: Status Entrega
+
+		annotation SummarizationSetBy = Automatic
+
+	column Entrega
+		dataType: string
+		lineageTag: 163eff53-0e21-474c-8343-88fdef1a4f13
+		summarizeBy: none
+		sourceColumn: Entrega
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dias Entrega'
+		dataType: int64
+		formatString: 0
+		lineageTag: 74576cf7-1ea2-464b-b17f-0fe4248f93ff
+		summarizeBy: sum
+		sourceColumn: Dias Entrega
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status OTIF'
+		dataType: string
+		lineageTag: b8ca4d23-08d4-4d41-9548-46a042090d52
+		summarizeBy: none
+		sourceColumn: Status OTIF
+
+		annotation SummarizationSetBy = Automatic
+
+	column NroEmpresa-NroPedido
+		dataType: string
+		lineageTag: 3bcf8df0-bc77-4daa-8ebf-2fffcb3ce97a
+		summarizeBy: none
+		sourceColumn: NroEmpresa-NroPedido
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DCEVPBI_PEDIDOENTREGAPRAZO = m
+		mode: import
+		source = ```
+				let
+				    Fonte = Oracle.Database("datavale", [HierarchicalNavigation=true]),
+				    DATAVALE = Fonte{[Schema="DATAVALE"]}[Data],
+				    DCEVPBI_PEDIDOENTREGAPRAZO1 = DATAVALE{[Name="DCEVPBI_PEDIDOENTREGAPRAZO"]}[Data],
+				    #"Tipo Alterado" = Table.TransformColumnTypes(DCEVPBI_PEDIDOENTREGAPRAZO1,{{"SEQPEDIDO", type text}, {"DTAPEDIDO", type date}, {"NROEMPRESA", type text}, {"NROPEDIDO", type text}, {"SEQPRODUTO", type text}, {"DTAPREVISTA", type date}, {"DTANF", type date}, {"DTACHEGADA", type date}, {"NRONOTAFISCAL", type text}}),
+				    #"Linhas Filtradas2" = Table.SelectRows(#"Tipo Alterado", each [DTACHEGADA] <> null and [DTACHEGADA] <> ""),
+				    #"Subtração da Data Inserida" = Table.AddColumn(#"Linhas Filtradas2", "Desvio Dias ", each Duration.Days([DTACHEGADA] - [DTAPREVISTA]), Int64.Type),
+				    #"Subtração da Data Inserida1" = Table.AddColumn(#"Subtração da Data Inserida", "Dias Entrega", each Duration.Days([DTACHEGADA] - [DTAPEDIDO]), Int64.Type),
+				    #"Coluna Condicional Adicionada" = Table.AddColumn(#"Subtração da Data Inserida1", "Status Entrega", each if [#"Desvio Dias "] = 0 then "No prazo" else if [#"Desvio Dias "] > 0 then "Atraso" else if [#"Desvio Dias "] < 0 then "Adiantado" else "Nulo"),
+				    #"Coluna Condicional Adicionada1" = Table.AddColumn(#"Coluna Condicional Adicionada", "Entrega", each if [QTDNF] >= [QUANTIDADE] then "Entrega Total" else if [QTDNF] < [QUANTIDADE] then "Entrega Parcial" else "Nulo"),
+				    #"Personalização Adicionada" = Table.AddColumn(
+				    #"Coluna Condicional Adicionada1", 
+				    "Status OTIF", 
+				    each if [Entrega] = "Entrega Total" and ([Status Entrega] = "No Prazo" or [Status Entrega] = "Adiantado") 
+				         then "OTIF" 
+				         else "Nao OTIF", 
+				    type text
+				),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Personalização Adicionada",{{"Entrega", type text}, {"Status Entrega", type text}}),
+				    #"Coluna Mesclada Inserida" = Table.AddColumn(#"Tipo Alterado1", "NroEmpresa-NroPedido", each Text.Combine({[NROEMPRESA], [NROPEDIDO]}, "-"), type text)
+				in
+				    #"Coluna Mesclada Inserida"
+				```
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

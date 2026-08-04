@@ -219,16 +219,30 @@
         },
         {
           "location": {
-            "x": 910.49891193913709,
-            "y": 1157.3312011132343
+            "x": 868.2189175219703,
+            "y": 1203.8391949721179
           },
           "nodeIndex": "DCEVPBI_SOLICITACAPRECOSAPROVADO",
           "nodeLineageTag": "3f94f010-3472-4511-ae96-7c313640afec",
           "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 17,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 1202.2308734175883,
+            "y": 1161.1705356561815
+          },
+          "nodeIndex": "DCEVPBI_PEDIDOENTREGAPRAZO",
+          "nodeLineageTag": "0b510e20-1ed3-42d7-9aaa-ee6da672d1cd",
+          "size": {
             "height": 300,
             "width": 234
           },
-          "zIndex": 17
+          "zIndex": 18
         }
       ],
       "name": "Todas as tabelas",

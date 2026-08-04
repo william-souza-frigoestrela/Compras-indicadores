@@ -2209,6 +2209,62 @@ table Medidas
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 65f214d5-63c2-47d1-8fb4-440a955296e8
 
+	measure 'Desvio Dias' =
+			
+			var dtachegada = SELECTEDVALUE(DCEVPBI_PEDIDOENTREGAPRAZO[DTACHEGADA])
+			
+			var dtaprevista = SELECTEDVALUE(DCEVPBI_PEDIDOENTREGAPRAZO[DTAPREVISTA])
+			
+			var dif_dias = DATEDIFF(dtaprevista,dtachegada,DAY)
+			RETURN
+			
+			dif_dias
+		formatString: 0
+		lineageTag: f1dcc0a5-671b-4879-89fd-f85c9b01f1a9
+
+	measure 'Status Entrega' =
+			
+			var desvio_dias = SELECTEDVALUE(DCEVPBI_PEDIDOENTREGAPRAZO[Desvio Dias ])
+			RETURN
+			
+			SWITCH(
+			    TRUE(),
+			    desvio_dias > 0, "Atraso",
+			    desvio_dias < 0, "Adiantado",
+			    desvio_dias = 0, "No prazo",
+			    "Nulo"
+			)
+		lineageTag: 1b55ec9d-6980-4e0a-a222-a166fe53fffa
+
+	measure 'Media dias entrega' = AVERAGE(DCEVPBI_PEDIDOENTREGAPRAZO[Dias Entrega])
+		lineageTag: 9374a136-ca09-4550-8d8e-9bd98b11392b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Media dias desvio' = AVERAGE(DCEVPBI_PEDIDOENTREGAPRAZO[Desvio Dias ])
+		lineageTag: 741432ac-236d-426a-b41a-f5d125e85557
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Qtd pedidos OTIF' =
+			
+			DISTINCTCOUNT(DCEVPBI_PEDIDOENTREGAPRAZO[NroEmpresa-NroPedido])
+		formatString: 0
+		lineageTag: b868080e-4c35-4bee-87da-5a2a1f5cbeb5
+
+	measure 'Qtd pedidos OTIF ok' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(DCEVPBI_PEDIDOENTREGAPRAZO[NroEmpresa-NroPedido]),
+			    DCEVPBI_PEDIDOENTREGAPRAZO[Status OTIF]= "OTIF"
+			)
+		formatString: 0
+		lineageTag: 886e908b-e3e1-47a7-aa29-03a2a5d0b318
+
+	measure '% OTIF' = DIVIDE([Qtd pedidos OTIF ok],[Qtd pedidos OTIF],0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 62e69155-9bf6-41cd-a2c7-68e11f745f35
+
 	column Column
 		isHidden
 		formatString: 0
