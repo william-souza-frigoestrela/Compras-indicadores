@@ -922,5 +922,177 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5de73a04500b9476cd52",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dEmpresa"
+              }
+            },
+            "Property": "NOMEREDUZIDO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ec50fa90e2e6025d80aa",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+              }
+            },
+            "Property": "NROPEDIDO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "57472557d3450b202640",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+              }
+            },
+            "Property": "NRONOTAFISCAL"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2dccdf6eb1026293e525",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+              }
+            },
+            "Property": "DTAPREVISTA"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fb82df20a03400652780",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+              }
+            },
+            "Property": "DTACHEGADA"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d9bf6d6ca08242168021",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+              }
+            },
+            "Property": "Desvio Dias "
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5c2fc9730ed15a888eb5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+              }
+            },
+            "Property": "Status Entrega"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3d84517ae6bc225b3528",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+              }
+            },
+            "Property": "Entrega"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4ceb5036804ce2790429",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+              }
+            },
+            "Property": "DESCRICAO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "bdc80693027b2ee5c1b7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+              }
+            },
+            "Property": "SEQPRODUTO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "38bb79f68629ee55e379",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+              }
+            },
+            "Property": "QUANTIDADE"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e82d0c51d21387341e00",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPBI_PEDIDOENTREGAPRAZO"
+              }
+            },
+            "Property": "QTDNF"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

@@ -2246,9 +2246,11 @@ table Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure Qtd_pedidos_Otiff = DISTINCTCOUNT(DCEVPBI_PEDIDOENTREGAPRAZO[NROPEDIDO])
+	measure 'Qtd pedidos OTIF' =
+			
+			DISTINCTCOUNT(DCEVPBI_PEDIDOENTREGAPRAZO[NroEmpresa-NroPedido])
 		formatString: 0
-		lineageTag: c7936bd1-9ca5-4509-a795-4bc8c7fb7b62
+		lineageTag: b868080e-4c35-4bee-87da-5a2a1f5cbeb5
 
 	column Column
 		isHidden

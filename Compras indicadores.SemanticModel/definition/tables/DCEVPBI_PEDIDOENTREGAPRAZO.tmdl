@@ -195,6 +195,14 @@ table DCEVPBI_PEDIDOENTREGAPRAZO
 
 		annotation SummarizationSetBy = Automatic
 
+	column NroEmpresa-NroPedido
+		dataType: string
+		lineageTag: 3bcf8df0-bc77-4daa-8ebf-2fffcb3ce97a
+		summarizeBy: none
+		sourceColumn: NroEmpresa-NroPedido
+
+		annotation SummarizationSetBy = Automatic
+
 	partition DCEVPBI_PEDIDOENTREGAPRAZO = m
 		mode: import
 		source = ```
@@ -216,9 +224,10 @@ table DCEVPBI_PEDIDOENTREGAPRAZO
 				         else "Nao OTIF", 
 				    type text
 				),
-				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Personalização Adicionada",{{"Entrega", type text}, {"Status Entrega", type text}})
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Personalização Adicionada",{{"Entrega", type text}, {"Status Entrega", type text}}),
+				    #"Coluna Mesclada Inserida" = Table.AddColumn(#"Tipo Alterado1", "NroEmpresa-NroPedido", each Text.Combine({[NROEMPRESA], [NROPEDIDO]}, "-"), type text)
 				in
-				    #"Tipo Alterado1"
+				    #"Coluna Mesclada Inserida"
 				```
 
 	annotation PBI_NavigationStepName = Navegação
