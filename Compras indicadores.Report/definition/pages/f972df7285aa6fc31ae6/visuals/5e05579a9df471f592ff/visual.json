@@ -56,6 +56,26 @@
             },
             {
               "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "NROSOLICITACAO"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(DCEVPB_SOLICITACAOTEMPOAPROVACAO.NROSOLICITACAO)",
+              "nativeQueryRef": "NROSOLICITACAO",
+              "displayName": "NROSOLICITACAO"
+            },
+            {
+              "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
