@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "fad6b5d00109ed5ce0e4",
   "position": {
     "x": 39.69742813918306,
@@ -310,7 +310,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Evolução spend mensal (CY vs LY)'"
+                  "Value": "'Evolução PMP mensal (CY vs LY)'"
                 }
               }
             },

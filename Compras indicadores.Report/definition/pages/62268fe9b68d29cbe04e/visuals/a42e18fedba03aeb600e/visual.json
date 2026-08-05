@@ -123,6 +123,20 @@
               "queryRef": "Medidas.Cost",
               "nativeQueryRef": "Cost ",
               "displayName": "Cost "
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "% Cost"
+                }
+              },
+              "queryRef": "Medidas.% Cost",
+              "nativeQueryRef": "% Cost"
             }
           ]
         }
@@ -623,7 +637,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "697.7312257480803D"
+                  "Value": "617.0090449034611D"
                 }
               }
             }

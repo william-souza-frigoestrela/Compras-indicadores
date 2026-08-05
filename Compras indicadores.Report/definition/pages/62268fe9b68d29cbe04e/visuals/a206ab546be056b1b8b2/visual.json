@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "c649b53b80b80a6c038e",
+  "name": "a206ab546be056b1b8b2",
   "position": {
-    "x": 33.694581280788178,
+    "x": 653.49753694581284,
     "y": 445.1231527093596,
-    "z": 0,
+    "z": 9000,
     "height": 226.10837438423644,
-    "width": 602.06896551724139,
-    "tabOrder": 0
+    "width": 579.01477832512319,
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "areaChart",
@@ -42,12 +42,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "1ª Oferta CY"
+                  "Property": "Cost CY"
                 }
               },
-              "queryRef": "Medidas.1ª Oferta",
-              "nativeQueryRef": "1ª Oferta",
-              "displayName": "1ª Oferta"
+              "queryRef": "Medidas.Cost CY",
+              "nativeQueryRef": "Cost CY"
             },
             {
               "field": {
@@ -57,12 +56,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Valor pago cost CY"
+                  "Property": "Cost LY"
                 }
               },
-              "queryRef": "Medidas.Valor pago",
-              "nativeQueryRef": "Valor Pago",
-              "displayName": "Valor Pago"
+              "queryRef": "Medidas.Cost LY",
+              "nativeQueryRef": "Cost LY"
             }
           ]
         }
@@ -224,10 +222,17 @@
                   "Value": "true"
                 }
               }
+            },
+            "strokeShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           },
           "selector": {
-            "metadata": "Medidas.1ª Oferta"
+            "metadata": "Medidas.Cost LY"
           }
         }
       ],
@@ -275,9 +280,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 8,
-                      "Percent": 0
+                    "Literal": {
+                      "Value": "'#D9B300'"
                     }
                   }
                 }
@@ -285,7 +289,7 @@
             }
           },
           "selector": {
-            "metadata": "Medidas.1ª Oferta"
+            "metadata": "Medidas.Cost LY"
           }
         },
         {
@@ -294,9 +298,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 1,
-                      "Percent": 0.6
+                    "Literal": {
+                      "Value": "'#989898'"
                     }
                   }
                 }
@@ -304,7 +307,7 @@
             }
           },
           "selector": {
-            "metadata": "Medidas.Valor pago"
+            "metadata": "Medidas.Cost CY"
           }
         }
       ]
@@ -316,7 +319,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Diferença 1ª Oferta vs Valor Pago'"
+                  "Value": "'Evolução Cost mensal'"
                 }
               }
             },

@@ -2265,6 +2265,18 @@ table Medidas
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 62e69155-9bf6-41cd-a2c7-68e11f745f35
 
+	measure '% Cost' =
+			
+			
+			VAR Anterior = [Valor pago cost CY]
+			VAR Atual = [1ª Oferta CY]
+			VAR Diferenca = Atual - Anterior
+			
+			RETURN
+			    DIVIDE(Diferenca, ABS(Anterior), 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: c507b84c-47a4-4dba-8e5c-64ea9de465bd
+
 	column Column
 		isHidden
 		formatString: 0
