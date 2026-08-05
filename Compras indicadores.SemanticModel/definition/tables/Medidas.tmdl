@@ -2277,7 +2277,7 @@ table Medidas
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: c507b84c-47a4-4dba-8e5c-64ea9de465bd
 
-	measure 'Tempo Médio (Aprovação x Pedido)' = ```
+	measure 'Tempo Medio (Aprovação x Pedido)' = ```
 			
 			
 			VAR TempoMedioDias =
