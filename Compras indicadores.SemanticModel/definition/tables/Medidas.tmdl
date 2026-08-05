@@ -2277,6 +2277,31 @@ table Medidas
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: c507b84c-47a4-4dba-8e5c-64ea9de465bd
 
+	measure 'Tempo Medio (Aprovação x Pedido)' = ```
+			
+			
+			VAR TempoMedioDias =
+			    AVERAGEX(
+			        FILTER(
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO,
+			            NOT(ISBLANK(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATAHORAPEDIDO])) &&
+			            NOT(ISBLANK(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SOLIAPROVACAO])) 
+			        ),
+			        DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATAHORAPEDIDO] - DCEVPB_SOLICITACAOTEMPOAPROVACAO[SOLIAPROVACAO]
+			    )
+			VAR Dias = INT(TempoMedioDias)
+			VAR Horas = INT(MOD(TempoMedioDias * 24, 24))
+			VAR Minutos = INT(MOD(TempoMedioDias * 24 * 60, 60))
+			RETURN
+			--IF([Pedidos Gerados no Período] < 1 , BLANK(),
+			
+			FORMAT(Dias, "00") & "D " &
+			FORMAT(Horas, "00") & "H " &
+			FORMAT(Minutos, "00"&"M ")
+			--)
+			```
+		lineageTag: 91578d74-f642-4d72-9e34-deb0b915a8ed
+
 	column Column
 		isHidden
 		formatString: 0

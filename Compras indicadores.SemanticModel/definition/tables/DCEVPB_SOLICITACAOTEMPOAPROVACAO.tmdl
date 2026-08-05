@@ -182,7 +182,7 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 
 	column SOLIAPROVACAO
 		dataType: dateTime
-		formatString: Short Date
+		formatString: General Date
 		lineageTag: ac364b00-d5d6-4467-b4f8-6ab9c8290112
 		summarizeBy: none
 		sourceColumn: SOLIAPROVACAO
@@ -202,7 +202,7 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 
 	column DATAHORAPEDIDO
 		dataType: dateTime
-		formatString: Short Date
+		formatString: General Date
 		lineageTag: 3318aad2-8172-4511-aadb-0bad2713fa4c
 		summarizeBy: none
 		sourceColumn: DATAHORAPEDIDO

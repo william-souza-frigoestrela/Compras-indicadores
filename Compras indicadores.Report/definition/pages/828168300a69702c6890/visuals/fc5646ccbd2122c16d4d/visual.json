@@ -172,6 +172,20 @@
                       "Entity": "Medidas"
                     }
                   },
+                  "Property": "Tempo Medio (Aprovação x Pedido)"
+                }
+              },
+              "queryRef": "Medidas.Tempo Medio (Aprovação x Pedido)",
+              "nativeQueryRef": "Tempo Medio (Aprovação x Pedido)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
                   "Property": "Eficiência"
                 }
               },
