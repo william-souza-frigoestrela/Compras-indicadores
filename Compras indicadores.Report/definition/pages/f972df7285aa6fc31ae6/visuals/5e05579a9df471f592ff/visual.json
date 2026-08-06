@@ -51,28 +51,22 @@
                 }
               },
               "queryRef": "Min(DCEVPB_SOLICITACAOTEMPOAPROVACAO.SEQPRODUTO)",
-              "nativeQueryRef": "SEQPRODUTO",
-              "displayName": "SEQPRODUTO"
+              "nativeQueryRef": "Seq Produto",
+              "displayName": "Seq Produto"
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-                        }
-                      },
-                      "Property": "NROSOLICITACAO"
+                    "SourceRef": {
+                      "Entity": "Medidas"
                     }
                   },
-                  "Function": 3
+                  "Property": "Nro Solicitação Atual"
                 }
               },
-              "queryRef": "Min(DCEVPB_SOLICITACAOTEMPOAPROVACAO.NROSOLICITACAO)",
-              "nativeQueryRef": "NROSOLICITACAO",
-              "displayName": "NROSOLICITACAO"
+              "queryRef": "Medidas.NRO SOLICITAÇÃO ATUAL",
+              "nativeQueryRef": "Nro Solicitação Atual"
             },
             {
               "field": {
@@ -110,11 +104,45 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Preco Ultima Compra"
+                  "Property": "Qtd Atual"
                 }
               },
-              "queryRef": "Medidas.Preco Ultima Compra",
-              "nativeQueryRef": "Preco Ultima Compra"
+              "queryRef": "Medidas.QUANT ATUAL",
+              "nativeQueryRef": "Qtd Atual"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "UNIDADE"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(DCEVPB_SOLICITACAOTEMPOAPROVACAO.UNIDADE)",
+              "nativeQueryRef": "Unidade",
+              "displayName": "Unidade"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Nro Solicitaçao Ultima Compra"
+                }
+              },
+              "queryRef": "Medidas.Nro Solicitaçao Ultima Compra",
+              "nativeQueryRef": "Nro Solicitaçao Ultima Compra"
             },
             {
               "field": {
@@ -129,6 +157,48 @@
               },
               "queryRef": "Medidas.Data Ultima Compra",
               "nativeQueryRef": "Data Ultima Compra"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Preco Ultima Compra"
+                }
+              },
+              "queryRef": "Medidas.Preco Ultima Compra",
+              "nativeQueryRef": "Preco Ultima Compra"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Qtd Ultima Compra"
+                }
+              },
+              "queryRef": "Medidas.Qtd Ultima Compra",
+              "nativeQueryRef": "Qtd Ultima Compra"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Unidade Ultima Compra"
+                }
+              },
+              "queryRef": "Medidas.Unidade Ultima Compra",
+              "nativeQueryRef": "Unidade Ultima Compra"
             },
             {
               "field": {
@@ -604,6 +674,123 @@
           ]
         },
         "isLockedInViewMode": true
+      },
+      {
+        "name": "eed6f16c87476e1bae52",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+              }
+            },
+            "Property": "DESCRICAO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f8061000cdb9a0031b96",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                  }
+                },
+                "Property": "SEQPRODUTO"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "34d915c670304c7b00ca",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Data Compra Atual"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d539d3035cc207a7445a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Preco Atual"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "13a41b64dc8776638056",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Preco Ultima Compra"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "89552dc084997054b788",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Delta Preco Unitario"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "116a297abc7cbc30c3d3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Delta Total"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3563b73e068ce75d780e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Nro Solicitação Atual"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
