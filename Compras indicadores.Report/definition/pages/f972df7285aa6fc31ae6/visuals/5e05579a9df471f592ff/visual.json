@@ -98,6 +98,20 @@
             },
             {
               "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "QUANT ATUAL"
+                }
+              },
+              "queryRef": "Medidas.QUANT ATUAL",
+              "nativeQueryRef": "QUANT ATUAL"
+            },
+            {
+              "field": {
                 "Aggregation": {
                   "Expression": {
                     "Column": {
@@ -162,6 +176,20 @@
               },
               "queryRef": "Medidas.Data Ultima Compra",
               "nativeQueryRef": "Data Ultima Compra"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Unidade Ultima Compra"
+                }
+              },
+              "queryRef": "Medidas.Unidade Ultima Compra",
+              "nativeQueryRef": "Unidade Ultima Compra"
             },
             {
               "field": {

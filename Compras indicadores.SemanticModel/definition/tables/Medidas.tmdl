@@ -2314,6 +2314,34 @@ table Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Unidade Ultima Compra' = ```
+			
+			VAR DataAtual = MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO])
+			VAR ProdutoAtual = SELECTEDVALUE(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO])
+			
+			-- 1. Encontra a data da última compra antes da data atual para este produto
+			VAR DataUltimaCompra = 
+			    CALCULATE(
+			        MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			        REMOVEFILTERS(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]), -- Limpa a data atual
+			        DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] < DataAtual,
+			        DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual
+			    )
+			
+			-- 2. Encontra a data da última compra antes da data atual para este produto para retornar unidade
+			VAR Unidade_ultima_compra = 
+			CALCULATE(
+			    MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[UNIDADE]),
+			        REMOVEFILTERS(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO]),
+			        DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO] = DataUltimaCompra,
+			        DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO] = ProdutoAtual
+			)
+			
+			RETURN
+			    Unidade_ultima_compra
+			```
+		lineageTag: 26cf7143-8bc1-4327-959e-681873769d2b
+
 	column Column
 		isHidden
 		formatString: 0
