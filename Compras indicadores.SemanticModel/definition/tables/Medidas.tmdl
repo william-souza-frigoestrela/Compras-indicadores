@@ -2302,6 +2302,11 @@ table Medidas
 			```
 		lineageTag: 91578d74-f642-4d72-9e34-deb0b915a8ed
 
+	measure 'NRO SOLICITAÇÃO ATUAL' =
+			
+			MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[NROSOLICITACAO])
+		lineageTag: 9d1fce69-0a94-4ad6-80e8-beb46f6ed1cc
+
 	column Column
 		isHidden
 		formatString: 0
