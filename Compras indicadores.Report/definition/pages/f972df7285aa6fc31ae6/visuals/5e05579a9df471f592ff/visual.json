@@ -51,8 +51,8 @@
                 }
               },
               "queryRef": "Min(DCEVPB_SOLICITACAOTEMPOAPROVACAO.SEQPRODUTO)",
-              "nativeQueryRef": "SEQPRODUTO",
-              "displayName": "SEQPRODUTO"
+              "nativeQueryRef": "Seq Produto",
+              "displayName": "Seq Produto"
             },
             {
               "field": {
@@ -104,11 +104,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "QUANT ATUAL"
+                  "Property": "Qtd Atual"
                 }
               },
               "queryRef": "Medidas.QUANT ATUAL",
-              "nativeQueryRef": "QUANT ATUAL"
+              "nativeQueryRef": "Qtd Atual"
             },
             {
               "field": {
@@ -127,8 +127,8 @@
                 }
               },
               "queryRef": "Min(DCEVPB_SOLICITACAOTEMPOAPROVACAO.UNIDADE)",
-              "nativeQueryRef": "UNIDADE",
-              "displayName": "UNIDADE"
+              "nativeQueryRef": "Unidade",
+              "displayName": "Unidade"
             },
             {
               "field": {
