@@ -1,9 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "ecfe45e87eac1b8ada56",
   "position": {
-    "x": 820.48985304408677,
-    "y": 207.80965710286912,
+    "x": 671.42389525368242,
+    "y": 207.39770867430443,
     "z": 7000,
     "height": 70.762771168649408,
     "width": 154.06578026592021,
@@ -572,5 +572,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "3e3e2284686cb2617480",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Solic urgente"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

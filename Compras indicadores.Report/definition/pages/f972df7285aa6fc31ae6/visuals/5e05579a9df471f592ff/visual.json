@@ -65,7 +65,7 @@
                   "Property": "Nro Solicitação Atual"
                 }
               },
-              "queryRef": "Medidas.NRO SOLICITAÇÃO ATUAL",
+              "queryRef": "Medidas.Nro Solicitação Atual",
               "nativeQueryRef": "Nro Solicitação Atual"
             },
             {
@@ -779,7 +779,96 @@
         "type": "Advanced"
       },
       {
-        "name": "3563b73e068ce75d780e",
+        "name": "b93d73535ad8d81b1c67",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Qtd Atual"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ebdbbb1ad3b707d0da5d",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                  }
+                },
+                "Property": "UNIDADE"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "67ff5f671532ced07dd0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Nro Solicitaçao Ultima Compra"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6dc10939ce4b70c1a557",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Data Ultima Compra"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "999f8f28030cd550d30b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Qtd Ultima Compra"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "102d0bb0750e205aaa51",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Unidade Ultima Compra"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "95b2432fcace20a7429a",
         "field": {
           "Measure": {
             "Expression": {

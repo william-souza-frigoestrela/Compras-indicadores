@@ -370,5 +370,51 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "eccbc4ffdb057058200a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dCalendario"
+              }
+            },
+            "Property": "Mês abreviado"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "281ea4f36c95ae1ecd48",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "PMP Ponderado CY"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e5e25ea2093e6dd6063e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "PMP Ponderado LY"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

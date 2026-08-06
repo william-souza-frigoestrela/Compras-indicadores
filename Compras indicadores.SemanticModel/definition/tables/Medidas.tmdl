@@ -2304,7 +2304,18 @@ table Medidas
 
 	measure 'Nro Solicitação Atual' =
 			
-			MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[NROSOLICITACAO])
+			VAR UltimaSolicitacao =
+			    TOPN(
+			        1,
+			        DCEVPB_SOLICITACAOTEMPOAPROVACAO,
+			        DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAEMISSAO], -- Substitua pela sua coluna de Data/Hora de referência
+			        DESC
+			    )
+			RETURN
+			    CALCULATE(
+			        MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[NROSOLICITACAO]),
+			        UltimaSolicitacao
+			    )
 		lineageTag: 9d1fce69-0a94-4ad6-80e8-beb46f6ed1cc
 
 	measure 'Qtd Atual' =

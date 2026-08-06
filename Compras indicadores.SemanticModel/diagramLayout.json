@@ -5,7 +5,7 @@
       "ordinal": 0,
       "scrollPosition": {
         "x": 0,
-        "y": 0
+        "y": 489.34135045402172
       },
       "nodes": [
         {
@@ -19,7 +19,7 @@
             "height": 296,
             "width": 234
           },
-          "zIndex": 12,
+          "zIndex": 17,
           "expandedHeight": 300
         },
         {
@@ -112,7 +112,7 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 13,
+          "zIndex": 18,
           "expandedHeight": 296
         },
         {
@@ -126,7 +126,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 14
+          "zIndex": 12
         },
         {
           "location": {
@@ -176,7 +176,7 @@
             "height": 104,
             "width": 234
           },
-          "zIndex": 16
+          "zIndex": 14
         },
         {
           "location": {
@@ -189,7 +189,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 15
+          "zIndex": 13
         },
         {
           "location": {
@@ -228,7 +228,7 @@
             "height": 176,
             "width": 234
           },
-          "zIndex": 17,
+          "zIndex": 15,
           "expandedHeight": 300
         },
         {
@@ -242,7 +242,7 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 18
+          "zIndex": 16
         }
       ],
       "name": "Todas as tabelas",

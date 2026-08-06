@@ -1046,5 +1046,163 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7344f6e2b7519b64b300",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+              }
+            },
+            "Property": "NOME"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "607d815942232a4e602c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Solic criadas"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d58746bc2065b432c989",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Solic aberto mais antiga"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "99e34061a04d0b443101",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Qtd itens"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "31f9a4e748ea0b4bd868",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Solic em aberto"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c68a45fed1c7430a6012",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Qtd itens c/ pedido"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "35d1db494706b43c1994",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Qtd itens s/ pedido"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fed4fef79d99b9585500",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Valor total pedidos"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9c419cc8884c99349000",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Solic urgente"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "17e2bd926164e15ea089",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Tempo Medio (Aprovação x Pedido)"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3f21b12a3687e0062d30",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Eficiência"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
