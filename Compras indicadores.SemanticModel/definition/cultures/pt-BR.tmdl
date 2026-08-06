@@ -11694,7 +11694,7 @@ cultureInfo pt-BR
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Medidas",
-			          "ConceptualProperty": "NRO SOLICITAÇÃO ATUAL"
+			          "ConceptualProperty": "Nro Solicitação Atual"
 			        }
 			      },
 			      "State": "Generated",

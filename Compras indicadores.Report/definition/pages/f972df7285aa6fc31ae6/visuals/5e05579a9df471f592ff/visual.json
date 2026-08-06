@@ -62,11 +62,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "NRO SOLICITAÇÃO ATUAL"
+                  "Property": "Nro Solicitação Atual"
                 }
               },
               "queryRef": "Medidas.NRO SOLICITAÇÃO ATUAL",
-              "nativeQueryRef": "NRO SOLICITAÇÃO ATUAL"
+              "nativeQueryRef": "Nro Solicitação Atual"
             },
             {
               "field": {
@@ -132,22 +132,31 @@
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
-                        }
-                      },
-                      "Property": "QUANTIDADE"
+                    "SourceRef": {
+                      "Entity": "Medidas"
                     }
                   },
-                  "Function": 0
+                  "Property": "Nro Solicitaçao Ultima Compra"
                 }
               },
-              "queryRef": "Sum(DCEVPB_SOLICITACAOTEMPOAPROVACAO.QUANTIDADE)",
-              "nativeQueryRef": "Soma de QUANTIDADE"
+              "queryRef": "Medidas.Nro Solicitaçao Ultima Compra",
+              "nativeQueryRef": "Nro Solicitaçao Ultima Compra"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Data Ultima Compra"
+                }
+              },
+              "queryRef": "Medidas.Data Ultima Compra",
+              "nativeQueryRef": "Data Ultima Compra"
             },
             {
               "field": {
@@ -171,11 +180,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Data Ultima Compra"
+                  "Property": "Qtd Ultima Compra"
                 }
               },
-              "queryRef": "Medidas.Data Ultima Compra",
-              "nativeQueryRef": "Data Ultima Compra"
+              "queryRef": "Medidas.Qtd Ultima Compra",
+              "nativeQueryRef": "Qtd Ultima Compra"
             },
             {
               "field": {
@@ -742,20 +751,6 @@
         "type": "Advanced"
       },
       {
-        "name": "18f6a2e335e044404682",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medidas"
-              }
-            },
-            "Property": "Data Ultima Compra"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
         "name": "89552dc084997054b788",
         "field": {
           "Measure": {
@@ -792,7 +787,7 @@
                 "Entity": "Medidas"
               }
             },
-            "Property": "NRO SOLICITAÇÃO ATUAL"
+            "Property": "Nro Solicitação Atual"
           }
         },
         "type": "Advanced"
