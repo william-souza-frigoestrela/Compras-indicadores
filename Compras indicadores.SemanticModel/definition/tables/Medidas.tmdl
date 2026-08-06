@@ -2268,8 +2268,8 @@ table Medidas
 	measure '% Cost' =
 			
 			
-			VAR Anterior = [Valor pago cost CY]
-			VAR Atual = [1ª Oferta CY]
+			VAR Atual = [Valor pago cost CY]
+			VAR Anterior = [1ª Oferta CY]
 			VAR Diferenca = Atual - Anterior
 			
 			RETURN
