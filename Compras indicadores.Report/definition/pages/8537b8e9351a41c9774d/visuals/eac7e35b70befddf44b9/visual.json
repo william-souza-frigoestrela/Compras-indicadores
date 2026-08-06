@@ -111,7 +111,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Comprador'"
+                  "Value": "'Empresa'"
                 }
               }
             }
@@ -244,5 +244,23 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "34387e9ba3d54ecc1c2c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dEmpresa"
+              }
+            },
+            "Property": "NOMEREDUZIDO"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

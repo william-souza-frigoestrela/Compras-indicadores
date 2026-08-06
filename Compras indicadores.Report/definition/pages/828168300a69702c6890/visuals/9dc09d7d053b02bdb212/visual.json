@@ -1,9 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "9dc09d7d053b02bdb212",
   "position": {
-    "x": 1065.9202239328201,
-    "y": 207.80965710286912,
+    "x": 877.77414075286413,
+    "y": 207.39770867430443,
     "z": 11000,
     "height": 70.762771168649408,
     "width": 160.33589923023092,
@@ -558,5 +558,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0689deae56a721947107",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "% Solicitação urgente perioro"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

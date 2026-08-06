@@ -1,9 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "738cf22d9a535a0b5c44",
   "position": {
-    "x": 73.449965010496854,
-    "y": 207.80965710286912,
+    "x": 49.230769230769226,
+    "y": 207.39770867430443,
     "z": 4000,
     "height": 70.762771168649408,
     "width": 149.58712386284114,
@@ -572,5 +572,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2aa995a6d00d7942bba7",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Solic criadas"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

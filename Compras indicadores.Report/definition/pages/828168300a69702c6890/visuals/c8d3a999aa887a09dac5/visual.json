@@ -1,9 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "c8d3a999aa887a09dac5",
   "position": {
-    "x": 312.61021693491949,
-    "y": 207.80965710286912,
+    "x": 247.2013093289689,
+    "y": 207.39770867430443,
     "z": 5000,
     "height": 70.762771168649408,
     "width": 157.64870538838349,
@@ -572,5 +572,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f2b7535c14c992ccc1d2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Solic em aberto"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

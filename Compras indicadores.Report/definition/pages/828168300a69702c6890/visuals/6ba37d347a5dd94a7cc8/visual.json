@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "09cea0085716b5a03e39",
+  "name": "6ba37d347a5dd94a7cc8",
   "position": {
-    "x": 447.26677577741407,
+    "x": 1058.9852700490999,
     "y": 207.39770867430443,
-    "z": 6000,
-    "height": 70.762771168649408,
-    "width": 186.31210636808956,
-    "tabOrder": 6000
+    "z": 11002,
+    "height": 71.227495908346967,
+    "width": 174.92635024549918,
+    "tabOrder": 11001
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,11 +23,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Qtd itens"
+                  "Property": "Tempo Medio (Aprovação x Pedido)"
                 }
               },
-              "queryRef": "Medidas.Itens solicitados no periodo",
-              "nativeQueryRef": "Qtd itens"
+              "queryRef": "Medidas.Tempo Medio (Aprovação x Pedido)",
+              "nativeQueryRef": "Tempo Medio (Aprovação x Pedido)"
             }
           ]
         }
@@ -42,10 +42,10 @@
                     "Entity": "Medidas"
                   }
                 },
-                "Property": "Qtd itens"
+                "Property": "Tempo Medio (Aprovação x Pedido)"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ],
         "isDefaultSort": true
@@ -161,34 +161,6 @@
           },
           "selector": {
             "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Medidas.Solicitacoes criadas periodo"
-          }
-        },
-        {
-          "properties": {
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Medidas.Itens solicitados no periodo"
           }
         }
       ],
@@ -488,7 +460,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Itens solicitados em aberto'"
+                  "Value": "'Tempo Médio'"
                 }
               }
             },
@@ -521,7 +493,7 @@
             "alignment": {
               "expr": {
                 "Literal": {
-                  "Value": "'left'"
+                  "Value": "'center'"
                 }
               }
             },
@@ -590,7 +562,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "db1cc0caa02b24208a0b",
+        "name": "9190413b10a3b09b5de4",
         "field": {
           "Measure": {
             "Expression": {
@@ -598,7 +570,7 @@
                 "Entity": "Medidas"
               }
             },
-            "Property": "Qtd itens"
+            "Property": "Tempo Medio (Aprovação x Pedido)"
           }
         },
         "type": "Advanced"
