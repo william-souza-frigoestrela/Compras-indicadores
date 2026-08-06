@@ -2307,6 +2307,13 @@ table Medidas
 			MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[NROSOLICITACAO])
 		lineageTag: 9d1fce69-0a94-4ad6-80e8-beb46f6ed1cc
 
+	measure 'QUANT ATUAL' =
+			
+			MAX(DCEVPB_SOLICITACAOTEMPOAPROVACAO[QUANTIDADE])
+		lineageTag: 9ffeadfa-f9c8-4164-be75-298ecdc58cc0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Column
 		isHidden
 		formatString: 0

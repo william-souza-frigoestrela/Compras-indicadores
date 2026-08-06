@@ -98,6 +98,45 @@
             },
             {
               "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "UNIDADE"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(DCEVPB_SOLICITACAOTEMPOAPROVACAO.UNIDADE)",
+              "nativeQueryRef": "UNIDADE",
+              "displayName": "UNIDADE"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                        }
+                      },
+                      "Property": "QUANTIDADE"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(DCEVPB_SOLICITACAOTEMPOAPROVACAO.QUANTIDADE)",
+              "nativeQueryRef": "Soma de QUANTIDADE"
+            },
+            {
+              "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
@@ -598,6 +637,137 @@
           ]
         },
         "isLockedInViewMode": true
+      },
+      {
+        "name": "eed6f16c87476e1bae52",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+              }
+            },
+            "Property": "DESCRICAO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f8061000cdb9a0031b96",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
+                  }
+                },
+                "Property": "SEQPRODUTO"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "34d915c670304c7b00ca",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Data Compra Atual"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d539d3035cc207a7445a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Preco Atual"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "13a41b64dc8776638056",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Preco Ultima Compra"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "18f6a2e335e044404682",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Data Ultima Compra"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "89552dc084997054b788",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Delta Preco Unitario"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "116a297abc7cbc30c3d3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Delta Total"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3563b73e068ce75d780e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "NRO SOLICITAÇÃO ATUAL"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
