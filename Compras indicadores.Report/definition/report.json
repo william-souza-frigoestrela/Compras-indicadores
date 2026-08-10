@@ -34,7 +34,7 @@
           "expanded": {
             "expr": {
               "Literal": {
-                "Value": "true"
+                "Value": "false"
               }
             }
           }
@@ -89,8 +89,13 @@
           "type": "Image"
         },
         {
-          "name": "otif6986973229268166.svg",
-          "path": "otif6986973229268166.svg",
+          "name": "OTIF_Detalhe8979674430620149.svg",
+          "path": "OTIF_Detalhe8979674430620149.svg",
+          "type": "Image"
+        },
+        {
+          "name": "otif35450824375597656.svg",
+          "path": "otif35450824375597656.svg",
           "type": "Image"
         },
         {

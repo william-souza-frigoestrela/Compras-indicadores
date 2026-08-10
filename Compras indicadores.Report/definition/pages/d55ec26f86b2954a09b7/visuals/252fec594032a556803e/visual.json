@@ -1,9 +1,9 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "eeaecdedcaba759ea1b0",
+  "name": "252fec594032a556803e",
   "position": {
-    "x": 276.98169445267331,
-    "y": 8.9719626168224273,
+    "x": 178.2901056676273,
+    "y": 0,
     "z": 2000,
     "height": 62.708933717579256,
     "width": 280.34582132564844,
@@ -141,6 +141,41 @@
                             {
                               "Literal": {
                                 "Value": "'2026/03'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'2026/04'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'2026/05'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'2026/06'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'2026/07'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'2026/02'"
                               }
                             }
                           ]
