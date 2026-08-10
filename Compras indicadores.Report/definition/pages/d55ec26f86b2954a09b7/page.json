@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
-  "name": "fe7e3004005558200d7d",
-  "displayName": "Detalhe OTIF",
+  "name": "d55ec26f86b2954a09b7",
+  "displayName": "OTIF",
   "displayOption": "FitToPage",
   "height": 720,
   "width": 1280,
@@ -27,7 +27,7 @@
               "name": {
                 "expr": {
                   "Literal": {
-                    "Value": "'OTIF Detalhe.svg'"
+                    "Value": "'otif.svg'"
                   }
                 }
               },
@@ -36,7 +36,7 @@
                   "ResourcePackageItem": {
                     "PackageName": "RegisteredResources",
                     "PackageType": 1,
-                    "ItemName": "OTIF_Detalhe8979674430620149.svg"
+                    "ItemName": "otif35450824375597656.svg"
                   }
                 }
               },
@@ -60,5 +60,37 @@
       }
     ]
   },
-  "visibility": "HiddenInViewMode"
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "6c26da8de9188532804e",
+      "target": "5b4d695965a7d48bebcb",
+      "type": "DataFilter"
+    },
+    {
+      "source": "6c26da8de9188532804e",
+      "target": "7c6d9457003709d29b8a",
+      "type": "DataFilter"
+    },
+    {
+      "source": "6c26da8de9188532804e",
+      "target": "aa32ab64b546195b9d0a",
+      "type": "DataFilter"
+    },
+    {
+      "source": "8675176fd75844910cd5",
+      "target": "aa32ab64b546195b9d0a",
+      "type": "DataFilter"
+    },
+    {
+      "source": "8675176fd75844910cd5",
+      "target": "7c6d9457003709d29b8a",
+      "type": "DataFilter"
+    },
+    {
+      "source": "8675176fd75844910cd5",
+      "target": "6c26da8de9188532804e",
+      "type": "DataFilter"
+    }
+  ]
 }

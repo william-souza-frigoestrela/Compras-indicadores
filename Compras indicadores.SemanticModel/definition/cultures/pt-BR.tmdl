@@ -11668,7 +11668,7 @@ cultureInfo pt-BR
 			        }
 			      ]
 			    },
-			    "medida.tempo_medio_aprovação_x_pedido": {
+			    "medida.tempo_medio_aprovação": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Medidas",
@@ -11678,14 +11678,8 @@ cultureInfo pt-BR
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "tempo medio (aprovação x pedido)": {
+			          "tempo medio aprovação": {
 			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "tempo medio": {
-			            "State": "Generated",
-			            "Weight": 0.75
 			          }
 			        }
 			      ]
@@ -11769,147 +11763,51 @@ cultureInfo pt-BR
 			          }
 			        }
 			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo.column_qtdped": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO",
+			          "ConceptualProperty": "_qtdPed"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Qtd. Pedidos": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dcevpbi_pedidoentregaprazo.column_qtdpedidosotif": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DCEVPBI_PEDIDOENTREGAPRAZO",
+			          "ConceptualProperty": "_qtdPedidosOTIF"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Qtd. Pedidos OTIF": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "dcevpbi_solicitacaprecosaprovado_has_d_fornecedore": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_solicitacaprecosaprovado": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado"
-			          }
-			        },
-			        "d_fornecedore": {
-			          "Target": {
-			            "Entity": "d_fornecedore"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            },
-			            "Object": {
-			              "Role": "d_fornecedore"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_d_fornecedores"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_fornecedore"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_fornecedores_have_dcevpbi_solicitacaprecosaprovados"
-			        }
-			      ]
-			    },
-			    "dcevpbi_solicitacaprecosaprovado_has_d_empresa": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_solicitacaprecosaprovado": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado"
-			          }
-			        },
-			        "d_empresa": {
-			          "Target": {
-			            "Entity": "d_empresa"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            },
-			            "Object": {
-			              "Role": "d_empresa"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_d_empresas"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_empresa"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_empresas_have_dcevpbi_solicitacaprecosaprovados"
-			        }
-			      ]
-			    },
-			    "dcevpbi_solicitacaprecosaprovado_has_d_calendario": {
-			      "Binding": {
-			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dcevpbi_solicitacaprecosaprovado": {
-			          "Target": {
-			            "Entity": "dcevpbi_solicitacaprecosaprovado"
-			          }
-			        },
-			        "d_calendario": {
-			          "Target": {
-			            "Entity": "d_calendario"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            },
-			            "Object": {
-			              "Role": "d_calendario"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dcevpbi_solicitacaprecosaprovados_have_d_calendarios"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_calendario"
-			            },
-			            "Object": {
-			              "Role": "dcevpbi_solicitacaprecosaprovado"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_calendarios_have_dcevpbi_solicitacaprecosaprovados"
-			        }
-			      ]
-			    },
 			    "dcevpbi_pedidoprazopagamento_has_d_prioridade": {
 			      "Binding": {
 			        "ConceptualEntity": "DCEVPBI_PEDIDOPRAZOPAGAMENTO"
@@ -12687,7 +12585,40 @@ cultureInfo pt-BR
 			        }
 			      ]
 			    },
-			    "dcevpb_solicitacaotempoaprovacao_has_medida_tempo_medio_aprovação_x_pedido": {
+			    "d_status_has_medida_tempo_medio_aprovação": {
+			      "Binding": {
+			        "ConceptualEntity": "dStatus"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_status": {
+			          "Target": {
+			            "Entity": "d_status"
+			          }
+			        },
+			        "medida.tempo_medio_aprovação": {
+			          "Target": {
+			            "Entity": "medida.tempo_medio_aprovação"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_status"
+			            },
+			            "Object": {
+			              "Role": "medida.tempo_medio_aprovação"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_statuses_have_tempo_medio_aprovação"
+			        }
+			      ]
+			    },
+			    "dcevpb_solicitacaotempoaprovacao_has_medida_tempo_medio_aprovação": {
 			      "Binding": {
 			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
 			      },
@@ -12698,9 +12629,9 @@ cultureInfo pt-BR
 			            "Entity": "dcevpb_solicitacaotempoaprovacao"
 			          }
 			        },
-			        "medida.tempo_medio_aprovação_x_pedido": {
+			        "medida.tempo_medio_aprovação": {
 			          "Target": {
-			            "Entity": "medida.tempo_medio_aprovação_x_pedido"
+			            "Entity": "medida.tempo_medio_aprovação"
 			          }
 			        }
 			      },
@@ -12711,12 +12642,12 @@ cultureInfo pt-BR
 			              "Role": "dcevpb_solicitacaotempoaprovacao"
 			            },
 			            "Object": {
-			              "Role": "medida.tempo_medio_aprovação_x_pedido"
+			              "Role": "medida.tempo_medio_aprovação"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_tempo_medio_aprovação_x_pedido"
+			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_tempo_medio_aprovação"
 			        }
 			      ]
 			    },
@@ -14661,6 +14592,39 @@ cultureInfo pt-BR
 			        }
 			      ]
 			    },
+			    "d_status_has_medida_eficiência": {
+			      "Binding": {
+			        "ConceptualEntity": "dStatus"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_status": {
+			          "Target": {
+			            "Entity": "d_status"
+			          }
+			        },
+			        "medida.eficiência": {
+			          "Target": {
+			            "Entity": "medida.eficiência"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_status"
+			            },
+			            "Object": {
+			              "Role": "medida.eficiência"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_statuses_have_eficiência"
+			        }
+			      ]
+			    },
 			    "dcevpb_solicitacaotempoaprovacao_has_medida_eficiência": {
 			      "Binding": {
 			        "ConceptualEntity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
@@ -16275,6 +16239,39 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_solic_urgente"
+			        }
+			      ]
+			    },
+			    "d_status_has_medida_qtd_itens": {
+			      "Binding": {
+			        "ConceptualEntity": "dStatus"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_status": {
+			          "Target": {
+			            "Entity": "d_status"
+			          }
+			        },
+			        "medida.qtd_itens": {
+			          "Target": {
+			            "Entity": "medida.qtd_itens"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_status"
+			            },
+			            "Object": {
+			              "Role": "medida.qtd_itens"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_statuses_have_qtd_itens"
 			        }
 			      ]
 			    },
@@ -22822,6 +22819,144 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dcevpb_solicitacaotempoaprovacaos_have_nrosolicitacaos"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_d_calendario": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "d_calendario": {
+			          "Target": {
+			            "Entity": "d_calendario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "d_calendario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_d_calendarios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendario"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendarios_have_dcevpbi_solicitacaprecosaprovados"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_d_empresa": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "d_empresa": {
+			          "Target": {
+			            "Entity": "d_empresa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "d_empresa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_d_empresas"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_empresa"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_empresas_have_dcevpbi_solicitacaprecosaprovados"
+			        }
+			      ]
+			    },
+			    "dcevpbi_solicitacaprecosaprovado_has_d_fornecedore": {
+			      "Binding": {
+			        "ConceptualEntity": "DCEVPBI_SOLICITACAPRECOSAPROVADO"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dcevpbi_solicitacaprecosaprovado": {
+			          "Target": {
+			            "Entity": "dcevpbi_solicitacaprecosaprovado"
+			          }
+			        },
+			        "d_fornecedore": {
+			          "Target": {
+			            "Entity": "d_fornecedore"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            },
+			            "Object": {
+			              "Role": "d_fornecedore"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dcevpbi_solicitacaprecosaprovados_have_d_fornecedores"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_fornecedore"
+			            },
+			            "Object": {
+			              "Role": "dcevpbi_solicitacaprecosaprovado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_fornecedores_have_dcevpbi_solicitacaprecosaprovados"
 			        }
 			      ]
 			    },
