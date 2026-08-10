@@ -366,13 +366,12 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 
 	partition DCEVPB_SOLICITACAOTEMPOAPROVACAO = m
 		mode: import
-		source = ```
+		source =
 				let
 				    Fonte = Oracle.Database("datavale", [HierarchicalNavigation=true]),
 				    DATAVALE = Fonte{[Schema="DATAVALE"]}[Data],
 				    DCEVPB_SOLICITACAOTEMPOAPROVACAO1 = DATAVALE{[Name="DCEVPB_SOLICITACAOTEMPOAPROVACAO"]}[Data],
 				    #"Tipo Alterado" = Table.TransformColumnTypes(DCEVPB_SOLICITACAOTEMPOAPROVACAO1,{{"DTASOLICITACAO", type date}, {"DTAAPROVACAOPEDIDO", type date}, {"PRIMEIRA", type date}, {"SOLIAPROVACAO", type datetime}, {"DTAEMISSAO", type date}, {"DATAHORAPEDIDO", type datetime}, {"NROEMPRESA", type text}, {"NROSOLICITACAO", type text}, {"STATUS", type text}, {"COD_PRIORIDADE", type text}, {"SEQSOLICITANTE", type text}, {"CODTIPOCOTACAO", type text}, {"SEQPRODUTO", type text}, {"GRUPOPROD", type text}, {"SUBGRUPOPROD", type text}, {"SEQCOTACAO", type text}, {"NROPEDIDO", type text}, {"SEQPEDIDOITEM", type text}, {"SEQFORNECEDOR", type text}}),
-				    
 				    // Substituição da lógica antiga pela nova coluna mesclada (Pedido | Forn | Desc)
 				    #"Coluna Mesclada Inserida" = Table.AddColumn(#"Tipo Alterado", "Detalhe pedido", each Text.Combine({"Pedido: " & Text.From([NROPEDIDO], "pt-BR"), "Forn: " & [FORNECEDOR], "Desc: " & [DESCRICAO]}, " | "), type text),
 				    #"Consultas Mescladas" = Table.NestedJoin(#"Coluna Mesclada Inserida", {"GRUPO"}, dCategoria, {"GRUPO"}, "dCategoria", JoinKind.LeftOuter),
@@ -382,7 +381,6 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 				    #"Data Inserida" = Table.AddColumn(#"Coluna Mesclada Inserida1", "DATA_SOLIAPROVACAO", each DateTime.Date([SOLIAPROVACAO]), type date)
 				in
 				    #"Data Inserida"
-				```
 
 	annotation PBI_NavigationStepName = Navegação
 
