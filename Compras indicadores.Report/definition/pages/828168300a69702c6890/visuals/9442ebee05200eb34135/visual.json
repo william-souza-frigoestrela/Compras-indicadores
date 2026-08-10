@@ -120,7 +120,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'COTAÇÃO APROVADA'"
+                                "Value": "'SOLICITAÇÃO APROVADA'"
                               }
                             }
                           ]
@@ -229,6 +229,13 @@
                   "Value": "false"
                 }
               }
+            },
+            "strictSingleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }
@@ -267,5 +274,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6d0805681e2ea1770a07",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dStatus"
+              }
+            },
+            "Property": "DESC STATUS"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }
