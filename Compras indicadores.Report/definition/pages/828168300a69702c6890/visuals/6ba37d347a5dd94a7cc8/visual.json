@@ -23,11 +23,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Tempo Medio (Aprovação x Pedido)"
+                  "Property": "Tempo Medio Aprovação"
                 }
               },
               "queryRef": "Medidas.Tempo Medio (Aprovação x Pedido)",
-              "nativeQueryRef": "Tempo Medio (Aprovação x Pedido)"
+              "nativeQueryRef": "Tempo Medio Aprovação"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "Medidas"
                   }
                 },
-                "Property": "Tempo Medio (Aprovação x Pedido)"
+                "Property": "Tempo Medio Aprovação"
               }
             },
             "direction": "Ascending"
@@ -570,7 +570,7 @@
                 "Entity": "Medidas"
               }
             },
-            "Property": "Tempo Medio (Aprovação x Pedido)"
+            "Property": "Tempo Medio Aprovação"
           }
         },
         "type": "Advanced"

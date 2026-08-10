@@ -11672,7 +11672,7 @@ cultureInfo pt-BR
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Medidas",
-			          "ConceptualProperty": "Tempo Medio (Aprovação x Pedido)"
+			          "ConceptualProperty": "Tempo Medio Aprovação"
 			        }
 			      },
 			      "State": "Generated",

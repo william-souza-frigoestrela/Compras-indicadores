@@ -2311,28 +2311,77 @@ table Medidas
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: c507b84c-47a4-4dba-8e5c-64ea9de465bd
 
-	measure 'Tempo Medio (Aprovação x Pedido)' = ```
+	measure 'Tempo Medio Aprovação' = ```
 			
+			VAR filtro_status = SELECTEDVALUE(dStatus[STATUS])
 			
-			VAR TempoMedioDias =
-			    AVERAGEX(
-			        FILTER(
-			            DCEVPB_SOLICITACAOTEMPOAPROVACAO,
-			            NOT(ISBLANK(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATAHORAPEDIDO])) &&
-			            NOT(ISBLANK(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SOLIAPROVACAO])) 
+			-- Status 3: Solicitacao Aprovada (Diferença entre Data/Hora Pedido e Solicitação Aprovação)
+			VAR solicitacao_aprovada = 
+			    CALCULATE(
+			        AVERAGEX(
+			            FILTER(
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO,
+			                NOT(ISBLANK(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTASOLICITACAO])) &&
+			                NOT(ISBLANK(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SOLIAPROVACAO]))
+			            ),
+			            DCEVPB_SOLICITACAOTEMPOAPROVACAO[SOLIAPROVACAO] - DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTASOLICITACAO] 
 			        ),
-			        DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATAHORAPEDIDO] - DCEVPB_SOLICITACAOTEMPOAPROVACAO[SOLIAPROVACAO]
+			        USERELATIONSHIP(dCalendario[Date], DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATA_SOLIAPROVACAO]),
+			        DCEVPB_SOLICITACAOTEMPOAPROVACAO[STATUSITEM] = 3
 			    )
-			VAR Dias = INT(TempoMedioDias)
-			VAR Horas = INT(MOD(TempoMedioDias * 24, 24))
-			VAR Minutos = INT(MOD(TempoMedioDias * 24 * 60, 60))
-			RETURN
-			--IF([Pedidos Gerados no Período] < 1 , BLANK(),
 			
-			FORMAT(Dias, "00") & "D " &
-			FORMAT(Horas, "00") & "H " &
-			FORMAT(Minutos, "00"&"M ")
-			--)
+			-- Status 4: Cotação Pré-Aprovada (Tempo decorrido entre Aprovação e AGORA)
+			VAR cotacao_pre_aprovada = 
+			    CALCULATE(
+			        AVERAGEX(
+			            FILTER(
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO,
+			                NOT(ISBLANK(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SOLIAPROVACAO]))
+			            ),
+			            NOW() - VALUE(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SOLIAPROVACAO])
+			        ),
+			        USERELATIONSHIP(dCalendario[Date], DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATA_SOLIAPROVACAO]),
+			        DCEVPB_SOLICITACAOTEMPOAPROVACAO[STATUSITEM] = 4
+			    )
+			
+			-- Status 5: Cotação Aprovada (Tempo decorrido entre Aprovação e Data emissao)
+			VAR cotacao_aprovada = 
+			    CALCULATE(
+			        AVERAGEX(
+			            FILTER(
+			                DCEVPB_SOLICITACAOTEMPOAPROVACAO,
+			                NOT(ISBLANK(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SOLIAPROVACAO]))
+			                &&NOT(ISBLANK(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAAPROVACAOPEDIDO]))
+			            ),
+			            VALUE(DCEVPB_SOLICITACAOTEMPOAPROVACAO[DTAAPROVACAOPEDIDO]) - VALUE(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SOLIAPROVACAO])
+			        ),
+			        USERELATIONSHIP(dCalendario[Date], DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATA_SOLIAPROVACAO]),
+			        DCEVPB_SOLICITACAOTEMPOAPROVACAO[STATUSITEM] = 5
+			    )
+			
+			-- Seleciona o resultado em dias decimais
+			VAR TempoMedioFinal = 
+			    SWITCH(
+			        TRUE(),
+			        filtro_status = "3", solicitacao_aprovada,
+			        filtro_status = "4", cotacao_pre_aprovada,
+			        filtro_status = "5", cotacao_aprovada,
+			        BLANK()
+			    )
+			
+			-- Conversão para DD HH MM
+			VAR Dias = INT(ABS(TempoMedioFinal))
+			VAR Horas = INT(MOD(ABS(TempoMedioFinal) * 24, 24))
+			VAR Minutos = INT(MOD(ABS(TempoMedioFinal) * 24 * 60, 60))
+			
+			RETURN
+			    IF(
+			        ISBLANK(TempoMedioFinal),
+			        BLANK(),
+			        FORMAT(Dias, "00") & "D " &
+			        FORMAT(Horas, "00") & "H " &
+			        FORMAT(Minutos, "00") & "M"
+			    )
 			```
 		lineageTag: 91578d74-f642-4d72-9e34-deb0b915a8ed
 
