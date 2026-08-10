@@ -1169,6 +1169,7 @@ table Medidas
 			CALCULATE(
 			    DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[Empresa-Nrosolicitacao]),
 			    USERELATIONSHIP(dCalendario[Date],DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATA_SOLIAPROVACAO])
+			    ,DCEVPB_SOLICITACAOTEMPOAPROVACAO[STATUSITEM]<>9
 			)
 		formatString: 0
 		lineageTag: fd4f5c6b-6834-42c2-868c-c359d08d6cd0
@@ -1183,11 +1184,43 @@ table Medidas
 		formatString: 0
 		lineageTag: 028777e7-7e42-40a5-854c-b5db62804a3a
 
-	measure 'Qtd itens' =
+	measure 'Qtd itens' = ```
 			
+			
+			var filtro_status = SELECTEDVALUE(dStatus[STATUS])
+			
+			var solicitacao_aprovada = 
 			CALCULATE(
 			    COUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO]),
-			    USERELATIONSHIP(dCalendario[Date],DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATA_SOLIAPROVACAO]))
+			    USERELATIONSHIP(dCalendario[Date],DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATA_SOLIAPROVACAO])
+			    ,DCEVPB_SOLICITACAOTEMPOAPROVACAO[STATUSITEM]<>9
+			    )
+			
+			var cotacao_pre_aprovada = 
+			CALCULATE(
+			    COUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO]),
+			    USERELATIONSHIP(dCalendario[Date],DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATA_SOLIAPROVACAO])
+			    ,DCEVPB_SOLICITACAOTEMPOAPROVACAO[STATUSITEM] =4
+			    )
+			
+			var cotacao_aprovada = 
+			CALCULATE(
+			    COUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[SEQPRODUTO]),
+			    USERELATIONSHIP(dCalendario[Date],DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATA_SOLIAPROVACAO])
+			    ,DCEVPB_SOLICITACAOTEMPOAPROVACAO[STATUSITEM] =5
+			    )
+			
+			
+			RETURN
+			
+			SWITCH(TRUE(),
+			filtro_status="3",solicitacao_aprovada,
+			filtro_status="4",cotacao_pre_aprovada,
+			filtro_status="5",cotacao_aprovada
+			)
+			
+			
+			```
 		formatString: 0
 		lineageTag: 432cdfe3-cad5-42c7-8c4f-f7eafb568f33
 
@@ -1197,6 +1230,7 @@ table Medidas
 			var solicitacao_urgente =
 			CALCULATE(
 			    DISTINCTCOUNT(DCEVPB_SOLICITACAOTEMPOAPROVACAO[Empresa-Nrosolicitacao]),DCEVPB_SOLICITACAOTEMPOAPROVACAO[COD_PRIORIDADE]="1",
+			    DCEVPB_SOLICITACAOTEMPOAPROVACAO[STATUSITEM]<>9,
 			    USERELATIONSHIP(dCalendario[Date],DCEVPB_SOLICITACAOTEMPOAPROVACAO[DATA_SOLIAPROVACAO])
 			    )
 			    
