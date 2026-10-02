@@ -7,6 +7,7 @@ relationship 3184ae06-69c4-1588-9343-087d5c5865f7
 	toColumn: dPrioridade.COD_PRIORIDADE
 
 relationship 2b63b3f7-6e84-1437-6676-30f1f7f0b64b
+	isActive: false
 	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.DTAEMISSAO
 	toColumn: dCalendario.Date
 
@@ -47,7 +48,6 @@ relationship 75f25e38-7e39-8694-5b56-a0edebaa2ad7
 	toColumn: dStatus.STATUS
 
 relationship 08fc06f6-958f-f399-e089-4b81900db0cc
-	isActive: false
 	fromColumn: DCEVPB_SOLICITACAOTEMPOAPROVACAO.DATA_SOLIAPROVACAO
 	toColumn: dCalendario.Date
 

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "220d5d0f3b09d55550d6",
   "position": {
     "x": 32.291520672740013,
@@ -92,11 +92,11 @@
                       "Entity": "Medidas"
                     }
                   },
-                  "Property": "Spend Dinamico Comparativo"
+                  "Property": "Valor Dinamico Comparativo"
                 }
               },
               "queryRef": "Medidas.Spend Dinamico Comparativo",
-              "nativeQueryRef": "Spend Dinamico Comparativo"
+              "nativeQueryRef": "Valor Dinamico Comparativo"
             }
           ]
         }
@@ -331,5 +331,79 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a9594ca6516575139e1e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dEmpresa"
+              }
+            },
+            "Property": "NOMEREDUZIDO"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "499a11243a6ca136444b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Periodos_Comparativo"
+              }
+            },
+            "Property": "Dimensao"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0298e0f1da01bbd4c067",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Periodos_Comparativo"
+              }
+            },
+            "Property": "Periodo"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7ef6ccfce90159052048",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dPrioridade"
+              }
+            },
+            "Property": "DESC_PRIORIDADE"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3b45e702a0d949501b0e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medidas"
+              }
+            },
+            "Property": "Valor Dinamico Comparativo"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

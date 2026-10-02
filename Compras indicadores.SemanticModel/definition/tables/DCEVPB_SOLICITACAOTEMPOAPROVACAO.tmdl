@@ -364,6 +364,32 @@ table DCEVPB_SOLICITACAOTEMPOAPROVACAO
 
 		annotation UnderlyingDateTimeDataType = Date
 
+	column SEQPEDIDO
+		dataType: double
+		lineageTag: c071ef2e-daa4-4cd1-b779-2a9104f23377
+		summarizeBy: sum
+		sourceColumn: SEQPEDIDO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column STATUSPED
+		dataType: string
+		lineageTag: d3821f38-68b9-4db0-9e25-8a033e9c471d
+		summarizeBy: none
+		sourceColumn: STATUSPED
+
+		annotation SummarizationSetBy = Automatic
+
+	column APROVADORSOLICITACAO
+		dataType: string
+		lineageTag: 0ba79625-89eb-42ba-9b6a-a48d28ace19c
+		summarizeBy: none
+		sourceColumn: APROVADORSOLICITACAO
+
+		annotation SummarizationSetBy = Automatic
+
 	partition DCEVPB_SOLICITACAOTEMPOAPROVACAO = m
 		mode: import
 		source =
