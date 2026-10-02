@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "4a0a6c00b34ecc007ead",
+  "name": "946571fa1c61ca916cbd",
   "position": {
-    "x": 293.21156773211567,
-    "y": 16.560121765601217,
-    "z": 0,
-    "height": 62.343987823439875,
-    "width": 278.59969558599693,
-    "tabOrder": 0
+    "x": 396.15642458100558,
+    "y": 17.162011173184357,
+    "z": 6000,
+    "height": 61.497206703910614,
+    "width": 258.86033519553075,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,20 +20,40 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dComprador"
+                      "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
                     }
                   },
-                  "Property": "NOME"
+                  "Property": "GRUPO"
                 }
               },
-              "queryRef": "dComprador.NOME",
-              "nativeQueryRef": "NOME",
+              "queryRef": "DCEVPB_SOLICITACAOTEMPOAPROVACAO.GRUPO",
+              "nativeQueryRef": "GRUPO1",
               "active": true
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "isDefaultSort": true
       }
     },
+    "expansionStates": [
+      {
+        "roles": [
+          "Values"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "DCEVPB_SOLICITACAOTEMPOAPROVACAO.GRUPO"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
     "objects": {
       "data": [
         {
@@ -60,6 +80,13 @@
                       "Percent": 0
                     }
                   }
+                }
+              }
+            },
+            "selfFilterEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -113,7 +140,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Comprador'"
+                  "Value": "'Grupo'"
                 }
               }
             }
@@ -161,13 +188,6 @@
                   "Value": "false"
                 }
               }
-            },
-            "strictSingleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
             }
           }
         }
@@ -210,15 +230,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "01595230303e5ad42002",
+        "name": "81dd159920502ebc32b3",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "dComprador"
+                "Entity": "DCEVPB_SOLICITACAOTEMPOAPROVACAO"
               }
             },
-            "Property": "NOME"
+            "Property": "GRUPO"
           }
         },
         "type": "Categorical"

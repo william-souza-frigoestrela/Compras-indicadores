@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "e19e923809cdfd74f919",
   "position": {
     "x": 920.39408866995075,
@@ -258,11 +258,6 @@
           }
         }
       ]
-    },
-    "syncGroup": {
-      "groupName": "NOME",
-      "fieldChanges": true,
-      "filterChanges": true
     },
     "drillFilterOtherVisuals": true
   },

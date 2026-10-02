@@ -1141,17 +1141,29 @@ table Medidas
 			)
 		lineageTag: 79cc95b9-bb34-45c0-916d-16e1d1f9eb6e
 
-	measure 'Spend Dinamico Comparativo' =
+	measure 'Valor Dinamico Comparativo' = ```
 			
-			VAR PeriodoVisivel = SELECTEDVALUE('Periodos_Comparativo'[Periodo])
+			VAR DimensaoVisivel = SELECTEDVALUE('Periodos_Comparativo'[Dimensao]) -- Nome da tabela/coluna que você usou no campo 'Múltiplos Pequenos'
+			VAR PeriodoVisivel  = SELECTEDVALUE('Periodos_Comparativo'[Periodo])
+			
 			RETURN
 			SWITCH(
-			    PeriodoVisivel,
-			    "Ano Atual", [Spend CY],
-			    "Ano Anterior", [Spend LY],
-			    [Spend CY] -- Valor padrão caso dê algum erro de contexto
+			    TRUE(),
+			    -- Cenários para o SPEND
+			    DimensaoVisivel = "Spend" && PeriodoVisivel = "Ano Atual", [Spend CY],
+			    DimensaoVisivel = "Spend" && PeriodoVisivel = "Ano Anterior", [Spend LY],
+			    
+			    -- Cenários para ITENS (substitua pelas suas medidas de quantidade de itens)
+			    DimensaoVisivel = "Itens" && PeriodoVisivel = "Ano Atual", [Qtd Itens CY],
+			    DimensaoVisivel = "Itens" && PeriodoVisivel = "Ano Anterior", [Qtd Itens LY],
+			    
+			    -- Fallback/Padrão
+			    [Spend CY]
 			)
+			```
 		lineageTag: f9eb66fc-1114-439a-8650-f44e40a63bd5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Status Solicitação' =
 			

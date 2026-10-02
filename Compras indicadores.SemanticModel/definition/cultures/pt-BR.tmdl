@@ -6332,7 +6332,7 @@ cultureInfo pt-BR
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Medidas",
-			          "ConceptualProperty": "Spend Dinamico Comparativo"
+			          "ConceptualProperty": "Valor Dinamico Comparativo"
 			        }
 			      },
 			      "State": "Generated",
@@ -11771,19 +11771,7 @@ cultureInfo pt-BR
 			          "ConceptualProperty": "_qtdPed"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Qtd. Pedidos": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "dcevpbi_pedidoentregaprazo.column_qtdpedidosotif": {
 			      "Definition": {
@@ -11792,19 +11780,7 @@ cultureInfo pt-BR
 			          "ConceptualProperty": "_qtdPedidosOTIF"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Qtd. Pedidos OTIF": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    }
 			  },
 			  "Relationships": {
